@@ -20,4 +20,7 @@ Schedule
 
 Day1 Note    
 
-![](https://cloud.githubusercontent.com/assets/10692276/9997354/5bdd519c-60be-11e5-99b1-eede762ec681.png)
+![](https://cloud.githubusercontent.com/assets/10692276/9997354/5bdd519c-60be-11e5-99b1-eede762ec681.png)   
+
+Day2 Note   
+![](https://cloud.githubusercontent.com/assets/10692276/10018332/68c1dea0-6168-11e5-8ec5-406c37016c46.png)
