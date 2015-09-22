@@ -1,10 +1,17 @@
 import React from 'react';
-import { AppBar } from 'material-ui';
+import { Tabs, Tab} from 'material-ui';
 
-export class Header extends React.Component{
+export default class Header extends React.Component{
   render(){
-    return (<AppBar
-      title="Reports" />
+    return (
+      <Tabs>
+        <Tab label="Item One" >
+        </Tab>
+        <Tab label="Item Two" >
+        </Tab>
+        <Tab
+          label="Item Three"/>
+      </Tabs>
     );
   }
 }

@@ -25,6 +25,10 @@ module.exports = {
         loader: 'style!css'
       },
       {
+        test: /\.scss$/,
+        loader: "style!css!sass"
+      },
+      {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url?limit=10000&mimetype=application/font-woff"
       },
