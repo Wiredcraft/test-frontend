@@ -1,29 +1,35 @@
 $paddingLength: 600px;
 $iconSize: 48px;
 
-.tabsContainer{
-  position: relative;
-  padding-left: 600px;
+body {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+    padding: 0 0;
+    margin: 0;
 
-  .mainIcon{
-    color: #fff;
-  }
-
-  .iconButton{
-    position: absolute;
-    left: 0;
-    color: #fff;
-    margin-right: $paddingLength;
-  }
-  .tabArea{
-    position: absolute;
-    left: $iconSize;
-    background-color: #00bcd4;
-    width: $paddingLength;
-    height: $iconSize;
-
-    .tabs{
+    .tabsContainer{
       position: relative;
+      padding-left: 600px;
+
+      .mainIcon{
+        color: #fff;
+      }
+
+      .iconButton{
+        position: absolute;
+        left: 0;
+        color: #fff;
+        margin-right: $paddingLength;
+      }
+      .tabArea{
+        position: absolute;
+        left: $iconSize;
+        background-color: #00bcd4;
+        width: $paddingLength;
+        height: $iconSize;
+
+        .tabs{
+          position: relative;
+        }
+      }
     }
-  }
 }
