@@ -24,6 +24,13 @@ Day1 Note
 
 Day2 Note   
 ![](https://cloud.githubusercontent.com/assets/10692276/10018332/68c1dea0-6168-11e5-8ec5-406c37016c46.png)  
-Add UI framework material-ui.
-Can not run jest on my machine, but the time is not enough, I will add unit test at weekend using karma, so sorry.   
+Add UI framework material-ui.  
+Can not run jest on my machine, but the time is not enough, I will add unit test at weekend using karma, so sorry. 
+
+Day2 result:   
+![](https://cloud.githubusercontent.com/assets/10692276/10022602/4b91dff2-6180-11e5-8be1-01a1fc2b93d4.png)  
+Tomorrow night todos:     
+1. The table component in material-ui look like this, I have to find customization way or design the table component by myselg.     
+2. Implement the region bar component.
+
 
