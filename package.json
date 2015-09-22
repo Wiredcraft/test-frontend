@@ -27,6 +27,8 @@
     "flux": "^2.1.1",
     "font-awesome": "^4.4.0",
     "immutable": "^3.7.5",
-    "react": "^0.13.3"
+    "material-ui": "^0.11.1",
+    "react": "^0.13.3",
+    "react-tap-event-plugin": "^0.1.7"
   }
 }
