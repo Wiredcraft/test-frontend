@@ -4,19 +4,14 @@ git clone https://github.com/EcutDavid/frontend-test.git
 cd frontend-test   
 git checkout David  
 ```  
-Run test:
-```
-npm run test
-```
+
 Local debug:  
 ```
 npm run dev
 ```
-
-Build Prd files:
-```
-npm run build
-```
+> How to run test and how to build prd files will be add.    
+  
+  
 
 ## Task: implement the following mock
 
