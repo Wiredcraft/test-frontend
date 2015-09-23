@@ -60,8 +60,9 @@ No test code.
 The RegionBar component implement code should improve.    
 The css need improve.   
 Font Family need improve (display ugly in windows).     
-Tomorrow todo:     
+Tomorrow night todo:     
 1.Improve component code.     
 2.Finish the RegionBar component.     
-3.Try to run test in this project.    
+3.Try to run test in this project.     
+4.If finish three, add how to run test in README.  
  
