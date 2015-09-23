@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import RegionBar from './RegionBar';
+import { Paper } from 'material-ui';
+
 
 //The mock data, TODO: add subItems
 let data = {
@@ -20,7 +22,9 @@ export default class Content extends React.Component{
     return (
       <div>
         <SearchBar />
-        <RegionBar source={data}/>
+        <Paper zDepth={2}>
+          <RegionBar style={{display: 'inline-block'}} source={data}/>
+        </Paper>
       </div>
     );
   }

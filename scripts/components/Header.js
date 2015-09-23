@@ -7,17 +7,18 @@ export default class Header extends React.Component{
   render(){
     let padding = 600;
     return (
-      <div className={'tabsContainer'}>
+      <div className={'HeaderTabsContainer'}>
         <IconButton
-          iconClassName="fa fa-pencil mainIcon"
+          iconClassName="fa fa-pencil"
+          iconStyle={{color:'#fff'}}
           style={{position: 'absolute',
           backgroundColor: '#00bcd4'}}
-          className={'iconButton'}>
+          className={'HeaderIconButton'}>
         </IconButton>
 
-        <div className={'tabArea'}/>
+        <div className={'HeaderTabArea'}/>
           <Tabs
-            className={'tabs'}
+            className={'HeaderTabs'}
             contentContainerStyle={{marginLeft: -padding}}
             initialSelectedIndex={1}>
             <Tab label="Overall">

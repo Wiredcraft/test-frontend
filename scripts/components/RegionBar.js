@@ -6,7 +6,7 @@ export default class RegionBar extends React.Component{
   }
   render(){
     return (
-      <div>
+      <div style={{display:'inline-block'}}>
         RegionBar
       </div>
     );

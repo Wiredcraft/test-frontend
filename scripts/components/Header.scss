@@ -6,28 +6,24 @@ body {
     padding: 0 0;
     margin: 0;
 
-    .tabsContainer{
+    .HeaderTabsContainer{
       position: relative;
       padding-left: 600px;
 
-      .mainIcon{
-        color: #fff;
-      }
-
-      .iconButton{
+      .HeaderIconButton{
         position: absolute;
         left: 0;
         color: #fff;
         margin-right: $paddingLength;
       }
-      .tabArea{
+      .HeaderTabArea{
         position: absolute;
         left: $iconSize;
         background-color: #00bcd4;
         width: $paddingLength;
         height: $iconSize;
 
-        .tabs{
+        .HeaderTabs{
           position: relative;
         }
       }
