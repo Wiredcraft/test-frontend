@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default class RegionBar extends React.Component{
+export default class SearchBar extends React.Component{
   constructor(){
     super();
   }
   render(){
     return (
       <div>
-        RegionBar
+        SearchBar
       </div>
     );
   }
