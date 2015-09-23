@@ -1,6 +1,24 @@
-# I will try my best.
+# How to run    
+```
+git clone https://github.com/EcutDavid/frontend-test.git    
+cd frontend-test   
+git checkout David  
+```  
+Run test:
+```
+npm run test
+```
+Local debug:  
+```
+npm run dev
+```
 
-## Task: implement the following mock.
+Build Prd files:
+```
+npm run build
+```
+
+## Task: implement the following mock
 
 Use HTML, CSS and JavaScript to implement the following mock.
 
@@ -33,4 +51,7 @@ Tomorrow night todos:
 1. The table component in material-ui look like this, I have to find customization way or design the table component by myselg.     
 2. Implement the region bar component.
 
-
+Day3 Note   
+If I delay implement test case to weekend, I will lose the benifit of write test case before implement component, so I add mocha, and try to write test case for the region bar component.   
+The table component, I should implement the table without the help from material-ui's table component.
+ 
