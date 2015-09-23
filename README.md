@@ -58,7 +58,7 @@ If I delay implement test case to weekend, I will lose the benifit of write test
 
 The table component, I should implement the table without the help from material-ui's table component.
 
-Day3 rsult:   
+Day3 result:   
 ![](https://cloud.githubusercontent.com/assets/10692276/10049388/dfa85404-6249-11e5-9d1c-459f89264bda.png)   
 Problem in Day 3:    
 No test code.   
