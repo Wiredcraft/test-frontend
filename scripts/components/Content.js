@@ -15,8 +15,6 @@ let data = {
   subItems:[]
 }
 
-//38 14 16 16
-
 export default class Content extends React.Component{
   constructor(){
     super();
@@ -26,6 +24,10 @@ export default class Content extends React.Component{
       <div className={'ContentContainer'}>
           <Paper className={'ContentArea'} zDepth={2}>
             <SearchBar />
+            <RegionBar style={{display: 'inline-block'}} isTitle={true} source={data}/>
+            <RegionBar style={{display: 'inline-block'}} source={data}/>
+            <RegionBar style={{display: 'inline-block'}} source={data}/>
+            <RegionBar style={{display: 'inline-block'}} source={data}/>
             <RegionBar style={{display: 'inline-block'}} source={data}/>
           </Paper>
       </div>
