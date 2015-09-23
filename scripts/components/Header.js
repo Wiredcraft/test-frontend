@@ -19,7 +19,8 @@ export default class Header extends React.Component{
         <div className={'HeaderTabArea'}/>
           <Tabs
             className={'HeaderTabs'}
-            contentContainerStyle={{marginLeft: -padding}}
+            contentContainerStyle={{marginLeft: -padding,
+            textAlign: 'center'}}
             initialSelectedIndex={1}>
             <Tab label="Overall">
               <h1>Nothing here.</h1>
