@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontIcon, IconButton, FlatButton } from 'material-ui';
 
-import 'font-awesome/css/font-awesome.min.css'
 import './RegionBar.scss';
 
 export default class RegionBar extends React.Component{
@@ -10,9 +9,7 @@ export default class RegionBar extends React.Component{
   }
   render(){
     let hoverColor = '#897ad0';
-    debugger;
     if(this.props.isTitle === true){
-
       return (
         <div className='RegionBar'>
           <div className='RegionBarTitleArea'>

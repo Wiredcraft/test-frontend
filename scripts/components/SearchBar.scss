@@ -1,0 +1,18 @@
+.SearchBar{
+  margin: 0;
+  height: 48px;
+  border-top: 1px solid #abadb8;
+  position: relative;
+
+  .SearchBarDropMenu{
+    float: left;
+    width: 12%;
+    border-right: 1px solid #abadb8;
+  }
+
+  .SearchBarTextInput{
+    margin-left: 5px;
+    float: right;
+    width: auto;
+  }
+}
