@@ -53,5 +53,8 @@ Tomorrow night todos:
 
 Day3 Note   
 If I delay implement test case to weekend, I will lose the benifit of write test case before implement component, so I add mocha, and try to write test case for the region bar component.   
+> Sorry facing with problem, still delay to weekend.    
+
+
 The table component, I should implement the table without the help from material-ui's table component.
  
