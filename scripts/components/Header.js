@@ -16,7 +16,9 @@ export default class Header extends React.Component{
           className={'HeaderIconButton'}>
         </IconButton>
 
-        <div className={'HeaderTabArea'}/>
+        <div className={'HeaderTabArea'}>
+          <h2 className={'HeaderTitle'}>Reports</h2>
+        </div>
           <Tabs
             className={'HeaderTabs'}
             contentContainerStyle={{marginLeft: -padding,
