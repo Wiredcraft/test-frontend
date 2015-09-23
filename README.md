@@ -57,4 +57,16 @@ If I delay implement test case to weekend, I will lose the benifit of write test
 
 
 The table component, I should implement the table without the help from material-ui's table component.
+
+Day3 rsult:   
+![](https://cloud.githubusercontent.com/assets/10692276/10049388/dfa85404-6249-11e5-9d1c-459f89264bda.png)   
+Problem in Day 3:    
+No test code.   
+The RegionBar component implement code should improve.    
+The css need improve.   
+Font Family need improve (display ugly in windows).     
+Tomorrow todo:     
+1.Improve component code.     
+2.Finish the RegionBar component.     
+3.Try to run test in this project.    
  
