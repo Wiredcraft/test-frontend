@@ -1,10 +1,12 @@
 $paddingLength: 600px;
 $iconSize: 48px;
+@import '../global';
 
 body {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-    padding: 0 0;
-    margin: 0;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  padding: 0 0;
+  margin: 0;
+  background-color: $backgrondColor;
     .HeaderTitle{
       margin-top: 10px;
       color: #fff;

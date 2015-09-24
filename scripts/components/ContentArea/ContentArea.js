@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import RegionBar from './RegionBar';
+import SearchBar from '../SearchBar/SearchBar';
+import RegionBar from '../RegionBar/RegionBar';
 import { Paper } from 'material-ui';
 
-import './Content.scss';
+import './ContentArea.scss';
 
 //The mock data, TODO: add subItems
 let data = {
@@ -15,21 +15,21 @@ let data = {
   subItems:[]
 }
 
-export default class Content extends React.Component{
+export default class ContentArea extends React.Component{
   constructor(){
     super();
   }
   render(){
     return (
       <div className={'ContentContainer'}>
-          <Paper className={'ContentArea'} zDepth={2}>
+          <div className={'ContentArea'}>
             <SearchBar />
             <RegionBar style={{display: 'inline-block'}} isTitle={true} source={data}/>
             <RegionBar style={{display: 'inline-block'}} source={data}/>
             <RegionBar style={{display: 'inline-block'}} source={data}/>
             <RegionBar style={{display: 'inline-block'}} source={data}/>
             <RegionBar style={{display: 'inline-block'}} source={data}/>
-          </Paper>
+          </div>
       </div>
     );
   }
