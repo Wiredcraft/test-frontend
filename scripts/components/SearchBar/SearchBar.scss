@@ -1,21 +1,58 @@
 @import '../global';
 $barHeight: 50px;
+$ButtonHoverColor: #3bbb8d;
+$SearchBarColor: #fff;
 
 .SearchBar{
-  margin: 0;
   height: $barHeight;
-  border-top: 1px solid $borderColor;
   position: relative;
+  width: 100%;
+  font-size: 1.1em;
 
   .SearchBarDropMenu{
+    height: 100%;
     float: left;
-    width: 12%;
+    width: 140px;
     border-right: 1px solid $borderColor;
+
+    .placeHolder{
+      display: inline-block;
+      color: $searchBarTitle;
+      position: absolute;
+      top: 50%;
+      left: 17px;
+      transform: translate(0%, -50%);
+      cursor: default;
+    }
+
+    .DropMenuIcon{
+      background-color: $SearchBarColor;
+      position: absolute;
+      top: 50%;
+      left: 112px;
+      transform: translate(0%, -50%);
+      cursor: pointer;
+    }
   }
 
   .SearchBarTextInput{
     margin-left: 5px;
-    float: right;
-    width: auto;
+    padding-left: 13px;
+    float: left;
+    border: 0;
+    width: 80%;
+    height: 50px;
+  }
+
+  .serachButton{
+    background-color: $SearchBarColor;
+    position: absolute;
+    right: 13px;
+    top: 13.5px;
+    cursor: pointer;
+
+    &:hover{
+      color: $ButtonHoverColor;
+    }
   }
 }

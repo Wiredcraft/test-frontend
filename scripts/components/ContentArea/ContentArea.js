@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import RegionBar from '../RegionBar/RegionBar';
-import { Paper } from 'material-ui';
 
 import './ContentArea.scss';
 
@@ -21,15 +20,13 @@ export default class ContentArea extends React.Component{
   }
   render(){
     return (
-      <div className={'ContentContainer'}>
-          <div className={'ContentArea'}>
-            <SearchBar />
-            <RegionBar style={{display: 'inline-block'}} isTitle={true} source={data}/>
-            <RegionBar style={{display: 'inline-block'}} source={data}/>
-            <RegionBar style={{display: 'inline-block'}} source={data}/>
-            <RegionBar style={{display: 'inline-block'}} source={data}/>
-            <RegionBar style={{display: 'inline-block'}} source={data}/>
-          </div>
+      <div className={'ContentArea'}>
+        <SearchBar />
+        <RegionBar style={{display: 'inline-block'}} isTitle={true} source={data}/>
+        <RegionBar style={{display: 'inline-block'}} source={data}/>
+        <RegionBar style={{display: 'inline-block'}} source={data}/>
+        <RegionBar style={{display: 'inline-block'}} source={data}/>
+        <RegionBar style={{display: 'inline-block'}} source={data}/>
       </div>
     );
   }

@@ -11,7 +11,8 @@ $selectedTabColor: #f0f2f8;
   position: relative;
   box-shadow: 0 1px 1px #555;
   height: $headerHeight;
-  border: 1px solid black;
+  background-color: $headerBcColor;
+  text-align: left;
 
   .HeaderIcon{
     padding: 13px;

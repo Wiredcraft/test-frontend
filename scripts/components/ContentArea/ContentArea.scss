@@ -1,12 +1,18 @@
 $contentLength: 1020px;
 @import '../global';
+$ContentAreaBcColor: #fff;
 
-.ContentContainer{
+
+body{
   text-align: center;
+  background-color: $backgrondColor;
+  height: 100%;
 
   .ContentArea{
+    background-color: $ContentAreaBcColor;
+    box-shadow: 0 0 1px #000;
     margin-top: 40px;
-    width: 1000px;
+    width: $ContentAreaWidth;
     text-align: left;
     display: inline-block;;
   }
