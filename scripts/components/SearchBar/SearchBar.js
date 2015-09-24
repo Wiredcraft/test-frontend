@@ -1,5 +1,4 @@
 import React from 'react';
-import SelectBox from '../SelectBox/SelectBox'
 import './SearchBar.scss'
 
 export default class SearchBar extends React.Component{
