@@ -6,7 +6,10 @@ export default class RegionBar extends React.Component{
     super();
   }
   render(){
-    let baseTitleAreaWidth = 370;
+    let baseTitleAreaWidth = 365;//365
+    let indent = 30;
+    let resultTitleAreaWidth = baseTitleAreaWidth - indent * this.props.areaLevel;
+    let expandText =  this.props.areaLevel === 0? 'District' : 'Township'
     //use variable here to implement the 'L'
     if(this.props.isTitle === true){
       return (
@@ -23,7 +26,7 @@ export default class RegionBar extends React.Component{
           <div className='RegionBarDateArea'>
             <p>{'Last Inpot'}</p>
           </div>
-          <div className='RegionBarTitleArea' style={{width:baseTitleAreaWidth}}>
+          <div className='RegionBarTitleArea' style={{width:365}}>
             <p className='tilte'>{'Region'}</p>
           </div>
         </div>
@@ -44,7 +47,7 @@ export default class RegionBar extends React.Component{
           <p>{this.props.source.lastData}</p>
         </div>
 
-        <div className='RegionBarTitleArea' style={{width:baseTitleAreaWidth}}>
+        <div className='RegionBarTitleArea' style={{width:resultTitleAreaWidth}}>
           <div className='RegionBarTitleIcon'>
             <p>A</p>
           </div>
@@ -52,13 +55,22 @@ export default class RegionBar extends React.Component{
             {this.props.source.title}
           </p>
           <div className='fa fa-download fa-lg RegionBarDownloadBtn'/>
-
-          <button
-            className='RegionBarExpandBtn'>
-            X Distinct    +
-          </button>
+          {
+            this.props.canExpand === false? '':
+            <button
+              className='RegionBarExpandBtn'>
+              X {expandText}    +
+            </button>
+          }
         </div>
+        {
+          this.props.areaLevel === 0? '':
+          <svg height="10" width="10" className="lIcon">
+            <polygon points="0,0 2,0 2,8, 10,8 10,10, 0,10" />
+          </svg>
+        }
       </div>
+
     );
   }
 }
@@ -66,5 +78,8 @@ export default class RegionBar extends React.Component{
 RegionBar.defaultProps = {
   isTitle: false,
   canExpand: false,
-  areaLevel: 0
+  areaLevel: 0,
 };
+// <svg height="10" width="10" className="lIcon">
+//   <polygon points="0,0 2,0 2,8, 10,8 10,10, 0,10" />
+// </svg>

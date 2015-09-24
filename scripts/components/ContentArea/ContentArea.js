@@ -22,11 +22,15 @@ export default class ContentArea extends React.Component{
     return (
       <div className={'ContentArea'}>
         <SearchBar />
-        <RegionBar style={{display: 'inline-block'}} isTitle={true} source={data}/>
-        <RegionBar style={{display: 'inline-block'}} source={data}/>
-        <RegionBar style={{display: 'inline-block'}} source={data}/>
-        <RegionBar style={{display: 'inline-block'}} source={data}/>
-        <RegionBar style={{display: 'inline-block'}} source={data}/>
+        <RegionBar style={{display: 'inline-block'}} isTitle={true} source={data} canExpand={true}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} canExpand={true}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} canExpand={false}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} areaLevel ={1} canExpand={false}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} areaLevel ={2} canExpand={false}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} areaLevel ={2} canExpand={false}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} canExpand={false}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} areaLevel ={1} canExpand={true}/>
+        <RegionBar style={{display: 'inline-block'}} source={data} canExpand={false}/>
       </div>
     );
   }
