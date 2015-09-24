@@ -2,73 +2,83 @@
 $RegionBarHeight: 50px;
 $DownloadBtnBkColor: #3bbb8d;
 $TextColor: #897ad0;
+$ButtonHoverColor: #3bbb8d;
 
 .RegionBar{
-  margin: 0;
   height: $RegionBarHeight;
   border-top: 1px solid $borderColor;
   position: relative;
   .RegionBarTitleArea{
     border-right: 1px solid $borderColor;
-    width: 37%;
+    width: 30%;
     height: $RegionBarHeight;
-    float: left;
-    p{
+    float: right;
+    position: relative;
+
+    .tilte{
+      @extend .VerticalAlign;
       margin-left: 18px;
     }
 
     .RegionBarTitleIcon{
-      float: left;
-      margin-top: 10px;
-      display: inline-block;
       border-radius: 50%;
+      @extend .VerticalAlign;
       background-color: $TextColor;
       text-align: center;
-      padding-top: 2px;
       width: 22px;
       height: 22px;
-      margin-left: 18px;
+
+      p{
+        @extend .VerHorAlign;
+        color: $iconColor;
+      }
     }
 
     .RegionBarTitle{
-      float: left;
-      margin: 0;
-      -webkit-transform: translateY(65%);
-      -ms-transform: translateY(65%);
-      transform: translateY(65%);
+      @extend .VerticalAlign;
       font-size: 1em;
-      margin-left: 15px;
-      vertical-align: middle;
+      margin-left: 36px;
     }
 
     .RegionBarDownloadBtn{
-      float: left;
-      margin-left: 18px;
-      margin-top: 9px;
+      margin-left: 117px;
+      margin-top: 14.5px;
+      padding-left: 2px;
+      padding-top: 4px;
+      background-origin: content-box;
       width: 22px;
-      height: 22px;
-      padding: 2px;
+      height: 18px;
+      color: $iconColor;
       background-color: $DownloadBtnBkColor;
     }
 
     .RegionBarExpandBtn{
       float: right;
-      background-color: black;
+      padding: 9px 8px 9px 12px;
+      margin: 8px 12px;
+      background-color: #f0f2f8;
+      &:hover{
+        background-color:$ButtonHoverColor;
+      }
     }
   }
 
   .RegionBarDateArea{
     border-right: 1px solid $borderColor;
-    float: left;
+    float: right;
     width: 14%;
     height: $RegionBarHeight;
     text-align: center;
+    position: relative;
+    p{
+      width: 100%;
+      @extend .VerHorAlign;
+    }
   }
 
   .RegionBarFormsArea{
     @extend .RegionBarDateArea;
     width: 16%;
-
   }
 
   .RegionBarVotersArea{
