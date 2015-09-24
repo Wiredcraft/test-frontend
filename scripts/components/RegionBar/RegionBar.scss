@@ -1,12 +1,17 @@
+@import '../global';
+$RegionBarHeight: 50px;
+$DownloadBtnBkColor: #3bbb8d;
+$TextColor: #897ad0;
+
 .RegionBar{
   margin: 0;
-  height: 42px;
-  border-top: 1px solid #abadb8;
+  height: $RegionBarHeight;
+  border-top: 1px solid $borderColor;
   position: relative;
   .RegionBarTitleArea{
-    border-right: 1px solid #abadb8;
+    border-right: 1px solid $borderColor;
     width: 37%;
-    height: 42px;
+    height: $RegionBarHeight;
     float: left;
     p{
       margin-left: 18px;
@@ -17,7 +22,7 @@
       margin-top: 10px;
       display: inline-block;
       border-radius: 50%;
-      background-color: #897ad0;
+      background-color: $TextColor;
       text-align: center;
       padding-top: 2px;
       width: 22px;
@@ -43,7 +48,7 @@
       width: 22px;
       height: 22px;
       padding: 2px;
-      background-color: #3bbb8d;
+      background-color: $DownloadBtnBkColor;
     }
 
     .RegionBarExpandBtn{
@@ -53,10 +58,10 @@
   }
 
   .RegionBarDateArea{
-    border-right: 1px solid #abadb8;
+    border-right: 1px solid $borderColor;
     float: left;
     width: 14%;
-    height: 42px;
+    height: $RegionBarHeight;
     text-align: center;
   }
 

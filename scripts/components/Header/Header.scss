@@ -1,38 +1,57 @@
-$paddingLength: 600px;
-$iconSize: 48px;
 @import '../global';
+$paddingLength: 600px;
+$HeaderIconColor: #3bbb8d;
+$iconSize: 48px;
+$headerBcColor: #fff;
+$headerHeight: 56px ;
+$headerTitleColor: #575b71;
+$selectedTabColor: #f0f2f8;
 
-body {
-  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
-  padding: 0 0;
-  margin: 0;
-  background-color: $backgrondColor;
-    .HeaderTitle{
-      margin-top: 10px;
-      color: #fff;
-      cursor: default;
+.HeaderTabsContainer{
+  position: relative;
+  box-shadow: 0 1px 1px #555;
+  height: $headerHeight;
+  border: 1px solid black;
+
+  .HeaderIcon{
+    padding: 13px;
+    color: $HeaderIconColor;
+    border-right: 1px solid $borderColor;
+  }
+
+  .HeaderTitle{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    left: 73px;
+    font-size: 1.3em;
+    display: inline-block;
+    color: $headerTitleColor;
+    cursor: default;
+  }
+  .HeaderTabTiltle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .HeaderTab{
+    border-left: 1px solid $borderColor;
+    width: 200px;
+    height: 100%;
+    position: relative;
+    float: right;
+    cursor: pointer;
+
+    &.selected{
+      background-color: $selectedTabColor;
     }
 
-    .HeaderTabsContainer{
-      position: relative;
-      padding-left: 600px;
-
-      .HeaderIconButton{
-        position: absolute;
-        left: 0;
-        color: #fff;
-        margin-right: $paddingLength;
-      }
-      .HeaderTabArea{
-        position: absolute;
-        left: $iconSize;
-        background-color: #00bcd4;
-        width: $paddingLength;
-        height: $iconSize;
-
-        .HeaderTabs{
-          position: relative;
-        }
-      }
+    &:hover{
+      background-color: $HeaderIconColor;
     }
+  }
+
+
 }

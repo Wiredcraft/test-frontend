@@ -1,13 +1,16 @@
+@import '../global';
+$barHeight: 50px;
+
 .SearchBar{
   margin: 0;
-  height: 48px;
-  border-top: 1px solid #abadb8;
+  height: $barHeight;
+  border-top: 1px solid $borderColor;
   position: relative;
 
   .SearchBarDropMenu{
     float: left;
     width: 12%;
-    border-right: 1px solid #abadb8;
+    border-right: 1px solid $borderColor;
   }
 
   .SearchBarTextInput{
