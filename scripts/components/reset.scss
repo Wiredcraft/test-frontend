@@ -41,3 +41,19 @@ q {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+::-webkit-input-placeholder {
+  color: #bac0cc;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #bac0cc;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #bac0cc;
+}
+
+:-ms-input-placeholder {
+  color: #bac0cc;
+}

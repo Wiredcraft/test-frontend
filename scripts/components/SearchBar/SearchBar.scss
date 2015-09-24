@@ -17,7 +17,7 @@ $SearchBarColor: #fff;
 
     .placeHolder{
       display: inline-block;
-      color: $searchBarTitle;
+      color: $placeHolderColor;
       position: absolute;
       top: 50%;
       left: 17px;
@@ -36,6 +36,7 @@ $SearchBarColor: #fff;
   }
 
   .SearchBarTextInput{
+    color: $placeHolderColor;
     margin-left: 5px;
     padding-left: 13px;
     float: left;
