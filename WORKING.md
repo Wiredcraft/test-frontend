@@ -41,4 +41,17 @@ Tomorrow night todo:
 
 Day4 Note:   
 due to [this](https://github.com/Wiredcraft/frontend-test/issues/2)     
-Today I should remove the dependence of material-ui first.
+Today I should remove the dependence of material-ui first.    
+    
+Day4 problem:   
+1.Test still not add    
+
+Day4 Result:   
+RegionBar component. implement basic function:    
+![](https://cloud.githubusercontent.com/assets/10692276/10077546/47d8f7b2-6313-11e5-8b52-fb62d6996646.png)   
+![](https://cloud.githubusercontent.com/assets/10692276/10077550/4d1c4ae4-6313-11e5-892c-27b080c6f42b.png)
+   
+Day 5 todo:    
+1.Finish the RegionBar component.     
+2.Finish the SearchBar component.    
+3.Try to run test in this project.   
