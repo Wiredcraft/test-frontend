@@ -55,3 +55,10 @@ Day 5 todo:
 1.Finish the RegionBar component.     
 2.Finish the SearchBar component.    
 3.Try to run test in this project.   
+
+
+Day 5 Note:
+Now UI totally follow mockup:
+![](https://cloud.githubusercontent.com/assets/10692276/10101243/273e12c8-63ca-11e5-98b1-027378235231.png)    
+Now test can run, I should think about how to implement test case.    
+Block in implement the dropdown list, I should think about how to implement it.
