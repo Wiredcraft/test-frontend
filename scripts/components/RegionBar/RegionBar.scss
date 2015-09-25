@@ -51,6 +51,11 @@ $ExpandButtonCotentColor: #8a8d9e;
       height: 18px;
       color: $iconColor;
       background-color: $DownloadBtnBkColor;
+
+      &:hover{
+        cursor: default;
+        color: $TextColor;
+      }
     }
 
     .RegionBarExpandBtn{

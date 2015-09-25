@@ -1,5 +1,9 @@
-// test case coding without ES 6 syntax.
-var React = require('react/addons');
-var assert = require('assert');
-var TestUtils = React.addons.TestUtils;
-var RegionBar = require('../scripts/components/RegionBar')
+import React from 'react/addons'
+import { expect } from 'chai'
+
+describe('test case should work', ()=> {
+  it('hello test case', function(done) {
+    expect(2).to.equal(2);
+    done();
+  });
+});

@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    './scripts/entry.js'],
+    './test/_test.js'],
   output: {
     path: __dirname + '/test',
     filename: "mochaTest.js"

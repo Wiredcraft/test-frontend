@@ -9,7 +9,7 @@ $SearchBarColor: #fff;
   width: 100%;
   font-size: 1.1em;
 
-  .SearchBarDropMenu{
+  .barDropMenu{
     height: 100%;
     float: left;
     width: 140px;
@@ -25,7 +25,7 @@ $SearchBarColor: #fff;
       cursor: default;
     }
 
-    .DropMenuIcon{
+    .dropMenuIcon{
       background-color: $SearchBarColor;
       position: absolute;
       top: 50%;
@@ -33,9 +33,17 @@ $SearchBarColor: #fff;
       transform: translate(0%, -50%);
       cursor: pointer;
     }
+
+    .dropDownList{
+      position: absolute;
+      width: 141px;
+      height: 50px;
+      top: $barHeight;
+      z-index: 9999;
+    }
   }
 
-  .SearchBarTextInput{
+  .TextInput{
     color: $placeHolderColor;
     margin-left: 5px;
     padding-left: 13px;
