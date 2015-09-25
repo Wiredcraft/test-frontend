@@ -22,8 +22,8 @@ export default class ContentArea extends React.Component{
     return (
       <div className={'ContentArea'}>
         <SearchBar />
-        <RegionBar isTitle={true} source={data} canExpand={true}/>
-        <RegionBar source={data} canExpand={true}/>
+        <RegionBar isTitle={true}/>
+        <RegionBar source={data} canExpand={true} subItemCount={3}/>
         <RegionBar source={data} canExpand={false}/>
         <RegionBar source={data} areaLevel ={1} canExpand={false}/>
         <RegionBar source={data} areaLevel ={2} canExpand={false}/>

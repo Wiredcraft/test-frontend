@@ -6,11 +6,10 @@ export default class RegionBar extends React.Component{
     super();
   }
   render(){
-    let baseTitleAreaWidth = 365;//365
+    let baseTitleAreaWidth = 365;
     let indent = 30;
     let resultTitleAreaWidth = baseTitleAreaWidth - indent * this.props.areaLevel;
     let expandText =  this.props.areaLevel === 0? 'District' : 'Township'
-    //use variable here to implement the 'L'
     if(this.props.isTitle === true){
       return (
         <div className='RegionBar'>
@@ -26,7 +25,7 @@ export default class RegionBar extends React.Component{
           <div className='RegionBarDateArea'>
             <p>{'Last Inpot'}</p>
           </div>
-          <div className='RegionBarTitleArea' style={{width:365}}>
+          <div className='RegionBarTitleArea' style={{width: baseTitleAreaWidth}}>
             <p className='tilte'>{'Region'}</p>
           </div>
         </div>
@@ -59,7 +58,9 @@ export default class RegionBar extends React.Component{
             this.props.canExpand === false? '':
             <button
               className='RegionBarExpandBtn'>
-              X {expandText}    +
+              <span className='RegionBarExpandBtnNumBlock'>{this.props.subItemCount}</span>
+              <span className='RegionBarExpandBtnAreaBlock'>{expandText}</span>
+              <span className='fa fa-plus RegionBarExpandBtnIconBlock'></span>
             </button>
           }
         </div>
@@ -78,8 +79,6 @@ export default class RegionBar extends React.Component{
 RegionBar.defaultProps = {
   isTitle: false,
   canExpand: false,
-  areaLevel: 0,
+  subItemCount: 0,
+  areaLevel: 0
 };
-// <svg height="10" width="10" className="lIcon">
-//   <polygon points="0,0 2,0 2,8, 10,8 10,10, 0,10" />
-// </svg>
