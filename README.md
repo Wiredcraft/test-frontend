@@ -9,7 +9,14 @@ Local debug:
 ```
 npm run dev
 ```
-> How to run test and how to build prd files will be add.    
+Run test:  
+```
+npm run test
+```
+Build prd files:  
+```
+npm run build
+```  
 
 [Working notes](https://github.com/EcutDavid/frontend-test/blob/David/WORKING.md)
 
