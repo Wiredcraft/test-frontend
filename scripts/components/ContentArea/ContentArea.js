@@ -11,8 +11,8 @@ let data = {
   formsCounts: 123456,
   votersCounts: 123456,
   update: 342456,
-  subItems:[]
-}
+  subItems: []
+};
 
 export default class ContentArea extends React.Component{
   constructor(){

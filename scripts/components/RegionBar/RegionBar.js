@@ -9,7 +9,8 @@ export default class RegionBar extends React.Component{
     let baseTitleAreaWidth = 365;
     let indent = 30;
     let resultTitleAreaWidth = baseTitleAreaWidth - indent * this.props.areaLevel;
-    let expandText =  this.props.areaLevel === 0? 'District' : 'Township'
+    let expandText = this.props.areaLevel === 0 ? 'District' : 'Township';
+    let areaLetters = ['S', 'D', 'T'];
     if(this.props.isTitle === true){
       return (
         <div className='RegionBar'>
@@ -29,7 +30,7 @@ export default class RegionBar extends React.Component{
             <p className='tilte'>{'Region'}</p>
           </div>
         </div>
-      )
+      );
     }
     return (
       <div className='RegionBar'>
@@ -46,16 +47,16 @@ export default class RegionBar extends React.Component{
           <p>{this.props.source.lastData}</p>
         </div>
 
-        <div className='RegionBarTitleArea' style={{width:resultTitleAreaWidth}}>
+        <div className='RegionBarTitleArea' style={{width: resultTitleAreaWidth}}>
           <div className='RegionBarTitleIcon'>
-            <p>A</p>
+            <p>{areaLetters[this.props.areaLevel]}</p>
           </div>
           <p className='RegionBarTitle'>
             {this.props.source.title}
           </p>
           <div className='fa fa-download fa-lg RegionBarDownloadBtn'/>
           {
-            this.props.canExpand === false? '':
+            this.props.canExpand === false ? '' :
             <button
               className='RegionBarExpandBtn'>
               <span className='RegionBarExpandBtnNumBlock'>{this.props.subItemCount}</span>
@@ -65,7 +66,7 @@ export default class RegionBar extends React.Component{
           }
         </div>
         {
-          this.props.areaLevel === 0? '':
+          this.props.areaLevel === 0 ? '' :
           <svg height="10" width="10" className="lIcon">
             <polygon points="0,0 2,0 2,8, 10,8 10,10, 0,10" />
           </svg>

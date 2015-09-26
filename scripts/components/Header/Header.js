@@ -1,9 +1,8 @@
 import React from 'react';
-import './Header.scss'
+import './Header.scss';
 
 export default class Header extends React.Component{
   render(){
-    let padding = 600;
     return (
       <div className={'HeaderTabsContainer'}>
         <div className={'fa fa-pencil fa-2x HeaderIcon'}></div>
