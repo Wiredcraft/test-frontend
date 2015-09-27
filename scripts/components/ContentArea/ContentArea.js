@@ -21,7 +21,7 @@ export default class ContentArea extends React.Component{
   render(){
     return (
       <div className={'ContentArea'}>
-        <SearchBar />
+        <SearchBar filters={['Region', 'Last Inpot']}/>
         <RegionBar isTitle={true}/>
         <RegionBar source={data} canExpand={true} subItemCount={3} areaTitles={['State', 'District', 'Township']}/>
         <RegionBar source={data} canExpand={false} areaTitles={['State', 'District', 'Township']}/>

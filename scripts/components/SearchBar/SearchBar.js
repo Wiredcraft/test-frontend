@@ -24,7 +24,7 @@ export default class SearchBar extends React.Component{
               {
                 this.props.filters.map((item, index) => {
                   return (
-                    <div className='dropItemArea' onClick={this.selectItem.bind(this, index)}>
+                    <div key={index} className='dropItemArea' onClick={this.selectItem.bind(this, index)}>
                       <div className='dropItem'>{item}</div>
                     </div>
                   );
