@@ -7,7 +7,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 0,
     areaLevel: 0,
     parentId: 0
   },
@@ -19,7 +18,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 2,
     areaLevel: 0,
     parentId: 0
   },
@@ -31,7 +29,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 2,
     areaLevel: 1,
     parentId: 1002
   },
@@ -43,7 +40,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 0,
     areaLevel: 2,
     parentId: 1003
   },
@@ -55,7 +51,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 0,
     areaLevel: 2,
     parentId: 1003
   },
@@ -67,7 +62,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 0,
     areaLevel: 1,
     parentId: 1002
   },
@@ -79,7 +73,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 0,
     areaLevel: 0,
     parentId: 0
   },
@@ -91,7 +84,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 2,
     areaLevel: 0,
     parentId: 0
   },
@@ -103,7 +95,6 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 0,
     areaLevel: 1,
     parentId: 1008
   },
@@ -115,8 +106,19 @@ export default [
     formsCounts: 123456,
     votersCounts: 123456,
     update: 342456,
-    subItemCount: 0,
     areaLevel: 1,
     parentId: 1008
+  }
+  ,
+  {
+    id: 1011,
+    display: true,
+    title: 'BALABALA',
+    lastData: '2014/12/13',
+    formsCounts: 123456,
+    votersCounts: 123456,
+    update: 342456,
+    areaLevel: 0,
+    parentId: 0
   }
 ];

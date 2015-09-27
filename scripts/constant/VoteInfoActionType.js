@@ -1,3 +1,4 @@
 export default{
-  EXPAND: 'EXPAND'
+  EXPAND: 'EXPAND',
+  CHANGEFILTER: 'CHANGEFILTER'
 };

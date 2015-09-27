@@ -1,5 +1,7 @@
 import React from 'react';
 import './SearchBar.scss';
+import VoteInfoActionCreator from '../../actions/VoteInfoActionCreator';
+import {REGION, INPOT} from '../../constant/FilterType';
 
 export default class SearchBar extends React.Component{
   constructor(){
@@ -11,6 +13,21 @@ export default class SearchBar extends React.Component{
   }
   showDropDownList() {
     this.setState({ listVisible: true });
+  }
+  _search(){
+    let filterText = React.findDOMNode(this.refs.inputBox).value;
+    let filterType = '';
+    switch (this.state.FilterText) {
+      case 'Region':
+        filterType = REGION;
+      break;
+      case 'Last Inpot':
+        filterType = INPOT;
+      break;
+      default:
+        return;
+    }
+    VoteInfoActionCreator.searchInfo(filterType, filterText);
   }
   render(){
     return (
@@ -33,9 +50,9 @@ export default class SearchBar extends React.Component{
             </div>
           }
         </div>
-        <input className='TextInput' type='text'
-        placeholder='Search' />
-        <button className='fa fa-search fa-lg serachButton'/>
+        <input className='TextInput' type='text' ref='inputBox'
+          placeholder='Search'/>
+        <button className='fa fa-search fa-lg serachButton' onClick={this._search.bind(this)}/>
       </div>
     );
   }
