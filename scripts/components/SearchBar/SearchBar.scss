@@ -1,0 +1,78 @@
+@import '../global';
+$barHeight: 50px;
+$ButtonHoverColor: #3bbb8d;
+$SearchBarColor: #fff;
+
+.SearchBar{
+  height: $barHeight;
+  position: relative;
+  width: 100%;
+  font-size: 1.1em;
+
+  .barDropMenu{
+    height: 100%;
+    float: left;
+    width: 140px;
+    border-right: 1px solid $borderColor;
+
+    .placeHolder{
+      display: inline-block;
+      color: $placeHolderColor;
+      left: 17px;
+      cursor: default;
+      @extend .VerticalAlign;
+    }
+
+    .dropMenuIcon{
+      background-color: $SearchBarColor;
+      left: 112px;
+      @extend .VerticalAlign;
+      cursor: pointer;
+    }
+
+    .dropDownList{
+      position: absolute;
+      width: 139px;
+
+      top: $barHeight;
+      z-index: 1;
+      border: 1px solid $borderColor;
+
+      .dropItemArea{
+        height: 40px;
+        position: relative;
+        background-color: #fff;
+
+        .dropItem{
+          font-size: 0.8em;
+          @extend .VerHorAlign;
+        }
+
+        &:hover{
+          background-color: $ButtonHoverColor;
+        }
+      }
+    }
+  }
+
+  .TextInput{
+    margin-left: 5px;
+    padding-left: 13px;
+    float: left;
+    border: 0;
+    width: 80%;
+    height: 50px;
+  }
+
+  .serachButton{
+    background-color: $SearchBarColor;
+    position: absolute;
+    right: 13px;
+    top: 13.5px;
+    cursor: pointer;
+
+    &:hover{
+      color: $ButtonHoverColor;
+    }
+  }
+}

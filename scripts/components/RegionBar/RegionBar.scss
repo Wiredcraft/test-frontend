@@ -1,0 +1,123 @@
+@import '../global';
+$RegionBarHeight: 50px;
+$DownloadBtnBkColor: #3bbb8d;
+$TextColor: #897ad0;
+$ButtonHoverColor: #3bbb8d;
+$ExpandButtonCotentColor: #8a8d9e;
+
+.RegionBar{
+  height: $RegionBarHeight;
+  border-top: 1px solid $borderColor;
+  position: relative;
+  .RegionBarTitleArea{
+    border-right: 1px solid $borderColor;
+    width: 30%;
+    height: $RegionBarHeight;
+    float: right;
+    position: relative;
+
+    .tilte{
+      @extend .VerticalAlign;
+    }
+
+    .RegionBarTitleIcon{
+      border-radius: 50%;
+      @extend .VerticalAlign;
+      background-color: $TextColor;
+      text-align: center;
+      width: 22px;
+      height: 22px;
+      cursor: default;
+      p{
+        @extend .VerHorAlign;
+        color: $iconColor;
+        cursor: inherit;
+      }
+    }
+
+    .RegionBarTitle{
+      @extend .VerticalAlign;
+      font-size: 1em;
+      margin-left: 36px;
+    }
+
+    .RegionBarDownloadBtn{
+      margin-left: 137px;
+      margin-top: 14.5px;
+      padding-left: 2px;
+      padding-top: 4px;
+      background-origin: content-box;
+      width: 22px;
+      height: 18px;
+      color: $iconColor;
+      background-color: $DownloadBtnBkColor;
+
+      &:hover{
+        cursor: default;
+        color: $TextColor;
+      }
+    }
+
+    .RegionBarExpandBtn{
+      float: right;
+      padding: 9px 8px 9px 12px;
+      margin: 10px 12px;
+      background-color: #f0f2f8;
+      font-size: 12px;
+      width: 110px;
+      position: relative;
+      color:$ExpandButtonCotentColor;
+
+      &:hover{
+        background-color:$ButtonHoverColor;
+      }
+
+      .RegionBarExpandBtnNumBlock{
+        text-align: left;
+        width: 20px;
+        float: left;
+      }
+
+      .RegionBarExpandBtnAreaBlock{
+        float: left;
+      }
+
+      .RegionBarExpandBtnIconBlock{
+        float: right;
+      }
+    }
+  }
+
+  .RegionBarDateArea{
+    border-right: 1px solid $borderColor;
+    float: right;
+    width: 14%;
+    height: $RegionBarHeight;
+    text-align: center;
+    position: relative;
+    p{
+      width: 100%;
+      @extend .VerHorAlign;
+    }
+  }
+
+  .RegionBarFormsArea{
+    @extend .RegionBarDateArea;
+    width: 16%;
+  }
+
+  .RegionBarVotersArea{
+    @extend .RegionBarFormsArea;
+  }
+  .RegionBarUpdateArea{
+    border-right: 0;
+    @extend .RegionBarFormsArea;
+  }
+
+  .lIcon{
+    float: right;
+    margin-right: 11px;
+    margin-top: 16px;
+    fill: $placeHolderColor;
+  }
+}
