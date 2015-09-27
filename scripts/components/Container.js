@@ -6,20 +6,20 @@ import VoteInfoStore from '../stores/VoteInfoStore';
 import './reset.scss';
 import 'font-awesome/css/font-awesome.min.css';
 
-
 export default class Container extends React.Component{
   constructor(){
     super();
     this.state = {
       voteInfoList: []
     };
+    this._onChange = this._onChange.bind(this);
   }
   _onChange(){
-    this.setState({voteInfoList: VoteInfoStore.getInfoList});
-
+    this.setState({voteInfoList: VoteInfoStore.getVoteDataList()});
   }
   componentDidMount(){
     VoteInfoStore.addChangeListener(this._onChange);
+    this._onChange();
   }
   componentWillUnmount(){
     VoteInfoStore.removeChangeListener(this._onChange);
@@ -28,7 +28,7 @@ export default class Container extends React.Component{
     return (
       <div>
         <Header />
-        <ContentArea />
+        <ContentArea voteDataList={this.state.voteInfoList}/>
       </div>
     );
   }

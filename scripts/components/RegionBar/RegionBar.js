@@ -5,9 +5,11 @@ import VoteInfoActionCreator from '../../actions/VoteInfoActionCreator';
 export default class RegionBar extends React.Component{
   constructor(){
     super();
+    this.state = { expended: false };
   }
   _expand(){
-    VoteInfoActionCreator.expandList(2);
+    VoteInfoActionCreator.expandList(this.props.id);
+    this.setState({ expended: !this.state.expended });
   }
   render(){
     let baseTitleAreaWidth = 365;
@@ -64,10 +66,10 @@ export default class RegionBar extends React.Component{
           {
             this.props.canExpand === false ? '' :
             <button
-              className='RegionBarExpandBtn' onClick={this._expand}>
+              className='RegionBarExpandBtn' onClick={this._expand.bind(this)}>
               <span className='RegionBarExpandBtnNumBlock'>{this.props.subItemCount}</span>
               <span className='RegionBarExpandBtnAreaBlock'>{expandText}</span>
-              <span className='fa fa-plus RegionBarExpandBtnIconBlock'></span>
+              <span className= {(this.state.expended ? 'fa-minus ' : 'fa-plus ') + 'fa RegionBarExpandBtnIconBlock'}></span>
             </button>
           }
         </div>

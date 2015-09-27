@@ -4,32 +4,16 @@ import RegionBar from '../RegionBar/RegionBar';
 
 import './ContentArea.scss';
 
-//The mock data, TODO: add subItems
-let data = [{
-  title: 'Shan state',
-  lastData: '2014/12/12',
-  formsCounts: 123456,
-  votersCounts: 123456,
-  update: 342456,
-  areaTitles: ['State', 'District', 'Township'],
-  subItems: []}, {
-  title: 'Shan state',
-  lastData: '2014/12/12',
-  formsCounts: 123456,
-  votersCounts: 123456,
-  update: 342456,
-  areaTitles: ['State', 'District', 'Township'],
-  subItems: []
-}];
-
 export default class ContentArea extends React.Component{
   constructor(){
     super();
   }
   render(){
-    let voteInfoBars = data.map((item) => {
+    let voteInfoBars = this.props.voteDataList.map((item) => {
       return (
-        <RegionBar {...item} canExpand={false}/>
+        item.display === false ? '' :
+        <RegionBar {...item} areaTitles = {['State', 'District', 'Township']}
+          canExpand = {item.subItemCount === 0 ? false : true}/>
       );
     });
     return (
