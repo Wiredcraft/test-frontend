@@ -69,3 +69,6 @@ Using karma and jasmine to run test.
 DAY 7 Note:   
 Test with search bar   
 ![](https://cloud.githubusercontent.com/assets/10692276/10121526/a93cacf4-6522-11e5-864f-5a8351005ca9.png)
+
+DAY 7 Result：    
+![](https://cloud.githubusercontent.com/assets/10692276/10123464/b8eda276-656c-11e5-86d6-9f67159167fc.gif)  

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "a test",
   "scripts": {
-    "build": "webpack -w",
+    "build": "webpack --config webpackBuild.config.js -w",
     "buildTest": "webpack --config webpackTest.config.js",
     "dev": "webpack-dev-server --devtool eval --colors --hot --content-base build",
     "test": "karma start"
