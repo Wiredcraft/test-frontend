@@ -66,4 +66,6 @@ Block in implement the dropdown list, I should think about how to implement it.
 Day 6 Note:    
 Using karma and jasmine to run test.     
 
-   
+DAY 7 Note:   
+Test with search bar   
+![](https://cloud.githubusercontent.com/assets/10692276/10121526/a93cacf4-6522-11e5-864f-5a8351005ca9.png)

@@ -1,9 +1,13 @@
 import React from 'react';
 import './RegionBar.scss';
+import VoteInfoActionCreator from '../../actions/VoteInfoActionCreator';
 
 export default class RegionBar extends React.Component{
   constructor(){
     super();
+  }
+  _expand(){
+    VoteInfoActionCreator.expandList(2);
   }
   render(){
     let baseTitleAreaWidth = 365;
@@ -37,16 +41,16 @@ export default class RegionBar extends React.Component{
     return (
       <div className='RegionBar'>
         <div className='RegionBarUpdateArea'>
-          <p>{this.props.source.update}</p>
+          <p>{this.props.update}</p>
         </div>
         <div className='RegionBarVotersArea'>
-          <p>{this.props.source.votersCounts}</p>
+          <p>{this.props.votersCounts}</p>
         </div>
         <div className='RegionBarFormsArea'>
-          <p>{this.props.source.formsCounts}</p>
+          <p>{this.props.formsCounts}</p>
         </div>
         <div className='RegionBarDateArea'>
-          <p>{this.props.source.lastData}</p>
+          <p>{this.props.lastData}</p>
         </div>
 
         <div className='RegionBarTitleArea' style={{width: resultTitleAreaWidth}}>
@@ -54,13 +58,13 @@ export default class RegionBar extends React.Component{
             <p>{areaLetters[this.props.areaLevel]}</p>
           </div>
           <p className='RegionBarTitle'>
-            {this.props.source.title}
+            {this.props.title}
           </p>
           <div className='fa fa-download fa-lg RegionBarDownloadBtn'/>
           {
             this.props.canExpand === false ? '' :
             <button
-              className='RegionBarExpandBtn'>
+              className='RegionBarExpandBtn' onClick={this._expand}>
               <span className='RegionBarExpandBtnNumBlock'>{this.props.subItemCount}</span>
               <span className='RegionBarExpandBtnAreaBlock'>{expandText}</span>
               <span className='fa fa-plus RegionBarExpandBtnIconBlock'></span>
@@ -74,7 +78,6 @@ export default class RegionBar extends React.Component{
           </svg>
         }
       </div>
-
     );
   }
 }

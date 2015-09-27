@@ -29,5 +29,5 @@ Use HTML, CSS and JavaScript to implement the following mock.
 ### Introduce
 
 * build tool: webpack with eslint and react hot loader   
-* framework: redux    
-* testing approach: Karma && jasmine 
+* framework: flux    
+* testing approach: Karma && jasmine
