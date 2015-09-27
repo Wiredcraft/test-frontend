@@ -23,14 +23,14 @@ export default class ContentArea extends React.Component{
       <div className={'ContentArea'}>
         <SearchBar />
         <RegionBar isTitle={true}/>
-        <RegionBar source={data} canExpand={true} subItemCount={3}/>
-        <RegionBar source={data} canExpand={false}/>
-        <RegionBar source={data} areaLevel ={1} canExpand={false}/>
-        <RegionBar source={data} areaLevel ={2} canExpand={false}/>
-        <RegionBar source={data} areaLevel ={2} canExpand={false}/>
-        <RegionBar source={data} canExpand={false}/>
-        <RegionBar source={data} areaLevel ={1} canExpand={true}/>
-        <RegionBar source={data} canExpand={false}/>
+        <RegionBar source={data} canExpand={true} subItemCount={3} areaTitles={['State', 'District', 'Township']}/>
+        <RegionBar source={data} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
+        <RegionBar source={data} areaLevel ={1} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
+        <RegionBar source={data} areaLevel ={2} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
+        <RegionBar source={data} areaLevel ={2} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
+        <RegionBar source={data} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
+        <RegionBar source={data} areaLevel ={1} canExpand={true} areaTitles={['State', 'District', 'Township']}/>
+        <RegionBar source={data} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
       </div>
     );
   }

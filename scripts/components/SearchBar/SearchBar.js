@@ -4,24 +4,34 @@ import './SearchBar.scss';
 export default class SearchBar extends React.Component{
   constructor(){
     super();
+    this.state = { listVisible: false, FilterText: 'Filter' };
   }
-  selectItem(item){
-    this.props.selected = item;
-    this.setState({ listVisible: false });
+  selectItem(index){
+    this.setState({ listVisible: false, FilterText: this.props.filters[index]});
   }
-  showDropDownList(e) {
-    e.preventDefault();
+  showDropDownList() {
     this.setState({ listVisible: true });
-
   }
   render(){
     return (
       <div className='SearchBar'>
         <div className='barDropMenu'>
-          <span className='placeHolder'>Filter</span>
-          <div className='fa fa-sort-desc dropMenuIcon' onClick={this.showDropDownList.bind(this)}/>
-          <div className='dropDownList'
-          onClick={this.selectItem.bind(this)} ></div>
+          <span className='placeHolder'>{this.state.FilterText}</span>
+          <div className='fa fa-sort-desc dropMenuIcon' onClick={this.showDropDownList.bind(this)} />
+          {
+            this.state.listVisible === false ? '' :
+            <div className='dropDownList'>
+              {
+                this.props.filters.map((item, index) => {
+                  return (
+                    <div className='dropItemArea' onClick={this.selectItem.bind(this, index)}>
+                      <div className='dropItem'>{item}</div>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          }
         </div>
         <input className='TextInput' type='text'
         placeholder='Search' />
@@ -30,3 +40,7 @@ export default class SearchBar extends React.Component{
     );
   }
 }
+
+SearchBar.defaultProps = {
+  filters: ['Region', 'Last Inpot']
+};

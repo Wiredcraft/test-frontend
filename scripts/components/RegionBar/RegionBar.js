@@ -9,8 +9,10 @@ export default class RegionBar extends React.Component{
     let baseTitleAreaWidth = 365;
     let indent = 30;
     let resultTitleAreaWidth = baseTitleAreaWidth - indent * this.props.areaLevel;
-    let expandText = this.props.areaLevel === 0 ? 'District' : 'Township';
-    let areaLetters = ['S', 'D', 'T'];
+    let expandText = this.props.areaLevel === 0 ? this.props.areaTitles[1] : this.props.areaTitles[2];
+    let areaLetters = this.props.areaTitles.map((item) =>{
+      return item.substr(0, 1);
+    });
     if(this.props.isTitle === true){
       return (
         <div className='RegionBar'>
@@ -81,5 +83,6 @@ RegionBar.defaultProps = {
   isTitle: false,
   canExpand: false,
   subItemCount: 0,
-  areaLevel: 0
+  areaLevel: 0,
+  areaTitles: ['Level1', 'Level2']
 };

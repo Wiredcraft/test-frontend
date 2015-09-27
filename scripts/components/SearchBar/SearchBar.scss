@@ -18,28 +18,40 @@ $SearchBarColor: #fff;
     .placeHolder{
       display: inline-block;
       color: $placeHolderColor;
-      position: absolute;
-      top: 50%;
       left: 17px;
-      transform: translate(0%, -50%);
       cursor: default;
+      @extend .VerticalAlign;
     }
 
     .dropMenuIcon{
       background-color: $SearchBarColor;
-      position: absolute;
-      top: 50%;
       left: 112px;
-      transform: translate(0%, -50%);
+      @extend .VerticalAlign;
       cursor: pointer;
     }
 
     .dropDownList{
       position: absolute;
-      width: 141px;
-      height: 50px;
+      width: 139px;
+
       top: $barHeight;
-      z-index: 9999;
+      z-index: 1;
+      border: 1px solid $borderColor;
+
+      .dropItemArea{
+        height: 40px;
+        position: relative;
+        background-color: #fff;
+
+        .dropItem{
+          font-size: 0.8em;
+          @extend .VerHorAlign;
+        }
+
+        &:hover{
+          background-color: $ButtonHoverColor;
+        }
+      }
     }
   }
 

@@ -30,4 +30,4 @@ Use HTML, CSS and JavaScript to implement the following mock.
 
 * build tool: webpack with eslint and react hot loader   
 * framework: redux    
-* testing approach:Jest
+* testing approach: Karma && jasmine 
