@@ -20,18 +20,21 @@ TableControl = React.createClass
     return <div className="table-control">
         <div className="form-inline">
           <div className="form-group">
-            <select className="form-control" onChange={this.handleSelect} defaultValue="State">
-              <option value="State"> State </option>
-              <option value="District"> District </option>
-              <option value="Township"> Township </option>
-
-            </select>
+            <div className="select-arrow">
+              <select className="form-control" onChange={this.handleSelect} defaultValue="State">
+                <option value="State"> State </option>
+                <option value="District"> District </option>
+                <option value="Township"> Township </option>
+              </select>
+            </div>
           </div>
           <div className="form-group">
             <input type="text" className="form-control" placeholder="Search" onChange={this.handleInput} />
           </div>
           <div className="form-group">
-            <button onClick={this.handleSearch}> search </button>
+            <a href="#" className="button" onClick={this.handleSearch}>
+              <span className="icon icon-search"></span>
+            </a>
           </div>          
         </div>
       </div>

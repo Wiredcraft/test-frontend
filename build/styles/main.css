@@ -434,6 +434,9 @@ body {
   width: 960px;
   margin: 30px auto;
 }
+.button {
+  display: inline-block;
+}
 .icon {
   display: inline-block;
 }
@@ -446,6 +449,16 @@ body {
   vertical-align: middle;
   text-align: center;
   line-height: 26px;
+}
+.icon-search {
+  width: 45px;
+  height: 40px;
+  background: url("../images/icon-search.png") center no-repeat;
+}
+.icon-download {
+  width: 26px;
+  height: 30px;
+  background: url("../images/icon-download.png") center no-repeat;
 }
 .icon-prepend {
   margin-right: 10px;
@@ -468,6 +481,36 @@ body {
 }
 .form-group .form-control {
   width: 100%;
+  height: 45px;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  padding: 0.75em;
+  width: 100%;
+}
+.select-arrow {
+  position: relative;
+}
+.select-arrow:after {
+  position: absolute;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+  content: "";
+  right: 0.5em;
+  top: 45%;
+}
+select::-ms-expand {
+  display: none;
 }
 header {
   width: 100%;
@@ -564,14 +607,23 @@ header {
   margin-left: 10px;
   vertical-align: middle;
 }
+.table-control {
+  border-bottom: 1px solid #dbdee8;
+}
 .table-control .form-group {
   width: 75%;
 }
 .table-control .form-group:first-child {
   width: 15%;
+  border-right: 1px solid #dbdee8;
 }
 .table-control .form-group:last-child {
   width: 10%;
+  text-align: center;
+}
+.table-control input {
+  border: none;
+  padding: 5px 10px;
 }
 .table {
   background-color: #fff;

@@ -20137,6 +20137,8 @@ TableControl = React.createClass({displayName: "TableControl",
       "className": "form-inline"
     }, React.createElement("div", {
       "className": "form-group"
+    }, React.createElement("div", {
+      "className": "select-arrow"
     }, React.createElement("select", {
       "className": "form-control",
       "onChange": this.handleSelect,
@@ -20147,7 +20149,7 @@ TableControl = React.createClass({displayName: "TableControl",
       "value": "District"
     }, " District "), React.createElement("option", {
       "value": "Township"
-    }, " Township "))), React.createElement("div", {
+    }, " Township ")))), React.createElement("div", {
       "className": "form-group"
     }, React.createElement("input", {
       "type": "text",
@@ -20156,9 +20158,13 @@ TableControl = React.createClass({displayName: "TableControl",
       "onChange": this.handleInput
     })), React.createElement("div", {
       "className": "form-group"
-    }, React.createElement("button", {
+    }, React.createElement("a", {
+      "href": "#",
+      "className": "button",
       "onClick": this.handleSearch
-    }, " search "))));
+    }, React.createElement("span", {
+      "className": "icon icon-search"
+    })))));
   }
 });
 
