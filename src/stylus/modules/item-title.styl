@@ -1,3 +1,9 @@
+icon-holder()
+  font-size  20px
+  font-weight  700
+  margin-left  10px
+  vertical-align  middle
+    
 .item-title
   position relative
   
@@ -15,3 +21,12 @@
     
   &.item-township
     padding-left    30px
+    
+.subitem-toggle
+  &.collapsed:after
+    content  "+"
+    icon-holder()
+    
+  &.expanded:after
+    content  "-"
+    icon-holder()

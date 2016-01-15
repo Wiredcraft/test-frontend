@@ -531,6 +531,20 @@ header {
 .item-title.item-township {
   padding-left: 30px;
 }
+.subitem-toggle.collapsed:after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.subitem-toggle.expanded:after {
+  content: "-";
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 10px;
+  vertical-align: middle;
+}
 .table {
   background-color: #fff;
 }
@@ -572,4 +586,7 @@ header {
 }
 .table-row {
   border-bottom: 1px solid #dbdee8;
+}
+.table-row.hidden {
+  display: none !important;
 }

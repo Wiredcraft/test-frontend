@@ -1,18 +1,25 @@
 React = require "react"
 District = require "./District.cjsx"
+classNames = require "classnames"
 
 State = React.createClass
 
   getInitialState: ->
-    {}
+    {expanded: false}
+
+  handleClick: (event) ->
+    status = not @state.expanded
+    @setState
+      expanded: status   
 
   render: ->
     state = @props.state
+    toggleClass = classNames "subitem-toggle", {expanded: @state.expanded, collapsed: !@state.expanded}
 
     if state.sub_records and state.sub_records.length > 0
       district_num = state.sub_records.length
       districts = state.sub_records.map (d)=>
-        return <District key={d.id} district={d} />
+        return <District key={d.id} district={d} hidden={!@state.expanded} />
 
       return <div>
           <div className="table-row">
@@ -20,7 +27,7 @@ State = React.createClass
               <div className="item-title">
                 <span className="icon icon-tag icon-prepend"> S </span>
                 {state.title} 
-                <div className="subitem-toggle">
+                <div className={toggleClass} onClick={@handleClick}>
                   <span> {district_num} </span>
                   Districts
                 </div>

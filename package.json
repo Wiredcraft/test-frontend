@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/woodpig07/frontend-test#readme",
   "dependencies": {
+    "classnames": "^2.2.3",
     "normalize.css": "^3.0.3",
     "react": "^0.14.6",
     "react-dom": "^0.14.6"

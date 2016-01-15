@@ -1,4 +1,5 @@
 React = require "react"
+classNames = require "classnames"
 
 Township = React.createClass
 
@@ -7,8 +8,9 @@ Township = React.createClass
 
   render: ->
     township = @props.township
+    tClassNames = classNames "table-row", {hidden: @props.hidden}
   
-    return <div className="table-row">
+    return <div className={tClassNames}>
           <div className="table-cell">
             <div className="item-title item-township">
               <span className="icon icon-tag icon-prepend"> T </span>
