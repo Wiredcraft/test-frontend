@@ -45,8 +45,6 @@ There's nothing here, we leave it to you to choose the build tool, code structur
 
 - Use git to manage code
 
-- TBA for front-end requirements
-
 ## What We Care About
 
 Feel free to use any libraries you would use if this were a real production app, but remember we're interested in your code & the way you solve the problem, not how well you can use a particular library.
