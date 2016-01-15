@@ -1,18 +1,32 @@
 React = require "react"
+TableControl = require "./TableControl.cjsx"
 State = require "./State.cjsx"
-dataAPI = require "../../utils/dataAPI.coffee"
+AppStore = require "../stores/AppStore.cjsx"
+# dataAPI = require "../../utils/dataAPI.coffee"
 
 ReportsTable = React.createClass
 
   getInitialState: ->
-    {states: dataAPI.getAllRecords()}
+    {states: AppStore.getDataList(), level: "State"}
+
+  componentDidMount: ->
+    AppStore.addChangeListener @handleChange
+
+  componentWillUnmount: ->
+    AppStore.removeChangeListener @handleChange
+
+  handleChange: ->
+    @setState 
+      states: AppStore.getProductList()
+      level: AppStore.getSelectedFilter()
 
   render: ->
-
+    tabelClass = "table " + @state.level
     states = @state.states.map (s) =>
       <State key={s.id} state={s} />
 
-    return <div className="table">
+    return <div className={tabelClass}>
+        <TableControl />
         <div className="table-heading">
           <div className="table-heading-cell"> Regions </div>
           <div className="table-heading-cell"> Last inpot </div>

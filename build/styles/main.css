@@ -450,6 +450,25 @@ body {
 .icon-prepend {
   margin-right: 10px;
 }
+.form-inline {
+  *zoom: 1;
+}
+.form-inline:before,
+.form-inline:after {
+  content: "";
+  display: table;
+}
+.form-inline:after {
+  clear: both;
+}
+.form-inline .form-group {
+  float: left;
+  display: inline;
+  min-height: 1px;
+}
+.form-group .form-control {
+  width: 100%;
+}
 header {
   width: 100%;
   min-width: 800px;
@@ -544,6 +563,15 @@ header {
   font-weight: 700;
   margin-left: 10px;
   vertical-align: middle;
+}
+.table-control .form-group {
+  width: 75%;
+}
+.table-control .form-group:first-child {
+  width: 15%;
+}
+.table-control .form-group:last-child {
+  width: 10%;
 }
 .table {
   background-color: #fff;
