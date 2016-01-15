@@ -1,0 +1,49 @@
+header
+  width 100%
+  min-width   800px
+  background-color  #fff
+  
+.nav
+  font-size  18px
+  line-height 50px
+  width 100%
+  display block
+  border-bottom 1px solid $border-gray
+  clearfix()
+  
+  &-logo,
+  &-title
+    float-comp()
+
+  &-logo
+    width  50px
+    text-align center
+  
+    img
+      vertical-align   middle
+      
+  &-title
+    font-weight    bold
+    padding-left  20px
+    padding-right   20px
+    border-left   1px solid $border-gray
+            
+  &-menu
+    float right
+    ul
+      inline-list()
+      unstyled-list()
+      
+    li 
+      width 160px
+      text-align center
+      border-left 1px solid $border-gray
+      
+      &.active
+        background-color  #F0F1F8
+        
+  a 
+    text-decoration  none
+    color $body-text-color
+      
+
