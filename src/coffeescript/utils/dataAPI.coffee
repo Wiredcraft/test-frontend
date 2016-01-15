@@ -31,9 +31,10 @@ searchTownship = (dataArray, keywordsArray) ->
 
     for district in item.sub_records
       if district.sub_records.length is 0
-        return false
+        continue
 
       matched = _searchArray(district.sub_records, keywordsArray)
+
       if matched.length > 0
         district.sub_records = matched
         return true
@@ -49,11 +50,11 @@ module.exports =
 
   searchRecords: (level, keywords) ->
     if !keywords
-      return getAllRecords()
+      return this.getAllRecords()
 
     level = level || "State"
     keywordsArray = keywords.split " "
-    data = getAllRecords()
+    data = this.getAllRecords()
 
     switch level
 

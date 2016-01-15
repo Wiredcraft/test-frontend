@@ -14,14 +14,20 @@ District = React.createClass
 
   render: ->
     district = @props.district
+    displayLevel = @props.displayLevel
     dClassNames = classNames "table-row", {hidden: @props.hidden}
     toggleClass = classNames "subitem-toggle", {expanded: @state.expanded, collapsed: !@state.expanded}
-    tHidden = if @props.hidden then true else !@state.expanded
+    # tHidden = if @props.hidden then true else !@state.expanded
+    townshipHidden = do =>
+      if displayLevel is "Township"
+        return false
+      else
+        return !@state.expanded
 
     if district.sub_records and district.sub_records.length > 0
       township_num = district.sub_records.length
       townships = district.sub_records.map (t)=>
-        return <Township key={t.id} township={t} hidden={tHidden} />
+        return <Township key={t.id} township={t} hidden={townshipHidden} />
 
       return <div>
           <div className={dClassNames}>

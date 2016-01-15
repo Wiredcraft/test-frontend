@@ -14,15 +14,28 @@ State = React.createClass
 
   render: ->
     state = @props.state
+    displayLevel = @props.displayLevel
+    districtHidden = do =>
+      switch displayLevel
+        when "State"
+          !@state.expanded
+        when "District"
+          false
+        when "Township"
+          true
+        else
+          !@state.expanded
+
+    stateClass = classNames "table-row", {hidden: displayLevel is "District" or displayLevel is "Township"}
     toggleClass = classNames "subitem-toggle", {expanded: @state.expanded, collapsed: !@state.expanded}
 
     if state.sub_records and state.sub_records.length > 0
       district_num = state.sub_records.length
       districts = state.sub_records.map (d)=>
-        return <District key={d.id} district={d} hidden={!@state.expanded} />
+        return <District key={d.id} district={d} hidden={districtHidden} displayLevel={displayLevel} />
 
       return <div>
-          <div className="table-row">
+          <div className={stateClass}>
             <div className="table-cell">
               <div className="item-title">
                 <span className="icon icon-tag icon-prepend"> S </span>
@@ -42,7 +55,7 @@ State = React.createClass
         </div>
 
     else  
-      return <div className="table-row">
+      return <div className={stateClass}>
             <div className="table-cell"> 
               <div className="item-title">
                 <span className="icon icon-tag icon-prepend"> S </span>

@@ -19865,8 +19865,9 @@ District = React.createClass({displayName: "District",
     });
   },
   render: function() {
-    var dClassNames, district, tHidden, toggleClass, township_num, townships;
+    var dClassNames, displayLevel, district, toggleClass, townshipHidden, township_num, townships;
     district = this.props.district;
+    displayLevel = this.props.displayLevel;
     dClassNames = classNames("table-row", {
       hidden: this.props.hidden
     });
@@ -19874,7 +19875,15 @@ District = React.createClass({displayName: "District",
       expanded: this.state.expanded,
       collapsed: !this.state.expanded
     });
-    tHidden = this.props.hidden ? true : !this.state.expanded;
+    townshipHidden = (function(_this) {
+      return function() {
+        if (displayLevel === "Township") {
+          return false;
+        } else {
+          return !_this.state.expanded;
+        }
+      };
+    })(this)();
     if (district.sub_records && district.sub_records.length > 0) {
       township_num = district.sub_records.length;
       townships = district.sub_records.map((function(_this) {
@@ -19882,7 +19891,7 @@ District = React.createClass({displayName: "District",
           return React.createElement(Township, {
             "key": t.id,
             "township": t,
-            "hidden": tHidden
+            "hidden": townshipHidden
           });
         };
       })(this));
@@ -19957,7 +19966,7 @@ ReportsTable = React.createClass({displayName: "ReportsTable",
   },
   handleChange: function() {
     return this.setState({
-      states: AppStore.getProductList(),
+      states: AppStore.getDataList(),
       level: AppStore.getSelectedFilter()
     });
   },
@@ -19968,7 +19977,8 @@ ReportsTable = React.createClass({displayName: "ReportsTable",
       return function(s) {
         return React.createElement(State, {
           "key": s.id,
-          "state": s
+          "state": s,
+          "displayLevel": _this.state.level
         });
       };
     })(this));
@@ -20016,8 +20026,26 @@ State = React.createClass({displayName: "State",
     });
   },
   render: function() {
-    var district_num, districts, state, toggleClass;
+    var displayLevel, districtHidden, district_num, districts, state, stateClass, toggleClass;
     state = this.props.state;
+    displayLevel = this.props.displayLevel;
+    districtHidden = (function(_this) {
+      return function() {
+        switch (displayLevel) {
+          case "State":
+            return !_this.state.expanded;
+          case "District":
+            return false;
+          case "Township":
+            return true;
+          default:
+            return !_this.state.expanded;
+        }
+      };
+    })(this)();
+    stateClass = classNames("table-row", {
+      hidden: displayLevel === "District" || displayLevel === "Township"
+    });
     toggleClass = classNames("subitem-toggle", {
       expanded: this.state.expanded,
       collapsed: !this.state.expanded
@@ -20029,12 +20057,13 @@ State = React.createClass({displayName: "State",
           return React.createElement(District, {
             "key": d.id,
             "district": d,
-            "hidden": !_this.state.expanded
+            "hidden": districtHidden,
+            "displayLevel": displayLevel
           });
         };
       })(this));
       return React.createElement("div", null, React.createElement("div", {
-        "className": "table-row"
+        "className": stateClass
       }, React.createElement("div", {
         "className": "table-cell"
       }, React.createElement("div", {
@@ -20055,7 +20084,7 @@ State = React.createClass({displayName: "State",
       }, " ", state.update, " ")), districts);
     } else {
       return React.createElement("div", {
-        "className": "table-row"
+        "className": stateClass
       }, React.createElement("div", {
         "className": "table-cell"
       }, React.createElement("div", {
@@ -20088,14 +20117,18 @@ FilterActions = require("../actions/FilterActions.cjsx");
 SearchActions = require("../actions/SearchActions.cjsx");
 
 TableControl = React.createClass({displayName: "TableControl",
-  getInitialState: function() {
-    return {};
-  },
   handleSelect: function(event) {
     var filter;
     filter = event.target.value;
-    console.log(filter);
     return FilterActions.changeFilter(filter);
+  },
+  handleInput: function(event) {
+    return this.setState({
+      keywords: event.target.value
+    });
+  },
+  handleSearch: function(event) {
+    return SearchActions.searchKeywords(this.state.keywords);
   },
   render: function() {
     return React.createElement("div", {
@@ -20119,10 +20152,13 @@ TableControl = React.createClass({displayName: "TableControl",
     }, React.createElement("input", {
       "type": "text",
       "className": "form-control",
-      "placeholder": "Search"
+      "placeholder": "Search",
+      "onChange": this.handleInput
     })), React.createElement("div", {
       "className": "form-group"
-    }, React.createElement("button", null, " search "))));
+    }, React.createElement("button", {
+      "onClick": this.handleSearch
+    }, " search "))));
   }
 });
 
@@ -20318,7 +20354,7 @@ searchTownship = function(dataArray, keywordsArray) {
     for (i = 0, len = ref.length; i < len; i++) {
       district = ref[i];
       if (district.sub_records.length === 0) {
-        return false;
+        continue;
       }
       matched = _searchArray(district.sub_records, keywordsArray);
       if (matched.length > 0) {
@@ -20339,11 +20375,11 @@ module.exports = {
   searchRecords: function(level, keywords) {
     var data, keywordsArray;
     if (!keywords) {
-      return getAllRecords();
+      return this.getAllRecords();
     }
     level = level || "State";
     keywordsArray = keywords.split(" ");
-    data = getAllRecords();
+    data = this.getAllRecords();
     switch (level) {
       case "State":
         return searchState(data, keywordsArray);

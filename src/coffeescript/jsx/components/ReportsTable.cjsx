@@ -2,7 +2,6 @@ React = require "react"
 TableControl = require "./TableControl.cjsx"
 State = require "./State.cjsx"
 AppStore = require "../stores/AppStore.cjsx"
-# dataAPI = require "../../utils/dataAPI.coffee"
 
 ReportsTable = React.createClass
 
@@ -17,13 +16,13 @@ ReportsTable = React.createClass
 
   handleChange: ->
     @setState 
-      states: AppStore.getProductList()
+      states: AppStore.getDataList()
       level: AppStore.getSelectedFilter()
 
   render: ->
     tabelClass = "table " + @state.level
     states = @state.states.map (s) =>
-      <State key={s.id} state={s} />
+      <State key={s.id} state={s} displayLevel={@state.level} />
 
     return <div className={tabelClass}>
         <TableControl />
