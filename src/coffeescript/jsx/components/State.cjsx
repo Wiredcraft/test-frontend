@@ -7,6 +7,11 @@ State = React.createClass
   getInitialState: ->
     {expanded: false}
 
+  componentWillReceiveProps: (nextProps) ->
+    if @props.displayLevel isnt nextProps.displayLevel
+      @setState
+        expanded: false
+
   handleClick: (event) ->
     status = not @state.expanded
     @setState
@@ -32,7 +37,7 @@ State = React.createClass
     if state.sub_records and state.sub_records.length > 0
       district_num = state.sub_records.length
       districts = state.sub_records.map (d)=>
-        return <District key={d.id} district={d} hidden={districtHidden} displayLevel={displayLevel} />
+        return <District key={d.id} district={d} hidden={districtHidden} displayLevel={displayLevel} parentExpanded={@state.expanded} />
 
       return <div>
           <div className={stateClass}>

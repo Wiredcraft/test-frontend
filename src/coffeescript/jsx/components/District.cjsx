@@ -7,6 +7,14 @@ District = React.createClass
   getInitialState: ->
     {expanded: !@props.hidden}
 
+  componentWillReceiveProps: (nextProps) ->
+    if @props.displayLevel isnt nextProps.displayLevel
+      @setState
+        expanded: false
+    else if !@props.parentExpanded
+      @setState
+        expanded: false
+
   handleClick: (event) ->
     status = not @state.expanded
     @setState
@@ -17,7 +25,6 @@ District = React.createClass
     displayLevel = @props.displayLevel
     dClassNames = classNames "table-row", {hidden: @props.hidden}
     toggleClass = classNames "subitem-toggle", {expanded: @state.expanded, collapsed: !@state.expanded}
-    # tHidden = if @props.hidden then true else !@state.expanded
     townshipHidden = do =>
       if displayLevel is "Township"
         return false

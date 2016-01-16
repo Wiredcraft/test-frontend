@@ -19964,6 +19964,17 @@ District = React.createClass({displayName: "District",
       expanded: !this.props.hidden
     };
   },
+  componentWillReceiveProps: function(nextProps) {
+    if (this.props.displayLevel !== nextProps.displayLevel) {
+      return this.setState({
+        expanded: false
+      });
+    } else if (!this.props.parentExpanded) {
+      return this.setState({
+        expanded: false
+      });
+    }
+  },
   handleClick: function(event) {
     var status;
     status = !this.state.expanded;
@@ -20125,6 +20136,13 @@ State = React.createClass({displayName: "State",
       expanded: false
     };
   },
+  componentWillReceiveProps: function(nextProps) {
+    if (this.props.displayLevel !== nextProps.displayLevel) {
+      return this.setState({
+        expanded: false
+      });
+    }
+  },
   handleClick: function(event) {
     var status;
     status = !this.state.expanded;
@@ -20165,7 +20183,8 @@ State = React.createClass({displayName: "State",
             "key": d.id,
             "district": d,
             "hidden": districtHidden,
-            "displayLevel": displayLevel
+            "displayLevel": displayLevel,
+            "parentExpanded": _this.state.expanded
           });
         };
       })(this));
