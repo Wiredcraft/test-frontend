@@ -20230,13 +20230,15 @@ module.exports = State;
 
 
 },{"./District.cjsx":169,"classnames":3,"react":164}],172:[function(require,module,exports){
-var FilterActions, React, SearchActions, TableControl;
+var FilterActions, React, SearchActions, TableControl, timeout;
 
 React = require("react");
 
 FilterActions = require("../actions/FilterActions.cjsx");
 
 SearchActions = require("../actions/SearchActions.cjsx");
+
+timeout = null;
 
 TableControl = React.createClass({displayName: "TableControl",
   handleSelect: function(event) {
@@ -20245,9 +20247,13 @@ TableControl = React.createClass({displayName: "TableControl",
     return FilterActions.changeFilter(filter);
   },
   handleInput: function(event) {
-    return this.setState({
+    this.setState({
       keywords: event.target.value
     });
+    clearTimeout(timeout);
+    return timeout = setTimeout(function() {
+      return SearchActions.searchKeywords(event.target.value);
+    }, 1500);
   },
   handleSearch: function(event) {
     return SearchActions.searchKeywords(this.state.keywords);

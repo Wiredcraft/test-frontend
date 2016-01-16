@@ -1,6 +1,7 @@
 React = require "react"
 FilterActions = require "../actions/FilterActions.cjsx"
 SearchActions = require "../actions/SearchActions.cjsx"
+timeout = null
 
 TableControl = React.createClass
 
@@ -11,6 +12,11 @@ TableControl = React.createClass
   handleInput: (event) ->
     @setState
       keywords: event.target.value
+
+    clearTimeout timeout
+    timeout = setTimeout () ->
+      SearchActions.searchKeywords event.target.value
+    , 1500
 
   handleSearch: (event) ->
     SearchActions.searchKeywords @state.keywords
