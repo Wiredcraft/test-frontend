@@ -18,6 +18,8 @@ minifyCss = require "gulp-minify-css"
 rename = require "gulp-rename"
 chalk = require "chalk"
 notify = require "gulp-notify"
+cjsx = require "gulp-cjsx"
+coffee = require "gulp-coffee"
 
 express = require "express"
 connect = require "connect-livereload"
@@ -131,6 +133,17 @@ gulp.task "server", ->
   setTimeout ->
     open "http://localhost:" + config.port + "/index.html"
   , 3000
+
+# compile .cjsx and .coffee files and moved them to another folder for unit test
+
+gulp.task "testFiles", ->
+  gulp.src "./src/coffeescript/**/*.coffee"
+    .pipe coffee({bare: true})
+    .pipe gulp.dest("./toBeTest/")
+
+  gulp.src "./src/coffeescript/**/*.cjsx"
+    .pipe cjsx({bare: true})
+    .pipe gulp.dest("./toBeTest/")
 
 # default task
 
