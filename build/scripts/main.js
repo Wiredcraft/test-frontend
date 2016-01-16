@@ -19965,11 +19965,7 @@ District = React.createClass({displayName: "District",
     };
   },
   componentWillReceiveProps: function(nextProps) {
-    if (this.props.displayLevel !== nextProps.displayLevel) {
-      return this.setState({
-        expanded: false
-      });
-    } else if (!this.props.parentExpanded) {
+    if (this.props.displayLevel !== nextProps.displayLevel || !this.props.parentExpanded) {
       return this.setState({
         expanded: false
       });

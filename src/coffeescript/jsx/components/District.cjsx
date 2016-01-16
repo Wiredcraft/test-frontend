@@ -8,10 +8,7 @@ District = React.createClass
     {expanded: !@props.hidden}
 
   componentWillReceiveProps: (nextProps) ->
-    if @props.displayLevel isnt nextProps.displayLevel
-      @setState
-        expanded: false
-    else if !@props.parentExpanded
+    if @props.displayLevel isnt nextProps.displayLevel or !@props.parentExpanded
       @setState
         expanded: false
 
