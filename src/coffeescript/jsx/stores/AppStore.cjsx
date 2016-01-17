@@ -12,6 +12,7 @@ selectedFilter = ""
 searchKeywords = ""
 
 setDataList = () ->
+  dataAPI.setDataSource JSON.parse(localStorage.getItem("records"))
   dataList = dataAPI.searchRecords selectedFilter, searchKeywords
 
 setFilter = (filter) ->

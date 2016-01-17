@@ -21,6 +21,7 @@ selectedFilter = "";
 searchKeywords = "";
 
 setDataList = function() {
+  dataAPI.setDataSource(JSON.parse(localStorage.getItem("records")));
   return dataList = dataAPI.searchRecords(selectedFilter, searchKeywords);
 };
 
