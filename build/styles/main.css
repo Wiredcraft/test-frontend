@@ -439,6 +439,7 @@ body {
 }
 .icon {
   display: inline-block;
+  vertical-align: middle;
 }
 .icon-tag {
   width: 26px;
@@ -446,7 +447,6 @@ body {
   border-radius: 13px;
   color: #fff;
   background-color: #975dd1;
-  vertical-align: middle;
   text-align: center;
   line-height: 26px;
 }
@@ -462,6 +462,9 @@ body {
 }
 .icon-prepend {
   margin-right: 10px;
+}
+.icon-append {
+  margin-left: 5px;
 }
 .form-inline {
   *zoom: 1;
@@ -514,7 +517,7 @@ select::-ms-expand {
 }
 header {
   width: 100%;
-  min-width: 800px;
+  min-width: 960px;
   background-color: #fff;
 }
 .nav {

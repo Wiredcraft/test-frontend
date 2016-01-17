@@ -20017,7 +20017,9 @@ District = React.createClass({displayName: "District",
         "className": "item-title item-district"
       }, React.createElement("span", {
         "className": "icon icon-tag icon-prepend"
-      }, " D "), district.title, React.createElement("div", {
+      }, " D "), district.title, React.createElement("span", {
+        "className": "icon icon-download icon-append"
+      }, " "), React.createElement("div", {
         "className": toggleClass,
         "onClick": this.handleClick
       }, React.createElement("span", null, " ", township_num, " "), "Townships"))), React.createElement("div", {
@@ -20038,7 +20040,9 @@ District = React.createClass({displayName: "District",
         "className": "item-title item-district"
       }, React.createElement("span", {
         "className": "icon icon-tag icon-prepend"
-      }, " D "), district.title)), React.createElement("div", {
+      }, " D "), district.title, React.createElement("span", {
+        "className": "icon icon-download icon-append"
+      }, " "))), React.createElement("div", {
         "className": "table-cell"
       }, " ", district.last_inpot, " "), React.createElement("div", {
         "className": "table-cell"
@@ -20192,7 +20196,9 @@ State = React.createClass({displayName: "State",
         "className": "item-title"
       }, React.createElement("span", {
         "className": "icon icon-tag icon-prepend"
-      }, " S "), state.title, React.createElement("div", {
+      }, " S "), state.title, React.createElement("span", {
+        "className": "icon icon-download icon-append"
+      }, " "), React.createElement("div", {
         "className": toggleClass,
         "onClick": this.handleClick
       }, React.createElement("span", null, " ", district_num, " "), "Districts"))), React.createElement("div", {
@@ -20213,7 +20219,9 @@ State = React.createClass({displayName: "State",
         "className": "item-title"
       }, React.createElement("span", {
         "className": "icon icon-tag icon-prepend"
-      }, " S "), state.title)), React.createElement("div", {
+      }, " S "), state.title, React.createElement("span", {
+        "className": "icon icon-download icon-append"
+      }, " "))), React.createElement("div", {
         "className": "table-cell"
       }, " ", state.last_inpot, " "), React.createElement("div", {
         "className": "table-cell"
@@ -20324,7 +20332,9 @@ Township = React.createClass({displayName: "Township",
       "className": "item-title item-township"
     }, React.createElement("span", {
       "className": "icon icon-tag icon-prepend"
-    }, " T "), township.title)), React.createElement("div", {
+    }, " T "), township.title, React.createElement("span", {
+      "className": "icon icon-download icon-append"
+    }, " "))), React.createElement("div", {
       "className": "table-cell"
     }, " ", township.last_inpot, " "), React.createElement("div", {
       "className": "table-cell"
