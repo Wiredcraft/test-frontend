@@ -72,7 +72,9 @@ State = React.createClass({
         "className": "item-title"
       }, React.createElement("span", {
         "className": "icon icon-tag icon-prepend"
-      }, " S "), state.title, React.createElement("div", {
+      }, " S "), state.title, React.createElement("span", {
+        "className": "icon icon-download icon-append"
+      }, " "), React.createElement("div", {
         "className": toggleClass,
         "onClick": this.handleClick
       }, React.createElement("span", null, " ", district_num, " "), "Districts"))), React.createElement("div", {
@@ -93,7 +95,9 @@ State = React.createClass({
         "className": "item-title"
       }, React.createElement("span", {
         "className": "icon icon-tag icon-prepend"
-      }, " S "), state.title)), React.createElement("div", {
+      }, " S "), state.title, React.createElement("span", {
+        "className": "icon icon-download icon-append"
+      }, " "))), React.createElement("div", {
         "className": "table-cell"
       }, " ", state.last_inpot, " "), React.createElement("div", {
         "className": "table-cell"

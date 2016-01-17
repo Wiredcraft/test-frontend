@@ -45,6 +45,7 @@ State = React.createClass
               <div className="item-title">
                 <span className="icon icon-tag icon-prepend"> S </span>
                 {state.title} 
+                <span className="icon icon-download icon-append"> </span>
                 <div className={toggleClass} onClick={@handleClick}>
                   <span> {district_num} </span>
                   Districts
@@ -65,6 +66,7 @@ State = React.createClass
               <div className="item-title">
                 <span className="icon icon-tag icon-prepend"> S </span>
                 {state.title} 
+                <span className="icon icon-download icon-append"> </span>
               </div> 
             </div>
             <div className="table-cell"> {state.last_inpot} </div>

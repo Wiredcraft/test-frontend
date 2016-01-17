@@ -15,6 +15,7 @@ Township = React.createClass
             <div className="item-title item-township">
               <span className="icon icon-tag icon-prepend"> T </span>
               {township.title}
+              <span className="icon icon-download icon-append"> </span>
             </div>
           </div>
           <div className="table-cell"> {township.last_inpot} </div>

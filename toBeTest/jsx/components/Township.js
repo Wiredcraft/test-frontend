@@ -22,7 +22,9 @@ Township = React.createClass({
       "className": "item-title item-township"
     }, React.createElement("span", {
       "className": "icon icon-tag icon-prepend"
-    }, " T "), township.title)), React.createElement("div", {
+    }, " T "), township.title, React.createElement("span", {
+      "className": "icon icon-download icon-append"
+    }, " "))), React.createElement("div", {
       "className": "table-cell"
     }, " ", township.last_inpot, " "), React.createElement("div", {
       "className": "table-cell"
