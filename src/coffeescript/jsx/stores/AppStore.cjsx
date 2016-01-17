@@ -6,6 +6,7 @@ dataAPI = require "../../utils/dataAPI.coffee"
 
 ActionTypes = AppConstants.ActionTypes
 
+dataAPI.setDataSource JSON.parse(localStorage.getItem("records"))
 dataList = dataAPI.getAllRecords()
 selectedFilter = ""
 searchKeywords = ""

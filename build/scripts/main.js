@@ -20375,6 +20375,8 @@ dataAPI = require("../../utils/dataAPI.coffee");
 
 ActionTypes = AppConstants.ActionTypes;
 
+dataAPI.setDataSource(JSON.parse(localStorage.getItem("records")));
+
 dataList = dataAPI.getAllRecords();
 
 selectedFilter = "";
@@ -20441,7 +20443,9 @@ require("./jsx/App.cjsx");
 
 
 },{"./AppData.coffee":165,"./jsx/App.cjsx":166}],178:[function(require,module,exports){
-var _searchArray, searchDistrict, searchState, searchTownship;
+var _searchArray, dataSource, searchDistrict, searchState, searchTownship;
+
+dataSource = [];
 
 _searchArray = function(dataArray, keywordsArray) {
   return dataArray.filter(function(item) {
@@ -20503,8 +20507,11 @@ searchTownship = function(dataArray, keywordsArray) {
 };
 
 module.exports = {
+  setDataSource: function(data) {
+    return dataSource = data;
+  },
   getAllRecords: function() {
-    return JSON.parse(localStorage.getItem("records"));
+    return dataSource;
   },
   searchRecords: function(level, keywords) {
     var data, keywordsArray;

@@ -1,4 +1,6 @@
-var _searchArray, searchDistrict, searchState, searchTownship;
+var _searchArray, dataSource, searchDistrict, searchState, searchTownship;
+
+dataSource = [];
 
 _searchArray = function(dataArray, keywordsArray) {
   return dataArray.filter(function(item) {
@@ -60,8 +62,11 @@ searchTownship = function(dataArray, keywordsArray) {
 };
 
 module.exports = {
+  setDataSource: function(data) {
+    return dataSource = data;
+  },
   getAllRecords: function() {
-    return JSON.parse(localStorage.getItem("records"));
+    return dataSource;
   },
   searchRecords: function(level, keywords) {
     var data, keywordsArray;

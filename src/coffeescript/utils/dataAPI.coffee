@@ -1,3 +1,5 @@
+dataSource = [];
+
 _searchArray = (dataArray, keywordsArray) ->
   dataArray.filter (item) ->
     for word in keywordsArray
@@ -44,9 +46,11 @@ searchTownship = (dataArray, keywordsArray) ->
     return true
 
 module.exports =
+  setDataSource: (data) ->
+    dataSource = data
 
   getAllRecords: ->
-    JSON.parse localStorage.getItem("records")
+    dataSource
 
   searchRecords: (level, keywords) ->
     if !keywords

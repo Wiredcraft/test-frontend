@@ -12,6 +12,8 @@ dataAPI = require("../../utils/dataAPI.js");
 
 ActionTypes = AppConstants.ActionTypes;
 
+dataAPI.setDataSource(JSON.parse(localStorage.getItem("records")));
+
 dataList = dataAPI.getAllRecords();
 
 selectedFilter = "";
