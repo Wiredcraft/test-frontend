@@ -156,15 +156,6 @@ class TableContent extends React.Component {
               </TableRow>
               ))}
           </TableBody>
-          <TableFooter
-            adjustForCheckbox={this.state.showCheckboxes}
-          >
-            <TableRow>
-              <TableRowColumn colSpan="5" style={{textAlign: 'center'}}>
-                Super Footer
-              </TableRowColumn>
-            </TableRow>
-          </TableFooter>
         </Table>
       </div>
     );
