@@ -7,6 +7,7 @@ import {createStore} from 'redux';
 require ('./styles/Main.scss')
 
 let store = createStore(testApp);
+console.log(store.getState());
 ReactDom.render(
 	<Provider store = {store}>
 	<Main />

@@ -1,22 +1,21 @@
-import { VisibilityFilters,SET_VISIBILITY_FILTER,TOGGLE_ITEM } from '../actions/actions';
+import { searchItems } from '../actions/actions';
 
 const initialState = {
-	visibilityFilters: VisibilityFilters.SHOW_ALL,
+	searchItems: '',
 	items: []
 }
 
-// aim to the whole app
 export default function testApp(state = initialState, action) {
 	switch(action.type) {
-		case SET_VISIBILITY_FILTER:
+		case 'SEARCH_ITEMS':
+		  console.log('success')
 			return Object.assign({},state, {
-				visibilityFilters: action.filter
+				items: state.items.map((item,index) => {
+						if(item.region.indexOf(action.context) >= 0) {
+							return Object.assign({}, item)
+						}
+				})
 			})
-		// toggle and show district and township
-		case TOGGLE_ITEM:
-		 return Object.assign({},state, {
-
-		 })
 	default:
 		return state
 	}

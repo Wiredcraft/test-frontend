@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{PropTypes} from 'react';
 import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
   from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
 import DropDownMenu from './AppDropDownMenu';
+import {connect} from 'react-redux';
+import {searchItems} from '../actions/actions';
 
 const styles = {
   propContainer: {
@@ -104,8 +106,10 @@ class TableContent extends React.Component {
   	};
   }
 
-  render() {
 
+  render() {
+    let { dispatch } = this.props
+    console.log(dispatch);
     return (
       <div className = "table-content">
         <Table
@@ -128,6 +132,10 @@ class TableContent extends React.Component {
 			      floatingLabelText="Search"
 			      type="text"
 			      style = {styles.searchStyle}
+            onKeyDown = { (e) => {
+              console.log(e.target.value);
+              dispatch(searchItems(e.target.value.trim()))
+            }}
 			    />
               </TableHeaderColumn>
             </TableRow>
@@ -148,7 +156,7 @@ class TableContent extends React.Component {
           >
             {tableData.map( (row, index) => (
               <TableRow key={index} selected={row.selected}>
-                <TableRowColumn>{index}</TableRowColumn>
+                <TableRowColumn>{this.region}</TableRowColumn>
                 <TableRowColumn>{row.inpot}</TableRowColumn>
                 <TableRowColumn>{row.forms}</TableRowColumn>
                 <TableRowColumn>{row.voters}</TableRowColumn>
@@ -161,5 +169,9 @@ class TableContent extends React.Component {
     );
   }
 }
+// TableContent.propTypes = {
+//   onChangeEvent: PropTypes.func.isRequired
+// }
 
-export default TableContent;
+export default connect()(TableContent)
+// export default TableContent;
