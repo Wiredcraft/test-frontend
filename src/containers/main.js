@@ -25,9 +25,8 @@ const muiTheme = getMuiTheme({
     backgroundColor: '#fff',
     textColor: blueGrey700,
     selectedTextColor: indigo300,
-  }
+  },
 });
-
 
 class Main extends Component {
     render() {

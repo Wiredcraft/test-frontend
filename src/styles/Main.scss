@@ -1,3 +1,12 @@
 body {
 	margin: 0px;
 }
+#root {
+	height: 100%;
+	background-color: rgb(77,81,102);
+	.table-content {
+		width: 90vw;
+		margin: 0 auto;
+		height: 100%;
+	}
+}

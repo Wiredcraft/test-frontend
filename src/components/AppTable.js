@@ -107,7 +107,7 @@ class TableContent extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className = "table-content">
         <Table
           height={this.state.height}
           fixedHeader={this.state.fixedHeader}
