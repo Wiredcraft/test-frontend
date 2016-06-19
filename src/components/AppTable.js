@@ -17,8 +17,8 @@ const styles = {
     margin: '20px auto 10px'
   },
   searchStyle: {
-  	width: '100%',
-    marginLeft: 9
+  	width: '93%',
+    marginLeft: 87
   },
   dropStyle: {
     position: 'absolute',
@@ -32,7 +32,6 @@ const styles = {
   },
   tableStyle: {
     position: 'relative'
-
   }
 };
 
@@ -46,12 +45,12 @@ class TableContent extends React.Component {
       fixedHeader: true,
       fixedFooter: true,
       stripedRows: false,
-      showRowHover: false,
+      showRowHover: true,
       selectable: true,
       multiSelectable: false,
       enableSelectAll: false,
       deselectOnClickaway: true,
-      showCheckboxes: true,
+      showCheckboxes: false,
       height: '300px',
     };
 
@@ -67,7 +66,7 @@ class TableContent extends React.Component {
 
 
   render() {
-    let { dispatch,items,} = this.props;
+    let { dispatch,items} = this.props;
     console.log(this.props);
     return (
       <div className = "table-content">
@@ -108,7 +107,7 @@ class TableContent extends React.Component {
             displayRowCheckbox={this.state.showCheckboxes}
             deselectOnClickaway={this.state.deselectOnClickaway}
             showRowHover={this.state.showRowHover}
-            showRowHover={true}
+            showRowHover={this.state.showRowHover}
             stripedRows={this.state.stripedRows}
           >
             {items.map( (row, index) => (
