@@ -1,5 +1,6 @@
 import { searchItems } from '../actions/actions';
 
+// todo: load initialize data via ajax
 const tableData = [
   {
     region: 'John Smith',
@@ -55,7 +56,8 @@ const tableData = [
 
 const initialState = {
 	searchItems: '',
-	items: tableData
+	items: tableData,
+	inputValue: 'filter'
 }
 
 export default function testApp(state = initialState, action) {
@@ -63,7 +65,7 @@ export default function testApp(state = initialState, action) {
 		case 'SEARCH_ITEMS':
 			return {
 				...state,
-				items: action.context !== '' ? state.items.filter(item => item.region.toLowerCase().indexOf(action.context.toLowerCase()) >= 0) : tableData
+				items: tableData.filter(item => item.region.toLowerCase().indexOf(action.context.toLowerCase()) >= 0)
 			}
 	default:
 		return state

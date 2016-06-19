@@ -11,14 +11,29 @@ const styles = {
   propContainer: {
     width: 200,
     overflow: 'hidden',
-    margin: '20px auto 0',
+    margin: '20px auto 0'
   },
   propToggleHeader: {
-    margin: '20px auto 10px',
+    margin: '20px auto 10px'
   },
   searchStyle: {
-  	width: '70vw',
+  	width: '100%',
+    marginLeft: 9
   },
+  dropStyle: {
+    position: 'absolute',
+    left: 0,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 74,
+    paddingTop: 0,
+    paddingBottom: 0
+  },
+  tableStyle: {
+    position: 'relative'
+
+  }
 };
 
 // this component has events, thus use class
@@ -56,7 +71,8 @@ class TableContent extends React.Component {
     console.log(this.props);
     return (
       <div className = "table-content">
-        <Table
+        <DropDownMenu/>
+        <Table style={styles.tableStyle}
           height={this.state.height}
           fixedHeader={this.state.fixedHeader}
           fixedFooter={this.state.fixedFooter}
@@ -70,16 +86,14 @@ class TableContent extends React.Component {
           >
             <TableRow>
               <TableHeaderColumn colSpan="5">
-                <DropDownMenu />
-               <TextField
-			      hintText="Search Field"
-			      floatingLabelText="Search"
-			      type="text"
-			      style = {styles.searchStyle}
-            onKeyUp = { (e) => {
-              dispatch(searchItems(e.target.value.trim()))
-            }}
-			    />
+                <TextField
+        			      hintText="Search Field"
+        			      floatingLabelText="Search"
+        			      type="text"
+        			      style = {styles.searchStyle}
+                    onKeyUp = { (e) => {
+                      dispatch(searchItems(e.target.value.trim()))
+                    }} />
               </TableHeaderColumn>
             </TableRow>
             <TableRow>

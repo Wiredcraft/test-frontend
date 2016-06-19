@@ -20,21 +20,28 @@ for (let i = 0; i < properties.length; i++ ) {
 
 class AppDropDownMenu extends React.Component {
 
+  // Q: change one class's state will affect the whole state?
 	constructor(props) {
 		super(props);
-		this.state = {value: 1};
+		this.state = props;
 		this.handleChange = (event, index, value) => {
 			this.setState({value});
 		}
 	}
 
 	render() {
+    console.log(this.state);
 		return (
-		  <DropDownMenu maxHeight={300} value={this.state.value} onChange={this.handleChange}>
-		    {items}
+		  <DropDownMenu maxHeight={300} value={this.state.value} onChange={this.handleChange} className={"drop-menu"}>
+		    {this.state.dropItems}
 		  </DropDownMenu>
 		);
 	}
+}
+
+AppDropDownMenu.defaultProps = {
+  value: "state",
+  dropItems: items
 }
 
 export default AppDropDownMenu;
