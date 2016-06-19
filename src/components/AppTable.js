@@ -21,60 +21,6 @@ const styles = {
   },
 };
 
-const tableData = [
-  {
-    region: 'John Smith',
-    inpot: 'Employed',
-    forms: 'Employed',
-    voters: 'Employed',
-    update: 'Employed',
-    selected: true,
-  },
-  {
-    region: 'Randal White',
-    inpot: 'Unemployed',
-    forms: 'Unemployed',
-    voters: 'Unemployed',
-    update: 'Unemployed',
-  },
-  {
-    region: 'Stephanie Sanders',
-    inpot: 'Employed',
-    forms: 'Employed',
-    voters: 'Employed',
-    update: 'Employed',
-  },
-  {
-    region: 'Steve Brown',
-    inpot: 'Employed',
-    forms: 'Employed',
-    voters: 'Employed',
-    update: 'Employed',
-  },
-  {
-    region: 'Joyce Whitten',
-    inpot: 'Employed',
-    forms: 'Employed',
-    voters: 'Employed',
-    update: 'Employed',
-  },
-  {
-    region: 'Samuel Roberts',
-    inpot: 'Employed',
-    forms: 'Employed',
-    voters: 'Employed',
-    update: 'Employed',
-  },
-  {
-    region: 'Adam Moore',
-    inpot: 'Employed',
-    forms: 'Employed',
-    voters: 'Employed',
-    update: 'Employed',
-  },
-];
-
-
 // this component has events, thus use class
 class TableContent extends React.Component {
 
@@ -168,9 +114,9 @@ class TableContent extends React.Component {
 }
 
 let dataToProps = (state) => {
-    state.items = tableData
+    // state.items = tableData
     return {
-      items: tableData
+      items: state.items
     }
 }
 
