@@ -1,18 +1,40 @@
+$theme-color: rgb(77,81,102);
+$toggle-btn-color: rgb(238,240,247);
 body {
 	margin: 0px;
 	#root {
 		height: 100vh;
-		background-color: rgb(77,81,102);
+		background-color: $theme-color;
 		.table-content {
 			width: 90vw;
 			margin: 0 auto;
 			height: auto;
 			margin-top: 10vh;
-		}
-		.drop-menu{
-			left: 0;
-			top: 66px;
-			z-index: 222;
+			.drop-menu {
+				left: 0;
+				top: 66px;
+				z-index: 222;
+			}
+			td,th {
+				border-right: 1px solid #ddd;
+				position: relative;
+			}
+			thead > tr > th {
+				font-weight: bolder!important;
+				color: #000!important;
+			}
+			.district-icon {
+				background-color: $toggle-btn-color!important;
+				position: absolute!important;
+				width: 7vw;
+				right: 5%;
+				height: 31px!important;
+				line-height: 32px!important;
+				color: $theme-color!important;
+				span {
+					font-size: 12px!important;
+				}
+			}
 		}
 	}
 }

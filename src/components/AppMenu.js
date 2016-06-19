@@ -6,7 +6,6 @@ import AccountCircle from 'material-ui/svg-icons/action/account-circle';
 import AppMenuTabs from './AppMenuTab';
 import Avatar from 'material-ui/Avatar';
 import {grey50,indigo300, blueGrey700, deepOrange500} from 'material-ui/styles/colors';
-
 const style = {
 	iconStyle: {
 		borderRight: '1px solid #ddd',

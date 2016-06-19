@@ -4,3 +4,10 @@ export function searchItems(context) {
 		context
 	}
 }
+
+export function showState(id) {
+	return {
+		type: 'SHOW_DISTRICT',
+		id
+	}
+}

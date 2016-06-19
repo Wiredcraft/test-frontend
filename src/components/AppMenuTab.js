@@ -23,6 +23,6 @@ const AppMenuTabs = () => (
 	    >
 	    </Tab>
 	</Tabs>
-)
+);
 
 export default AppMenuTabs;

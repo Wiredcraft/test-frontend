@@ -1,11 +1,16 @@
 import React,{PropTypes} from 'react';
 import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
   from 'material-ui/Table';
+import IconButton from 'material-ui/IconButton';
+import VerticalIcon from 'material-ui/svg-icons/editor/vertical-align-bottom';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
 import DropDownMenu from './AppDropDownMenu';
 import {connect} from 'react-redux';
-import {searchItems} from '../actions/actions';
+import {searchItems,showState} from '../actions/actions';
+import FontIcon from 'material-ui/FontIcon';
+import {grey50,green500} from 'material-ui/styles/colors';
+import FlatButton from 'material-ui/FlatButton';
 
 const styles = {
   propContainer: {
@@ -32,6 +37,14 @@ const styles = {
   },
   tableStyle: {
     position: 'relative'
+  },
+  downloadStyle: {
+    backgroundColor: 'rgb(52,178,130)',
+    zoom: '.6',
+    marginLeft: '10%'
+  },
+  iconStyle: {
+    fontWeight: 'bolder'
   }
 };
 
@@ -46,7 +59,7 @@ class TableContent extends React.Component {
       fixedFooter: true,
       stripedRows: false,
       showRowHover: true,
-      selectable: true,
+      selectable: false,
       multiSelectable: false,
       enableSelectAll: false,
       deselectOnClickaway: true,
@@ -63,7 +76,6 @@ class TableContent extends React.Component {
     	this.setState({height: event.target.value});
   	};
   }
-
 
   render() {
     let { dispatch,items} = this.props;
@@ -111,8 +123,21 @@ class TableContent extends React.Component {
             stripedRows={this.state.stripedRows}
           >
             {items.map( (row, index) => (
-              <TableRow key={index} selected={row.selected} >
-                <TableRowColumn>{row.region}</TableRowColumn>
+              <TableRow key={row.id} selected={row.selected}>
+                <TableRowColumn >{row.region}
+                  <IconButton style={styles.downloadStyle}>
+                    <VerticalIcon color={grey50} style={styles.iconStyle}/>
+                  </IconButton>
+                  <FlatButton
+                    label="2 Districts +"
+                    className={'district-icon'}
+                    primary={true}
+                    onTouchTap = { () => dispatch(showState(row.id)) }
+                    style = {{
+                      display: row.district ? '' : 'none'
+                    }}
+                    />
+                </TableRowColumn>
                 <TableRowColumn>{row.inpot}</TableRowColumn>
                 <TableRowColumn>{row.forms}</TableRowColumn>
                 <TableRowColumn>{row.voters}</TableRowColumn>
@@ -127,7 +152,6 @@ class TableContent extends React.Component {
 }
 
 let dataToProps = (state) => {
-    // state.items = tableData
     return {
       items: state.items
     }
