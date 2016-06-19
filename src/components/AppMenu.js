@@ -6,30 +6,17 @@ import AccountCircle from 'material-ui/svg-icons/action/account-circle';
 import AppMenuTabs from './AppMenuTab';
 import Avatar from 'material-ui/Avatar';
 import {grey50,indigo300, blueGrey700, deepOrange500} from 'material-ui/styles/colors';
-const style = {
-	iconStyle: {
-		borderRight: '1px solid #ddd',
-		height: 50,
-		padding: 0,
-		position: 'relative',
-		width: 50,
-	},
-	titleStyle: {
-		fontSize: 21,
-		fontWeight: 'bolder',
-	},
-}
-
+import styles from '../config/styles';
 const AppMenu = () => (
   <AppBar
     title="Reports"
-    titleStyle = {style.titleStyle}
+    titleStyle = {styles.titleStyle}
     iconElementLeft = {
-    	<IconButton style = {style.iconStyle}>
+    	<IconButton style = {styles.iconStyle}>
 		    <Avatar
 		          src="assets/sina.png"
 		          size = {38}
-		          style = {style.avatarStyle}
+		          style = {styles.avatarStyle}
 		  	/>
 		</IconButton>
     }

@@ -11,44 +11,8 @@ import {searchItems,showState} from '../actions/actions';
 import FontIcon from 'material-ui/FontIcon';
 import {grey50,green500} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
+import styles from '../config/styles';
 
-const styles = {
-  propContainer: {
-    width: 200,
-    overflow: 'hidden',
-    margin: '20px auto 0'
-  },
-  propToggleHeader: {
-    margin: '20px auto 10px'
-  },
-  searchStyle: {
-  	width: '93%',
-    marginLeft: 87
-  },
-  dropStyle: {
-    position: 'absolute',
-    left: 0,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 74,
-    paddingTop: 0,
-    paddingBottom: 0
-  },
-  tableStyle: {
-    position: 'relative'
-  },
-  downloadStyle: {
-    backgroundColor: 'rgb(52,178,130)',
-    zoom: '.6',
-    marginLeft: '10%'
-  },
-  iconStyle: {
-    fontWeight: 'bolder'
-  }
-};
-
-// this component has events, thus use class
 class TableContent extends React.Component {
 
   constructor(props) {
@@ -78,8 +42,8 @@ class TableContent extends React.Component {
   }
 
   render() {
-    let { dispatch,items} = this.props;
-    console.log(this.props);
+    let { dispatch,items,triggerId} = this.props;
+    console.log('triggerId',triggerId);
     return (
       <div className = "table-content">
         <DropDownMenu/>
@@ -123,20 +87,23 @@ class TableContent extends React.Component {
             stripedRows={this.state.stripedRows}
           >
             {items.map( (row, index) => (
-              <TableRow key={row.id} selected={row.selected}>
+              <TableRow key={row.id} selected={row.selected} style={{
+                display: row.parentId === 0 || row.parentId === triggerId ? '' : 'none'
+              }}>
                 <TableRowColumn >{row.region}
                   <IconButton style={styles.downloadStyle}>
-                    <VerticalIcon color={grey50} style={styles.iconStyle}/>
+                    <VerticalIcon color={grey50} style={styles.verticalIconStyle}/>
                   </IconButton>
-                  <FlatButton
-                    label="2 Districts +"
-                    className={'district-icon'}
-                    primary={true}
-                    onTouchTap = { () => dispatch(showState(row.id)) }
-                    style = {{
-                      display: row.district ? '' : 'none'
-                    }}
-                    />
+                  {
+                    row.subLId !== 0 ?
+                      <FlatButton
+                        label="2 Districts +"
+                        className={'district-icon'}
+                        primary={true}
+                        onTouchTap = { () => dispatch(showState(row.id)) }
+
+                        /> : ''
+                  }
                 </TableRowColumn>
                 <TableRowColumn>{row.inpot}</TableRowColumn>
                 <TableRowColumn>{row.forms}</TableRowColumn>
@@ -153,7 +120,8 @@ class TableContent extends React.Component {
 
 let dataToProps = (state) => {
     return {
-      items: state.items
+      items: state.items,
+      triggerId: state.triggerId
     }
 }
 

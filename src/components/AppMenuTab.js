@@ -1,25 +1,18 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import {grey50,indigo300, blueGrey700,grey300,deepOrange500} from 'material-ui/styles/colors';
-
-const style = {
-	tabStyle: {
-		padding: '0px 31px',
-		height: 50,
-		borderLeft: `1px solid ${grey300}`
-	}
-};
+import styles from '../config/styles';
 
 const AppMenuTabs = () => (
 	<Tabs initialSelectedIndex = {1}
-      inkBarStyle = {style}
+      inkBarStyle = {styles}
 	>
 	    <Tab
-	      label="Overall" style = {style.tabStyle}
+	      label="Overall" style = {styles.tabStyle}
 	    >
 	    </Tab>
 	    <Tab
-	      label="Specific" style = {style.tabStyle}
+	      label="Specific" style = {styles.tabStyle}
 	    >
 	    </Tab>
 	</Tabs>

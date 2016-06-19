@@ -1,19 +1,13 @@
 import React from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
-const styles = {
-  customWidth: {
-    width: 200,
-  },
-};
-
+import styles from '../config/styles';
 
 const items = [];
 const properties = ["state","district"];
 for (let i = 0; i < properties.length; i++ ) {
 	items.push(<MenuItem value={properties[i]} key={i} primaryText={`${properties[i]}`} />);
-}
+};
 
 class AppDropDownMenu extends React.Component {
 
@@ -24,7 +18,7 @@ class AppDropDownMenu extends React.Component {
 		this.handleChange = (event, index, value) => {
 			this.setState({value});
 		}
-	}
+	};
 
 	render() {
     console.log(this.state);
@@ -34,11 +28,11 @@ class AppDropDownMenu extends React.Component {
 		  </DropDownMenu>
 		);
 	}
-}
+};
 
 AppDropDownMenu.defaultProps = {
   value: "state",
   dropItems: items
-}
+};
 
 export default AppDropDownMenu;
