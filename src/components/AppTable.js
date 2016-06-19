@@ -108,8 +108,9 @@ class TableContent extends React.Component {
 
 
   render() {
-    let { dispatch } = this.props
-    console.log(dispatch);
+    // 通过connect 方法，来获得props参数
+    let { dispatch,items} = this.props
+    console.log(items);
     return (
       <div className = "table-content">
         <Table
@@ -133,7 +134,6 @@ class TableContent extends React.Component {
 			      type="text"
 			      style = {styles.searchStyle}
             onKeyDown = { (e) => {
-              console.log(e.target.value);
               dispatch(searchItems(e.target.value.trim()))
             }}
 			    />
@@ -154,9 +154,9 @@ class TableContent extends React.Component {
             showRowHover={true}
             stripedRows={this.state.stripedRows}
           >
-            {tableData.map( (row, index) => (
+            {items.map( (row, index) => (
               <TableRow key={index} selected={row.selected}>
-                <TableRowColumn>{this.region}</TableRowColumn>
+                <TableRowColumn>{row.region}</TableRowColumn>
                 <TableRowColumn>{row.inpot}</TableRowColumn>
                 <TableRowColumn>{row.forms}</TableRowColumn>
                 <TableRowColumn>{row.voters}</TableRowColumn>
@@ -169,9 +169,20 @@ class TableContent extends React.Component {
     );
   }
 }
-// TableContent.propTypes = {
-//   onChangeEvent: PropTypes.func.isRequired
-// }
+TableContent.PropTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    region: PropTypes.string.isRequired,
+    inpot: PropTypes.string.isRequired,
+    form: PropTypes.string.isRequired,
+    voters: PropTypes.string.isRequired,
+    update: PropTypes.number.isRequired
+  }).isRequired).isRequired,
+}
 
-export default connect()(TableContent)
-// export default TableContent;
+let dataToProps = (state) => {
+    return {
+      items: tableData
+    }
+}
+
+export default connect(dataToProps)(TableContent)
