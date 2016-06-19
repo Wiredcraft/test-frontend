@@ -63,7 +63,7 @@ export default function testApp(state = initialState, action) {
 		case 'SEARCH_ITEMS':
 			return {
 				...state,
-				items: state.items.filter(item => item.region.toLowerCase().indexOf(action.context.toLowerCase()) >= 0)
+				items: action.context !== '' ? state.items.filter(item => item.region.toLowerCase().indexOf(action.context.toLowerCase()) >= 0) : tableData
 			}
 	default:
 		return state
