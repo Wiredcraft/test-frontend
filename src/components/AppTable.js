@@ -21,8 +21,6 @@ const styles = {
   },
 };
 
-
-// data structureww
 const tableData = [
   {
     region: 'John Smith',
@@ -108,9 +106,8 @@ class TableContent extends React.Component {
 
 
   render() {
-    // 通过connect 方法，来获得props参数
-    let { dispatch,items} = this.props
-    console.log(items);
+    let { dispatch,items,} = this.props;
+    console.log(this.props);
     return (
       <div className = "table-content">
         <Table
@@ -133,7 +130,7 @@ class TableContent extends React.Component {
 			      floatingLabelText="Search"
 			      type="text"
 			      style = {styles.searchStyle}
-            onKeyDown = { (e) => {
+            onKeyUp = { (e) => {
               dispatch(searchItems(e.target.value.trim()))
             }}
 			    />
@@ -155,7 +152,7 @@ class TableContent extends React.Component {
             stripedRows={this.state.stripedRows}
           >
             {items.map( (row, index) => (
-              <TableRow key={index} selected={row.selected}>
+              <TableRow key={index} selected={row.selected} >
                 <TableRowColumn>{row.region}</TableRowColumn>
                 <TableRowColumn>{row.inpot}</TableRowColumn>
                 <TableRowColumn>{row.forms}</TableRowColumn>
@@ -169,17 +166,9 @@ class TableContent extends React.Component {
     );
   }
 }
-TableContent.PropTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    region: PropTypes.string.isRequired,
-    inpot: PropTypes.string.isRequired,
-    form: PropTypes.string.isRequired,
-    voters: PropTypes.string.isRequired,
-    update: PropTypes.number.isRequired
-  }).isRequired).isRequired,
-}
 
 let dataToProps = (state) => {
+    state.items = tableData
     return {
       items: tableData
     }

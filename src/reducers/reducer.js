@@ -1,5 +1,6 @@
 import { searchItems } from '../actions/actions';
 
+
 const initialState = {
 	searchItems: '',
 	items: []
@@ -8,15 +9,10 @@ const initialState = {
 export default function testApp(state = initialState, action) {
 	switch(action.type) {
 		case 'SEARCH_ITEMS':
-		  console.log('success')
-			console.log(state);
-			return Object.assign({},state, {
-				items: state.items.map((item,index) => {
-						if(item.region.indexOf(action.context) >= 0) {
-							return Object.assign({}, item)
-						}
-				})
-			})
+			return {
+				...state,
+				items: state.items.filter(item => item.region.toLowerCase().indexOf(action.context.toLowerCase()) >= 0)
+			}
 	default:
 		return state
 	}
