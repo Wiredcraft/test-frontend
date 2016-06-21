@@ -1,7 +1,7 @@
 $theme-color: rgb(77,81,102);
 $toggle-btn-color: rgb(238,240,247);
 $icon-color: rgb(126,108,201);
-$icon-width: 30px;
+$icon-width: 25px;
 $td-padding: 20px;
 body {
 	margin: 0px;
@@ -18,26 +18,48 @@ body {
 				top: 66px;
 				z-index: 222;
 			}
-      td {
-        padding-left: $td-padding!important;
-        padding-right: $td-padding!important;
-      }
-			td,th {
-				border-right: 1px solid #ddd;
-				position: relative;
-        i.circle-icon {
-          width: $icon-width;
-          height: $icon-width;
-          background-color: #7e6cc9;
-          border-radius: 50%;
-          color: #fff;
-          display: inline-block;
-          float: left;
-          line-height: $icon-width;
-          text-align: center;
-          margin-right: 10px;
-        }
+			table {
+				  table-layout: inherit!important;
 			}
+			tbody > tr {
+				&:hover {
+					background-color: #eaeaea;
+				}
+			}
+      tr {
+        width: 100%;
+				&.table-header {
+					height: 50px;
+				}
+        td {
+          padding-left: $td-padding!important;
+          padding-right: $td-padding!important;
+          border-bottom: 1px solid #eaeaea;
+          padding: 10px;
+          width: 17%;
+        }
+        td.td-region {
+          width: 25%;
+        }
+  			td,th {
+  				border-right: 1px solid #ddd;
+  				position: relative;
+          i.circle-icon {
+            width: $icon-width;
+            height: $icon-width;
+            background-color: #7e6cc9;
+            border-radius: 50%;
+            color: #fff;
+            display: inline-block;
+            float: left;
+            line-height: $icon-width;
+            text-align: center;
+            margin-right: 10px;
+            position: relative;
+            top: 2px;
+          }
+  			}
+      }
 			thead > tr > th {
 				font-weight: bolder!important;
 				color: #000!important;

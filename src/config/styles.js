@@ -52,6 +52,8 @@ const styles = {
   },
   verticalIconStyle: {
     fontWeight: 'bolder'
+  },
+  tableStyle: {
   }
 };
 

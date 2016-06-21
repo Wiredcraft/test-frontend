@@ -71,13 +71,13 @@ class TableContent extends React.Component {
                     }} />
               </TableHeaderColumn>
             </TableRow>
-            <TableRow>
-              <TableHeaderColumn >Region</TableHeaderColumn>
-              <TableHeaderColumn >Last inpot</TableHeaderColumn>
-              <TableHeaderColumn >Number of forms</TableHeaderColumn>
-              <TableHeaderColumn >Number of Voters</TableHeaderColumn>
-              <TableHeaderColumn >Update</TableHeaderColumn>
-            </TableRow>
+            <tr className={'table-header'}>
+              <td className={'td-region'}>Region</td>
+              <td >Last inpot</td>
+              <td >Number of forms</td>
+              <td >Number of Voters</td>
+              <td >Update</td>
+            </tr>
           </TableHeader>
           <TableBody
             displayRowCheckbox={this.state.showCheckboxes}
@@ -87,10 +87,10 @@ class TableContent extends React.Component {
             stripedRows={this.state.stripedRows}
           >
             {items.map( (row, index) => (
-              <TableRow key={row.id} selected={row.selected} style={{
+              <tr key={row.id} selected={row.selected} style={{
                 display: row.parentId === 0 || row.parentId === triggerId ? '' : 'none'
               }}>
-                <TableRowColumn >
+                <td className={'td-region'}>
                 <i className={'circle-icon'}>S</i>
                 {row.region}
                   <IconButton style={styles.downloadStyle}>
@@ -106,12 +106,12 @@ class TableContent extends React.Component {
 
                         /> : ''
                   }
-                </TableRowColumn>
-                <TableRowColumn>{row.inpot}</TableRowColumn>
-                <TableRowColumn>{row.forms}</TableRowColumn>
-                <TableRowColumn>{row.voters}</TableRowColumn>
-                <TableRowColumn>{row.update}</TableRowColumn>
-              </TableRow>
+                </td>
+                <td>{row.inpot}</td>
+                <td>{row.forms}</td>
+                <td>{row.voters}</td>
+                <td>{row.update}</td>
+              </tr>
               ))}
           </TableBody>
         </Table>
