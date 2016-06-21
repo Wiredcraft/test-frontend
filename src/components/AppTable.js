@@ -90,7 +90,9 @@ class TableContent extends React.Component {
               <TableRow key={row.id} selected={row.selected} style={{
                 display: row.parentId === 0 || row.parentId === triggerId ? '' : 'none'
               }}>
-                <TableRowColumn >{row.region}
+                <TableRowColumn >
+                <i className={'circle-icon'}>S</i>
+                {row.region}
                   <IconButton style={styles.downloadStyle}>
                     <VerticalIcon color={grey50} style={styles.verticalIconStyle}/>
                   </IconButton>
