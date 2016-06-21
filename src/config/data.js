@@ -13,7 +13,7 @@ export const tableData = [
   },
   {
     region: 'State',
-    inpot: '2014/12/12ed',
+    inpot: '2014/12/12',
     forms: '123,456ed',
     voters: '123,456ed',
     update: '342,456ed',
