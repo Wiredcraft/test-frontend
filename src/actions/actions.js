@@ -11,3 +11,10 @@ export function showState(id) {
 		id
 	}
 }
+
+export function changeFilter(text) {
+	return {
+		type: 'CHANGE_FILTER',
+		text
+	}
+}
