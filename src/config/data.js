@@ -14,9 +14,9 @@ export const tableData = [
   {
     region: 'State',
     inpot: '2014/12/12',
-    forms: '123,456ed',
-    voters: '123,456ed',
-    update: '342,456ed',
+    forms: '123,456',
+    voters: '123,456',
+    update: '342,456',
     id: 1002,
     subLId: 1005,
     parentId: 0,
