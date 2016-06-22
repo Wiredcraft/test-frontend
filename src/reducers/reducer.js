@@ -21,10 +21,10 @@ export default function testApp(state = initialState, action) {
 				items: tableData.filter(item => item[filterText].toLowerCase().indexOf(action.context.toLowerCase()) >= 0)
 			}
     case 'SHOW_DISTRICT':
-      console.log(action.id);
+			// let id = action.id;
       return {
        ...state,
-       triggerId: action.id
+			 triggerId: action.id
       }
 		case 'CHANGE_FILTER':
 			return {

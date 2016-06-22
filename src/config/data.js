@@ -8,68 +8,71 @@ export const tableData = [
     update: '342456',
     selected: true,
     id: 1001,
-    subLId: 0,
-    parentId: 0,
+    stateId: "001",
+    districtId: "000",
+    townshipId: "000",
+    display: true
   },
   {
-    region: 'State',
+    region: 'District',
     inpot: '2014/12/12',
     forms: '123456',
     voters: '123456',
     update: '342456',
     id: 1002,
-    subLId: 1005,
-    parentId: 0,
+    stateId: "001",
+    districtId: "001",
+    townshipId: "000",
+    display: true
   },
   {
-    region: 'district',
+    region: 'Township',
     inpot: '2014/12/12',
     forms: '123456',
     voters: '123456',
     update: '342456',
     id: 1005,
-    subLId: 1006,
-    parentId: 1002,
+    stateId: "001",
+    districtId: "001",
+    townshipId: "001",
+    display: true
   },
   {
-    region: 'township',
+    region: 'State',
     inpot: '2014/12/12',
     forms: '123456',
     voters: '123456',
     update: '342456',
     id: 1006,
-    subLId: 0,
-    parentId: 1005
+    stateId: "002",
+    districtId: "000",
+    townshipId: "000",
+    display: true
   },
   {
-    region: 'State',
+    region: 'District',
     inpot: '2014/12/12',
     forms: '123456',
     voters: '123456',
     update: '342456',
     id: 1007,
-    subLId: 0,
-    parentId: 0
+    stateId: "002",
+    districtId: "001",
+    townshipId: "000",
+    display: true
   },
   {
-    region: 'State',
+    region: 'TownShip',
     inpot: '2014/12/12',
     forms: '123456',
     voters: '123456',
     update: '342456',
     id: 1008,
-    subLId: 0,
-    parentId: 0
-  },
-  {
-    region: 'State',
-    inpot: '2014/12/12',
-    forms: '123456',
-    voters: '123456',
-    update: '342456',
-    subLId: 0,
-    parentId: 0
-  },
+    stateId: "002",
+    districtId: "001",
+    townshipId: "001",
+    display: true
+  }
 ];
 
-export const triggerId = 0;
+export const triggerId = "000";

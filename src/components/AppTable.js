@@ -45,6 +45,22 @@ class TableContent extends React.Component {
       this.setState({value});
     }
   }
+
+  showDrop(stateId,districtId) {
+    let arr = this.state.items.map((item) => {
+      if (districtId === '000') {
+        if (item.stateId == stateId && item.districtId != '000') {
+          item.display = !item.display;
+        }
+      } else {
+        if(item.stateId == stateId && item.districtId!= '000' && item.townshipId != '000') {
+          item.display = !item.display
+        }
+      }
+    })
+    this.setState(this.state);
+  }
+
   render() {
     let { dispatch,items,triggerId} = this.props;
     return (
@@ -96,23 +112,27 @@ class TableContent extends React.Component {
           >
             {items.map( (row, index) => (
               <tr key={row.id} selected={row.selected} style={{
-                display: row.parentId === 0 || row.parentId === triggerId ? '' : 'none'
+                left: row.districtId === '000' && row.townshipId === '000' ? '0px' : row.townshipId === '000' ? '10px' : '20px',
+                display: row.display ? '' : 'none'
               }}>
-                <td className={'td-region'}>
-                <i className={'circle-icon'}>S</i>
+                <td className={'td-region'} style={{
+                  left: row.districtId === '000' && row.townshipId === '000' ? '0px' : row.townshipId === '000' ? '10px' : '20px'
+                }}>
+                <i className={'circle-icon'}>{
+                    row.districtId === '000' && row.townshipId === '000' ? 'S' : row.townshipId === '000' ? 'D' : 'T'
+                }</i>
                 {row.region}
                   <IconButton style={styles.downloadStyle}>
                     <VerticalIcon color={grey50} style={styles.verticalIconStyle}/>
                   </IconButton>
                   {
-                    row.subLId !== 0 ?
-                      <FlatButton
+                      row.districtId != '000' && row.townshipId != '000' ?
+                       "" : <FlatButton
                         label="2 Districts +"
                         className={'district-icon'}
                         primary={true}
-                        onTouchTap = { () => dispatch(showState(row.id)) }
-
-                        /> : ''
+                        onTouchTap = { () => this.showDrop(row.stateId,row.districtId) }
+                      />
                   }
                 </td>
                 <td>{row.inpot}</td>
