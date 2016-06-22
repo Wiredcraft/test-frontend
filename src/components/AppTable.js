@@ -45,7 +45,6 @@ class TableContent extends React.Component {
       this.setState({value});
     }
   }
-
   render() {
     let { dispatch,items,triggerId} = this.props;
     return (
@@ -116,10 +115,19 @@ class TableContent extends React.Component {
                         /> : ''
                   }
                 </td>
-                <td>{row.inpot}</td>
-                <td>{row.forms}</td>
-                <td>{row.voters}</td>
-                <td>{row.update}</td>
+                <td>row.inpot</td>
+                <td>{
+                  // todo: it seems like class inner function cannot return a value, should extract to a function
+                  (row.forms / 1000).toFixed(3).replace(/\./,',')
+                }</td>
+                <td>{
+                  (row.voters / 1000).toFixed(3).replace(/\./,',')
+                }
+                </td>
+                <td>{
+                  (row.update / 1000).toFixed(3).replace(/\./,',')
+                }
+                </td>
               </tr>
               ))}
           </TableBody>
