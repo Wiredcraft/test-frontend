@@ -29,8 +29,10 @@ const styles = {
     margin: '20px auto 10px'
   },
   searchStyle: {
-    width: '93%',
-    marginLeft: 87
+    width: '92%',
+    marginLeft: 87,
+    borderLeft: '1px solid #eaeaea',
+    paddingLeft: '2%'
   },
   dropStyle: {
     position: 'absolute',
