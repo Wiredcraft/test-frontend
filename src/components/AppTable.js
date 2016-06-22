@@ -115,17 +115,17 @@ class TableContent extends React.Component {
                         /> : ''
                   }
                 </td>
-                <td>row.inpot</td>
+                <td>{row.inpot}</td>
                 <td>{
                   // todo: it seems like class inner function cannot return a value, should extract to a function
-                  (row.forms / 1000).toFixed(3).replace(/\./,',')
+                  row.forms > 100000 ? (row.forms / 1000).toFixed(3).replace(/\./,',') : row.forms
                 }</td>
                 <td>{
-                  (row.voters / 1000).toFixed(3).replace(/\./,',')
+                  row.voters > 100000 ? (row.voters / 1000).toFixed(3).replace(/\./,',') : row.voters
                 }
                 </td>
                 <td>{
-                  (row.update / 1000).toFixed(3).replace(/\./,',')
+                  row.update > 100000 ? (row.update / 1000).toFixed(3).replace(/\./,',') : row.update
                 }
                 </td>
               </tr>
