@@ -6,7 +6,9 @@ Make sure you read **all** of this document carefully, and follow the guidelines
 
 Use HTML, CSS and JavaScript to implement the following mock.
 
-![wiredcraft-front-end-test-mock](https://cldup.com/QNw9nUVmcN-2000x2000.png)
+![wiredcraft-front-end-test-mock](https://cldup.com/JM3lLBAS5V.jpg)
+
+Source file here: https://cldup.com/2wo0ktkbxJ.sketch
 
 ### Page structure
 
