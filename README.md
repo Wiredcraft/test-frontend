@@ -4,13 +4,13 @@ Make sure you read **all** of this document carefully, and follow the guidelines
 
 ## Background
 
-Use HTML, CSS and JavaScript to implement the following mock.
+Use HTML, CSS and JavaScript to implement the following mockup.
 
 ![wiredcraft-front-end-test-mock](https://cldup.com/JM3lLBAS5V.jpg)
 
-Source file here: https://cldup.com/2wo0ktkbxJ.sketch
+[Mockup source Sketch file](https://cldup.com/2wo0ktkbxJ.sketch)
 
-### Page structure
+### Page Structure
 
 ```
 Header(Navigation)
@@ -31,21 +31,20 @@ Main
 
 ### Functionality
 
-* Static page header(nav), nothing need to do here.
-* The table filter needs to be able to filter the result in the table by the type and keywords
-* The table is nested, and grouped by state, district, township
+* Static page header(navigation bar), no extra features needed.
+* The table filter needs to be able to filter the result in the table by the type and keywords.
+* The table is nested, and grouped by state, district, township.
 
-## Getting started
+## Getting Started
 
 There's nothing here, we leave it to you to choose the build tool, code structure, framework, testing approach...
 
 ## Requirements
 
-- With clear documentation on how to run the code
+- Clear documentation, including but not limited to how to test your code.
 
-- Provide proper unit test
+- Proper unit tests.
 
-- Use git to manage code
 
 ## What We Care About
 
@@ -57,9 +56,9 @@ Here's what you should aim for:
 
 - Good use of current HTML, CSS and JavaScript & performance best practices.
 
-- Solid testing approach
+- Solid testing approach.
 
-- Extensible code;
+- Extensible code.
 
 ## Q&A
 
