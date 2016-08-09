@@ -6,7 +6,7 @@ const models = require('./server/models/index')
 const dataMigration = require('./dataMigration')
 
 // Constants
-const PORT = 8080;
+const PORT = process.env.EXPOSE_PORT || 8080;
 
 // App
 const app = express();
