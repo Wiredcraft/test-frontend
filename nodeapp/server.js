@@ -45,7 +45,7 @@ if (ENV_DEV) {
 
 models.sequelize.sync().then(function () {
 
-  //dataMigration.init(models);
+  dataMigration.init(models);
   const server = app.listen(PORT, function() {
 
     var host = server.address().address;
