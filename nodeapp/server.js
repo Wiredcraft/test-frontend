@@ -43,12 +43,17 @@ if (ENV_DEV) {
   app.use(express.static(__dirname + '/build'));
 }
 
-models.sequelize.sync({force:true}).then(function () {
+models.sequelize.sync().then(function () {
 
-  dataMigration.init(models);
-
+  //dataMigration.init(models);
   const server = app.listen(PORT, function() {
-    console.log('Running on http://localhost:' + PORT);
+
+    var host = server.address().address;
+    var port = server.address().port;
+
+    require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+      console.log('Running on http://%s:%s', add, port);
+    })
   });
 });
 
