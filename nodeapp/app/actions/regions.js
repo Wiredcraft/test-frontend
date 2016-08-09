@@ -24,7 +24,7 @@ export function toggleTownship(stateId, districtId) {
 }
 
 export function fetchRegions(filterType, keyword) {
-  const API_URL = (() => {
+  const API_URL = keyword ? (() => {
     switch(filterType) {
       case FILTER_STATE:
         return `${API.GET_REGION}?${FILTER_STATE}=${keyword}`
@@ -35,7 +35,7 @@ export function fetchRegions(filterType, keyword) {
       default:
         return API.GET_REGION
     }
-  })()
+  })() : API.GET_REGION
 
   return dispatch => {
     // pending
@@ -71,7 +71,7 @@ function fetchRegionsSuccess(data, filterType) {
     payload: {
       status: SUCCESS,
       records: data,
-      filter: filterType
+      filter: filterType || FILTER_STATE
     }
   }
 }
