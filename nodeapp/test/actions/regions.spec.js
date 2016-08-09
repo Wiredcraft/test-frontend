@@ -15,7 +15,8 @@ describe('async actions', () => {
     nock.cleanAll()
   })
 
-  it('creates FETCH_REGION when fetching regions has been done', () => {
+  // for success
+  it('creates FETCH_REGION with success status', () => {
     nock(API.BASE_URL)
       .get('/region')
       .reply(200, [{name: 'state'}])
@@ -34,6 +35,38 @@ describe('async actions', () => {
           status: 'SUCCESS', 
           records: [{name: 'state'}],
           filter: FILTER_STATE
+        } 
+      }
+    ]
+
+    const store = mockStore({ records: [] })
+
+    return store.dispatch(actions.fetchRegions())
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions)
+      })
+  })
+
+
+  // for failed
+  it('creates FETCH_REGION with error status', () => {
+    nock(API.BASE_URL)
+      .get('/region')
+      .replyWithError({'message': 'an error occured', 'code': 505});
+
+    const expectedActions = [
+      { 
+        type: FETCH_REGION, 
+        payload: { 
+          status: 'PENDING', 
+          records: [],
+        } 
+      },
+      { 
+        type: FETCH_REGION, 
+        payload: { 
+          status: 'FAILED', 
+          records: [],
         } 
       }
     ]

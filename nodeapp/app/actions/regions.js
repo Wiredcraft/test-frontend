@@ -49,7 +49,6 @@ export function fetchRegions(filterType, keyword) {
       dispatch(fetchRegionsSuccess(json, filterType))
     // failed
     }).catch(error => {
-      console.error(error);
       dispatch(fetchRegionsFailure(error))
     })
   }
@@ -81,8 +80,7 @@ function fetchRegionsFailure(error) {
     type: ACTION.FETCH_REGION,
     payload: {
       status: FAILED,
-      records: [],
-      error
+      records: []
     }
   }
 }
