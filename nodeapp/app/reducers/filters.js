@@ -9,7 +9,11 @@ const initialState = {
 export default function filter(state = initialState, action) {
   switch (action.type) {
     case ACTION.SET_FILTER:
-      return { ...state, activeIndex: action.payload.index }
+      if (action.payload.index >= 0 && action.payload.index < state.type.length) {
+        return { ...state, activeIndex: action.payload.index }
+      } else {
+        return state
+      }
     default:
       return state
   }
