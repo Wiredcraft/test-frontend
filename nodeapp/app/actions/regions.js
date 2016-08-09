@@ -23,7 +23,7 @@ export function toggleTownship(stateId, districtId) {
   }
 }
 
-export function searchRegions(filterType, keyword) {
+export function fetchRegions(filterType, keyword) {
   const API_URL = (() => {
     switch(filterType) {
       case FILTER_STATE:
@@ -39,37 +39,51 @@ export function searchRegions(filterType, keyword) {
 
   return dispatch => {
     // pending
-    dispatch({
-      type: ACTION.FETCH_REGION,
-      payload: {
-        status: PENDING,
-        records: []
-      }
-    });
+    dispatch(fetchRegionsRequest());
 
     // fetching
-    fetch(API_URL).then(res => {
-      if (res.status === 200) return res.json();
+    return fetch(API_URL).then(res => {
+      return res.json()
     }).then(json => {
       // success
-      dispatch({
-        type: ACTION.FETCH_REGION,
-        payload: {
-          status: SUCCESS,
-          records: json,
-          filter: filterType
-        }
-      })
+      dispatch(fetchRegionsSuccess(json, filterType))
     // failed
     }).catch(error => {
       console.error(error);
-      dispatch({
-        type: ACTION.FETCH_REGION,
-        payload: {
-          status: FAILED,
-          records: []
-        }
-      })
+      dispatch(fetchRegionsFailure(error))
     })
   }
 }
+
+function fetchRegionsRequest() {
+  return {
+    type: ACTION.FETCH_REGION,
+    payload: {
+      status: PENDING,
+      records: []
+    }
+  }
+}
+
+function fetchRegionsSuccess(data, filterType) {
+  return {
+    type: ACTION.FETCH_REGION,
+    payload: {
+      status: SUCCESS,
+      records: data,
+      filter: filterType
+    }
+  }
+}
+
+function fetchRegionsFailure(error) {
+  return {
+    type: ACTION.FETCH_REGION,
+    payload: {
+      status: FAILED,
+      records: [],
+      error
+    }
+  }
+}
+

@@ -28,7 +28,7 @@ export default class VisibleRegionList extends Component {
 
   componentDidMount() {
     const { actions } = this.props
-    actions.searchRegions()
+    actions.fetchRegions()
   }
 
   render() {

@@ -48,7 +48,7 @@ class TableFilter extends Component {
       const { filters, activeIndex, actions }  = this.props
       const keyword = event.target.value
 
-      actions.searchRegions(filters.type[activeIndex], keyword)
+      actions.fetchRegions(filters.type[activeIndex], keyword)
     }
   }
 }
