@@ -25,6 +25,9 @@ $ npm run test
 
 ### Deployment
 ````
+$ cd nodeapp
+$ npm run build
+$ cd ..
 $ docker-compose up -d
 ````
 
