@@ -33,7 +33,7 @@ function populateLikeCondition(prop, value) {
   return value ? 
   {
     [prop]: {
-      $like: '%' + value + '%'
+      $iLike: '%' + value + '%'
     }
   }
   : {}
