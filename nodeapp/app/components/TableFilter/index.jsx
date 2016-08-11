@@ -5,7 +5,13 @@ import styles from './style.css'
 class TableFilter extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      keyword: ''
+    }
+
     this.handlePressEnter = this.handlePressEnter.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   render() {
@@ -33,8 +39,8 @@ class TableFilter extends Component {
             >
               {menuItems}
             </DropdownButton>
-            <FormControl type="text" placeholder="Search..." onKeyPress={this.handlePressEnter} />
-            <FormControl.Feedback>
+            <FormControl type="text" placeholder="Search..." onKeyPress={this.handlePressEnter} onChange={this.handleChange} value={this.state.keyword} />
+            <FormControl.Feedback className={this.state.keyword && 'hide'}>
               <Glyphicon glyph="search" />
             </FormControl.Feedback>
           </InputGroup>
@@ -50,6 +56,10 @@ class TableFilter extends Component {
 
       actions.fetchRegions(filters.type[activeIndex], keyword)
     }
+  }
+
+  handleChange(event) {
+    this.setState({keyword: event.target.value})
   }
 }
 
