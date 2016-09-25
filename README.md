@@ -4,8 +4,8 @@
 1. Install [Docker](https://www.docker.com/) on your system.
 2. Install [Docker Compose](http://docs.docker.com/compose/) on your system.
 
-### Online Demo
-Please visit [online demo](http://52.197.230.20/)
+### <del>Online Demo</del>
+<del>Please visit [online demo](http://52.197.230.20/)</del>
 
 ### Development
 1. Clone the repo
