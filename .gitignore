@@ -1,0 +1,4 @@
+nodeapp/node_modules/
+nodeapp/build/
+npm-debug.log
+nodeapp/*.json.gzip

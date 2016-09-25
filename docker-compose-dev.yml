@@ -1,0 +1,46 @@
+version: '2'
+services:
+  nodeapp:
+    build:
+      context: ./nodeapp
+      dockerfile: Dockerfile-dev
+    volumes:
+      - ./nodeapp:/usr/src/app
+      - nodemodules:/usr/src/app/node_modules
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    depends_on:
+      - postgres
+    ports:
+      - "8080"
+  postgres:
+    image: postgres
+    volumes_from:
+      - pgdatavolume
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+  nginx:
+    build: ./nginx
+    links:
+      - nodeapp:nodeapp
+    ports:
+      - "80:80"
+  pgdatavolume:
+    image: postgres
+    volumes:
+      - pgdatavolume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    entrypoint: /bin/bash
+    command: echo 'Data Container for PostgreSQL'
+volumes:
+  pgdatavolume:
+  nodemodules:

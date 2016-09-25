@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - sudo pip install -U docker-compose
+
+test:
+  override:
+    - docker-compose -f docker-compose-dev.yml run -d nodeapp
+    - cd node; npm run test

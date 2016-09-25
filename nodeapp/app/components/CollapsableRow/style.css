@@ -1,0 +1,18 @@
+.district {
+  .text {
+    padding-left: 2.5rem;
+  }
+}
+.township {
+  .text {
+    padding-left: 5rem;
+  }
+}
+
+.btn-collapsed {
+  background-color: #dde4e9;
+}
+
+.btn-collapsed-text {
+  margin-right: 0.8rem;
+}

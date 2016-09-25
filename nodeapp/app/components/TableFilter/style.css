@@ -1,0 +1,13 @@
+.wirecraft-filter-bar {
+  > .form-group {
+    margin: 2.6rem 0 0;
+  }
+
+  .dropdown-toggle, .form-control, .form-control-feedback {
+    color: #797979;
+  }
+
+  .dropdown-toggle, .dropdown-menu {
+    text-transform: capitalize;
+  }
+}
