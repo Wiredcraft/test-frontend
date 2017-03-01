@@ -1,0 +1,31 @@
+.table
+  background-color  #fff
+  
+  &-heading,
+  &-row
+    width  100%
+    clearfix()
+  
+  &-heading-cell,  
+  &-cell
+    float-comp()
+    width  15%
+    text-align center
+    line-height   50px
+    border-left    1px solid $border-gray
+    
+    &:first-child
+      width  40%
+      text-align left
+      padding  0  10px
+      
+  &-heading
+    border-bottom 2px solid $border-gray-bold
+    font-weight   bold
+    
+  &-row
+    border-bottom   1px solid $border-gray
+    
+    &.hidden
+      display   none !important
+    

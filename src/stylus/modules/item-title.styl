@@ -1,0 +1,32 @@
+icon-holder()
+  font-size  20px
+  font-weight  700
+  margin-left  10px
+  vertical-align  middle
+    
+.item-title
+  position relative
+  
+  .subitem-toggle
+    cursor    pointer
+    position  absolute
+    right    0
+    top      12px
+    background-color  $light-gray
+    line-height   normal
+    padding   5px
+    
+  &.item-district
+    padding-left   15px
+    
+  &.item-township
+    padding-left    30px
+    
+.subitem-toggle
+  &.collapsed:after
+    content  "+"
+    icon-holder()
+    
+  &.expanded:after
+    content  "-"
+    icon-holder()

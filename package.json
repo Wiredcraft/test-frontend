@@ -1,0 +1,71 @@
+{
+  "name": "frontend-test",
+  "version": "1.0.0",
+  "description": "Work for Wiredcraft frontend test",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woodpig07/frontend-test.git"
+  },
+  "keywords": [
+    "frontend"
+  ],
+  "author": "woodpig07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woodpig07/frontend-test/issues"
+  },
+  "homepage": "https://github.com/woodpig07/frontend-test#readme",
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "flux": "^2.1.1",
+    "keymirror": "^0.1.1",
+    "normalize.css": "^3.0.3",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "chalk": "^1.1.1",
+    "coffee-reactify": "^4.0.0",
+    "connect-livereload": "^0.5.4",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cjsx": "^3.0.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-if": "^2.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-streamify": "^1.0.2",
+    "gulp-stylus": "^2.2.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "4.2.5",
+    "jest-cli": "^0.8.2",
+    "nib": "^1.1.0",
+    "open": "0.0.5",
+    "react-addons-test-utils": "^0.14.6",
+    "tiny-lr": "^0.2.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  }  
+}
