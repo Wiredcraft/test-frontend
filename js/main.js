@@ -1,12 +1,11 @@
 require.config({
     paths : {
         "jquery" : "../common/jQuery/jquery-2.1.4.min",
-        "layui" : "../common/layui/src/layui",
         "data" : "data" 
     }
 });
 
-require(["jquery", "layui","data"], function(jquery,layui,data){
+require(["jquery","data"], function(jquery,data){
     $(function(){
     	 init(); //初始化
     })
@@ -70,7 +69,7 @@ require(["jquery", "layui","data"], function(jquery,layui,data){
 				var Children = data[children]; 
 				var showChild = "";
 				if(children == "city"){showChild = "Districts"}else{showChild="Townships"}
-				html += '<span put="yes" class="tip">&nbsp;'+Children.length + "" + showChild + '<i class="layui-icon mergeIcon" style="font-size: 10px; color: #81869C;">&#xe61a;</i></span>';	
+				html += '<span put="yes" class="tip">&nbsp;'+Children.length + "" + showChild + '<img src="img/down.ico" class="plusAnddown" alt="" />';	
 			}
 			html += '<td>'+ data.lastInput +'</td>';
 			html += '<td>'+ data.forms +'</td>';
@@ -97,7 +96,7 @@ require(["jquery", "layui","data"], function(jquery,layui,data){
 			var name =$(this).parent().parent().attr("name");
 			if($this.attr("put") == "yes"){
 				$this.attr("put","no");
-				$this.find("i").html("&#xe654;")
+				$this.find("img").attr("src","img/plus.ico");
 				var $children = $("tr[parent='"+name+"']");
 				$children.hide(100);
 				$children.each(function(index,child){
@@ -107,7 +106,7 @@ require(["jquery", "layui","data"], function(jquery,layui,data){
 				});
 			}else{
 				$this.attr("put","yes");
-				$this.find("i").html("&#xe61a;");
+				$this.find("img").attr("src","img/down.ico");
 				$("tr[parent='"+name+"']").show(100);
 			}
 		});

@@ -111,7 +111,10 @@ ul li{
 	color: #81869C;
 	margin-left: 20x;
 }
-.tip i{
+.tip .plusAnddown{
+	width: 12px;
+	height: 12px;
+	margin-top: 5px;
 	float: right;
 }
 tr[class^="levelone"] .tdFir{
