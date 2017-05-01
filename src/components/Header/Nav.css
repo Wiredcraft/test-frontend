@@ -1,0 +1,24 @@
+@value headerHeight,borderColor from './shared.css';
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.navList {
+  list-style: none;
+}
+.navItem {
+  display: inline-block;
+  width: 200px;
+  height: headerHeight;
+  line-height: headerHeight;
+  text-align: center;
+  border-left: 1px solid borderColor;
+  cursor: pointer;
+}
+
+.navItemChosen {
+  background: #f0f2f8;
+}
