@@ -5,7 +5,7 @@
 * To achieve the effect of table consolidation
 * Can be filtered by type and according to the keyword query
 
-!Demo address [http://maxxiaobao.github.io/test-frontend/index.html]([http://maxxiaobao.github.io/test-frontend/index.html])
+! Demo address [http://maxxiaobao.github.io/test-frontend/index.html]([http://maxxiaobao.github.io/test-frontend/index.html])
 
 ## Instructions for use
 
