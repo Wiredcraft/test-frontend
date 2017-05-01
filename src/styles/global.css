@@ -1,3 +1,5 @@
+@value primaryColor from './color.css';
+
 :global * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,12 @@
   box-sizing: border-box;
 }
 
-:global *, *:before, *:after {
+:global body {
+  font-family: "Helvetica Neue", "Open Sans", sans-serif;
+  color: primaryColor;
+  background: primaryColor;
+}
+
+:global *, :global *:before, :global *:after {
   box-sizing: inherit;
 }
