@@ -1,12 +1,14 @@
 'use strict';
 
 var autoprefixer = require('autoprefixer');
+var postcssModulesValues = require('postcss-modules-values');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 var getClientEnvironment = require('./env');
+var path = require('path');
 var paths = require('./paths');
 
 
@@ -78,7 +80,8 @@ module.exports = {
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      'styles': path.join(paths.appSrc, 'styles')
     }
   },
   
@@ -173,6 +176,7 @@ module.exports = {
           'not ie < 9', // React doesn't support IE8 anyway
         ]
       }),
+      postcssModulesValues
     ];
   },
   plugins: [
