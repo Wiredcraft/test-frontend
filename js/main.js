@@ -101,7 +101,7 @@ require(["jquery","data"], function(jquery,data){
 				$children.hide(100);
 				$children.each(function(index,child){
 					$(child).find('.tip').attr("put","no");
-					$(child).find("i").html("&#xe654;");
+					$(child).find(".tip img").attr("src","img/plus.ico");
 					$("tr[parent='"+$(child).attr("name")+"']").hide(100);
 				});
 			}else{
