@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
+import {observer} from 'mobx-react'
 
-class App extends Component {
-  render() {
+import Header from './Header'
+import Table from './Table'
+import Filter from './Filter'
+
+@observer class App extends Component {
+  render () {
+    const {store} = this.props
     return (
       <div>
-        <h1>Test</h1>
+        <Header />
+        <Filter store={store} />
+        <Table store={store} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
