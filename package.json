@@ -40,6 +40,8 @@
     "jest": "18.1.0",
     "json-loader": "0.5.4",
     "lint-staged": "^3.4.1",
+    "mobx-react-devtools": "^4.2.11",
+    "mockjs": "^1.0.1-beta3",
     "object-assign": "4.1.1",
     "postcss-loader": "1.2.2",
     "prettier": "^1.2.2",
@@ -97,6 +99,9 @@
       "react-app"
     ],
     "plugins": ["transform-decorators-legacy"]
+    "plugins": [
+      "transform-decorators-legacy"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

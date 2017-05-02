@@ -1145,6 +1145,10 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
+classnames@^2.2.3:
+  version "2.2.5"
+  resolved "http://registry.npm.taobao.org/classnames/download/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.0.x:
   version "4.0.12"
   resolved "http://registry.npm.taobao.org/clean-css/download/clean-css-4.0.12.tgz#a02e61707f1840bd3338f54dbc9acbda4e772fa3"
@@ -1265,7 +1269,7 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.9.x, commander@^2.9.0:
+commander@*, commander@2.9.x, commander@^2.9.0:
   version "2.9.0"
   resolved "http://registry.npm.taobao.org/commander/download/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
@@ -3764,6 +3768,10 @@ minimist@1.2.0, minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
+mobx-react-devtools@^4.2.11:
+  version "4.2.11"
+  resolved "http://registry.npm.taobao.org/mobx-react-devtools/download/mobx-react-devtools-4.2.11.tgz#18d89a32b7d28b48228d12ccde73cf733aacc395"
+
 mobx-react@^4.1.8:
   version "4.1.8"
   resolved "http://registry.npm.taobao.org/mobx-react/download/mobx-react-4.1.8.tgz#5b636c01c599bbee248c05c5aab6c77a41ab07f9"
@@ -3773,6 +3781,12 @@ mobx-react@^4.1.8:
 mobx@^3.1.9:
   version "3.1.9"
   resolved "http://registry.npm.taobao.org/mobx/download/mobx-3.1.9.tgz#ed4af9d874ff6032c7af91fc1b87d9d33122a557"
+
+mockjs@^1.0.1-beta3:
+  version "1.0.1-beta3"
+  resolved "http://registry.npm.taobao.org/mockjs/download/mockjs-1.0.1-beta3.tgz#d234f3c27256397564f2c955142e891909537209"
+  dependencies:
+    commander "*"
 
 ms@0.7.1:
   version "0.7.1"
@@ -4683,6 +4697,12 @@ react-dom@^15.5.4:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "~15.5.7"
+
+react-dropdown@^1.2.3:
+  version "1.2.3"
+  resolved "http://registry.npm.taobao.org/react-dropdown/download/react-dropdown-1.2.3.tgz#b59c4d9735ee7061ee093dfc174a90c4790868f3"
+  dependencies:
+    classnames "^2.2.3"
 
 react@^15.5.4:
   version "15.5.4"
