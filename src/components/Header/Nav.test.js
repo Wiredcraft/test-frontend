@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import App from './App'
+import Nav from './Nav'
 
 it('renders without crashing', () => {
-  shallow(<App />)
+  shallow(<Nav />)
 })
