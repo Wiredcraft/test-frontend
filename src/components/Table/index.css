@@ -1,0 +1,7 @@
+.table {
+  width: 1024px;
+  margin: 0 auto 50px auto;
+  background: #fff;
+  border-spacing: 0;
+  box-shadow: 0 2px 0 rgba(0,0,0,.1);
+}

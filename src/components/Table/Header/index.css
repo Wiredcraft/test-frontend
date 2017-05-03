@@ -1,0 +1,12 @@
+@value primaryColor from 'styles/color.css';
+
+.headerItem {
+  padding: 15px;
+  height: 50px;
+  font-weight: 400;
+  border-right: 1px solid #D0D6E1;
+  border-bottom: 1px solid primaryColor;
+}
+.headerItem:first-child {
+  text-align: left;
+}

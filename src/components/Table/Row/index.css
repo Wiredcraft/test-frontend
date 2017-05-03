@@ -1,0 +1,64 @@
+.cell {
+  height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #D0D6E1;
+  border-right: 1px solid #D0D6E1;
+}
+
+.region {
+  text-align: left;
+  padding: 15px;
+}
+
+.toggleButton {
+  float: right;
+  width: 120px;
+  height: 30px;
+  color: #81869C;
+  background: #DBDFEB;
+  border: none;
+}
+
+.toggleButtonIcon {
+  margin-left: 8px;
+  color: #575B71;
+}
+
+.regionBanner {
+  display: inline-block;
+  position: relative;
+  margin-right: 12px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  background: #897AD0;
+  text-align: center;
+  border-radius: 50%;
+}
+.cityRegionBanner {
+  margin-left: 40px;
+}
+
+.countyRegionBanner {
+  margin-left: 80px;
+}
+
+.cityRegionBanner::before, .countyRegionBanner::before {
+  position: absolute;
+  content: '└';
+  color: #D0D6E1;
+  left: -35px;
+}
+
+.downloadIconContainer {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  margin-left: 10px;
+  color: #fff;
+  background: #3BBB8D;
+  text-align: center;
+  border-radius: 2px;
+}

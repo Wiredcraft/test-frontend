@@ -1,0 +1,17 @@
+@value headerHeight from './shared.css';
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: headerHeight;
+  background: #fff;
+  box-shadow: 0 2px 0 rgba(0,0,0,.1);
+}
+
+.title {
+  margin-left: 15px;
+  font-size: 1.5em;
+  font-weight: 400;
+}

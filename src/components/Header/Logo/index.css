@@ -1,0 +1,12 @@
+@value headerHeight,borderColor from '../shared.css';
+
+.logoContainer {
+  position: relative;
+  width: headerHeight;
+  height: headerHeight;
+  border-right: 1px solid borderColor;
+}
+
+.logo {
+  composes: center from 'styles/common.css';
+}
