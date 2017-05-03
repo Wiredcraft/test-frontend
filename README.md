@@ -6,7 +6,7 @@
 * Can be filtered by type and according to the keyword query
 
 > Demo address [http://maxxiaobao.github.io/test-frontend/index.html]([http://maxxiaobao.github.io/test-frontend/index.html])
-
+> Demo address by handlebars [http://maxxiaobao.github.io/test-frontend/index1.html]([http://maxxiaobao.github.io/test-frontend/index1.html])
 ## Instructions for use
 
 * Click the arrow sub-element to merge,Click the plus sign sub-element to expand
