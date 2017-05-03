@@ -2,11 +2,12 @@ define(function(){
 	var getData = function(){
 		var dataJson = [
 			{
-				name: "shandong",
+				name: "shandong", 
 				lastInput: "2016-04-21",
 				forms: 324456,
 				voter: 13425,
 				update: "2017-03-22",
+				level: "levelone",
 				city:[
 					{
 						name: "jian",
@@ -14,6 +15,7 @@ define(function(){
 						forms: 324456,
 						voter: 13425,
 						update: "2017-03-22",
+						level: "leveltwo",
 						area:[
 							{
 								name: "lixia",
@@ -21,6 +23,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							},
 							{
 								name: "shizhong",
@@ -28,6 +31,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							},
 							{
 								name: "tianqiao",
@@ -35,6 +39,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							},
 							{
 								name: "huaiyin",
@@ -42,6 +47,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							}
 						]
 					},
@@ -51,6 +57,7 @@ define(function(){
 						forms: 324456,
 						voter: 13425,
 						update: "2017-03-22",
+						level: "leveltwo",
 						area:[
 
 						]
@@ -61,6 +68,7 @@ define(function(){
 						forms: 324456,
 						voter: 13425,
 						update: "2017-03-22",
+						level: "leveltwo",
 						area:[
 
 						]
@@ -71,6 +79,7 @@ define(function(){
 						forms: 324456,
 						voter: 13425,
 						update: "2017-03-22",
+						level: "leveltwo",
 						area:[
 
 						]
@@ -81,6 +90,7 @@ define(function(){
 						forms: 324456,
 						voter: 13425,
 						update: "2017-03-22",
+						level: "leveltwo",
 						area:[
 							{
 								name: "caoxian",
@@ -88,6 +98,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							}
 						]
 					}
@@ -99,6 +110,7 @@ define(function(){
 				forms: 324456,
 				voter: 13425,
 				update: "2017-03-22",
+				level: "levelone",
 				city:[
 					{
 						name: "chengdu",
@@ -106,6 +118,7 @@ define(function(){
 						forms: 324456,
 						voter: 13425,
 						update: "2017-03-22",
+						level: "leveltwo",
 						area:[
 
 						]
@@ -118,6 +131,7 @@ define(function(){
 				forms: 324456,
 				voter: 13425,
 				update: "2017-03-22",
+				level: "levelone",
 				city:[
 					{
 						name: "hangzhou",
@@ -125,6 +139,7 @@ define(function(){
 						forms: 324456,
 						voter: 13425,
 						update: "2017-03-22",
+						level: "leveltwo",
 						area:[
 							{
 								name: "xihu",
@@ -132,6 +147,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							},
 							{
 								name: "shangcheng",
@@ -139,6 +155,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							},
 							{
 								name: "xiacheng",
@@ -146,6 +163,7 @@ define(function(){
 								forms: 324456,
 								voter: 13425,
 								update: "2017-03-22",
+								level: "levelthree"
 							}
 						]
 					}

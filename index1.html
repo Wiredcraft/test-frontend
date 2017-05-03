@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Report</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css?version=1.1">
+</head>
+<body>
+	<!-- 页眉 -->
+    <header>
+    	<span class="title">Report</span>
+    	<ul>
+    		<li class="liClick">Overall</li>
+    		<li>Speccific</li>
+    	</ul>
+    </header>
+    <!-- 主体 -->
+    <div class="main">
+    	<div class="filter">
+    		<select name="" class="filSelect" lay-verify="" >
+    			<option value="">Filter</option>
+    			<option value="Districts">Districts</option>
+    			<option value="Townships">Townships</option>
+    		</select>
+    		<input type="text" class="filInput" placeholder="Search">
+    		<img src="img/search.ico" class="searchIcon" alt="">
+    	</div>
+    	<div class="tableDiv">
+    		<table class="table">
+    			<tr class="trFir">
+    			 	<th>Region</th>
+    			 	<th>Last input</th>
+    			 	<th>Number of forms</th>
+    			 	<th>Number of voters</th>
+    			 	<th>Updates</th>
+    			 </tr>
+    			<tbody class="tbody"></tbody>
+    		</table>
+    	</div>
+    </div>
+    <script data-main="js/main1" src="common/require/require.js"></script>
+</body>
+</html>
