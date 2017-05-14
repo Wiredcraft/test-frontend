@@ -1,71 +1,50 @@
-# Wiredcraft Front-end Developer Coding Test
+# test-frontend
 
-Make sure you read **all** of this document carefully, and follow the guidelines in it.
+This project shows how to filter data from a table, you can use input to type specific term to filter 
+the city, or you can use checkbox to filter specific city type, narrow down the cities first, then
+use input to search the right cities. You can also toggle the different type of cities.
 
-## Background
 
-Use HTML, CSS and JavaScript to implement the following mockup.
+## Build Setup
 
-![wiredcraft-front-end-test-mock](https://cldup.com/JM3lLBAS5V.jpg)
+``` bash
+# install dependencies
+npm install
 
-[Mockup source Sketch file](https://cldup.com/2wo0ktkbxJ.sketch)
+# serve with hot reload at localhost:8080
+npm run dev
 
-### Page Structure
+# build for production with minification
+npm run build
 
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run e2e tests
+npm run e2e
+
+# run all tests
+npm test
 ```
-Header(Navigation)
+## FQA
 
-Main
-  - Table Filter
-    - Search Filter(dropdown component)
-    - Search Keywords(input field)
-  - Table
-    - Table Header
-    - Table Body
-      - Table Row
-        - Collapsable Row(State -> Distract -> Township)
-          - State Level(Show by default)
-            - District Level(Hide by default, show by clicking the button in state level)
-              - Township Level(Hide by default, show by clicking the button in district level)
-```
+if you want to run the e2e test, make sure you have installed **Java enviroment** in your computer, otherwise,
+the test won't work
 
-### Functionality
+## Structure
 
-* Static page header(navigation bar), no extra features needed.
-* The table filter needs to be able to filter the result in the table by the type and keywords.
-* The table is nested, and grouped by state, district, township.
+> components
+- Filter.vue
+- SearchBar.vue
+- State.vue
+- States.vue
 
-## Getting Started
-
-There's nothing here, we leave it to you to choose the build tool, code structure, framework, testing approach...
-
-## Requirements
-
-- Clear documentation, including but not limited to how to test your code.
-
-- Proper unit tests.
+This project is mainly made up of four small components, they are:
+- Filter.vue: where you can filter the cities by state, district and county 
+- SearchBar.vue: where you can filter the cities by the term you type
+- State.vue: represent each city, and in the html table, it is a single tr
+- States.vue: all the cities
 
 
-## What We Care About
-
-Feel free to use any libraries you would use if this were a real production app, but remember we're interested in your code & the way you solve the problem, not how well you can use a particular library.
-
-We're interested in your method and how you approach the problem just as much as we're interested in the end result.
-
-Here's what you should aim for:
-
-- Good use of current HTML, CSS and JavaScript & performance best practices.
-
-- Solid testing approach.
-
-- Extensible code.
-
-## Q&A
-
-* Where should I send back the result when I'm done?
-
-Fork this repo and send us a pull request when you think you are done. We don't have deadline for the task.
-
-* What if I have question?
-
-Create a new issue in the repo and we will get back to you very quickly.
+## Online Demo
+[demo](https://codepen.io/wxiaojie45/full/KmRZLK/)
