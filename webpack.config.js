@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const CompressionPlugin = require('compression-webpack-plugin')
 const isProd = (process.env.ENV_MODE === 'production')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
     devtool: 'eval',
@@ -25,10 +25,21 @@ module.exports = {
     plugins: getPlugins(),
     module: {
         loaders: [{
-            test: /\.(js|jsx)$/,
-            exclude: /(node_modules|bower_components)/,
-            loaders: ['react-hot-loader', 'babel-loader?presets[]=env,plugins[]=transform-runtime'],
-        }],
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                loaders: ['react-hot-loader', 'babel-loader?presets[]=env,plugins[]=transform-runtime'],
+            },
+            {
+                test: /\.(css|scss|sass)$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
+            }
+        ]
     }
 }
 
