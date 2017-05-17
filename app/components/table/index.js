@@ -7,7 +7,7 @@ export default class _table extends Component {
     render() {
         return (
             <div>
-                123
+                table
                 <_tableFilter></_tableFilter>
                 <_tableHeader></_tableHeader>
             </div>
