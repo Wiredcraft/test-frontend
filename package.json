@@ -2,8 +2,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "env ENV_MODE=dev webpack-dev-server --hot --inline --progress --colors --port 8000",
-    "deploy": "rm -rf dist && ENV_MODE=production webpack --progress --colors --bail --profile && cp dist/bundle.js docs"
+    "start": "npm run build && env ENV_MODE=dev webpack-dev-server --progress --colors",
+    "build": "webpack --progress --colors --bail --profile && cp dist/bundle.js docs && rm -rf dist",
+    "deploy": "env ENV_MODE=production webpack --progress --colors --bail --profile && cp dist/bundle.js docs && rm -rf dist"
   },
   "name": "test",
   "author": "Hongzhao Gan",
