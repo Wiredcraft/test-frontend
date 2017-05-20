@@ -14,6 +14,6 @@ export default class header extends Component {
                     <h2 className={'header-tab-title'}>Overall</h2>
                 </div>
             </div>
-        );
+        )
     }
 }

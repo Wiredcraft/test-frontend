@@ -1,7 +1,7 @@
-import example from './example'
+import tableState from './tableState'
 
 const reducers = {
-    example,
+    tableState
 }
 
 export default reducers

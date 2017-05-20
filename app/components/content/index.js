@@ -6,8 +6,8 @@ export default class content extends Component {
     render() {
         return (
             <div className={'ContentArea'}>
-                <_table></_table>
+                <_table tableData = {this.props.tableData} _expand = {this.props._expand}></_table>
             </div>
-        );
+        )
     }
 }

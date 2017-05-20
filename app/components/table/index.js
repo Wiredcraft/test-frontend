@@ -5,12 +5,20 @@ import _tableRow from '../tableRow'
 
 export default class _table extends Component {
     render() {
+        const tableContent = this.props.tableData.map((item, index) => {
+            return (item.display === false
+                ? ''
+                : <_tableRow {...item} key={index}
+                    _expand={this.props._expand}
+                    expandable={item.subItemLength === 0 ? false : true}/>);
+        });
+
         return (
             <div>
-                table
                 <_tableFilter></_tableFilter>
-                <_tableRow></_tableRow>
+                <_tableRow isTitle={true}></_tableRow>
+                {tableContent}
             </div>
-        );
+        )
     }
 }
