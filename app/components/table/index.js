@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './table.scss'
 import _tableFilter from '../tableFilter'
-import _tableHeader from '../tableHeader'
+import _tableRow from '../tableRow'
 
 export default class _table extends Component {
     render() {
@@ -9,7 +9,7 @@ export default class _table extends Component {
             <div>
                 table
                 <_tableFilter></_tableFilter>
-                <_tableHeader></_tableHeader>
+                <_tableRow></_tableRow>
             </div>
         );
     }
