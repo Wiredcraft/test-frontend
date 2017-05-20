@@ -1,101 +1,51 @@
-$backgrondColor: #575b71 !default;
-$iconColor: #fff !default;
-$filter-attrColor: #bac0cc !default;
-$borderColor: #abadb8 !default;
-
-$ContentAreaWidth: 1020px;
-
-.VerticalAlign{
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
-  -ms-transform: translate(0%, -50%);
-  -webkit-transform: translate(0%, -50%);
-}
-
-.VerHorAlign{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-}
-
-$barHeight: 50px;
-$ButtonHoverColor: #3bbb8d;
-$table-filterColor: #fff;
-
-.table-filter{
-  height: $barHeight;
-  position: relative;
-  width: 100%;
-  font-size: 1.1em;
-
-  .drop-down-menu{
-    height: 100%;
-    float: left;
-    width: 140px;
-    border-right: 1px solid $borderColor;
-
-    .filter-attr{
-      display: inline-block;
-      color: $filter-attrColor;
-      left: 17px;
-      cursor: default;
-      @extend .VerticalAlign;
-    }
-
-    .drop-down-menu-icon{
-      background-color: $table-filterColor;
-      left: 112px;
-      @extend .VerticalAlign;
-      cursor: pointer;
-    }
-
-    .drop-down-menu{
-      position: absolute;
-      width: 139px;
-
-      top: $barHeight;
-      z-index: 1;
-      border: 1px solid $borderColor;
-
-      .drop-down-menu-content{
-        height: 40px;
-        position: relative;
-        background-color: #fff;
-
-        .drop-down-menu-item{
-          font-size: 0.8em;
-          @extend .VerHorAlign;
-        }
-
-        &:hover{
-          background-color: $ButtonHoverColor;
-        }
-      }
-    }
-  }
-
-  .search-keywords{
-    margin-left: 5px;
-    padding-left: 13px;
-    float: left;
-    border: 0;
-    width: 80%;
-    height: 50px;
-  }
-
-  .search-button{
-    background-color: $table-filterColor;
-    position: absolute;
-    right: 13px;
-    top: 13.5px;
-    cursor: pointer;
-
-    &:hover{
-      color: $ButtonHoverColor;
-    }
-  }
+.table-filter {
+	.drop-down-menu {
+		.filter-attr {
+			position: absolute;
+			top: 50%;
+			transform: translate(0%, -50%);
+			-ms-transform: translate(0%, -50%);
+			-webkit-transform: translate(0%, -50%);
+			display: inline-block;
+			color: #bac0cc;
+			left: 17px;
+			cursor: default;
+		}
+		.drop-down-menu-icon {
+			position: absolute;
+			top: 50%;
+			transform: translate(0%, -50%);
+			-ms-transform: translate(0%, -50%);
+			-webkit-transform: translate(0%, -50%);
+			background-color: white;
+			left: 112px;
+			cursor: pointer;
+		}
+		height: 100%;
+		float: left;
+		width: 140px;
+		border-right: 1px solid #abadb8;
+	}
+	height: 50px;
+	position: relative;
+	width: 100%;
+	font-size: 1.1em;
+	.search-keywords {
+		margin-left: 5px;
+		padding-left: 13px;
+		float: left;
+		border: 0;
+		width: 80%;
+		height: 50px;
+	}
+	.search-button {
+		background-color: $background_color_1;
+		position: absolute;
+		right: 13px;
+		top: 13.5px;
+		cursor: pointer;
+		&:hover {
+			color: #3bbb8d;
+		}
+	}
 }
