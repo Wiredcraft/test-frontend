@@ -32,7 +32,7 @@ export default class tableRow extends Component {
 
         if (isTitle === true) {
             return (
-                <div className='table-row'>
+                <div className='table-row table-row-header'>
                     <div className='table-row-update'>
                         <p>{'Update'}</p>
                     </div>

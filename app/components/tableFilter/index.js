@@ -13,6 +13,7 @@ export default class tableFilter extends Component {
 
     filterBy(index) {
         this.setState({showFilters: false, filterRow: this.props.filters[index]})
+        this.setState({filterValue: ''})
     }
 
     showDropDownMenu() {
@@ -29,9 +30,9 @@ export default class tableFilter extends Component {
         const { filterRow, showFilters, filterValue } = this.state
         return (
             <div className='table-filter'>
-                <div className='drop-down-menu'>
+                <div className='drop-down-menu-container'>
                     <span className='filter-attr'>{filterRow}</span>
-                    <div className='fa fa-sort-desc drop-down-menu-icon' onClick={this.showDropDownMenu.bind(this)}>
+                    <div className='fa fa-sort-desc drop-down-menu-icon' onClick={this.showDropDownMenu.bind(this)}></div>
                     {showFilters === false
                     ? null
                     : <div className='drop-down-menu'>
@@ -44,10 +45,15 @@ export default class tableFilter extends Component {
                         })}
                     </div>
                     }
-                    </div>
                 </div>
                 <input className='search-keywords' type='text' placeholder='Search'
-                    onChange={this.setFilterValue.bind(this)} value={filterValue}/>
+                    onChange={this.setFilterValue.bind(this)}
+                    onKeyUp={(e)=>{
+                        if (e.key === 'Enter') {
+                            this.props._search(filterRow, filterValue)
+                        }
+                    }}
+                    value={filterValue}/>
                 <button className='fa fa-search fa-lg search-button' onClick={(e)=>{
                         this.props._search(filterRow, filterValue)
                     }}/>

@@ -5,7 +5,7 @@ import _table from '../table'
 export default class content extends Component {
     render() {
         return (
-            <div className={'ContentArea'}>
+            <div className={'content'}>
                 <_table
                     tableData={this.props.tableData}
                     _expand={this.props._expand}
