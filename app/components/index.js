@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import * as tableActions from '../actions/index'
 
 import './reset.css'
+
 import _header from './header'
 import _content from './content'
 

@@ -13,6 +13,9 @@
 	vertical-align: baseline;
 }*/
 
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
 html, body, div, span, applet, object, iframe,
 dl, dt, dd, ol, ul, li, div,
 h1, h2, h3, h4, h5, h6, input, blockquote, pre,
