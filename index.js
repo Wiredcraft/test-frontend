@@ -7,6 +7,8 @@ import {Provider} from 'react-redux'
 import reducers from './app/reducers'
 import App from './app/containers/app.jsx'
 
+require('font-awesome/css/font-awesome.min.css');
+
 const reducer = combineReducers(reducers)
 const middleware = applyMiddleware(thunkMiddleware, loggerMiddleware)
 let store = ''
