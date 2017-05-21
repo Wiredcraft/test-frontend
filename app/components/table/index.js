@@ -15,7 +15,7 @@ export default class _table extends Component {
 
         return (
             <div>
-                <_tableFilter></_tableFilter>
+                <_tableFilter _search={this.props._search}></_tableFilter>
                 <_tableRow isTitle={true}></_tableRow>
                 {tableContent}
             </div>

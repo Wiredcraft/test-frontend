@@ -6,7 +6,8 @@ export default class tableFilter extends Component {
         super()
         this.state = {
             showFilters: false,
-            filterRow: 'Filter'
+            filterRow: 'Filter',
+            filterValue: ''
         }
     }
 
@@ -18,33 +19,49 @@ export default class tableFilter extends Component {
         this.setState({showFilters: true})
     }
 
+    setFilterValue(e){
+        this.setState({
+            filterValue: e.target.value
+        })
+    }
+
     render() {
+        const { filterRow, showFilters, filterValue } = this.state
         return (
             <div className='table-filter'>
                 <div className='drop-down-menu'>
-                    <span className='filter-attr'>{this.state.filterRow}</span>
+                    <span className='filter-attr'>{filterRow}</span>
                     <div className='fa fa-sort-desc drop-down-menu-icon' onClick={this.showDropDownMenu.bind(this)}>
-                        {this.state.showFilters === false
-                            ? null
-                            : <div className='drop-down-menu'>
-                                {this.props.filters.map((item, index) => {
-                                    return (
-                                        <div key={index} className='drop-down-menu-content' onClick={this.filterBy.bind(this, index)}>
-                                            <div className='drop-down-menu-item'>{item}</div>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        }
+                    {showFilters === false
+                    ? null
+                    : <div className='drop-down-menu'>
+                        {this.props.filters.map((item, index) => {
+                            return (
+                                <div key={index} className='drop-down-menu-content' onClick={this.filterBy.bind(this, index)}>
+                                    <div className='drop-down-menu-item'>{item}</div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    }
                     </div>
                 </div>
-                <input className='search-keywords' type='text' placeholder='Search'/>
-                <button className='fa fa-search fa-lg search-button'/>
+                <input className='search-keywords' type='text' placeholder='Search'
+                    onChange={this.setFilterValue.bind(this)} value={filterValue}/>
+                <button className='fa fa-search fa-lg search-button' onClick={(e)=>{
+                        this.props._search(filterRow, filterValue)
+                    }}/>
             </div>
         )
     }
 }
 
 tableFilter.defaultProps = {
-    filters: ['Region', 'Last Input']
+    filters: [
+        'Region',
+        'Last Input',
+        'Number of forms',
+        'Number of Voters',
+        'Update'
+    ]
 }

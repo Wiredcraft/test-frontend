@@ -14,7 +14,10 @@ class AppComponent extends Component {
         return (
             <div>
                 <_header></_header>
-                <_content tableData = {tableData} _expand = {this.props.tableActions._expand}></_content>
+                <_content tableData = {tableData}
+                    _expand = {this.props.tableActions._expand}
+                    _search = {this.props.tableActions._search}>
+                </_content>
             </div>
         )
     }
