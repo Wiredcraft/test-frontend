@@ -17,34 +17,20 @@ npm run dev
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-## FQA
-
-if you want to run the e2e test, make sure you have installed **Java enviroment** in your computer, otherwise,
-the test won't work
-
 ## Structure
 
 > components
-- Filter.vue
-- SearchBar.vue
-- State.vue
-- States.vue
+- Filter.js
+- SearchBar.js
+- State.js
+- States.js
 
 This project is mainly made up of four small components, they are:
-- Filter.vue: where you can filter the cities by state, district and county 
-- SearchBar.vue: where you can filter the cities by the term you type
-- State.vue: represent each city, and in the html table, it is a single tr
-- States.vue: all the cities
+- Filter.js: where you can filter the cities by state, district and county 
+- SearchBar.js: where you can filter the cities by the term you type
+- State.js: represent each city, and in the html table, it is a single tr
+- States.js: all the cities
 
 
 ## Online Demo
-[demo](https://codepen.io/wxiaojie45/full/KmRZLK/)
+[demo](http://s.codepen.io/wxiaojie45/debug/zwMjxE/xJMjOWqodVQr)
