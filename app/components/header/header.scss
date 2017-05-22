@@ -1,0 +1,48 @@
+.header-container {
+	position: relative;
+	box-shadow: 0 1px 1px #555;
+	height: 56px;
+	background-color: white;
+	text-align: left;
+
+	.header-icon {
+		padding: 12px;
+		color: grey;
+		border-right: 1px solid #abadb8;
+	}
+
+	.header-title {
+		position: absolute;
+		top: 50%;
+		transform: translate(0%, -50%);
+		left: 73px;
+		font-size: 1.3em;
+		display: inline-block;
+		color: #575b71;
+		cursor: default;
+	}
+
+	.header-tab {
+		border-left: 1px solid #abadb8;
+		width: 200px;
+		height: 100%;
+		position: relative;
+		float: right;
+		cursor: pointer;
+
+		&:hover {
+			background-color: grey;
+		}
+
+		&.selected {
+			background-color: #f0f2f8;
+		}
+
+		.header-tab-title {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}

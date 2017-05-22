@@ -1,0 +1,83 @@
+.table-filter {
+	height: 50px;
+	position: relative;
+	width: 100%;
+	font-size: 1.1em;
+
+	.drop-down-menu-container {
+		height: 100%;
+		float: left;
+		width: 140px;
+		border-right: 1px solid #abadb8;
+
+		.filter-attr {
+			position: absolute;
+			top: 50%;
+			transform: translate(0%, -50%);
+			display: inline-block;
+			color: #bac0cc;
+			left: 17px;
+			cursor: default;
+			width: 139px;
+		}
+
+		.drop-down-menu-icon {
+			position: absolute;
+			top: 50%;
+			transform: translate(0%, -50%);
+			background-color: white;
+			left: 112px;
+			cursor: pointer;
+		}
+
+		.drop-down-menu {
+			position: absolute;
+			width: 139px;
+			top: 100%;
+			z-index: 1;
+			border: 1px solid #abadb8;
+
+			.drop-down-menu-content {
+				height: 40px;
+				position: relative;
+				background-color: #fff;
+
+				.drop-down-menu-item {
+					font-size: 0.8em;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				&:hover {
+					background-color: #3bbb8d;
+				}
+			}
+		}
+	}
+
+	.search-keywords {
+		margin-left: 5px;
+		padding-left: 13px;
+		float: left;
+		border: 0;
+		width: 80%;
+		height: 50px;
+	}
+
+	.search-button {
+		background-color: white;
+		position: absolute;
+		right: 13px;
+		top: 13.5px;
+		cursor: pointer;
+		border: 0;
+		font-size: 1.1em;
+		font-weight: normal;
+
+		&:hover {
+			color: #3bbb8d;
+		}
+	}
+}
