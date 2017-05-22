@@ -26,7 +26,7 @@ export default class tableRow extends Component {
             ? administrations[1]
             : administrations[2]
 
-        const getFirstChar = administrations.filter((item) => {
+        const getFirstChar = administrations.map((item) => {
             return item.substr(0, 1)
         })
 
