@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import Panel from './panel';
-
-
-import avatar from './image/avatar.png';
-import search from './image/search.png';
-
+import avatarPic from './image/avatar.png';
+import searchPic from './image/search.png';
 import './style/normalize.css';
 import './style/App.css';
-
 
 class App extends Component { 
 
@@ -36,7 +32,7 @@ class App extends Component {
 
         <header className="clearfix">
           <span className="avatar">
-            <img src={avatar} alt="avatar" />
+            <img src={avatarPic} alt="avatar" />
           </span>
           Reports
           <a>Specific</a>
@@ -54,7 +50,7 @@ class App extends Component {
             </div>
             <input type="text" ref={(input) => this.input = input}/>
             <button>
-              <img src={search} alt="search-icon" />
+              <img src={searchPic} alt="search-icon" />
             </button>
           </form>
 
@@ -67,9 +63,7 @@ class App extends Component {
               <div>Update</div>
             </div>
             <div>
-
               <Panel keyWord={this.state.keyWrod} startLevel={this.state.startLevel}/>
-
             </div>
           </div>
 

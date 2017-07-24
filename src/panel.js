@@ -1,9 +1,6 @@
-import React, {
-  Component
-} from 'react';
+import React, { Component } from 'react';
 import Item from './Item'
 import rawData from './data'
-
 
 let arr = [];
 function getData(data, level, keyWord) {
@@ -18,7 +15,6 @@ function getData(data, level, keyWord) {
   })
   return arr;
 }
-
 
 class panel extends Component {
 
@@ -36,10 +32,6 @@ class panel extends Component {
       return (
         <Item
           name={item.name}
-          startLevel={this.props.startLevel}
-          level={item.level}
-          filter={this.props.filter}
-          keyWord={this.keyWord}
           sub={item.sub ? item.sub : []}
           key={i + item.name}
         />
@@ -53,6 +45,5 @@ class panel extends Component {
     )
   }
 }
-
 
 export default panel

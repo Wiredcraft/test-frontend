@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import download from './image/download.png';
-
+import downloadPic from './image/download.png';
 
 class Item extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -28,18 +26,20 @@ class Item extends Component {
 
     if (childLength && visible) {
       childNodes = this.props.sub.map(function (item, index) {
-        return <Item name={item.name} visible={subVisible} key={index} sub={item.sub ? item.sub : []} />
+        return <Item 
+                name={item.name} 
+                visible={subVisible} 
+                key={index + item.name} 
+                sub={item.sub ? item.sub : []} />
       })
     }
-
-    //if (keyWord !== '' && keyWord.indexOf)
 
     return (
       <div className="table-item clearfix">
         <div>
           <span className="table-itemClass">{this.props.name.slice(0,1)}</span>
           <span className="table-itemName">{this.props.name}</span>
-          <img className="download-icon" src={download} alt="download-icon" />
+          <img className="download-icon" src={downloadPic} alt="download-icon" />
 
           {
             childLength > 0 ?
