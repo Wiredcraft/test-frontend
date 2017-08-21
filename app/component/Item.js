@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import downloadPic from './image/download.png';
+import downloadPic from '../image/download.png';
 
 class Item extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Item extends Component {
       visible: this.props.visible !== null ? this.props.visible : 'false',
       subVisible: this.props.visible !== null ? this.props.visible : 'false',
     }
-  }
+  } 
 
   toggle() {
     let visible = !this.state.visible;

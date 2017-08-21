@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Panel from './panel';
+import Panel from './component/panel';
 import avatarPic from './image/avatar.png';
 import searchPic from './image/search.png';
 import './style/normalize.css';
-import './style/App.css';
+import './style/App.scss';
 
 class App extends Component { 
 

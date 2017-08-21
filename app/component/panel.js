@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item'
-import rawData from './data'
+import rawData from '../data'
 
 let arr = [];
 function getData(data, level, keyWord) {
@@ -20,9 +20,6 @@ class panel extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      data: []
-    }
   }
 
   renderLocation() {
