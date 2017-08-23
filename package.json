@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-dropdown": "^1.3.0",
     "react-scripts": "1.0.11"
   },
   "scripts": {
