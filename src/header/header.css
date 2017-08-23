@@ -20,7 +20,7 @@
   right: 0;
 }
 .button {
-  padding: 10px 25px;
+  padding: 10px 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,8 +38,11 @@
 .logo {
   border-right: 1px solid #ddd;
   width: auto;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
+  -ms-flex-pack: start;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
 }
 .logo-img {
   animation: App-logo-spin infinite 20s linear;
@@ -49,6 +52,9 @@
 }
 .title {
   width: 80%;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
 }
 .title > p {
   margin-left: 10px;
