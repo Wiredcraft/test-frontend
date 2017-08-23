@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import './main.css'
+import SearchBar from './searchBar/searchBar'
+import Table from './table/table'
 
 class Main extends Component {
   render () {
     return (
-      <div>
-        <h1>Hello world</h1>
+      <div className='componentBody'>
+        <SearchBar />
+        <Table />
       </div>
     )
   }

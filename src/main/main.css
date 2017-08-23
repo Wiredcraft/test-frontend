@@ -1,0 +1,11 @@
+.componentBody {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0 0;
+    width: 70%;
+    border-radius: 3px 3px;
+    box-shadow: 2px 2px 2px #555;
+}
+.componentBody > div {
+    width: 100%;
+}
