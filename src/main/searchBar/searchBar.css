@@ -1,6 +1,26 @@
+.container{
+    display: flex;
+}
+.filter {
+    width: 15%;
+}
+.inputSearch {
+    width: 85%;
+    position: relative;
+    padding: 10px 20px;
+    color: #575757;
+    font-weight: lighter;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+.inputSearch::placeholder{
+    color: #ccc;
+    font-weight: lighter;
+}
 /*
  CSS :  Dropdown imported from live demo
  edit cursor:  pointer
+      arrow top 50%
 */
 .Dropdown-root{
     position: relative;
@@ -12,13 +32,14 @@
     border: 1px solid #ccc;
     border-radius: 2px;
     box-sizing: border-box;
-    color: #333;
+    color: #ccc;
+    font-weight: lighter;
     cursor: pointer;
     outline: none;
-    padding: 8px 52px 8px 10px;
+    padding: 16px 52px 16px 10px;
     transition: all 200ms ease;
 }
-.Dropdown-control: hover{
+.Dropdown-control:hover{
     box-shadow: 0 1px 0 rgba(0,0,0,0.06);
 }
 .Dropdown-arrow{
@@ -31,7 +52,7 @@
     margin-top: -ceil(2.5);
     position: absolute;
     right: 10px;
-    top: 14px;
+    top: 50%;
     width: 0;
 }
 .is-open .Dropdown-arrow{
@@ -65,11 +86,11 @@
     display: block;
     padding: 8px 10px;
 }
-.Dropdown-option: last-child{
+.Dropdown-option:last-child{
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
 }
-.Dropdown-option: hover{
+.Dropdown-option:hover{
     background-color: #f2f9fc;
     color: #333;
 }
