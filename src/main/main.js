@@ -6,23 +6,23 @@ import Table from './table/table'
 const tableInterface = [
   {
     'name': 'Region',
-    'class': 'name'
+    'class': 'item big'
   },
   {
     'name': 'Last Input',
-    'class': 'cell'
+    'class': 'item small'
   },
   {
     'name': 'Number of forms',
-    'class': 'cell'
+    'class': 'item small'
   },
   {
     'name': 'Number of Voters',
-    'class': 'cell'
+    'class': 'item small'
   },
   {
     'name': 'Update',
-    'class': 'cell'
+    'class': 'item small'
   }
 
 ]
@@ -32,9 +32,9 @@ class Main extends Component {
     return (
       <div className='componentBody'>
         <SearchBar />
-        <div className='table'>
-          {tableInterface.map(e => {
-            return <a href='#' className={e.class}><div>{e.name}</div></a>
+        <div className='row head'>
+          {tableInterface.map((e, i) => {
+            return <a href='#' key={i} className={e.class}><div>{e.name}</div></a>
           })}
         </div>
         <Table />
