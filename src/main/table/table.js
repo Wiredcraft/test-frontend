@@ -1,22 +1,59 @@
 import React, { Component } from 'react'
 import './table.css'
 
-const data = [
+let data = [
   {
-    name: 'Tanner Linsley',
-    age: 26,
-    friend: {
-      name: 'Jason Maurer',
-      age: 23
-    }
+    name: 'Shan state',
+    district: [
+      {
+        name: 'Aunglan',
+        township: [
+          {
+            name: 'Loilen'
+          }
+        ]
+      }
+    ],
+    last: 123456,
+    forms: 342456,
+    voters: 123456,
+    update: 342456
   },
   {
-    name: 'Francisco Briceno',
-    age: 21,
-    friend: {
-      name: 'Jason Maurer',
-      age: 23
-    }
+    name: 'Shan state',
+    district: [
+      {
+        name: 'Aunglan',
+        township: [
+          {
+            name: 'Loilen'
+          }
+        ]
+      }
+    ],
+    last: 123456,
+    forms: 342456,
+    voters: 123456,
+    update: 342456
+  },
+  {
+    name: 'Shan state',
+    last: 123456,
+    forms: 342456,
+    voters: 123456,
+    update: 342456
+  },
+  {
+    name: 'Shan state',
+    district: [
+      {
+        name: 'Aunglan'
+      }
+    ],
+    last: 123456,
+    forms: 342456,
+    voters: 123456,
+    update: 342456
   }
 ]
 
@@ -32,12 +69,12 @@ class Table extends Component {
     return (
       <div>
         {data.map((e, i) => {
-          return <a className='row' key={i} onClick={() => this.handleClick(i)}>
+          return <a className='row' id={'id:' + i}key={i} onClick={() => this.handleClick(i)}>
             <div className='item big'>{e.name}</div>
-            <div className='item small'>{e.age}</div>
-            <div className='item small'>{e.friend.name}</div>
-            <div className='item small'>{e.friend.age}</div>
-            <div className='item small'>{e.age}</div>
+            <div className='item small'>{e.last.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
+            <div className='item small'>{e.forms.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
+            <div className='item small'>{e.voters.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
+            <div className='item small'>{e.update.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
           </a>
         }) }
       </div>
