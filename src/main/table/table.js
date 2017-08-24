@@ -1,13 +1,29 @@
 import React, { Component } from 'react'
 import './table.css'
 
+const data = [{
+  name: 'Tanner Linsley',
+  age: 26,
+  friend: {
+    name: 'Jason Maurer',
+    age: 23
+  }
+},
+{
+  name: 'Francisco Briceno',
+  age: 21,
+  friend: {
+    name: 'Jason Maurer',
+    age: 23
+  }
+}]
+
 class Table extends Component {
   render () {
-    return (
-      <div>
-        <h3>table</h3>
-      </div>
-    )
+    data.map((e) => {
+      console.log(e)
+    })
+    return (<p>Hello world</p>)
   }
 }
 
