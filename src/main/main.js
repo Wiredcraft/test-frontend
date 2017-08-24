@@ -33,14 +33,9 @@ class Main extends Component {
       <div className='componentBody'>
         <SearchBar />
         <div className='table'>
-          {tableInterface.map((e) => {
-            console.log(e)
+          {tableInterface.map(e => {
+            return <a href='#' className={e.class}><div>{e.name}</div></a>
           })}
-          <a href='#' className='name' ><div>Region</div></a>
-          <a href='#' className='cell' ><div>Last input</div></a>
-          <a href='#' className='cell' ><div>Number of forms</div></a>
-          <a href='#' className='cell' ><div>Number of Voters</div></a>
-          <a href='#' className='cell' ><div>Update</div></a>
         </div>
         <Table />
       </div>
