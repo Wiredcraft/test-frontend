@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import Avatar from 'react-avatar'
 import './table.css'
+import download from '../../assets/download.png'
 
 let data = [
   {
@@ -69,8 +71,12 @@ class Table extends Component {
     return (
       <div>
         {data.map((e, i) => {
-          return <a className='row' id={'id:' + i}key={i} onClick={() => this.handleClick(i)}>
-            <div className='item big'>{e.name}</div>
+          return <a href='' className='row' id={'id:' + i}key={i} onClick={() => this.handleClick(i)}>
+            <div className='item big'>
+              <Avatar name={e.name} size={20} round />
+              {e.name}
+              <img className='download' src={download} />
+            </div>
             <div className='item small'>{e.last.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
             <div className='item small'>{e.forms.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>
             <div className='item small'>{e.voters.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</div>

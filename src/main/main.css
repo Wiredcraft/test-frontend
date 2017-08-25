@@ -16,18 +16,18 @@
     align-items: flex-start;
     border-bottom: 2px solid #ccc;
 }
-.item {
+.row.head > .item {
     text-decoration: none;
     color: #555;
     font-weight: 600;
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 0.8em;
-    text-align: center;
 }
 .small {
     width: 15%;
     border-left: 1px solid #ccc;
+    text-align: center;
 }
 .big {
     border-left: 0px;
