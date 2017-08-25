@@ -1,0 +1,151 @@
+
+* {
+    margin : 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+body{
+
+    background-color: #565b71;
+}
+/*-- nav bar --*/
+nav {
+    background-color: #ffffff;
+    height: 56px;
+    font-size: 16px;
+    color: #575B70;
+}
+nav img {
+    float: left;
+    height: 56px;
+    width: 55.5px;
+    border-right: 1px solid #D0D6E1;
+}
+nav .banner {
+    float: left;
+    padding: 0 30px;
+    height: 56px;
+    line-height: 56px;
+}
+nav .section{
+    display: inline-block;
+    float: right;
+    width: 10%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+}
+nav .selected {
+    background-color: #F0F2F8;
+}
+
+/*-- main table --*/
+.mainBody{
+    position: absolute;
+    width: 80%;
+    top: 97px;
+    left: 50%;
+    transform: translate( -50% , 0%);
+    background-color: #ffffff;
+}
+.table .hidden {
+  display: none;
+}
+
+.tableFilter{
+    height: 50px;
+}
+.tableFilter #filter {
+    display: inline-block;
+    width: 20%;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px solid #D0D6E1;
+    padding: 0 20px;
+    background : url("../img/filterButton.png") center right no-repeat;
+}
+.tableFilter #search {
+    display: inline-block;
+    float: right;
+    width: 80%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    background : url("../img/search.png") center right no-repeat;
+}
+.tableFilter #search .searchInput {
+  width: 100%;
+  height: 100%;
+  margin-left: -20px;
+  padding-left: 10px;
+  border:none;
+  outline:none;
+  font-size: 14px;
+}
+.table ul {
+  width: 100%;
+  height: 56px;
+}
+
+.table li {
+  display: inline-block;
+  width: 15%;
+  line-height: 56px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table .tableFirst {
+  width : 40%;
+  text-align: left;
+  padding: 0 20px;
+}
+.regionHeader::before{
+    display: inline-block;
+    position: absolute;
+    content: 'S';
+    width: 20px;
+    height: 20px;
+    margin-top: 17px;
+    margin-left: -40px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #8979D0;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.regionHeader{
+  margin-left: 40px;
+}
+.regionHeader .regionHeader {
+    margin-left: 70px;
+}
+.dropDown {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    background: url("../img/downloadButton.png") center right no-repeat;
+}
+.regionButton {
+    display: inline-block;
+    float: right;
+    margin-top: 13px;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-family: OpenSans-Bold sans-serif;
+    color :#80869C ;
+    background-color: #DADEEA;
+}
+.buttonContent{
+  margin: 0 10px;
+}
+.show {
+  display: flex !important;
+}
