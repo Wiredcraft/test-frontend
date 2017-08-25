@@ -10,7 +10,7 @@
 }
 .item {
     color: #555;
-    font-weight: 600;
+    font-weight: 500;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 0.8em;
@@ -33,6 +33,9 @@
 .sb-avatar{
     margin-right: 10px;
 }
+.sb-avatar > div{
+    font-size: 9px;
+}
 .download{
     margin-left: 10px;
     width: 20px;
@@ -40,4 +43,27 @@
     -ms-transform: rotate(-90deg); /* IE 9 */
     -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
     transform: rotate(-90deg);
+}
+.nameLabel{
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 2px 2px;
+    border-radius: 3px;
+    background-color: #ddd;
+}
+.nameLabel > bold, .more, .less {
+    font-weight: 600;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.more {
+    display: inline-block;
+    visibility: visible;
+}
+.less {
+    display: none;
+    visibility: hidden;
+}
+.state {
+    margin: 0 0;
 }
