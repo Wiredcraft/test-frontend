@@ -1,67 +1,323 @@
+let randomNumber = () => {
+    return Math.floor(Math.random() * (999999 - 99999) + 99999);
+};
+
+let randomCharacter = () =>{
+    return String.fromCharCode(Math.floor(Math.random()*26)+"A".charCodeAt(0))
+}
+
 export  var RegionStates =
   [
       {
-          regionClass : "S",
-          name : "lhan state",
-          districts : [
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "lhan state",
+          childRegions : [
                   {
-                      regionClass : "D",
-                      name : "Aunglan",
-                      lastInput : 123456 ,
-                      numberOfForms : 342456 ,
-                      numberOfVotes : 123456 ,
-                      update : 342456 ,
-                      townships : [
+                      regionClass : "disctricts",
+                      subRegionClass : "townships",
+                      name : randomCharacter() + randomCharacter() +  "Cunglan",
+                      lastInput : randomNumber() ,
+                      numberOfForms : randomNumber() ,
+                      numberOfVotes : randomNumber() ,
+                      update : randomNumber() ,
+                      childRegions : [
                         {
-                          regionClass : "T",
-                          name : "Lollen",
-                          lastInput : 123456 ,
-                          numberOfForms : 342465 ,
-                          numberOfVotes : 123456 ,
-                          update : 342456
-                        }
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                        },
+                          {
+                              regionClass : "townships",
+                              name : randomCharacter() + randomCharacter() +  "Lollen",
+                              lastInput : randomNumber() ,
+                              numberOfForms : randomNumber() ,
+                              numberOfVotes : randomNumber() ,
+                              update : randomNumber()
+                          }
                       ]
-                  }
+                  },
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Aunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              },
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Bunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              }
               ],
-          lastInput : 123456 ,
-          numberOfForms : 342400 ,
-          numberOfVotes : 123456 ,
-          update : 342456
+          lastInput : randomNumber() ,
+          numberOfForms : randomNumber() ,
+          numberOfVotes : randomNumber() ,
+          update : randomNumber()
       },
       {
-          regionClass : "S",
-          name : "Than state",
-          districts : [
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "Than state",
+          childRegions : [
               {
-                  regionClass : "D",
-                  name : "Aunglan",
-                  lastInput : 123456 ,
-                  numberOfForms : 342456 ,
-                  numberOfVotes : 123456 ,
-                  update : 342456
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Aunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber()
               }
           ],
-          lastInput : 123456 ,
-          numberOfForms : 342456 ,
-          numberOfVotes : 123456 ,
-          update : 342456
+          lastInput : randomNumber() ,
+          numberOfForms : randomNumber() ,
+          numberOfVotes : randomNumber() ,
+          update : randomNumber()
       } ,
       {
-        regionClass : "S",
-        name : "Shan state",
-        districts : [
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "Shan state",
+          childRegions : [
                 {
-                    regionClass : "D",
-                    name : "Aunglan",
-                    lastInput : 123456 ,
-                    numberOfForms : 342456 ,
-                    numberOfVotes : 123456 ,
-                    update : 342456
+                    regionClass : "disctricts",
+                    subRegionClass : "townships",
+                    name : randomCharacter() + randomCharacter() +  "Aunglan",
+                    lastInput : randomNumber() ,
+                    numberOfForms : randomNumber() ,
+                    numberOfVotes : randomNumber() ,
+                    update : randomNumber()
                 }
             ],
-        lastInput : 123456 ,
-        numberOfForms : 342456 ,
-        numberOfVotes : 123456 ,
-        update : 342456
+        lastInput : randomNumber() ,
+        numberOfForms : randomNumber() ,
+        numberOfVotes : randomNumber() ,
+        update : randomNumber()
+      },
+      {
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "Shan state",
+          childRegions : [
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Aunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber()
+              }
+          ],
+          lastInput : randomNumber() ,
+          numberOfForms : randomNumber() ,
+          numberOfVotes : randomNumber() ,
+          update : randomNumber()
+      },
+      {
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "lhan state",
+          childRegions : [
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Cunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              },
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Aunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              },
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Bunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              }
+          ],
+          lastInput : randomNumber() ,
+          numberOfForms : randomNumber() ,
+          numberOfVotes : randomNumber() ,
+          update : randomNumber()
+      },
+      {
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "Shan state",
+          childRegions : [
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Aunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber()
+              }
+          ],
+          lastInput : randomNumber() ,
+          numberOfForms : randomNumber() ,
+          numberOfVotes : randomNumber() ,
+          update : randomNumber()
+      },
+      {
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "lhan state",
+          childRegions : [
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Cunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              },
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Aunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              },
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Bunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber() ,
+                  childRegions : [
+                      {
+                          regionClass : "townships",
+                          name : randomCharacter() + randomCharacter() +  "Lollen",
+                          lastInput : randomNumber() ,
+                          numberOfForms : randomNumber() ,
+                          numberOfVotes : randomNumber() ,
+                          update : randomNumber()
+                      }
+                  ]
+              }
+          ],
+          lastInput : randomNumber() ,
+          numberOfForms : randomNumber() ,
+          numberOfVotes : randomNumber() ,
+          update : randomNumber()
+      },
+      {
+          regionClass : "states",
+          subRegionClass : "disctricts",
+          name : randomCharacter() + randomCharacter() +  "Shan state",
+          childRegions : [
+              {
+                  regionClass : "disctricts",
+                  subRegionClass : "townships",
+                  name : randomCharacter() + randomCharacter() +  "Aunglan",
+                  lastInput : randomNumber() ,
+                  numberOfForms : randomNumber() ,
+                  numberOfVotes : randomNumber() ,
+                  update : randomNumber()
+              }
+          ],
+          lastInput : randomNumber() ,
+          numberOfForms : randomNumber() ,
+          numberOfVotes : randomNumber() ,
+          update : randomNumber()
       }
   ];

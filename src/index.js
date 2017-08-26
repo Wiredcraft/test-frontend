@@ -55,8 +55,8 @@ class MyTable extends React.Component {
             <main className ="mainBody">
                 <div className ="tableFilter">
                     <div id = "filter" onClick={this.filterToggle}>
-                        <div id = "filterContent">{this.state.filterContent}</div>
-                        <ul className={this.state.filterVisible ? "sortList" : "sortList hidden"}>
+                        <div id = "filterContent">{this.state.filterContent!=="" ? this.state.filterContent : "Filter"}</div>
+                        <ul className={this.state.filterVisible ? "" : "hidden"}>
                             <li onClick={this.filterByType.bind(this, 'name', 'Region')}>Region</li>
                             <li onClick={this.filterByType.bind(this, 'lastInput', 'Last input')}>Last input</li>
                             <li onClick={this.filterByType.bind(this, 'numberOfForms', 'Number of forms')}>Number of forms</li>
@@ -69,7 +69,7 @@ class MyTable extends React.Component {
                     </div>
                 </div>
                 <div className ="table">
-                    <ul>
+                    <ul className="tableHeader">
                         <li className = "tableFirst">Region</li>
                         <li>Last input</li>
                         <li>Number of forms</li>

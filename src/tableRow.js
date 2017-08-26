@@ -12,20 +12,24 @@ class TableRow extends Component {
 
   toggleVisible (){
     this.setState({childVisible : !this.state.childVisible});
+      console.log(this.state.childVisible);
   }
-  sortByType(a ,b){
-      let type = this.props.filterType;
-      switch (type) {
-          case 'lastInput' :
-          case 'numberOfForms'  :
-          case 'numberOfVotes'  :
-          case 'update'  :
-              return b[type] - a[type];
-          case 'name' :
-              return a[type].toString().localeCompare(b[type].toString());
-          default :
-              return 0;
-      }
+
+  sortByType(type){
+      this.props.regionState.childRegions.sort((a , b) => {
+              switch (type) {
+                  case 'lastInput' :
+                  case 'numberOfForms'  :
+                  case 'numberOfVotes'  :
+                  case 'update'  :
+                      return b[type] - a[type];
+                  case 'name' :
+                      return a[type].toString().localeCompare(b[type].toString());
+                  default :
+                      return 0;
+              }
+          }
+      )
   }
   containSearch (searchValue){
     return this.props.regionState.name.toLowerCase().indexOf(searchValue) > -1 ||
@@ -36,58 +40,37 @@ class TableRow extends Component {
   }
   render() {
     let regionState = this.props.regionState;
-    let subChildLength;
     let subChild = "" ;
-    let subChildName;
+    let subChildLength = regionState.childRegions? regionState.childRegions.length : 0;
     let searchValue = this.props.searchValue;
     let visible = searchValue !== ""? this.containSearch(searchValue.toLowerCase()) :this.props.childVisible ;
 
-    switch (regionState.regionClass){
-        case 'S':
-        subChildLength = regionState.districts? regionState.districts.length :0;
-        subChildName = "Disctricts";
-        if(subChildLength > 0 ){
-          this.props.filterType !== "" && subChildLength > 1 ? regionState.districts.sort(this.sortByType()) : "";
-          subChild = regionState.districts.map((nextRegionState) => {
-            return (<TableRow regionState = {nextRegionState}  searchValue = {this.props.searchValue} childVisible = {this.state.childVisible&&visible}/>)
-          });
-        }
-      break;
-      case 'D':
-        subChildLength = regionState.townships? regionState.townships.length :0;
-        subChildName = "Townships";
-        if( subChildLength > 0 ) {
-            this.props.filterType !== "" && subChildLength > 1 ? regionState.townships.sort(this.sortByType()) : "";
-            subChild = regionState.townships.map((nextRegionState) => {
-                return (<TableRow regionState={nextRegionState} searchValue={this.props.searchValue}
-                                  childVisible={this.state.childVisible && visible}/>)
-            });
-        }
-       break;
-      case 'T':
-        subChildLength = 0;
-        subChild = "";
-      break;
+    if( subChildLength > 0 ) {
+        this.props.filterType!== "" && subChildLength > 1 ? this.sortByType(this.props.filterType) : "";
+        subChild = regionState.childRegions.map((nextRegionState) => {
+            return (<TableRow regionState={nextRegionState} searchValue={this.props.searchValue}
+                              childVisible={this.state.childVisible && visible}/>)
+        });
     }
-
 
     return (
       <div className = "tableRow">
-        <ul className = {visible? "show" : "hidden"}>
-          <li className = "tableFirst">
+        <ul className = { visible ? "" : "hidden"}>
+          <li className = {"tableFirst" + " "+ regionState.regionClass}>
+              <span className = "headerCircle">{regionState.regionClass.charAt(0).toUpperCase()}</span>
               <span className = "regionHeader">{regionState.name}</span>
               <span className = "dropDown"/>
               {subChildLength > 0?
                 <span className = "regionButton" onClick = {this.toggleVisible}>
-                {subChildLength}
-                <span className = "buttonContent">{subChildName}</span>
-                {this.state.childVisiable? "-" : "+"}
+                    <span className="bold"> {subChildLength}</span>
+                    <span className = "buttonContent">{regionState.subRegionClass.charAt(0).toUpperCase() + regionState.subRegionClass.slice(1)}</span>
+                    <span className="bold"> {this.state.childVisible? "-" : "+"}</span>
                 </span> : ""}
           </li>
-          <li>{regionState.lastInput}</li>
-          <li>{regionState.numberOfForms}</li>
-          <li>{regionState.numberOfVotes}</li>
-          <li>{regionState.update}</li>
+          <li>{regionState.lastInput.toLocaleString('en-US')}</li>
+          <li>{regionState.numberOfForms.toLocaleString('en-US')}</li>
+          <li>{regionState.numberOfVotes.toLocaleString('en-US')}</li>
+          <li>{regionState.update.toLocaleString('en-US')}</li>
         </ul>
         {subChild}
       </div>
