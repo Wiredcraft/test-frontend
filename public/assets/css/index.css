@@ -41,35 +41,55 @@ nav .selected {
     background-color: #F0F2F8;
 }
 
-/*-- main table --*/
+/*-- for table common use  --*/
 .mainBody{
+
     position: absolute;
-    width: 80%;
+    width: 1024px;
     top: 97px;
     left: 50%;
     transform: translate( -50% , 0%);
     background-color: #ffffff;
 }
-.table .hidden {
-  display: none;
+.hidden {
+  display: none; !important;
 }
 
+/*-- table filter & search  --*/
 .tableFilter{
     height: 50px;
 }
 .tableFilter #filter {
     display: inline-block;
-    width: 20%;
+    width: 264px;
     height: 50px;
     line-height: 50px;
     border-right: 1px solid #D0D6E1;
     padding: 0 20px;
     background : url("../img/filterButton.png") center right no-repeat;
 }
+.tableFilter #filterContent{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #565b71;
+    background: transparent;
+}
+.tableFilter .sortList li{
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #FFFFFF;
+    opacity: 0.99;
+    list-style-type :none;
+    z-index:999;
+    border: 1px solid #ddd;
+}
 .tableFilter #search {
     display: inline-block;
     float: right;
-    width: 80%;
+    width: 760px;
     height: 50px;
     line-height: 50px;
     padding: 0 20px;
@@ -84,7 +104,11 @@ nav .selected {
   outline:none;
   font-size: 14px;
 }
+
+/*-- table body --*/
+
 .table ul {
+
   width: 100%;
   height: 56px;
 }
@@ -102,6 +126,9 @@ nav .selected {
   text-align: left;
   padding: 0 20px;
 }
+.regionHeader{
+    margin-left: 40px;
+}
 .regionHeader::before{
     display: inline-block;
     position: absolute;
@@ -116,13 +143,9 @@ nav .selected {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
+    z-index:-1;
 }
-.regionHeader{
-  margin-left: 40px;
-}
-.regionHeader .regionHeader {
-    margin-left: 70px;
-}
+
 .dropDown {
     display: inline-block;
     width: 20px;
@@ -147,5 +170,5 @@ nav .selected {
   margin: 0 10px;
 }
 .show {
-  display: flex !important;
+    display: flex ;
 }
