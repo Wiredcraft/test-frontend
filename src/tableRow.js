@@ -61,7 +61,7 @@ class TableRow extends Component {
               <span className = "regionHeader">{regionState.name}</span>
               <span className = "dropDown"/>
               {subChildLength > 0?
-                <span className = "regionButton" onClick = {this.toggleVisible}>
+                <span className = {this.state.childVisible ? "regionButton show" : "regionButton"} onClick = {this.toggleVisible}>
                     <span className="bold"> {subChildLength}</span>
                     <span className = "buttonContent">{regionState.subRegionClass.charAt(0).toUpperCase() + regionState.subRegionClass.slice(1)}</span>
                     <span className="bold"> {this.state.childVisible? "-" : "+"}</span>
