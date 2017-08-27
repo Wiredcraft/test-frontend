@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TableRow from './tableRow.js'
 import {RegionStates} from './data.js'
-import registerServiceWorker from './registerServiceWorker';
 
 
 class MyTable extends React.Component {
@@ -94,4 +93,3 @@ ReactDOM.render(
   <MyTable/>,
   document.getElementById('mainBody')
 );
-registerServiceWorker();

@@ -10,9 +10,9 @@ class TableRow extends Component {
     this.toggleVisible = this.toggleVisible.bind(this);
   }
 
+  // control sub node can show or hidden
   toggleVisible (){
     this.setState({childVisible : !this.state.childVisible});
-      console.log(this.state.childVisible);
   }
 
   sortByType(type){
@@ -44,6 +44,7 @@ class TableRow extends Component {
     let subChildLength = regionState.childRegions? regionState.childRegions.length : 0;
     let searchValue = this.props.searchValue;
     let visible = searchValue !== ""? this.containSearch(searchValue.toLowerCase()) :this.props.childVisible ;
+
 
     if( subChildLength > 0 ) {
         this.props.filterType!== "" && subChildLength > 1 ? this.sortByType(this.props.filterType) : "";
