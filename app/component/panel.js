@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react'
 import Item from './Item'
 import rawData from '../data'
 
 let arr = [];
-function getData(data, level, keyWord) {
+function getData(data,level, keyWord) {
   data.forEach((item) => {
     if (item.level === level) {
       if (keyWord === '' || item.name.indexOf(keyWord) !== -1) {
@@ -16,31 +16,32 @@ function getData(data, level, keyWord) {
   return arr;
 }
 
-class panel extends Component {
+const panel = ({ level,keyWord }) => {
+  arr = []
+  let items = getData(rawData,level, keyWord).map((item, i) => {
+    return <Item
+      name={item.name}
+      sub={item.sub ? item.sub : []}
+      key={item.id}
+    />
+  })
 
-  constructor(props) {
-    super(props)
-  }
 
-  renderLocation() {
-    arr = [];
-    let data = getData(rawData, this.props.startLevel, this.props.keyWord);
-    return data.map((item, i) => {
-      return (
-        <Item
-          name={item.name}
-          sub={item.sub ? item.sub : []}
-          key={i + item.name}
-        />
-      )
-    })
-  }
-
-  render() {
-    return (
-      <div > {this.renderLocation()} </div>
-    )
-  }
+  return  (
+    <div >
+      {
+        items.length == 0 ?
+        <div className="noResults">
+          Your search &nbsp;
+          <span>"{keyWord}"</span>&nbsp;
+          did not match any &nbsp;
+          <span>{level}</span>
+        </div>
+        :
+        items
+      }
+    </div>
+  )
 }
 
 export default panel

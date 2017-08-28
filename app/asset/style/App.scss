@@ -89,6 +89,10 @@ header {
     padding-left: 20px;
     width: 140px;
   }
+  input {
+    width: 820px;
+    padding-left: 20px;
+  }
   button {
     float: right;
   }
@@ -242,5 +246,14 @@ header {
   }
   &.active::after {
     display: none;
+  }
+}
+.noResults {
+  padding: 10px ;
+  text-align: center;
+
+  span {
+    color: #000;
+    font-size: 16px;
   }
 }

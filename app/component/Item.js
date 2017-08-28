@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import downloadPic from '../image/download.png';
+import downloadPic from '../asset/image/download.png';
 
 class Item extends Component {
   constructor(props) {
