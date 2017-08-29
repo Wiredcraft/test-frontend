@@ -1,0 +1,211 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("../font/OpenSans.ttf");
+}
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url("../font/OpenSans-Bold.ttf");
+}
+* {
+  margin : 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  background-color: #565b71;
+}
+.hidden {
+  display: none; !important;
+}
+.bold {
+  font-weight: bold ;
+}
+
+
+/*-- nav bar --*/
+nav {
+  height: 56px;
+  font-size: 16px;
+  color: #575B70;
+  background-color: #ffffff;
+  img {
+    float: left;
+    height: 56px;
+    width: 55.5px;
+    border-right: 1px solid #D0D6E1;
+  }
+  .banner {
+    float: left;
+    padding: 0 30px;
+    height: 56px;
+    line-height: 56px;
+  }
+  .section{
+    display: inline-block;
+    float: right;
+    width: 10%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+  }
+  .selected {
+    background-color: #F0F2F8;
+  }
+}
+
+
+/*-- for table common use  --*/
+.mainBody{
+  position: absolute;
+  left: 50%;
+  top: 97px;
+  transform: translate( -50% , 0%);
+  width: 1280px;
+  background-color: #ffffff;
+}
+
+
+
+/*-- table filter & search  --*/
+.tableFilter{
+  height: 50px;
+  font-size: 14px;
+  #filter {
+    display: inline-block;
+    width: 280px;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px solid #D0D6E1;
+    background : url("../img/filterButton.png") center right no-repeat;
+    li{
+      display: block;
+      padding-left: 20px;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #FFFFFF;
+      opacity: 0.99;
+      list-style-type :none;
+      z-index: 999;
+      border: 1px solid #ddd;
+      border-top: 0px ;
+    }
+    #filterContent{
+      padding-left: 20px;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      color: #565b71;
+      font-family: OpenSans sans-serif;
+      background: transparent;
+    }
+  }
+
+   #search {
+    display: inline-block;
+    float: right;
+    padding: 0 20px;
+    width: 1000px;
+    height: 50px;
+    line-height: 50px;
+    background : url("../img/search.png") center right no-repeat;
+     .searchInput {
+       margin-left: -20px;
+       padding-left: 10px;
+       width: 100%;
+       height: 100%;
+       color: #565b71;
+       font-family: 'OpenSans', sans-serif;
+       border: none;
+       outline: none;
+     }
+  }
+
+}
+
+
+/*-- table body --*/
+
+.table {
+  ul {
+    width: 100%;
+    height: 56px;
+  }
+  li {
+    display: inline-block;
+    width: 15%;
+    line-height: 56px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-family: 'OpenSans',sans-serif;
+    color: #575B70;
+  }
+
+  .tableHeader li{
+    font-family: 'OpenSans-Bold',sans-serif;
+    border-top: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
+  }
+  .tableRow {
+    .disctricts {
+      padding-left: 50px;
+    }
+    .townships {
+      padding-left: 80px;
+    }
+  }
+
+  /*--  first element of the table body --*/
+  .tableFirst {
+    width : 40%;
+    text-align: left;
+    padding: 0 20px;
+
+    .headerCircle {
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      color: #FFFFFF;
+      background-color: #8979D0;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      z-index: -1;
+    }
+    .regionHeader{
+      margin-left: 20px;
+    }
+    .dropDown {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 10px;
+      background: url("../img/downloadButton.png") center right no-repeat;
+    }
+    .regionButton {
+      display: inline-block;
+      float: right;
+      margin-top: 13px;
+      width: 110px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 12px;
+      color :#80869C ;
+      background-color: #F0F2F8;
+    }
+    .show {
+      background-color :#DADEEA ;
+    }
+    .buttonContent{
+      margin: 0 10px;
+    }
+  }
+}
+
