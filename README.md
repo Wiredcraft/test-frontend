@@ -1,8 +1,9 @@
-### Development
-1. npm i
-2. npm start
+### Develop
+
+	 npm i
+	 npm start
 
 ---
 
 ### Build
-+ npm run build
+	 npm run build
