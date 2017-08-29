@@ -17,17 +17,11 @@ class TableRow extends Component {
 
   sortByType(type){
       this.props.regionState.childRegions.sort((a , b) => {
-              switch (type) {
-                  case 'lastInput' :
-                  case 'numberOfForms'  :
-                  case 'numberOfVotes'  :
-                  case 'update'  :
-                      return b[type] - a[type];
-                  case 'name' :
-                      return a[type].toString().localeCompare(b[type].toString());
-                  default :
-                      return 0;
+              var index = "lastInput numberOfForms numberOfVotes update name".indexOf(type);
+              if(index !== -1 ) {
+                  if(index === 45 ) return a[type].toString().localeCompare(b[type].toString()); else  return b[type] - a[type];
               }
+              return 0;
           }
       )
   }
