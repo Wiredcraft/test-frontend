@@ -1,3 +1,4 @@
+import "../public/assets/css/main.scss"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TableRow from './tableRow.js'
