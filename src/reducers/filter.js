@@ -1,6 +1,6 @@
 
-
-const filter = ( state = {filterType : "", filterName :"",filterVisible:false} , action ) => {
+let initialData = {filterType : "", filterName :"",filterVisible:false};
+const filter = ( state = initialData , action ) => {
     switch (action.type) {
         case 'SORT_BY_TYPE':
             return {...state, filterType:action.sortType,filterName :action.sortName}

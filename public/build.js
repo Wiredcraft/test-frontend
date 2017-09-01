@@ -25514,9 +25514,33 @@ exports.default = tableApp;
 
 /***/ }),
 /* 234 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: H:/Documents/GitHub/test-frontend/src/reducers/filter.js: Unexpected token (6:20)\n\n  4 |     switch (action.type) {\n  5 |         case 'SORT_BY_TYPE':\n> 6 |             return {...state, filterType:action.sortType,filterName :action.sortName}\n    |                     ^\n  7 |         case 'FILTER_MENU_VISIBLE'   :\n  8 |             return {...state, filterVisible: !state.filterVisible}\n  9 |         default :\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var initialData = { filterType: "", filterName: "", filterVisible: false };
+var filter = function filter() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialData;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'SORT_BY_TYPE':
+            return _extends({}, state, { filterType: action.sortType, filterName: action.sortName });
+        case 'FILTER_MENU_VISIBLE':
+            return _extends({}, state, { filterVisible: !state.filterVisible });
+        default:
+            return state;
+    }
+};
+
+exports.default = filter;
 
 /***/ }),
 /* 235 */
