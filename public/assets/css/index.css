@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url("../font/OpenSans.ttf");
+}
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url("../font/OpenSans-Bold.ttf");
+}
+* {
+    margin : 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+body{
+    background-color: #565b71;
+}
+/*-- nav bar --*/
+nav {
+    height: 56px;
+    font-size: 16px;
+    color: #575B70;
+    background-color: #ffffff;
+}
+nav img {
+    float: left;
+    height: 56px;
+    width: 55.5px;
+    border-right: 1px solid #D0D6E1;
+}
+nav .banner {
+    float: left;
+    padding: 0 30px;
+    height: 56px;
+    line-height: 56px;
+}
+nav .section{
+    display: inline-block;
+    float: right;
+    width: 10%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+}
+nav .selected {
+    background-color: #F0F2F8;
+}
+.hidden {
+    display: none; !important;
+}
+.bold {
+    font-weight: bold ;
+}
