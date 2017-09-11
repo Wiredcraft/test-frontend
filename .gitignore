@@ -60,3 +60,5 @@ typings/
 .DS_Store
 
 build
+dist
+.vscode
