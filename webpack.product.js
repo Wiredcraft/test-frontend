@@ -19,11 +19,11 @@ const publicConfig = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
-    // new BundleAnalyzerPlugin({
-    //     analyzerMode: 'server',
-    //     analyzerHost: '0.0.0.0',
-    //     analyzerPort: 8080
-    // })//打包后打开网页,显示打包具体信息(包含各个模块的比重)
+    new BundleAnalyzerPlugin({
+        analyzerMode: 'server',
+        analyzerHost: '0.0.0.0',
+        analyzerPort: 8080
+    })//打包后打开网页,显示打包具体信息(包含各个模块的比重)
   ]
 
 };

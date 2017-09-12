@@ -33,7 +33,7 @@ commonConfig = {
       include: path.join(__dirname, 'src'),
       use: ExtractTextPlugin.extract({
         fallback: "style-loader",
-        use:['css-loader?sourceMap','postcss-loader','sass-loader']
+        use:['css-loader?sourceMap&minimize','postcss-loader','sass-loader']
       })
     }, {
       test: /\.(png|jpg|gif)$/,
