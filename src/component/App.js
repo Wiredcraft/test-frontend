@@ -5,7 +5,6 @@ import Header from '../component/Header'
 import Search from '../containers/search';
 import Table from '../component/Table';
 
-import '../asset/style/normalize.css';
 import '../asset/style/App.scss';
 
 const App = () => (

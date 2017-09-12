@@ -8,21 +8,23 @@ const commonConfig = require('./webpack.config.js');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const publicConfig = {
-    devtool: 'cheap-module-source-map',
-    plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new UglifyJSPlugin(),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
-        }),
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'server',
-            analyzerHost: '0.0.0.0',
-            analyzerPort: 8080
-        })//打包后打开网页,显示打包具体信息(包含各个模块的比重)
-    ]
+  devtool: 'cheap-module-source-map',
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    // new BundleAnalyzerPlugin({
+    //     analyzerMode: 'server',
+    //     analyzerHost: '0.0.0.0',
+    //     analyzerPort: 8080
+    // })//打包后打开网页,显示打包具体信息(包含各个模块的比重)
+  ]
 
 };
 

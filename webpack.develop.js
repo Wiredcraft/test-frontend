@@ -10,7 +10,7 @@ const devConfig = {
   entry: {
     app: [
       'react-hot-loader/patch',
-      path.join(__dirname, 'app/index.js')
+      path.join(__dirname, 'src/index.js')
     ]
   },
   output: {
@@ -24,6 +24,9 @@ const devConfig = {
     host: '0.0.0.0'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
     new OpenBrowserPlugin({
       url: 'http://localhost:8080'
     })

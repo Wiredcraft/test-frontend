@@ -7,7 +7,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 commonConfig = {
   entry: {
     app: [
-      path.join(__dirname, 'app/index.js')
+      path.join(__dirname, 'src/index.js')
     ],
     vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
   },
@@ -15,44 +15,35 @@ commonConfig = {
     path: path.join(__dirname, './dist'),
     filename: 'js/[name].[chunkhash].js',
     chunkFilename: 'js/[name].[chunkhash].js',
-    publicPath: "./"
+    publicPath: "/"
   },
   module: {
     rules: [{
       test: /\.js|jsx$/,
       use: ['babel-loader?cacheDirectory=true'],
-      include: path.join(__dirname, 'app')
+      include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
         fallback: "style-loader",
-        use: "css-loader?modules"
+        use: ['css-loader?modules&minimize','postcss-loader']
       })
     }, {
       test: /\.scss$/,
-      include: path.join(__dirname, 'app'),
-      use: [{
-        loader:"style-loader"
-      },{
-        loader: "css-loader?modules",
-        options: {
-          sourceMap: true
-        }
-      }, {
-        loader: "sass-loader",
-        options: {
-          sourceMap: true
-        }
-      }]
+      include: path.join(__dirname, 'src'),
+      use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use:['css-loader?sourceMap','postcss-loader','sass-loader']
+      })
     }, {
       test: /\.(png|jpg|gif)$/,
-      loader:['url-loader?limit=8192&name=images/[name].[hash:8].[ext]']
+      loader: ['url-loader?limit=8192&name=images/[name].[hash:8].[ext]']
     }]
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.join(__dirname, 'app/index.tpl.html')
+      template: path.join(__dirname, 'src/index.tpl.html')
     }),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
@@ -64,9 +55,9 @@ commonConfig = {
     // }),
     new ExtractTextPlugin({
       filename: 'css/[name].[contenthash:5].css',
-      allChunks: true
+      allChunks: true,
+      disable: process.env.NODE_ENV != 'production'
     })
   ]
 };
-
 module.exports = commonConfig;

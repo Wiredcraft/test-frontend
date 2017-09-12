@@ -17,13 +17,18 @@ let render = app => {
     document.getElementById('root')
   )
 }
-
 render(App)
-
 /*热更新*/
 if (module.hot) {
   module.hot.accept('./component/App', () => {
       const NextApp = require('./component/App').default;
+      const hotEmitter = require("webpack/hot/emitter");
+      hotEmitter.on("webpackHotUpdate", function(currentHash) {
+        document.querySelectorAll('link[href][rel=stylesheet]').forEach((link) => {
+          const nextStyleHref = link.href.replace(/(\?\d+)?$/, `?${Date.now()}`)
+          link.href = nextStyleHref
+        })
+      })
       render(NextApp)
   })
 }
