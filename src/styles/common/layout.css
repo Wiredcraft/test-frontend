@@ -1,6 +1,6 @@
 html,
 body,
-#app {
+#root {
   height: 100%;
 }
 
@@ -11,4 +11,16 @@ body {
   * {
     box-sizing: border-box;
   }
+}
+
+main {
+  height: 100%;
+}
+
+.view {
+  width: 60rem;
+  height: 80%;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  margin: 2.5rem auto 0;
 }

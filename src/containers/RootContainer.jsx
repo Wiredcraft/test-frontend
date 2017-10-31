@@ -1,8 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { withRouter, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import logo from '../images/logo.png';
+
+/* Import Containers */
+import ReportsContainer from './ReportsContainer';
 
 /* Import Components */
 import Header from '../components/Header';
@@ -30,7 +32,7 @@ class RootContainer extends React.Component {
                 </Header>
                 <section className="view" data-view>
                     <Switch>
-                        {/* routes here */}
+                        <Route exact path="/" component={ReportsContainer} />
                     </Switch>
                 </section>
             </main>
@@ -38,4 +40,4 @@ class RootContainer extends React.Component {
     }
 }
 
-export default withRouter(connect()(RootContainer));
+export default RootContainer;
