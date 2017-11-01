@@ -1,0 +1,34 @@
+{
+  "states": [
+    {
+      "name": "Shan state",
+      "last": 123456,
+      "forms": 342456,
+      "voters": 123456,
+      "update": 342456,
+      "has": "districts",
+      "type": "state",
+      "children": [
+        {
+          "name": "Aunglan",
+          "last": 123456,
+          "forms": 342456,
+          "voters": 123456,
+          "update": 342456,
+          "has": "townships",
+          "type": "district",
+          "children": [
+            {
+              "name": "Loilen",
+              "last": 123456,
+              "forms": 342456,
+              "voters": 123456,
+              "update": 342456,
+              "type": "township"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
