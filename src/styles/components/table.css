@@ -24,6 +24,7 @@
       align-items: center;
       height: 100%;
       height: 3rem;
+      animation: appearFromTop 0.3s ease-in-out forwards;
 
       @nest .table__body & {
         border-bottom: 1px solid var(--brand-light);
@@ -36,7 +37,7 @@
     padding: 1rem 1rem;
     flex-shrink: 1;
     flex-grow: 1;
-    width: 17.5%;
+    width: 10%;
     text-align: center;
     border-left: 1px solid var(--brand-light);
 
@@ -44,6 +45,10 @@
       width: 30%;
       text-align: left;
       border-left: none;
+
+      .button--toggle {
+        float: right;
+      }
 
       @nest .table__row--1 & {
         padding-left: 2.5rem;
@@ -60,26 +65,6 @@
 
     @nest .table__head & {
       font-weight: bold;
-    }
-  }
-
-  &__icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-
-    &--state {
-      background: url(../../images/state.svg) center center no-repeat;
-    }
-
-    &--district {
-      background: url(../../images/district.svg) center center no-repeat;
-    }
-
-    &--township {
-      background: url(../../images/township.svg) center center no-repeat;
     }
   }
 }

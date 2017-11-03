@@ -1,0 +1,43 @@
+.button {
+  padding: 0 0.75rem;
+  border: none;
+  height: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: var(--brand-lighter);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  text-align: left;
+
+  * + & {
+    margin-left: 0.5rem;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--download {
+    width: 2rem;
+    background: url(../../images/download.svg) center center no-repeat;
+  }
+
+  &--toggle {
+    padding-right: 2rem;
+    background-image: url(../../images/add.svg);
+    background-position: calc(100% - 0.75rem) center;
+    background-repeat: no-repeat;
+    background-size: 10px auto;
+    transition: background-color 0.2s ease;
+    width: 7rem;
+
+    &:hover,
+    &-on {
+      background-color: var(--brand-light);
+    }
+
+    &-on {
+      background-image: url(../../images/substract.svg);
+    }
+  }
+}

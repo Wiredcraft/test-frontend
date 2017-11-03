@@ -12,17 +12,20 @@ describe('render', () => {
         {
             name: 'name',
             email: 'email',
-            phone: 'phone'
+            phone: 'phone',
+            type: 'type'
         },
         {
             name: 'name',
             email: 'email',
-            phone: 'phone'
+            phone: 'phone',
+            type: 'type'
         },
         {
             name: 'name',
             email: 'email',
-            phone: 'phone'
+            phone: 'phone',
+            type: 'type'
         }
     ];
     const wrapper = shallow(<Table headers={columns} dataset={dataset} />);

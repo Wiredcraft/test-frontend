@@ -1,5 +1,6 @@
 @import 'common/colors.css';
 @import 'common/variables.css';
+@import 'common/animations.css';
 @import 'common/typography.css';
 @import 'common/layout.css';
 
@@ -7,3 +8,5 @@
 @import 'components/header.css';
 @import 'components/navigation.css';
 @import 'components/table.css';
+@import 'components/icon.css';
+@import 'components/button.css';

@@ -1,0 +1,11 @@
+@keyframes appearFromTop {
+  from {
+    transform: translateY(-5px);
+    opacity: 0
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
