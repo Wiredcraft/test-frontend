@@ -17,7 +17,7 @@ const Table = ({ headers, dataset }) => (
             </div>
         </div>
         <div className="table__body">
-            {dataset.map(data => <TableRow data={data} headers={headers} key={`row${data.name}`} />)}
+            {dataset.map(data => <TableRow data={data} headers={headers} key={`row${data.id}`} />)}
         </div>
     </section>
 );

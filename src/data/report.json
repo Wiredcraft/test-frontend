@@ -1,6 +1,7 @@
 {
   "states": [
     {
+      "id": 0,
       "name": "Shan state",
       "last": 123456,
       "forms": 342456,
@@ -10,6 +11,7 @@
       "type": "state",
       "children": [
         {
+          "id": 1,
           "name": "Aunglan",
           "last": 123456,
           "forms": 342456,
@@ -19,6 +21,172 @@
           "type": "district",
           "children": [
             {
+              "id": 2,
+              "name": "Loilen",
+              "last": 123456,
+              "forms": 342456,
+              "voters": 123456,
+              "update": 342456,
+              "type": "township"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Shan state",
+      "last": 123456,
+      "forms": 342456,
+      "voters": 123456,
+      "update": 342456,
+      "has": "districts",
+      "type": "state",
+      "children": [
+        {
+          "id": 4,
+          "name": "Aunglan",
+          "last": 123456,
+          "forms": 342456,
+          "voters": 123456,
+          "update": 342456,
+          "has": "townships",
+          "type": "district",
+          "children": [
+            {
+              "id": 5,
+              "name": "Loilen",
+              "last": 123456,
+              "forms": 342456,
+              "voters": 123456,
+              "update": 342456,
+              "type": "township"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Shan state",
+      "last": 123456,
+      "forms": 342456,
+      "voters": 123456,
+      "update": 342456,
+      "has": "districts",
+      "type": "state",
+      "children": [
+        {
+          "id": 7,
+          "name": "Aunglan",
+          "last": 123456,
+          "forms": 342456,
+          "voters": 123456,
+          "update": 342456,
+          "has": "townships",
+          "type": "district",
+          "children": [
+            {
+              "id": 8,
+              "name": "Loilen",
+              "last": 123456,
+              "forms": 342456,
+              "voters": 123456,
+              "update": 342456,
+              "type": "township"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Shan state",
+      "last": 123456,
+      "forms": 342456,
+      "voters": 123456,
+      "update": 342456,
+      "has": "districts",
+      "type": "state",
+      "children": [
+        {
+          "id": 10,
+          "name": "Aunglan",
+          "last": 123456,
+          "forms": 342456,
+          "voters": 123456,
+          "update": 342456,
+          "has": "townships",
+          "type": "district",
+          "children": [
+            {
+              "id": 11,
+              "name": "Loilen",
+              "last": 123456,
+              "forms": 342456,
+              "voters": 123456,
+              "update": 342456,
+              "type": "township"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Shan state",
+      "last": 123456,
+      "forms": 342456,
+      "voters": 123456,
+      "update": 342456,
+      "has": "districts",
+      "type": "state",
+      "children": [
+        {
+          "id": 13,
+          "name": "Aunglan",
+          "last": 123456,
+          "forms": 342456,
+          "voters": 123456,
+          "update": 342456,
+          "has": "townships",
+          "type": "district",
+          "children": [
+            {
+              "id": 14,
+              "name": "Loilen",
+              "last": 123456,
+              "forms": 342456,
+              "voters": 123456,
+              "update": 342456,
+              "type": "township"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Shan state",
+      "last": 123456,
+      "forms": 342456,
+      "voters": 123456,
+      "update": 342456,
+      "has": "districts",
+      "type": "state",
+      "children": [
+        {
+          "id": 16,
+          "name": "Aunglan",
+          "last": 123456,
+          "forms": 342456,
+          "voters": 123456,
+          "update": 342456,
+          "has": "townships",
+          "type": "district",
+          "children": [
+            {
+              "id": 17,
               "name": "Loilen",
               "last": 123456,
               "forms": 342456,

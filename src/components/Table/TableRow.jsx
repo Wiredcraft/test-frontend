@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransitionGroup } from 'react-transition-group';
 import TableCell from './TableCell';
 import Button from '../Button';
 import Icon from '../Icon';
@@ -66,10 +67,15 @@ class TableRow extends React.Component {
                 <div className="table__row-wrapper" key={`wrapper${level}`}>
                     {cells.map(this.renderCell)}
                 </div>
-                {
-                    shouldRenderChildRow && data.children.map(nestedData =>
-                        <TableRow data={nestedData} headers={headers} key={`row${nestedData.name}${level}`} level={level + 1} />)
-                }
+                <CSSTransitionGroup
+                    transitionName="tableRow"
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={300}>
+                    {
+                        shouldRenderChildRow && data.children.map(nestedData =>
+                            <TableRow data={nestedData} headers={headers} key={`row${nestedData.id}`} level={level + 1} />)
+                    }
+                </CSSTransitionGroup>
             </div>
         ) : null;
     }

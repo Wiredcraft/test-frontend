@@ -1,11 +1,45 @@
 @keyframes appearFromTop {
   from {
     transform: translateY(-5px);
-    opacity: 0
+    opacity: 0;
+    max-height: 0;
   }
 
   to {
     transform: translateY(0);
     opacity: 1;
+    max-height: 3rem;
   }
+}
+
+.tableRow-enter {
+  opacity: 0;
+  transform: translateY(-5px);
+  max-height: 0;
+}
+
+.tableRow-enter.tableRow-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 3rem;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    max-height 300ms ease;
+}
+
+.tableRow-leave {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 3rem;
+}
+
+.tableRow-leave.tableRow-leave-active {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-5px);
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    max-height 300ms ease;
 }
