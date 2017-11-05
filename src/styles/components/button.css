@@ -40,4 +40,29 @@
       background-image: url(../../images/substract.svg);
     }
   }
+
+  &--filter {
+    width: 100%;
+    background-color: transparent;
+    padding: 1rem;
+    height: auto;
+    text-align: left;
+    position: relative;
+    color: var(--text-light);
+
+    &::after {
+      top: calc(50% - 2px);
+      left: calc(100% -1rem);
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-top-color: var(--black);
+      border-width: 4px;
+      margin-left: -4px;
+    }
+  }
 }

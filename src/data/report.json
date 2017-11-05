@@ -8,7 +8,7 @@
     "update": 342456,
     "has": "districts",
     "type": "state",
-    "children": [1]
+    "children": [1,4,7]
   },
   {
     "id": 3,
@@ -19,7 +19,7 @@
     "update": 342456,
     "has": "districts",
     "type": "state",
-    "children": [4]
+    "children": [4,7]
   },
   {
     "id": 6,
@@ -41,7 +41,7 @@
     "update": 342456,
     "has": "districts",
     "type": "state",
-    "children": [10]
+    "children": [10, 1]
   },
   {
     "id": 12,

@@ -43,3 +43,18 @@
     transform 300ms ease,
     max-height 300ms ease;
 }
+
+.appearFromTop-enter,
+.appearFromTop-leave.appearFromTop-leave-active {
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.appearFromTop-enter.appearFromTop-enter-active,
+.appearFromTop-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
