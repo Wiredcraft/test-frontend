@@ -1,45 +1,41 @@
 [
   {
     "id": 0,
-    "name": "Shan state",
+    "name": "Magway",
     "last": 123456,
     "forms": 342456,
     "voters": 123456,
     "update": 342456,
-    "has": "districts",
     "type": "state",
     "children": [1,4,7]
   },
   {
     "id": 3,
-    "name": "Shan state",
+    "name": "Mandalay",
     "last": 123456,
     "forms": 342456,
     "voters": 123456,
     "update": 342456,
-    "has": "districts",
     "type": "state",
     "children": [4,7]
   },
   {
     "id": 6,
-    "name": "Shan state",
+    "name": "Naypyidaw Union",
     "last": 123456,
     "forms": 342456,
     "voters": 123456,
     "update": 342456,
-    "has": "districts",
     "type": "state",
     "children": [7]
   },
   {
     "id": 9,
-    "name": "Shan state",
+    "name": "Kayah State",
     "last": 123456,
     "forms": 342456,
     "voters": 123456,
     "update": 342456,
-    "has": "districts",
     "type": "state",
     "children": [10, 1]
   },
@@ -50,18 +46,16 @@
     "forms": 342456,
     "voters": 123456,
     "update": 342456,
-    "has": "districts",
     "type": "state",
     "children": [13]
   },
   {
     "id": 5,
-    "name": "Shan state",
+    "name": "Ayeyarwady",
     "last": 123456,
     "forms": 342456,
     "voters": 123456,
     "update": 342456,
-    "has": "districts",
     "type": "state",
     "children": [16]
   },
