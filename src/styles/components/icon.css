@@ -16,4 +16,8 @@
   &--township {
     background: url(../../images/township.svg) center center no-repeat;
   }
+
+  &--search {
+    background: url(../../images/search.svg) center center no-repeat;
+  }
 }

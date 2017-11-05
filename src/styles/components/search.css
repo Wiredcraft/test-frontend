@@ -1,0 +1,28 @@
+.search {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  &__input {
+    border: none;
+    color: var(--text-light);
+    padding: 1rem;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--text-light);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+}
