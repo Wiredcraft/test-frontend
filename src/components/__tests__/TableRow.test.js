@@ -7,21 +7,22 @@ const headers = [
     { title: 'E-mail', selector: 'email' },
     { title: 'Phone', selector: 'phone' },
 ];
-const data = {
-    name: 'John',
-    email: 'john@gmail.com',
-    phone: '0123456789',
-    type: 'state',
-    children: [
-        {
-            name: 'John',
-            email: 'john@gmail.com',
-            phone: '0123456789',
-            type: 'district'
-        }
-    ]
-};
-const wrapper = shallow(<TableRow data={data} headers={headers} />);
+const data = [
+    {
+        name: 'John',
+        email: 'john@gmail.com',
+        phone: '0123456789',
+        type: 'state',
+        children: [1]
+    },
+    {
+        name: 'John',
+        email: 'john@gmail.com',
+        phone: '0123456789',
+        type: 'district'
+    }
+];
+const wrapper = shallow(<TableRow data={data[0]} headers={headers} getChildren={() => [data[1]]} />);
 
 describe('render', () => {
     test('it should render a cell for each key in the given dataset that matches the table`s headers', () => {
@@ -29,9 +30,9 @@ describe('render', () => {
     });
 
     test('it should render a nested table row if the dataset contains children after user clicks on the toggle', () => {
-        expect(wrapper.find('.table__row').first().children().length).toEqual(1);
+        expect(wrapper.find('CSSTransitionGroup').first().children().length).toEqual(0);
         wrapper.setState({ showChildren: true });
-        expect(wrapper.find('.table__row').first().children().length).toEqual(2);
+        expect(wrapper.find('CSSTransitionGroup').first().children().length).toEqual(1);
     });
 });
 

@@ -43,18 +43,23 @@ class TableRow extends React.Component {
                         type="toggle"
                         className={showChildren && 'button--toggle-on'}
                         onClick={this.toggleChildren}>
-                            <strong>{children.length}</strong> {toggleText}
+                        <strong>{children.length}</strong> {toggleText}
                     </Button>
                 )}
             </TableCell>
         );
     };
 
+    renderNestedRows = (children, level) =>
+        this.props.getChildren(children)
+            .map(nestedData =>
+               <TableRow data={nestedData} headers={this.props.headers} level={level + 1} getChildren={this.props.getChildren} key={`row${nestedData.id}`} />)
+
     /**
      * render
      */
     render() {
-        const { data, headers, level } = this.props;
+        const { data, headers, level, getChildren } = this.props;
         const { showChildren } = this.state;
         const shouldRenderChildRow = data.children && showChildren;
         const headerSelectors = headers.map(({ selector }) => selector);
@@ -71,10 +76,7 @@ class TableRow extends React.Component {
                     transitionName="tableRow"
                     transitionEnterTimeout={300}
                     transitionLeaveTimeout={300}>
-                    {
-                        shouldRenderChildRow && data.children.map(nestedData =>
-                            <TableRow data={nestedData} headers={headers} key={`row${nestedData.id}`} level={level + 1} />)
-                    }
+                    {shouldRenderChildRow && this.renderNestedRows(data.children, level)}
                 </CSSTransitionGroup>
             </div>
         ) : null;
@@ -82,7 +84,8 @@ class TableRow extends React.Component {
 }
 
 TableRow.defaultProps = {
-    level: 0
+    level: 0,
+    getChildren: () => []
 };
 
 TableRow.propTypes = {
@@ -90,11 +93,10 @@ TableRow.propTypes = {
     data: PropTypes.shape({
         name: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
-        children: PropTypes.arrayOf(PropTypes.shape({
-            name: PropTypes.string
-        }))
+        children: PropTypes.arrayOf(PropTypes.number)
     }).isRequired,
-    headers: PropTypes.arrayOf(PropTypes.object).isRequired
+    headers: PropTypes.arrayOf(PropTypes.object).isRequired,
+    getChildren: PropTypes.func
 };
 
 export default TableRow;

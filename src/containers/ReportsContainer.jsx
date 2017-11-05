@@ -17,8 +17,13 @@ class ReportsContainer extends React.Component {
         ]
     };
 
+    getChildren = ids => {
+        return this.state.report.filter(({ id }) => ids.includes(id));
+    }
+
     render() {
-        return <Table headers={this.state.headers} dataset={this.state.report.states} />;
+        const dataset = this.state.report.filter(({ type }) => type === 'state');
+        return <Table headers={this.state.headers} dataset={dataset} getChildren={this.getChildren} />;
     }
 }
 
