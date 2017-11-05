@@ -1,6 +1,7 @@
 import React from 'react';
-import Table from '../components/Table/Table';
+import FilterBar from '../components/FilterBar';
 import Filter from '../components/Filter';
+import Table from '../components/Table/Table';
 import data from '../data/report.json';
 
 /**
@@ -21,25 +22,42 @@ class ReportsContainer extends React.Component {
         filterIsOpen: false
     };
 
+    /**
+     * filter callback
+     * @param {String} filter
+     */
     onFilter = filter => {
         this.setState({ ...this.state, activeFilter: filter, filterIsOpen: false });
     }
 
+    /**
+     * toggle callback
+     */
     onToggleFilter = () => {
         this.setState({ ...this.state, filterIsOpen: !this.state.filterIsOpen });
     }
 
+    /**
+     * get children
+     * @param {Array} ids
+     * @return {Array}
+     */
     getChildren = ids => {
         return this.state.data.filter(({ id }) => ids.includes(id));
     }
 
+    /**
+     * render
+     */
     render() {
         const { headers, data, activeFilter } = this.state;
         const { onToggleFilter, onFilter, getChildren } = this;
         const dataset = data.filter(({ type }) => type === activeFilter);
 
         return [
-            <Filter options={this.state.filters} onToggle={onToggleFilter} onFilter={onFilter} key="filter" isOpen={this.state.filterIsOpen} />,
+            <FilterBar key="filterbar">
+                <Filter options={this.state.filters} onToggle={onToggleFilter} onFilter={onFilter} isOpen={this.state.filterIsOpen} />
+            </FilterBar>,
             <Table headers={this.state.headers} dataset={dataset} getChildren={getChildren} key="table" />
         ];
     }
