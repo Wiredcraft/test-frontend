@@ -1,11 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ type, children, onClick, className }) => (
-    <button className={type ? `button button--${type} ${className}` : 'button'} onClick={onClick}>
-        { children }
-    </button>
-);
+/**
+ * Button component
+ */
+const Button = ({
+    type,
+    children,
+    onClick,
+    className
+}) => {
+    const appendClassName = className + type ? ` button button--${type}` : ' button';
+    return (
+        <button className={appendClassName} onClick={onClick}>
+            { children }
+        </button>
+    );
+};
 
 Button.defaultProps = {
     type: false,
@@ -23,7 +34,8 @@ Button.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ]),
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    className: PropTypes.string
 };
 
 export default Button;

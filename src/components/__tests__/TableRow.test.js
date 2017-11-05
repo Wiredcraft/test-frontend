@@ -22,7 +22,9 @@ const data = [
         type: 'district'
     }
 ];
-const wrapper = shallow(<TableRow data={data[0]} headers={headers} getChildren={() => [data[1]]} />);
+
+const element = <TableRow data={data[0]} headers={headers} getChildren={() => [data[1]]} />;
+const wrapper = shallow(element);
 
 describe('render', () => {
     test('it should render a cell for each key in the given dataset that matches the table`s headers', () => {
@@ -63,6 +65,6 @@ describe('renderCell()', () => {
         expect(cell.find('TableCell').children('Button').last().props().type).toBe('toggle');
         expect(secondCell.find('TableCell').children('Button').length).toEqual(0);
     });
-})
+});
 
 /* eslint-enable react/jsx-filename-extension */

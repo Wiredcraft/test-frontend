@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Icon = ({ type, className }) => {
-    className += ` icon icon--${type}`;
-    return <span className={className} />;
-}
+    const appendClassName = `${className} icon icon--${type}`;
+    return <span className={appendClassName} />;
+};
 
 Icon.defaultProps = {
     className: ''

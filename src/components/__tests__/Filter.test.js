@@ -21,25 +21,26 @@ describe('render', () => {
         expect(wrapper.find('li').length).toEqual(options.length);
     });
 
-    test('it should render the option text inside the li element', () => {
-        expect(wrapper.find('li').first().text()).toBe(options[0]);
+    test('it should render a Button with the option text inside the li element', () => {
+        expect(wrapper.find('li').first().find('Button').length).toEqual(1);
     });
 });
 
 describe('onToggle', () => {
     test('it should trigger the onToggle callback when user clicks on the button', () => {
-        wrapper.find('Button').simulate('click');
+        wrapper.find('Button').first().simulate('click');
         expect(callbackMock.mock.calls.length).toEqual(1);
     });
 });
 
 describe('onFilter', () => {
     test('it should trigger the onFilter callback when user selects a filter', () => {
-        wrapper.find('li').first().simulate('click');
+        wrapper
+            .find('li').first()
+            .find('Button').first()
+            .simulate('click');
         expect(filterMock.mock.calls.length).toEqual(1);
     });
 });
-
-
 
 /* eslint-enable react/jsx-filename-extension */

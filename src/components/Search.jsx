@@ -16,19 +16,18 @@ class Search extends React.Component {
     };
 
     state = {
-        term: this.props.activeTerm,
-        timeout: 0
+        term: this.props.activeTerm
     };
 
-    _timeout = 0;
-
     onChange = ({ target: { value } }) => {
-        if (this._timeout) clearTimeout(this._timeout);
-        this._timeout = setTimeout(() => this.props.onChange(this.state.term), 300);
+        if (this.timeout) clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => this.props.onChange(this.state.term), 300);
         this.setState({
             term: value
         });
     }
+
+    timeout = 0;
 
     render() {
         const { onChange } = this;
@@ -40,7 +39,8 @@ class Search extends React.Component {
                     className="search__input"
                     placeholder="Search"
                     onChange={onChange}
-                    value={term}/>
+                    value={term}
+                />
                 <Icon type="search" className="search__icon" />
             </div>
         );

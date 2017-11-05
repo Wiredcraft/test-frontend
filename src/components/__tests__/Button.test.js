@@ -17,7 +17,7 @@ describe('render', () => {
 
     test('it should render its children', () => {
         expect(wrapper.find('.button').children('span').length).toEqual(2);
-    })
+    });
 });
 
 /* eslint-enable react/jsx-filename-extension */

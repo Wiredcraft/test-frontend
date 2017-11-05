@@ -11,7 +11,7 @@ describe('render', () => {
 
     test('it should append any class given through the className prop', () => {
         expect(wrapper.find('.some__icon').length).toEqual(1);
-    })
+    });
 });
 
 /* eslint-enable react/jsx-filename-extension */

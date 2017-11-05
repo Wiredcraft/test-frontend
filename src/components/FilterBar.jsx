@@ -7,6 +7,10 @@ const FilterBar = ({ children }) => (
     </div>
 );
 
+FilterBar.defaultProps = {
+    children: null
+};
+
 FilterBar.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),

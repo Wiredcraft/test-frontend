@@ -41,8 +41,9 @@ class TableRow extends React.Component {
                 {isFirstCell && children && (
                     <Button
                         type="toggle"
-                        className={showChildren && 'button--toggle-on'}
-                        onClick={this.toggleChildren}>
+                        className={showChildren ? 'button--toggle-on' : ''}
+                        onClick={this.toggleChildren}
+                    >
                         <strong>{children.length}</strong> {toggleText}
                     </Button>
                 )}
@@ -53,13 +54,15 @@ class TableRow extends React.Component {
     renderNestedRows = (children, level) =>
         this.props.getChildren(children)
             .map(nestedData =>
-               <TableRow data={nestedData} headers={this.props.headers} level={level + 1} getChildren={this.props.getChildren} key={`row${nestedData.id}`} />)
+                <TableRow data={nestedData} headers={this.props.headers} level={level + 1} getChildren={this.props.getChildren} key={`row${nestedData.id}`} />)
 
     /**
      * render
      */
     render() {
-        const { data, headers, level, getChildren } = this.props;
+        const {
+            data, headers, level
+        } = this.props;
         const { showChildren } = this.state;
         const shouldRenderChildRow = data.children && showChildren;
         const headerSelectors = headers.map(({ selector }) => selector);
@@ -75,7 +78,8 @@ class TableRow extends React.Component {
                 <CSSTransitionGroup
                     transitionName="tableRow"
                     transitionEnterTimeout={300}
-                    transitionLeaveTimeout={300}>
+                    transitionLeaveTimeout={300}
+                >
                     {shouldRenderChildRow && this.renderNestedRows(data.children, level)}
                 </CSSTransitionGroup>
             </div>

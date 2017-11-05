@@ -18,14 +18,14 @@ describe('render', () => {
 
     test('it should render the active search term if available', () => {
         expect(wrapper.find('input').first().props().value).toBe(activeTerm);
-    })
+    });
 });
 
 describe('onSearch', () => {
     test('it should trigerr the on seach callback 300ms after user stops typing', () => {
-        wrapper.find('input[type="text"]').simulate('change', { target: { value: 'some value'} });
+        wrapper.find('input[type="text"]').simulate('change', { target: { value: 'some value' } });
         expect(callback.mock.calls.length).toEqual(0);
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
             setTimeout(() => resolve(callback.mock.calls.length), 300);
         }).then(called => expect(called).toEqual(1));
     });
