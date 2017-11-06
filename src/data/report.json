@@ -1,0 +1,182 @@
+[
+  {
+    "id": 0,
+    "name": "Magway",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "state",
+    "children": [1,4,7]
+  },
+  {
+    "id": 3,
+    "name": "Mandalay",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "state",
+    "children": [4,7]
+  },
+  {
+    "id": 6,
+    "name": "Naypyidaw Union",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "state",
+    "children": [7]
+  },
+  {
+    "id": 9,
+    "name": "Kayah State",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "state",
+    "children": [10, 1]
+  },
+  {
+    "id": 12,
+    "name": "Shan state",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "state",
+    "children": [13]
+  },
+  {
+    "id": 5,
+    "name": "Ayeyarwady",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "state",
+    "children": [16]
+  },
+  {
+    "id": 1,
+    "name": "Aunglan",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "has": "townships",
+    "type": "district",
+    "children": [2]
+  },
+  {
+    "id": 4,
+    "name": "Aunglan",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "has": "townships",
+    "type": "district",
+    "children": [5]
+  },
+  {
+    "id": 7,
+    "name": "Aunglan",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "has": "townships",
+    "type": "district",
+    "children": [8]
+  },
+  {
+    "id": 10,
+    "name": "Aunglan",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "has": "townships",
+    "type": "district",
+    "children": [11]
+  },
+  {
+    "id": 13,
+    "name": "Aunglan",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "has": "townships",
+    "type": "district",
+    "children": [14]
+  },
+  {
+    "id": 16,
+    "name": "Aunglan",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "has": "townships",
+    "type": "district",
+    "children": [17]
+  },
+  {
+    "id": 2,
+    "name": "Loilen",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "township"
+  },
+  {
+    "id": 5,
+    "name": "Loilen",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "township"
+  },
+  {
+    "id": 8,
+    "name": "Loilen",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "township"
+  },
+  {
+    "id": 11,
+    "name": "Loilen",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "township"
+  },
+  {
+    "id": 14,
+    "name": "Loilen",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "township"
+  },
+  {
+    "id": 17,
+    "name": "Loilen",
+    "last": 123456,
+    "forms": 342456,
+    "voters": 123456,
+    "update": 342456,
+    "type": "township"
+  }
+]

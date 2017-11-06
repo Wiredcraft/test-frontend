@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": ["class-property"],
+  "globals": {
+    "document": true,
+    "jest": true,
+    "expect": true,
+    "shallow": true,
+    "describe": true,
+    "test": true
+  },
+  "rules": {
+    "padded-blocks": 0,
+    "indent": [2, 4],
+    "react/jsx-indent": [2, 4],
+    "react/jsx-indent-props": [2, 4],
+    "comma-dangle": [0]
+  }
+}

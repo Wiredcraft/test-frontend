@@ -1,0 +1,23 @@
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+
+  &--state {
+    background: url(../../images/state.svg) center center no-repeat;
+  }
+
+  &--district {
+    background: url(../../images/district.svg) center center no-repeat;
+  }
+
+  &--township {
+    background: url(../../images/township.svg) center center no-repeat;
+  }
+
+  &--search {
+    background: url(../../images/search.svg) center center no-repeat;
+  }
+}

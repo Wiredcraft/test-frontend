@@ -1,0 +1,10 @@
+.filter-bar {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    border-bottom: 1px solid var(--brand-light);
+
+    > * + * {
+        border-left: 1px solid var(--brand-light);
+    }
+}
