@@ -29,6 +29,7 @@ class ReportsContainer extends React.Component {
      * @param {String} filter
      */
     onFilter = (filter) => {
+        if (!filter) return;
         this.setState({
             ...this.state,
             activeFilter: filter,
@@ -51,6 +52,7 @@ class ReportsContainer extends React.Component {
      * @param {String} term
      */
     onSearch = (term) => {
+        if (typeof term === 'undefined') return;
         this.setState({
             ...this.state,
             searchTerm: term
@@ -72,9 +74,9 @@ class ReportsContainer extends React.Component {
     filterData(data) {
         const { searchTerm, activeFilter } = this.state;
         return data
-            .filter(({ type }) => type === activeFilter)
+            .filter(({ type }) => (activeFilter ? type === activeFilter : true))
             .filter(({ name }) =>
-                (!searchTerm ? true : name.toLowerCase().includes(searchTerm.toLowerCase())));
+                (searchTerm ? name.toLowerCase().includes(searchTerm.toLowerCase()) : true));
     }
 
     /**
