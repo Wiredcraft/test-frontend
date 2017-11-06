@@ -28,7 +28,7 @@ describe('render', () => {
             type: 'type'
         }
     ];
-    const wrapper = shallow(<Table headers={columns} dataset={dataset} />);
+    let wrapper = shallow(<Table headers={columns} dataset={dataset} />);
 
     test('it should render table header for each given column', () => {
         expect(wrapper.find('.table__row-wrapper').children('TableCell').length).toEqual(columns.length);
@@ -36,6 +36,12 @@ describe('render', () => {
 
     test('it should render a table row for each object in the given dataset', () => {
         expect(wrapper.find('TableRow').length).toEqual(dataset.length);
+    });
+
+    test('it should render a message if there are no results', () => {
+        wrapper = shallow(<Table headers={columns} dataset={[]} />);
+        expect(wrapper.find('TableRow').length).toEqual(0);
+        expect(wrapper.find('.table__body').text()).toBe('There are no regions matching your search query');
     });
 });
 

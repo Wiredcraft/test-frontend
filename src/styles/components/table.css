@@ -17,7 +17,8 @@
     overflow-y: auto;
   }
 
-  &__row {
+  &__row,
+  &__no-result {
     overflow: hidden;
 
     &-wrapper {
@@ -30,7 +31,12 @@
         border-bottom: 1px solid var(--brand-light);
       }
     }
+  }
 
+  &__no-result {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-light);
   }
 
   &__cell {

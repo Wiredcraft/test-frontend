@@ -21,7 +21,11 @@ const Table = ({ headers, dataset, getChildren }) => {
                 </div>
             </div>
             <div className="table__body">
-                {dataset.map(renderRow)}
+                {
+                    dataset.length
+                        ? dataset.map(renderRow)
+                        : <div className="table__no-result">There are no regions matching your search query</div>
+                }
             </div>
         </section>
     );
