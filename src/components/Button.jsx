@@ -10,9 +10,9 @@ const Button = ({
     onClick,
     className
 }) => {
-    const appendClassName = className + type ? ` button button--${type}` : ' button';
+    const appendClassName = type ? `button button--${type}` : 'button';
     return (
-        <button className={appendClassName} onClick={onClick}>
+        <button className={`${appendClassName} ${className}`} onClick={onClick}>
             { children }
         </button>
     );
