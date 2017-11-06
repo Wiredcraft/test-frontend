@@ -20,3 +20,10 @@ $ yarn lint
 # or
 $ npm run lint
 ```
+
+### Run tests
+```sh
+$ yarn test
+# or
+$ npm run test
+```
