@@ -33,7 +33,7 @@ class TableRow extends React.Component {
         const { showChildren } = this.state;
         const isFirstCell = index === 0;
         const toggleText = type === 'state' ? 'Districts' : 'Townships';
-        return (
+        return isFirstCell ? (
             <TableCell name={name} key={name + value}>
                 {isFirstCell && <Icon type={type} />}
                 {value}
@@ -48,7 +48,7 @@ class TableRow extends React.Component {
                     </Button>
                 )}
             </TableCell>
-        );
+        ) : <TableCell name={name} key={name + value}>{value}</TableCell>;
     };
 
     renderNestedRows = (children, level) =>

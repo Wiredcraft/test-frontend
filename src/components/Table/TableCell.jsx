@@ -6,22 +6,27 @@ import PropTypes from 'prop-types';
  * @param {String} name
  * @param {Array|HTMLElement} children
  */
-const TableCell = ({ name, children }) => (
-    <div className={`table__cell table__cell--${name}`}>
-        {children}
-    </div>
-);
+class TableCell extends React.PureComponent {
+    static defaultProps = {
+        children: null
+    };
 
-TableCell.defaultProps = {
-    children: null
-};
+    static propTypes = {
+        name: PropTypes.string.isRequired,
+        children: PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.node),
+            PropTypes.node
+        ])
+    };
 
-TableCell.propTypes = {
-    name: PropTypes.string.isRequired,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.node),
-        PropTypes.node
-    ])
-};
+    render() {
+        const { name, children } = this.props;
+        return (
+            <div className={`table__cell table__cell--${name}`}>
+                {children}
+            </div>
+        );
+    }
+}
 
 export default TableCell;
