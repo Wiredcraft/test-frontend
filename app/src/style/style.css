@@ -1,0 +1,15 @@
+/* line 5, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+body {
+  background-color: #575b71;
+  width: 100vw;
+  height: 100vh;
+  margin: 0; }
+
+/* line 12, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+#header {
+  width: 100%;
+  height: 56px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.64); }
+
+/*# sourceMappingURL=style.css.map */
