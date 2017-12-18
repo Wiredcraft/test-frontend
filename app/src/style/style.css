@@ -76,12 +76,16 @@ body {
     /* line 90, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #content table td:not(:first-child) {
       text-align: center; }
-  /* line 95, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 94, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data {
     display: inline-block;
     background-color: darkgray;
     color: white;
     padding: 3px;
     border-radius: 2px; }
+  /* line 101, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #content .expand-data:after {
+    content: "+";
+    margin-left: 5px; }
 
 /*# sourceMappingURL=style.css.map */

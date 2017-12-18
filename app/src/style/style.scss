@@ -91,12 +91,15 @@ body {
             text-align: center;
         }
     }
-
     .expand-data {
         display: inline-block;
         background-color: darkgray;
         color: white;
         padding: 3px;
         border-radius: 2px;
+    }
+    .expand-data:after {
+        content: "+";
+        margin-left: 5px;
     }
 }
