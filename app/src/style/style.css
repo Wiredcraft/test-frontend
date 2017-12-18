@@ -87,5 +87,15 @@ body {
   #content .expand-data:after {
     content: "+";
     margin-left: 5px; }
+  /* line 105, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #content .region-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: mediumpurple;
+    color: white;
+    margin: 5px 5px;
+    text-align: center;
+    border-radius: 20px; }
 
 /*# sourceMappingURL=style.css.map */

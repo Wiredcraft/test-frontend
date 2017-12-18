@@ -36,9 +36,10 @@
             </thead>
             <tbody>
                 <tr v-for="region in regions" :id="region.name">
-                    <td>{{region.name}}
+                    <td> <div class="region-icon">S</div>{{region.name}}
                     </td>
                     <td>
+                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active">
                             {{region.districts.length}} districts
                         </div>
                     </td>
