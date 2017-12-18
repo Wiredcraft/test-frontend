@@ -27,6 +27,7 @@
             <thead>
                 <tr>
                     <th>Region</th>
+                    <th></th>
                     <th>Last input</th>
                     <th>Number of forms</th>
                     <th>Number of voters</th>
@@ -36,8 +37,11 @@
             <tbody>
                 <tr v-for="region in regions" :id="region.name">
                     <td>{{region.name}}
+                    </td>
+                    <td>
                         <div class="expand-data">
-                            {{region.districts.length}} districts</div>
+                            {{region.districts.length}} districts +
+                        </div>
                     </td>
                     <td>{{region.lastInput}}</td>
                     <td>{{region.numOfForms}}</td>

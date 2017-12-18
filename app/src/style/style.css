@@ -66,21 +66,22 @@ body {
   border-radius: 3px; }
   /* line 81, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content table {
-    width: 100%;
-    border-collapse: collapse; }
-    /* line 85, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    width: 100%; }
+    /* line 84, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #content table th {
       font-weight: 900; }
-    /* line 88, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    /* line 87, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #content table th:first-child {
       text-align: left; }
-    /* line 91, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    /* line 90, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #content table td:not(:first-child) {
       text-align: center; }
-  /* line 96, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 95, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data {
     display: inline-block;
     background-color: darkgray;
-    color: white; }
+    color: white;
+    padding: 3px;
+    border-radius: 2px; }
 
 /*# sourceMappingURL=style.css.map */

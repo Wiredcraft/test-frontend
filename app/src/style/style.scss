@@ -80,7 +80,6 @@ body {
 
     table {
         width: 100%;
-        border-collapse: collapse;
 
         th {
             font-weight: 900;
@@ -97,5 +96,7 @@ body {
         display: inline-block;
         background-color: darkgray;
         color: white;
+        padding: 3px;
+        border-radius: 2px;
     }
 }
