@@ -47,15 +47,15 @@ body {
     #header #btn-container .button:hover {
       background-color: beige;
       color: #575b70; }
-    /* line 63, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    /* line 62, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #header #btn-container .button + .button {
       margin-left: 10px; }
-    /* line 66, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    /* line 65, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #header #btn-container .button-active {
       background-color: #b9b9b9;
       color: white; }
 
-/* line 73, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+/* line 72, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
 #content {
   display: flex;
   margin: auto;
@@ -64,5 +64,23 @@ body {
   background-color: #ffffff;
   box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.64);
   border-radius: 3px; }
+  /* line 81, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #content table {
+    width: 100%;
+    border-collapse: collapse; }
+    /* line 85, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #content table th {
+      font-weight: 900; }
+    /* line 88, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #content table th:first-child {
+      text-align: left; }
+    /* line 91, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #content table td:not(:first-child) {
+      text-align: center; }
+  /* line 96, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #content .expand-data {
+    display: inline-block;
+    background-color: darkgray;
+    color: white; }
 
 /*# sourceMappingURL=style.css.map */

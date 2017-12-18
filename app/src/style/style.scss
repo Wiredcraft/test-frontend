@@ -58,9 +58,8 @@ body {
         .button:hover {
             background-color: beige;
             color: $font-color;
-        }
-        // Add a margin to the second button to make some space.
-        .button + .button{
+        } // Add a margin to the second button to make some space.
+        .button + .button {
             margin-left: 10px;
         }
         .button-active {
@@ -79,4 +78,24 @@ body {
     box-shadow: $shadow;
     border-radius: 3px;
 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+            font-weight: 900;
+        } //text alignment of the first th should be left
+        th:first-child {
+            text-align: left;
+        } //all th elements but the first have their text aligned to the center
+        td:not(:first-child) {
+            text-align: center;
+        }
+    }
+
+    .expand-data {
+        display: inline-block;
+        background-color: darkgray;
+        color: white;
+    }
 }

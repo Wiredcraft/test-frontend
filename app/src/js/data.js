@@ -20,7 +20,7 @@ var data = {
                 }]
             }]
     }, {
-        "name": "Shan state",
+        "name": "Shan state 2",
         "lastInput": 123456,
         "numOfForms": 342456,
         "numOfVoters": 123456,
