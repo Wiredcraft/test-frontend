@@ -6,6 +6,10 @@
     <!-- Setting the viewport of the page. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <script src="../dist/lib/vue/vue.js"></script>
+    <!-- Using defer to execute the script, once the has page finished loading, so addEventListener can be avoided. -->
+    <script src="../src/js/data.js"></script>
+    <script src="../src/js/app.js" defer></script>
 </head>
 
 <body>
@@ -18,7 +22,11 @@
             <div class="button">Specific</div>
         </div>
     </div>
-    <div id="content">ffd</div>
+    <div id="content"><div id="table-filter"></div>
+    
+    <div class="region" v-for="region in regions">{{region.name}}</div>
+    
+    </div>
 </body>
 
 </html>

@@ -53,13 +53,13 @@ body {
             padding: 10px 10px;
             border: 1px solid $divider-color;
             border-radius: 2px;
-            cursor:default;
+            cursor: default;
         }
         .button:hover {
             background-color: beige;
             color: $font-color;
         }
-        // Add a margin between two buttons. I'didnt know that before. That's cool!
+        // Add a margin to the second button to make some space.
         .button + .button{
             margin-left: 10px;
         }
@@ -68,8 +68,6 @@ body {
             color: white;
         }
     }
-
-
 }
 
 #content {
