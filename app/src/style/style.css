@@ -1,15 +1,68 @@
-/* line 5, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/* line 14, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
 body {
-  background-color: #575b71;
   width: 100vw;
   height: 100vh;
-  margin: 0; }
+  margin: 0;
+  background-color: #575b71;
+  font: 100% Open Sans, sans-serif;
+  color: #575b70; }
 
-/* line 12, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+/* line 23, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
 #header {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 56px;
   background-color: #ffffff;
   box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.64); }
+  /* line 31, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #header #logo {
+    margin-left: 10px;
+    padding: 0 10px;
+    width: 30px; }
+  /* line 36, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #header #headline {
+    font-size: 16px;
+    margin-left: 10px;
+    width: 70%; }
+  /* line 41, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #header .divider {
+    height: 100%;
+    width: 1px;
+    background-color: #d0d6e1; }
+  /* line 46, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #header #btn-container {
+    display: flex;
+    align-items: center;
+    margin: auto; }
+    /* line 51, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #header #btn-container .button {
+      width: 50%;
+      padding: 10px 10px;
+      border: 1px solid #d0d6e1;
+      border-radius: 2px;
+      cursor: default; }
+    /* line 58, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #header #btn-container .button:hover {
+      background-color: beige;
+      color: #575b70; }
+    /* line 63, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #header #btn-container .button + .button {
+      margin-left: 10px; }
+    /* line 66, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #header #btn-container .button-active {
+      background-color: #b9b9b9;
+      color: white; }
+
+/* line 75, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+#content {
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.64);
+  border-radius: 3px; }
 
 /*# sourceMappingURL=style.css.map */
