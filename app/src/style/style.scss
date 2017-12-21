@@ -91,6 +91,12 @@ body {
             text-align: center;
         }
     }
+    .district {
+        padding-left: 20px;
+    }
+    .township {
+        padding-left: 40px;
+    }
     .expand-data {
         display: inline-block;
         background-color: darkgray;
@@ -102,14 +108,14 @@ body {
         content: "+";
         margin-left: 5px;
     }
-    .region-icon{
+    .region-icon {
         display: inline-block;
         width: 20px;
         height: 20px;
         background-color: mediumpurple;
         color: white;
         margin: 5px 5px;
-        text-align:center;
+        text-align: center;
         border-radius: 20px;
     }
 }

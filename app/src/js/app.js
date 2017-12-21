@@ -5,7 +5,20 @@ Vue.filter('townships', function (name) {
 
 var app = new Vue({
     el: '#content',
-    data: data
-});
+    data: {
+        results: votingResults,
+        search: '',
+        filter: '',
+    },
 
-console.log(data);
+    //Using computed to filter the elements without altering data
+    computed: {},
+    methods: {
+        show: function (el) {
+
+        },
+        hide: function (el) {
+
+        }
+    }
+});

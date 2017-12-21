@@ -77,17 +77,23 @@ body {
     #content table td:not(:first-child) {
       text-align: center; }
   /* line 94, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #content .district {
+    padding-left: 20px; }
+  /* line 97, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #content .township {
+    padding-left: 40px; }
+  /* line 100, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data {
     display: inline-block;
     background-color: darkgray;
     color: white;
     padding: 3px;
     border-radius: 2px; }
-  /* line 101, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 107, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data:after {
     content: "+";
     margin-left: 5px; }
-  /* line 105, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 111, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .region-icon {
     display: inline-block;
     width: 20px;

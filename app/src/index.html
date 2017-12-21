@@ -34,9 +34,10 @@
                     <th>Update</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr v-for="region in regions" :id="region.name">
-                    <td> <div class="region-icon">S</div>{{region.name}}
+            <template v-for="region in results.regions" :id="region.name">
+                     <tbody>
+                <tr v-on:click="changeRows(region)">
+                    <td> <div class="region-icon" >S</div>{{region.name}}
                     </td>
                     <td>
                         <div v-if="region.districts.length > 0" class="expand-data expand-data-active">
@@ -48,8 +49,41 @@
                     <td>{{region.numOfVoters}}</td>
                     <td>{{region.update}}</td>
                 </tr>
+                <template  v-for="district in region.districts">
+                <tr v-on:click="changeRows(region)">
+                    <td class="district"> <div class="region-icon">D</div>{{district.name}}
+                    </td>
+                    <td>
+                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active">
+                            {{district.townships.length}} townships
+                        </div>
+                    </td>
+                    <td>{{district.lastInput}}</td>
+                    <td>{{district.numOfForms}}</td>
+                    <td>{{district.numOfVoters}}</td>
+                    <td>{{district.update}}</td>
+                </tr>
+                    <tr v-for="township in district.townships" v-on:click="changeRows(region)">
+                    <td class="township"><div class="region-icon">T</div>{{township.name}}
+                    </td>
+                    <td>
+                    </td>
+                    <td>{{township.lastInput}}</td>
+                    <td>{{township.numOfForms}}</td>
+                    <td>{{township.numOfVoters}}</td>
+                    <td>{{township.update}}</td>
+                </tr>
+                             </template>
+            </tbody>
+            </template>
             </tbody>
         </table>
+
+
+
+
+
+
     </div>
 </body>
 
