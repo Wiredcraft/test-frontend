@@ -36,11 +36,11 @@
             </thead>
             <template v-for="region in results.regions" :id="region.name">
                      <tbody>
-                <tr v-on:click="changeRows(region)">
+                <tr>
                     <td> <div class="region-icon" >S</div>{{region.name}}
                     </td>
                     <td>
-                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active">
+                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 1)">
                             {{region.districts.length}} districts
                         </div>
                     </td>
@@ -50,11 +50,11 @@
                     <td>{{region.update}}</td>
                 </tr>
                 <template  v-for="district in region.districts">
-                <tr v-on:click="changeRows(region)">
+                <tr v-if="region.level === 2 || region.level === 3">
                     <td class="district"> <div class="region-icon">D</div>{{district.name}}
                     </td>
                     <td>
-                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active">
+                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 2)">
                             {{district.townships.length}} townships
                         </div>
                     </td>
@@ -63,7 +63,7 @@
                     <td>{{district.numOfVoters}}</td>
                     <td>{{district.update}}</td>
                 </tr>
-                    <tr v-for="township in district.townships" v-on:click="changeRows(region)">
+                    <tr v-for="township in district.townships" v-if="district.level === 3">
                     <td class="township"><div class="region-icon">T</div>{{township.name}}
                     </td>
                     <td>

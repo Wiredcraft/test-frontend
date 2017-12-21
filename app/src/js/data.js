@@ -5,13 +5,14 @@ var votingResults = {
         "numOfForms": 342456,
         "numOfVoters": 123456,
         "update": 342456,
-        "level": 1,
+        "level": 2,
         "districts": [{
             "name": "Aunglan",
             "lastInput": 123456,
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
+            "level": 2,
             "townships": [{
                 "name": "Loilen ",
                 "lastInput": 123456,
@@ -33,6 +34,7 @@ var votingResults = {
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
+            "level": 2,
             "townships": [{
                 "name": "Loilen 1",
                 "lastInput": 123456,
@@ -58,6 +60,7 @@ var votingResults = {
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
+            "level": 2,
             "townships": [{
                 "name": "Loilen 4",
                 "lastInput": 123456,
@@ -71,6 +74,7 @@ var votingResults = {
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
+            "level": 2,
             "townships": [{
                 "name": "Loilen 5",
                 "lastInput": 123456,
@@ -85,6 +89,6 @@ var votingResults = {
                 "update": 342456
                 }]
             }],
-        
+
     }]
 };
