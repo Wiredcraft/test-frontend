@@ -12,7 +12,7 @@ var votingResults = {
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
-            "level": 2,
+            "level": 3,
             "townships": [{
                 "name": "Loilen ",
                 "lastInput": 123456,
@@ -27,7 +27,7 @@ var votingResults = {
         "numOfForms": 342456,
         "numOfVoters": 123456,
         "update": 342456,
-        "level": 1,
+        "level": 2,
         "districts": [{
             "name": "Aunglan",
             "lastInput": 123456,

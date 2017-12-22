@@ -54,7 +54,7 @@
                     <td class="district"> <div class="region-icon">D</div>{{district.name}}
                     </td>
                     <td>
-                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 2)">
+                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 2, district.name)">
                             {{district.townships.length}} townships
                         </div>
                     </td>
