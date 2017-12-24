@@ -23,6 +23,15 @@
         </div>
     </div>
     <div id="content">
+        <div id="search">
+                <select v-model="filterOption" form="filterForm" name="options" id="options">
+                    <option  disabled value="0">Pick filter</option>
+                    <option value="1">Region</option>
+                    <option value="2">District</option>
+                    <option value="3">Township</option>
+                </select>
+                <input v-model="searchQuery" type="text" name="filter" id="filter" placeholder="Enter keyword..">
+        </div>
         <table>
             <thead>
                 <tr>
@@ -78,12 +87,6 @@
             </template>
             </tbody>
         </table>
-
-
-
-
-
-
     </div>
 </body>
 

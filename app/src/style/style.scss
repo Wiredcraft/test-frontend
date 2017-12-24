@@ -4,12 +4,10 @@ $primary-color: #575b71;
 $box-color: #ffffff;
 $font-color: #575b70;
 $divider-color: #d0d6e1;
-$shadow: 0px 1px 10px 0px rgba(50,
-50,
-50,
-0.64); //distX, distY, blur, spread, color
-$font-stack: Open Sans,
-sans-serif;
+$filter-font-color: #ACB3C3;
+//distX, distY, blur, spread, color
+$shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.64); 
+$font-stack: Open Sans, sans-serif;
 
 body {
     width: 100vw;
@@ -70,14 +68,40 @@ body {
 }
 
 #content {
-    display: flex;
     margin: auto;
     margin-top: 20px;
     width: 90%;
     background-color: $box-color;
     box-shadow: $shadow;
     border-radius: 3px;
-
+    
+    #search{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 40px;
+        margin-bottom: 15px;
+    
+        select{
+            flex: 1 0 auto;
+            height: 100%;
+            color: $filter-font-color;
+            font-size: 20px;
+            
+            option{
+                font-size: 20px;
+            }
+        }
+        input{
+            flex: 4 0 auto;
+            height: 100%;
+            font-size: 20px;
+            color: black;
+        }
+    }
+    
     table {
         width: 100%;
 
@@ -107,6 +131,10 @@ body {
     .expand-data:after {
         content: "+";
         margin-left: 5px;
+    }
+    .expand-data:hover {
+        cursor: pointer;
+        background-color: #8e8d8d;
     }
     .region-icon {
         display: inline-block;

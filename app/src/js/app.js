@@ -7,8 +7,8 @@ var app = new Vue({
     el: '#content',
     data: {
         results: votingResults,
-        search: '',
-        filter: '',
+        searchQuery: '',
+        filterOption: 0,
     },
 
     //Using computed to filter the elements without altering the data
@@ -37,8 +37,9 @@ var app = new Vue({
 
                 if (elem.level > 1) {
                     elem.level = 1;
-                    elem.districts.forEach(function(resultDistrict){
-                        if(resultDistrict.level > 2){
+                    //If the Region level toggle is clicked and the Districts  are being toggled off, each Township must be toggled off, too.
+                    elem.districts.forEach(function (resultDistrict) {
+                        if (resultDistrict.level > 2) {
                             resultDistrict.level = 2;
                         }
                     });
