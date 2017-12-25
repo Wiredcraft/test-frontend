@@ -14,7 +14,7 @@ var votingResults = {
             "update": 342456,
             "level": 3,
             "townships": [{
-                "name": "Loilen ",
+                "name": "Loilen",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
@@ -27,62 +27,62 @@ var votingResults = {
         "numOfForms": 342456,
         "numOfVoters": 123456,
         "update": 342456,
-        "level": 2,
+        "level": 1,
         "districts": [{
-            "name": "Aunglan",
+            "name": "Rakhaing",
             "lastInput": 123456,
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
             "level": 2,
             "townships": [{
-                "name": "Loilen 1",
+                "name": "Naypyidaw",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
                 "update": 342456
                 }, {
-                "name": "Loilen 2",
+                "name": "Mandalay",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
                 "update": 342456
                 }, {
-                "name": "Loilen 3",
+                "name": "Magwe",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
                 "update": 342456
                 }]
             }, {
-            "name": "Aunglan 2",
+            "name": "Chin",
             "lastInput": 123456,
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
             "level": 2,
             "townships": [{
-                "name": "Loilen 4",
+                "name": "Hakha",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
                 "update": 342456
                 }]
             }, {
-            "name": "Aunglan 3",
+            "name": "Kachin",
             "lastInput": 123456,
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
             "level": 2,
             "townships": [{
-                "name": "Loilen 5",
+                "name": "Taunggyi",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
                 "update": 342456
                 }, {
-                "name": "Loilen 6",
+                "name": "Pathein",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,

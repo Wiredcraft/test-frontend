@@ -6,14 +6,77 @@ Vue.filter('townships', function (name) {
 var app = new Vue({
     el: '#content',
     data: {
-        results: votingResults,
+        //Copying the votingResult Object
+        results: JSON.parse(JSON.stringify(votingResults)),
         searchQuery: '',
-        filterOption: 0,
+        filterOption: 'region',
     },
-
-    //Using computed to filter the elements without altering the data
-    computed: {},
+    //Watch for changes of this.searchQuery and respond accordingly
+    watch: {
+        searchQuery: function () {
+            //Only do something, if an filter option was selected and this.searchQuery.length is longer than/equals three characters
+            if (this.searchQuery.length >= 3) {
+                if (this.filterOption === 'region') {
+                    var res = this.findByRegion(this.searchQuery);
+                    if (res !== undefined)
+                        this.pushResults(res);
+                } else if (this.filterOption === 'district') {
+                    var res = this.findByDistrict(this.searchQuery);
+                    if (res !== undefined)
+                        this.pushResults(res);
+                } else if (this.filterOption === 'township') {
+                    var res = this.findByTownship(this.searchQuery);
+                    if (res !== undefined)
+                        this.pushResults(res);
+                }
+            } else if (this.searchQuery === '' || this.searchQuery.length < 3) {
+                this.restoreOriginalState();
+            }
+        }
+    },
     methods: {
+        pushResults: function (res) {
+            this.results.regions = [];
+            this.results.regions.push(res);
+        },
+        restoreOriginalState: function () {
+            this.results.regions = [];
+            this.results = JSON.parse(JSON.stringify(votingResults));
+        },
+        //Finds a region by specifying a full or partial String in this.searchQuery
+        findByRegion: function (regionString) {
+            var tmpResults = JSON.parse(JSON.stringify(votingResults));
+            return tmpResults.regions.find(function (region) {
+                //If this.searchQuery matches region.name, the region will be returned. toLowerCase() is being applied, so the user can ignore case sensitivity.
+                if (region.name.toLowerCase().match(regionString.toLowerCase()))
+                    return region;
+            });
+        },
+        findByDistrict: function (districtString) {
+            var tmpResults = JSON.parse(JSON.stringify(votingResults));
+            return tmpResults.regions.find(function (region) {
+                return region.districts.find(function (district) {
+                    if (district.name.toLowerCase().match(districtString.toLowerCase())) {
+                        region.level = 2;
+                        return region;
+                    }
+                });
+            });
+        },
+        findByTownship: function (townshipString) {
+            var tmpResults = JSON.parse(JSON.stringify(votingResults));
+            return tmpResults.regions.find(function (region) {
+                return region.districts.find(function (district) {
+                    return district.townships.find(function (township) {
+                        if (township.name.toLowerCase().match(townshipString.toLowerCase())) {
+                            region.level = 2;
+                            district.level = 3;
+                            return region;
+                        }
+                    });
+                });
+            });
+        },
         //Finds the region for which the toggle was clicked
         findRegion: function (region) {
             return this.results.regions.find(function (currentRegion) {
