@@ -4,14 +4,9 @@ Thanks again for giving me the chance to prove myself. Here are my results! :)
 
 ## Implementation
 
-As requested, I used Vue.js instead of React to implement the Coding Test. For the style, I decided to go for SCSS. The SCSS 
-source can be found in app/src/style/style.scss.
-Instead of implementing all the browser prefixes in the SCSS/CSS, I decided to use -prefix-free to automatically add those prefixes when required.
+As requested, I used Vue.js instead of React to implement the Coding Test. For the style, I decided to go for SCSS. The SCSS source can be found in app/src/style/style.scss.
 
 No other Frameworks (eg. jQuery) were used.
-
-## Approach
-
 
 ## Folder structure
 
@@ -54,7 +49,7 @@ Search for townships and enter "Mag". The search kicks in and finds the first To
 
 The Unit Tests were performed with Karma + Jasmine. Please note, that Karma +  Jasmine were installed globally using npm.
 
-Just run karma karma.conf.js to run the tests.
+Just run karma karma.conf.js and the tests should be performed.
 
 ### Test cases
 
