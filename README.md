@@ -39,7 +39,7 @@ To provide a better user experience, the search input is not case-sensitive. Thi
 
 ### Possible improvements
 
-This apporach might already be better than an more static search that requires the input of on entire String to find an result, but it could be even further improved by displaying all similar results.
+This approach might already be better than an more static search, that requires the input of on entire String to find an result, but it could be even further improved by displaying all similar results.
 
 Example:
 
@@ -47,18 +47,18 @@ Search for townships and enter "Mag". The search kicks in and finds the first To
 
 ## Unit Tests
 
-The Unit Tests were performed with Karma + Jasmine. Please note, that Karma +  Jasmine were installed globally using npm.
+The Unit Tests were performed with Karma + Jasmine. Please note that Karma +  Jasmine were installed globally using npm.
 
-Just run karma karma.conf.js and the tests should be performed.
+Just run "karma karma.conf.js" and the tests should be performed.
 
 ### Test cases
 
 I implemented four simple text cases:
 
 - initial value of filterOption must be region
-- findRegion is able to find an region by providing an incomplete search query
-- findRegion is able to find an region by providing an complete search query
-- pushResults is able to correctly push search results
+- findRegion() is able to find an region by providing an incomplete search query
+- findRegion() is able to find an region by providing an complete search query
+- pushResults() is able to correctly push search results
 
 
 
