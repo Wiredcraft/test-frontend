@@ -113,12 +113,17 @@ body {
 
         th {
             font-weight: 900;
+            border-bottom:  1px solid $divider-color;
         } //text alignment of the first th should be left
         th:first-child {
             text-align: left;
         } //all th elements but the first have their text aligned to the center
         td:not(:first-child) {
             text-align: center;
+        }
+        tr{
+            height: 45px;
+            border: 1px solid $divider-color;
         }
     }
     .district {

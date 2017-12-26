@@ -98,20 +98,25 @@ body {
     width: 100%; }
     /* line 114, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #content table th {
-      font-weight: 900; }
-    /* line 117, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+      font-weight: 900;
+      border-bottom: 1px solid #d0d6e1; }
+    /* line 118, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #content table th:first-child {
       text-align: left; }
-    /* line 120, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    /* line 121, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
     #content table td:not(:first-child) {
       text-align: center; }
-  /* line 124, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    /* line 124, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    #content table tr {
+      height: 45px;
+      border: 1px solid #d0d6e1; }
+  /* line 129, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .district {
     padding-left: 20px; }
-  /* line 127, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 132, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .township {
     padding-left: 40px; }
-  /* line 130, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 135, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data {
     display: inline-block;
     background-color: darkgray;
@@ -119,19 +124,19 @@ body {
     padding: 3px;
     border-radius: 2px;
     width: 120px; }
-  /* line 138, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 143, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data-active:after {
     content: "-" !important;
     margin-left: 5px; }
-  /* line 142, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 147, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data:after {
     content: "+";
     margin-left: 5px; }
-  /* line 146, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 151, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data:hover {
     cursor: pointer;
     background-color: #8e8d8d; }
-  /* line 150, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 155, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .region-icon {
     display: inline-block;
     width: 20px;
