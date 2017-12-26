@@ -15,22 +15,23 @@ No other Frameworks (eg. jQuery) were used.
 
 ## Folder structure
 
-.
+```
 +-- app
 |   +-- dist
-|       +-- js
-|           +-- app.js (Main JS-File)
-|           +-- data.js (Data-Object)
-|       +-- lib
-|           +-- vue.min.js
-|       +-- res
-|       +-- style
+|       +-- js (JS files)
+|       +-- lib (Library files)
+|       +-- res (Ressources like images)
+|       +-- style (style.css)
 |   +-- src
+|       +-- js (Src JS files)
+|       +-- lib (Library files)
+|       +-- res (Ressources like images)
+|       +-- style (SCSS source)
 +-- test
 |   +-- karma.conf.js
 |   +-- test.js
 +-- README.md
-
+```
 ## How to run
 
 Just open the app/dist/index.html in your browser.
@@ -52,6 +53,8 @@ Search for townships and enter "Mag". The search kicks in and finds the first To
 ## Unit Tests
 
 The Unit Tests were performed with Karma + Jasmine. Please note, that Karma +  Jasmine were installed globally using npm.
+
+Just run karma karma.conf.js to run the tests.
 
 ### Test cases
 
