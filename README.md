@@ -49,7 +49,7 @@ Search for townships and enter "Mag". The search kicks in and finds the first To
 
 The Unit Tests were performed with Karma + Jasmine. Please note that Karma +  Jasmine were installed globally using npm.
 
-Just run "karma karma.conf.js" and the tests should be performed.
+Just run "karma start karma.conf.js" and the tests should be performed.
 
 ### Test cases
 
