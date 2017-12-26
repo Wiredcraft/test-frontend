@@ -1,8 +1,3 @@
-//returns all the townships to the list
-Vue.filter('townships', function (name) {
-    return data.filter(name);
-});
-
 var app = new Vue({
     el: '#content',
     data: {
@@ -16,8 +11,10 @@ var app = new Vue({
         searchQuery: function () {
             //Only do something, if an filter option was selected and this.searchQuery.length is longer than/equals three characters
             if (this.searchQuery.length >= 3) {
+                //If the results are being filtered by 'region', try to find a match
                 if (this.filterOption === 'region') {
                     var res = this.findByRegion(this.searchQuery);
+                    //If a region was found, show the results on the page
                     if (res !== undefined)
                         this.pushResults(res);
                 } else if (this.filterOption === 'district') {
@@ -29,22 +26,26 @@ var app = new Vue({
                     if (res !== undefined)
                         this.pushResults(res);
                 }
+                // If the search input is being deletd, the original data set must be displayed
             } else if (this.searchQuery === '' || this.searchQuery.length < 3) {
                 this.restoreOriginalState();
             }
         }
     },
     methods: {
+        //Removes the current data set and pushes the results to be shown on the page
         pushResults: function (res) {
             this.results.regions = [];
             this.results.regions.push(res);
         },
+        //Restores the inital states and data
         restoreOriginalState: function () {
             this.results.regions = [];
             this.results = JSON.parse(JSON.stringify(votingResults));
         },
         //Finds a region by specifying a full or partial String in this.searchQuery
         findByRegion: function (regionString) {
+            //Clone votingResults to use unaltered data
             var tmpResults = JSON.parse(JSON.stringify(votingResults));
             return tmpResults.regions.find(function (region) {
                 //If this.searchQuery matches region.name, the region will be returned. toLowerCase() is being applied, so the user can ignore case sensitivity.
@@ -52,25 +53,39 @@ var app = new Vue({
                     return region;
             });
         },
+        // Finds a district by specifying a full or partial String in this.searchQuery
         findByDistrict: function (districtString) {
             var tmpResults = JSON.parse(JSON.stringify(votingResults));
+            //Iterate through all regions
             return tmpResults.regions.find(function (region) {
+                //Iterate through all districts of the current region
                 return region.districts.find(function (district) {
+                    //Check if the (partial) string matches the current district.name
                     if (district.name.toLowerCase().match(districtString.toLowerCase())) {
+                        //Change the region level to show the district level in the table
                         region.level = 2;
+                        //return the entire region
                         return region;
                     }
                 });
             });
         },
+        //Finds a township by specifying a full or partial String in this.searchQuery
         findByTownship: function (townshipString) {
             var tmpResults = JSON.parse(JSON.stringify(votingResults));
+            //Iterate through all regions
             return tmpResults.regions.find(function (region) {
+                //Iterate through all districts
                 return region.districts.find(function (district) {
+                    //Iterate through all townships
                     return district.townships.find(function (township) {
+                        //Check if the current township matches the (partial) search string
                         if (township.name.toLowerCase().match(townshipString.toLowerCase())) {
+                            //Change the region level to show the district level in the table
                             region.level = 2;
+                            //Change the district level to show alle the districts townships in the table
                             district.level = 3;
+                            //Return the entire region
                             return region;
                         }
                     });
@@ -97,27 +112,31 @@ var app = new Vue({
             if (clickedLevel === 1) {
                 //Finding the required region in results
                 var elem = this.findRegion(region);
-
+                //Toggle out the dostricts
                 if (elem.level > 1) {
                     elem.level = 1;
-                    //If the Region level toggle is clicked and the Districts  are being toggled off, each Township must be toggled off, too.
+                    //If the region level toggle is clicked and the districts are being toggled off, the township level must be toggled off, too.
                     elem.districts.forEach(function (resultDistrict) {
                         if (resultDistrict.level > 2) {
                             resultDistrict.level = 2;
                         }
                     });
+                    //Toggle in the districts
                 } else if (elem.level === 1) {
                     elem.level = 2;
                 }
             } else if (clickedLevel === 2) {
                 //Finding the required region in results
                 var elem = this.findDistrict(region, district);
+                //Toggle out the townships
                 if (elem.level > 2) {
                     elem.level = 2;
+                    //Toggle in the townships
                 } else if (elem.level === 2) {
                     elem.level = 3;
                 }
             }
-        }
+        },
+
     }
 });

@@ -133,6 +133,11 @@ body {
         color: white;
         padding: 3px;
         border-radius: 2px;
+        width: 120px;
+    }
+   .expand-data-active:after {
+        content: "-" !important;
+        margin-left: 5px;
     }
     .expand-data:after {
         content: "+";

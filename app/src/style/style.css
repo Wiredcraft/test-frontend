@@ -117,16 +117,21 @@ body {
     background-color: darkgray;
     color: white;
     padding: 3px;
-    border-radius: 2px; }
-  /* line 137, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+    border-radius: 2px;
+    width: 120px; }
+  /* line 138, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  #content .expand-data-active:after {
+    content: "-" !important;
+    margin-left: 5px; }
+  /* line 142, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data:after {
     content: "+";
     margin-left: 5px; }
-  /* line 141, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 146, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .expand-data:hover {
     cursor: pointer;
     background-color: #8e8d8d; }
-  /* line 145, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
+  /* line 150, C:/Users/patri/Desktop/wiredcraft-front-end-task/test-frontend/app/src/style/style.scss */
   #content .region-icon {
     display: inline-block;
     width: 20px;

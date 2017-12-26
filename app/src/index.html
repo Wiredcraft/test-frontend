@@ -24,12 +24,17 @@
     </div>
     <div id="content">
         <div id="search">
-                <select v-model="filterOption" form="filterForm" name="options" id="options">
+            <select v-model="filterOption" form="filterForm" name="options" id="options">
                     <option value="region" default>Region</option>
                     <option value="district">District</option>
                     <option value="township">Township</option>
                 </select>
-                <input v-model="searchQuery" type="text" name="filter" id="filter" placeholder="Enter keyword..">
+            <!--
+
+            The input will be dynamically assigned to the model.searchQuery
+            
+            -->
+            <input v-model="searchQuery" type="text" name="filter" id="filter" placeholder="Enter keyword..">
         </div>
         <table>
             <thead>
@@ -42,13 +47,38 @@
                     <th>Update</th>
                 </tr>
             </thead>
+            <!--
+
+            Iterate through all the regions.
+
+            -->
             <template v-for="region in results.regions" :id="region.name">
                      <tbody>
                 <tr>
                     <td> <div class="region-icon" >S</div>{{region.name}}
                     </td>
                     <td>
-                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 1)">
+                        <!--
+
+                        Show this if the item's level property is === 1 to indicate, that this is a nested table (+)
+
+                        The +/- toggle is performed by adding an additional class (expand-data-active) to the classList.
+                        
+                        -->
+                        <div v-if="region.districts.length > 0" v-show="region.level === 1" class="expand-data" v-on:click="changeDisplayLevel(region.name, 1)">
+                            <!--
+
+                            Show the number of the region's districts
+            
+                            -->
+                            {{region.districts.length}} districts
+                        </div>
+                        <!--
+
+                        If the region's level is > 1, this will be shown to indicate, that the table rows containing the districts can be hidden. (-)
+            
+                        -->
+                        <div v-if="region.districts.length > 0" v-show="region.level > 1" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 1)">
                             {{region.districts.length}} districts
                         </div>
                     </td>
@@ -57,13 +87,22 @@
                     <td>{{region.numOfVoters}}</td>
                     <td>{{region.update}}</td>
                 </tr>
+                                                  
+                <!--
+
+                To access the 3d level (townships) and place the table rows correctly under the right district, we need to create a sub-template, iterating through the regions district.
+            
+                --> 
                 <template  v-for="district in region.districts">
                 <tr v-if="region.level === 2 || region.level === 3">
                     <td class="district"> <div class="region-icon">D</div>{{district.name}}
                     </td>
                     <td>
-                        <div v-if="region.districts.length > 0" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 2, district.name)">
+                        <div v-show="district.level === 2" v-if="region.districts.length > 0" class="expand-data" v-on:click="changeDisplayLevel(region.name, 2, district.name)">
                             {{district.townships.length}} townships
+                            </div>
+                        <div v-show="district.level > 2" v-if="region.districts.length > 0" class="expand-data expand-data-active" v-on:click="changeDisplayLevel(region.name, 2, district.name)">
+                 {{district.townships.length}} townships
                         </div>
                     </td>
                     <td>{{district.lastInput}}</td>

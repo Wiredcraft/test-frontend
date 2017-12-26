@@ -5,14 +5,14 @@ var votingResults = {
         "numOfForms": 342456,
         "numOfVoters": 123456,
         "update": 342456,
-        "level": 2,
+        "level": 1,
         "districts": [{
             "name": "Aunglan",
             "lastInput": 123456,
             "numOfForms": 342456,
             "numOfVoters": 123456,
             "update": 342456,
-            "level": 3,
+            "level": 2,
             "townships": [{
                 "name": "Loilen",
                 "lastInput": 123456,
@@ -42,7 +42,7 @@ var votingResults = {
                 "numOfVoters": 123456,
                 "update": 342456
                 }, {
-                "name": "Mandalay",
+                "name": "Ayin",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
@@ -76,7 +76,7 @@ var votingResults = {
             "update": 342456,
             "level": 2,
             "townships": [{
-                "name": "Taunggyi",
+                "name": "Magwa",
                 "lastInput": 123456,
                 "numOfForms": 342456,
                 "numOfVoters": 123456,
