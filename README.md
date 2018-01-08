@@ -49,7 +49,9 @@ Search for townships and enter "Mag". The search kicks in and finds the first To
 
 The Unit Tests were performed with Karma + Jasmine. Please note that Karma +  Jasmine were installed globally using npm.
 
-Just run "karma start karma.conf.js" and the tests should be performed.
+To install the dependencies, just enter `npm install` in the console.
+
+Once npm has installed the dependencies, you should be able to perform the tests by using `npm test`.
 
 ### Test cases
 

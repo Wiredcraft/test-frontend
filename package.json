@@ -1,0 +1,36 @@
+{
+  "name": "test-frontend",
+  "version": "1.0.0",
+  "description": "Thanks again for giving me the chance to prove myself. Here are my results! :)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "karma": "^2.0.0",
+    "jasmine-core": "^2.8.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-spec-reporter": "0.0.32"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.8.0",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-spec-reporter": "0.0.32"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/karma start test/karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmielke89/test-frontend.git"
+  },
+  "author": "Patrick Mielke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmielke89/test-frontend/issues"
+  },
+  "homepage": "https://github.com/pmielke89/test-frontend#readme"
+}

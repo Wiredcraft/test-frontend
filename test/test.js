@@ -4,15 +4,15 @@ describe("Vue Unit Tests", function () {
         expect(app.filterOption).toBe('region');
     });
 
-    it("findRegion is able to find an region by providing an incomplete search query", function () {
+    it("findRegion() is able to find an region by providing an incomplete search query", function () {
         expect(app.findByRegion("Sha").name).toBe('Shan state');
     });
 
-    it("findRegion is able to find an region by providing an complete search query", function () {
+    it("findRegion() is able to find an region by providing an complete search query", function () {
         expect(app.findByRegion("Shan state").name).toBe('Shan state');
     });
 
-    it("pushResults is able to correctly push search results", function () {
+    it("pushResults() is able to correctly push search results", function () {
         var results = {
             "name": "Shan state",
             "lastInput": 123456,
