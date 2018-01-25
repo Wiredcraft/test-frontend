@@ -1,6 +1,6 @@
 # Wiredcraft Front-end Developer Coding Test
 
-Built with React and Redux. Styles written in sass.live Demo:[frontend-test](https://romeroyang.github.io/)
+Built with React and Redux. Styles written in sass.live Demo:[frontend-test](https://romeroyang.github.io/test-frontend/)
 
 ## Design in React Components
 
