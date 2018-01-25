@@ -3,12 +3,15 @@ import { createLogger } from "redux-logger"
 
 import rootReducer from "../reducers/reducers"
 
-const loggerMiddleware = createLogger()
+const middlewares = []
+if (process.env.NODE_ENV === `development`) {
+    middlewares.push(createLogger())
+}
 
 export default function configureStore(preloadedState) {
     return createStore(
         rootReducer,
         preloadedState,
-        applyMiddleware(loggerMiddleware)
+        applyMiddleware(...middlewares)
     )
 }

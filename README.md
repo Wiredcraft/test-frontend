@@ -33,5 +33,5 @@ Built with React and Redux. Styles written in sass.
 ### production
 
 ```
- npm build
+ npm run build
 ```
