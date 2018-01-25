@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 import Header from "./Header"
 import PageAll from "../containers/PageAll"
@@ -15,8 +15,12 @@ class App extends Component {
           <Header />
 
           <div className="body">
-            <Route exact path="/" component={PageAll} />
-            <Route exact path="/spec" component={PageSpec} />
+            <Switch>
+              <Route exact path="/" component={PageAll} />
+              <Route path="/spec" component={PageSpec} />
+
+              <Route path="/" component={PageAll} />
+            </Switch>
           </div>
         </div>
       </Router>
