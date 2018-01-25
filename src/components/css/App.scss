@@ -1,0 +1,169 @@
+$border-color: #ddd;
+$text-color: #666;
+
+$nav-height: 56px;
+$table-li-height: 40px;
+
+.App {
+  display: flex;
+  flex-direction: column;
+  background-color: #556;
+  min-height: 100vh;
+  color: $text-color;
+}
+
+select,
+input {
+  border: none;
+  outline: none;
+}
+
+/*-------------header--------------*/
+.header {
+  background-color: #fff;
+  height: $nav-height;
+  box-shadow: 0 0 3px 3px #555;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: $nav-height;
+  border-right: 1px solid #ddd;
+  img {
+    padding: 4px 0;
+    height: 48px;
+  }
+}
+
+.title {
+  flex-grow: 1;
+  padding: 0 8px;
+}
+
+.nav-btn {
+  text-align: center;
+  line-height: $nav-height;
+  border-left: 1px solid #ddd;
+  &.active {
+    background-color: #eee;
+  }
+  a {
+    display: block;
+    min-width: 150px;
+    height: $nav-height;
+    text-decoration: none;
+    color: #666;
+    &:hover {
+      background: #eee;
+    }
+  }
+}
+
+/*-------------body--------------*/
+.body {
+  flex-grow: 1;
+}
+
+.table {
+  margin: $table-li-height auto;
+  width: 80%;
+  min-width: 800px;
+  background-color: #fff;
+  border-radius: 3px;
+  p {
+    padding: 16px;
+  }
+  .thead {
+    font-weight: bold;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    > div {
+      width: 30%;
+      height: $table-li-height;
+      line-height: $table-li-height;
+      text-align: center;
+      border: 1px solid #ddd;
+      &.name {
+        min-width: 30%;
+        flex-grow: 1;
+        text-align: left;
+        padding: 0 8px;
+      }
+    }
+    .icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 8px;
+      color: #fff;
+      text-align: center;
+      line-height: 24px;
+      background-color: #769;
+      border-radius: $table-li-height;
+      &.lv-d {
+        margin-left: 32px;
+      }
+      &.lv-t {
+        margin-left: 56px;
+      }
+    }
+    button {
+      float: right;
+      margin: 8px;
+      text-align: left;
+      color: $text-color;
+      border: none;
+      background: #eee;
+      width: 40%;
+      height: 24px;
+      outline: none;
+      border-radius: 2px;
+      &:hover,
+      &.open {
+        background: $border-color;
+      }
+      span {
+        float: right;
+        font-size: 20px;
+        line-height: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.table-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  select {
+    padding: 0 8px;
+    border-right: 1px solid #ddd;
+    border-radius: 3px 0 0 0;
+    min-width: 150px;
+    height: 48px;
+    font-size: 16px;
+  }
+  option {
+    font-size: 16px;
+  }
+  input {
+    padding: 0 8px;
+    height: 48px;
+    flex-grow: 1;
+  }
+  img {
+    height: 16px;
+    padding: 16px;
+  }
+}
