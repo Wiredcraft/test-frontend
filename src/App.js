@@ -3,6 +3,7 @@ import './App.css';
 import StateRow from './components/StateRow'
 import Table from './components/Table';
 import { data } from './data/data'
+import TableFilter from './components/TableFilter';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           
         </header>
 
+        <TableFilter />
         <table style={{width: '80%', margin: 'auto'}}>
           <thead>
             <tr>
