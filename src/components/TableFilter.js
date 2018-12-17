@@ -3,7 +3,7 @@ import Dropdown from './Dropdown/Dropdown'
 import Search from './Search';
 import styles from './TableFilter.module.scss'
 import { connect } from 'react-redux';
-import { onSearchBtnClicked } from '../store/actions/inputAction'
+import { onSearchBtnClicked } from '../store/actions/filterAction'
 
 // dropdown options
 const options = ['Region', 'Last input', 'Number of forms', 'Number of voters', 'Updates'];
