@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styles from './Dropdown.module.scss'
 
 class Dropdown extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Dropdown extends Component {
     return this.props.options.map((option, i) => {   
       return (
         <li 
-          onClick={() => {this.props.onTypeChange(i); this.setState({active: false})}} 
+          onClick={() => {this.props.onFilterChange(i); this.setState({active: false})}} 
           key={i} 
           // className={"dropdown__list-item " + (i === this.state.selected ? 'dropdown__list-item--active' : '')}
         >
@@ -37,7 +38,7 @@ class Dropdown extends Component {
   render() {
     // dropdown div
     return (
-      <div className="dropdown">
+      <div className={styles.Dropdown}>
         <div
           onClick={() => this.toggleDropdown()}
         >

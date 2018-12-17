@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Row.module.scss'
 import PropTypes from 'prop-types'
 
 
