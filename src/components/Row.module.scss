@@ -1,0 +1,29 @@
+@import '../styles/variables.scss';
+
+.row {
+  font-size: 1.6rem;
+  height: 5rem;
+  // text-align: center;
+  color: $color-primary;
+
+  // Region table cell are not text-centered
+  td:not(:first-child) {
+    text-align: center;
+  }
+
+  td:first-child {
+    position: relative;
+    width: 38rem;
+  }
+
+
+  button {
+    float: right;
+    width: 10.7rem;
+    height: 2.6rem;
+    margin-right: 1rem;
+    border-radius: 2px;
+    border: none;
+    color: $color-gray-dark;
+  }
+}

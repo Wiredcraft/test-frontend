@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './Row.module.scss'
+import Region from './Region/Region';
 
 
 export default function Row(props) {
   const {name, input, forms, voters, updates} = props.data
   return (
-    <tr>
+    <tr className={styles.row}>
       <td>
-          <span>{name}</span>
-          {props.children}
+        <Region name={name} type={props.type}/>
+        {props.children}
       </td>
       <td>{input}</td>
       <td>{forms}</td>

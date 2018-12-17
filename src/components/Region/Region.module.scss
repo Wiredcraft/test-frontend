@@ -1,0 +1,39 @@
+.container {
+  display: inline-block;
+
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+
+
+  .icon {
+    display: inline-block;
+    background-color: #897AD0;
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    margin: 0 .5rem 0 1rem;
+
+  }
+
+
+  .name {
+    display: inline-block;
+    
+  }
+}
+
+// indentation before district-level cell region name
+.DIndentation {
+  margin-left: 2rem;
+  height: 0.9rem;
+}
+// indentation before township-level cell region name
+.TIndentation {
+  margin-left: 4rem;
+  height: 0.9rem;
+}

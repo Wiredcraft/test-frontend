@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Dropdown from './Dropdown/Dropdown'
-import Search from './Search';
+import Dropdown from '../Dropdown/Dropdown'
+import Search from '../Search';
 import styles from './TableFilter.module.scss'
 import { connect } from 'react-redux';
-import { onSearchBtnClicked } from '../store/actions/filterAction'
+import { onSearchBtnClicked } from '../../store/actions/filterAction'
 
 // dropdown options
 const options = ['Region', 'Last input', 'Number of forms', 'Number of voters', 'Updates'];
@@ -30,7 +30,7 @@ class TableFilter extends Component {
     console.log(this.state.filterText)
 
     return (
-      <div>
+      <div className={styles.container}>
         <div className={styles.DropdownBox}>
           <Dropdown  title={this.state.filterType} options={options} onFilterChange={this.onTypeChangeHandler} />
         </div>

@@ -1,0 +1,27 @@
+@import './styles/variables.scss';
+
+table, th, td {
+  border: 1px solid #D8D8D8;
+  border-collapse: collapse;
+  background-color: $color-white;
+}
+
+th:first-child {
+  width: 28%;
+}
+th {
+  width: 17%;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  
+}
+
+.TableContainer {
+  padding: 2rem 0 10rem 0;
+  background-color: $color-primary;
+  width: 100vw;
+  margin: auto;
+}

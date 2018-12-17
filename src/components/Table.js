@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import StateRow from './StateRow';
 import { connect } from 'react-redux';
+import Row from './Row';
+import styles from './Table.module.scss';
 
 class Table extends Component {
 
@@ -22,20 +24,22 @@ class Table extends Component {
     })
   }
 
+
   render() {
     const { searchKeyword, searchType } = this.props
     console.log(searchKeyword, searchType)
+    const tableAttributes = {
+      name: 'Region', 
+      input: 'Last input', 
+      forms: 'Number of forms',
+      voters: 'Number of voters',
+      updates: 'Updates'
+    }
     return (
       <React.Fragment>
-        <table style={{width: '80%', margin: 'auto'}}>
+        <table className={styles.container}>
           <thead>
-            <tr>
-              <th>Region</th>
-              <th>Last input</th>
-              <th>Number of forms</th>
-              <th>Number of voters</th>
-              <th>Updates</th>
-            </tr>
+            <Row data={tableAttributes}/>
           </thead>
           <tbody>
             {this.filter()}

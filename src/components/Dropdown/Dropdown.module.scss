@@ -1,9 +1,18 @@
 .Dropdown {
   position: relative;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  height: 2.4rem;
+  color: gray;
+  text-align: center;
   
   ul {
     position: fixed;
     background: #fff;
-    padding: 3rem;
+    list-style: none;
+
+    li {
+      padding: .5rem;
+    }
   }
 }

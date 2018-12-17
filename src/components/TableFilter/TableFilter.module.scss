@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.container {
+  
+  width: 80vw;
+  background: white;
+  margin: auto;
+  font-size: 1.6rem;
+  color: $color-primary;
+}
+
+
+.DropdownBox {
+  width: 18%;
+  display: inline-block;
+  height: 100%;
+}
+.SearchBox {
+  width: 82%;
+  // height: 100%;
+  display: inline-block;
+}

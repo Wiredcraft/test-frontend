@@ -7,7 +7,6 @@ export default class Nav extends Component {
   }
 
   onSelectedHandler = (e) => {
-    console.log(e.target.name);
     this.setState({active: e.target.name})
   }
 

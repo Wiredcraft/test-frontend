@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Row from './Row'
 import TownshipRow from './TownshipRow';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import styles from './StateRow.module.scss'; // only use its Active Default classes
 
 class DistrictRow extends Component {
 	constructor(props) {
@@ -14,16 +15,21 @@ class DistrictRow extends Component {
 	}
 
 	render() {
-    const {townships} = this.props.districtData
+		const {townships} = this.props.districtData
+		const { show } = this.state
     
     // this renders a single district-level row 
 		// and optionally rendering its township-level childrens
+		// &nbsp; is space in HTML entities
 		return (
 			<React.Fragment>
-				<Row data={this.props.districtData}>
-					<button onClick={this.handleButtonClicked}>{townships.length} Townships</button>
+				<Row type='D' data={this.props.districtData}>
+					<button 
+						className={show ? styles.Active : styles.Default} 
+						onClick={this.handleButtonClicked}>{townships.length} Townships &nbsp;
+						{show || townships.length === 0 ? <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i> }</button>
 				</Row>
-				{this.state.show && townships.map(i => <TownshipRow key={i.name} townshipData={i} />) }
+				{show && townships.map(i => <TownshipRow key={i.name} townshipData={i} />) }
 			</React.Fragment>
   	)
 	}

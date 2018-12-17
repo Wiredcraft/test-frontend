@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 function TownshipRow(props) {
   return (
-    <Row data={props.townshipData} />
+    <Row type='T' data={props.townshipData} />
   )
 }
 
