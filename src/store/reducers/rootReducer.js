@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import inputReducer from './inputReducer'
+import filterReducer from './filterReducer'
 
 const rootReducer = combineReducers({
-  searchText: inputReducer
+  search: filterReducer
 })
 
 export default rootReducer

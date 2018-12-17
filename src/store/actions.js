@@ -1,1 +1,1 @@
-export const INPUT_UPDATE = 'INPUT_UPDATE'
+export const SEARCH_UPDATE = 'SEARCH_UPDATE'

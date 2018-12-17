@@ -3,8 +3,28 @@ import StateRow from './StateRow';
 import { connect } from 'react-redux';
 
 class Table extends Component {
+
+  // optionally render rows based on keywords and searchType
+  filter = () => {
+    return this.props.data.map(i => {
+      switch(this.props.searchType) {
+        case 'Last input':
+          return i.input.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
+        case 'Number of forms':
+          return i.forms.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
+        case 'Number of voters':
+          return i.voters.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
+        case 'Updates':
+          return i.updates.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
+        default:
+          return i.name.toUpperCase().includes(this.props.searchKeyword.toUpperCase()) && <StateRow key={i.name} stateData={i}/>
+      }
+    })
+  }
+
   render() {
-    console.log(this.props.data)
+    const { searchKeyword, searchType } = this.props
+    console.log(searchKeyword, searchType)
     return (
       <React.Fragment>
         <table style={{width: '80%', margin: 'auto'}}>
@@ -18,21 +38,20 @@ class Table extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* list of state-level rows */}
-          {this.props.data.map(i =>  <StateRow key={i.name} stateData={i}/>)}
+            {this.filter()}
           </tbody>
         </table>
       </React.Fragment>
-     
     )
   }
 }
 
 // searchKeyword is the search text user entered
 const mapStatesToProps = state => {
-  console.log(state)
+  console.log(state);
   return {
-    searchKeyword: state.searchText
+    searchKeyword: state.search.filterText,
+    searchType: state.search.filterType
   }
 }
 

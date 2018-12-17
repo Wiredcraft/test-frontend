@@ -3,7 +3,7 @@ import Dropdown from './Dropdown/Dropdown'
 import Search from './Search';
 import styles from './TableFilter.module.scss'
 import { connect } from 'react-redux';
-import { onInputChange } from '../store/actions/inputAction'
+import { onSearchBtnClicked } from '../store/actions/inputAction'
 
 // dropdown options
 const options = ['Region', 'Last input', 'Number of forms', 'Number of voters', 'Updates'];
@@ -13,7 +13,7 @@ class TableFilter extends Component {
     super(props)
     this.state = {
       filterType: '',
-      searchText: ''
+      filterText: ''
     }
   }
 
@@ -22,11 +22,12 @@ class TableFilter extends Component {
     console.log(options[i])
   }
   onSearchChangeHandler = (e) => {
-    console.log(e.target.value)
-    this.setState({searchText: e.target.value})
+    this.setState({filterText: e.target.value})
   }
 
+  
   render() {
+    console.log(this.state.filterText)
 
     return (
       <div>
@@ -34,7 +35,7 @@ class TableFilter extends Component {
           <Dropdown  title={this.state.filterType} options={options} onFilterChange={this.onTypeChangeHandler} />
         </div>
         <div className={styles.SearchBox}>
-          <Search onSearchChange={this.props.onInputChange}/>
+          <Search onSearchChange={this.onSearchChangeHandler} onSearchClicked={() => this.props.onSearchBtnClicked(this.state)}/>
         </div>
         
       </div>
@@ -44,7 +45,8 @@ class TableFilter extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onInputChange: (e) => dispatch(onInputChange(e.target.value))
+    // this triggers update redux state of the filterText
+    onSearchBtnClicked: (value) => dispatch(onSearchBtnClicked(value))
   }
 }
 

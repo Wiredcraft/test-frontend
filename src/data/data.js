@@ -39,10 +39,10 @@ export const data = [
 
     {
         name: 'Shan state 2',
-        input: '213.3',
-        forms: '123',
-        voters: '234',
-        updates: '234',
+        input: '2.3',
+        forms: '12356',
+        voters: '24',
+        updates: '256734',
         districts: [
             // district level
             {
@@ -104,10 +104,10 @@ export const data = [
     },
     {
         name: 'Shan state 3',
-        input: '213.3',
-        forms: '123',
-        voters: '234',
-        updates: '234',
+        input: '21.3',
+        forms: '465',
+        voters: '678',
+        updates: '4',
         districts: []
     }
 

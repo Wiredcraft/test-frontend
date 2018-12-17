@@ -1,8 +1,8 @@
-import { INPUT_UPDATE } from '../actions'
+import { SEARCH_UPDATE} from '../actions'
 
-export const onInputChange = (inputText) => {
+export const onSearchBtnClicked = (input) => {
   return ({
-    type: INPUT_UPDATE,
-    payload: inputText
+    type: SEARCH_UPDATE,
+    payload: input
   })
 }
