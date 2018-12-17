@@ -19,7 +19,7 @@ class App extends Component {
               <th>Last input</th>
               <th>Number of forms</th>
               <th>Number of voters</th>
-              <th>Update</th>
+              <th>Updates</th>
             </tr>
           </thead>
           <tbody>

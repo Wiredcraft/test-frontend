@@ -1,8 +1,17 @@
 import React from 'react'
 import Row from './Row';
+import PropTypes from 'prop-types'
 
-export default function TownshipRow(props) {
+
+function TownshipRow(props) {
   return (
-    <Row type={props.townshipData.townshipName} />
+    <Row data={props.townshipData} />
   )
 }
+
+TownshipRow.propTypes = {
+	townshipData: PropTypes.object.isRequired
+}
+
+export default TownshipRow
+

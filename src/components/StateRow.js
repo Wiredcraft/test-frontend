@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
 import Row from './Row'
-import DistrictRow from './DistrictRow';
+import DistrictRow from './DistrictRow'
+import PropTypes from 'prop-types'
 
 class StateRow extends Component {
 	constructor(props) {
@@ -14,23 +14,23 @@ class StateRow extends Component {
 	}
 
 	render() {
-		// number of districts shown on the button
-		let num = 0 
-		if (this.props.stateData.districts) {
-			num = this.props.stateData.districts.length
-		}
+		const {districts} = this.props.stateData
 		
+		// this renders a single state-level row 
+		// and optionally rendering its district-level childrens
 		return (
 			<React.Fragment>
-				<Row type={this.props.stateData.stateName}>
-					<button onClick={this.handleButtonClicked}>{num} Districts</button>
+				<Row data={this.props.stateData}>
+					<button onClick={this.handleButtonClicked}>{districts.length} Districts</button>
 				</Row>
-				{this.state.show && this.props.stateData.districts.map(i => <DistrictRow key={i.districtName} districtData={i} />) }
+				{this.state.show && districts.map(i => <DistrictRow key={i.name} districtData={i} />) }
 			</React.Fragment>
-    
   	)
 	}
-  
+}
+
+StateRow.propTypes = {
+	stateData: PropTypes.object.isRequired
 }
 
 export default StateRow

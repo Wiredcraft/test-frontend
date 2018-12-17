@@ -6,7 +6,7 @@ export default class Table extends Component {
     console.log(this.props.data)
     return (
       <React.Fragment>
-        {this.props.data.map(i =>  <StateRow key={i.stateName} stateData={i}/>)}
+        {this.props.data.map(i =>  <StateRow key={i.name} stateData={i}/>)}
       </React.Fragment>
      
     )
