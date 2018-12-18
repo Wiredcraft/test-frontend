@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './App.module.scss';
-import Table from './components/Table/Table';
+import Table from './containers/Table/Table';
 import { data } from './data/data'
-import TableFilter from './components/TableFilter/TableFilter';
+import TableFilter from './containers/TableFilter/TableFilter';
 import Nav from './components/Nav/Nav';
 
 class App extends Component {

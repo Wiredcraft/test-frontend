@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Row.module.scss'
-import Region from '../Region/Region';
+import Region from './Region/Region';
 
 
 export default function Row(props) {

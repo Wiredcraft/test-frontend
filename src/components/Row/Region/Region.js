@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Region.module.scss'
-import thread_svg from '../../assets/thread.svg'
-import download_svg from '../../assets/download.svg'
+import thread_svg from '../../../assets/thread.svg'
+import download_svg from '../../../assets/download.svg'
 
 // dynamically generate region name + region icon + download button (and indentation)
 export default function Region(props) {
