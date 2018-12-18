@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import StateRow from './StateRow';
+import StateRow from '../Row/StateRow';
 import { connect } from 'react-redux';
-import Row from './Row';
+import Row from '../Row/Row';
 import styles from './Table.module.scss';
 
 class Table extends Component {

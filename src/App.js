@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './App.module.scss';
-import Table from './components/Table';
+import Table from './components/Table/Table';
 import { data } from './data/data'
 import TableFilter from './components/TableFilter/TableFilter';
 import Nav from './components/Nav/Nav';

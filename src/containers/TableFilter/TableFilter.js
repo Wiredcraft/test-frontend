@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Dropdown from '../Dropdown/Dropdown'
-import Search from '../Search';
+import Search from '../Search/Search';
 import styles from './TableFilter.module.scss'
 import { connect } from 'react-redux';
 import { onSearchBtnClicked } from '../../store/actions/filterAction'
