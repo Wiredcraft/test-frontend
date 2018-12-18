@@ -1,6 +1,7 @@
 {
   "name": "test-frontend",
   "version": "0.1.0",
+  "homepage": "https://littlebobby.github.io/test-frontend/",
   "private": true,
   "dependencies": {
     "node-sass": "^4.11.0",
