@@ -12,6 +12,7 @@ export default function Search(props) {
   )
 }
 
+
 Search.propTypes = {
   onSearchChange: PropTypes.func.isRequired, // update the value of input fields
   onSearchClicked: PropTypes.func.isRequired

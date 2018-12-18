@@ -20,8 +20,9 @@ th {
 }
 
 .TableContainer {
-  padding: 2rem 0 10rem 0;
   background-color: $color-primary;
-  width: 100vw;
+  width: 80vw;
+  height: calc(100vh - 8.6rem); // minus padding top and nav height
+  padding: 3rem 10vw 0 10vw;
   margin: auto;
 }

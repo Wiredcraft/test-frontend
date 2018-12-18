@@ -1,5 +1,24 @@
+@import '../styles/variables.scss';
+
 .input {
-  width: 80%;
-  height: 2rem;
+  width: 100%;
   display: inline-block;
+  outline: none;
+  border: none;
+  height: 100%;
+  font-size: 1.6rem;
+
+  // search icon
+  & + i {
+    position: absolute;
+    cursor: pointer;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-primary;
+  }
 }
+
+
+
+

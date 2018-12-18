@@ -6,8 +6,8 @@
 
   & > * {
     display: inline-block;
-    height: 5.6rem; // can set a variable for this nav height
-    line-height: 5.6rem;
+    height: $nav-height; // can set a variable for this nav height
+    line-height: $nav-height;
     box-sizing: border-box;
 
     &:not(:last-child) {

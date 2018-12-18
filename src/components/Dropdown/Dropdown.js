@@ -44,6 +44,7 @@ class Dropdown extends Component {
         >
           {this.props.title !== '' ? this.props.title : 'Filter'}
         </div>
+        <i onClick={() => this.toggleDropdown()} className="fas fa-caret-down"></i>
         <ul>{this.renderOptions()}</ul>      
       </div>
     );

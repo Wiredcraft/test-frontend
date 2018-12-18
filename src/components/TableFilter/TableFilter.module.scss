@@ -1,10 +1,11 @@
 @import '../../styles/variables.scss';
 
 .container {
-  
-  width: 80vw;
+  width: 90%;
   background: white;
-  margin: auto;
+  box-sizing: border-box;
+  margin: 0 auto;
+  height: 4.8rem;
   font-size: 1.6rem;
   color: $color-primary;
 }
@@ -17,6 +18,11 @@
 }
 .SearchBox {
   width: 82%;
-  // height: 100%;
+  height: 100%;
   display: inline-block;
+  position: relative; // to center the search icon in Search.scss
+  border-left: 1px $color-gray-medium solid;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  
 }
