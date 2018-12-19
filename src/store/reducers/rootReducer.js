@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import filterReducer from './filterReducer'
+import dataReducer from './dataReducer';
 
 const rootReducer = combineReducers({
-  search: filterReducer
+  data: dataReducer
 })
 
 export default rootReducer

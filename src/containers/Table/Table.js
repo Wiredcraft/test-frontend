@@ -6,25 +6,6 @@ import styles from './Table.module.scss';
 
 class Table extends Component {
 
-  // optionally render rows based on keywords and searchType
-  filter = () => {
-    return this.props.data.map(i => {
-      switch(this.props.searchType) {
-        case 'Last input':
-          return i.input.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
-        case 'Number of forms':
-          return i.forms.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
-        case 'Number of voters':
-          return i.voters.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
-        case 'Updates':
-          return i.updates.includes(this.props.searchKeyword) && <StateRow key={i.name} stateData={i}/>
-        default:
-          return i.name.toUpperCase().includes(this.props.searchKeyword.toUpperCase()) && <StateRow key={i.name} stateData={i}/>
-      }
-    })
-  }
-
-
   render() {
     const { searchKeyword, searchType } = this.props
     console.log(searchKeyword, searchType)
@@ -42,7 +23,7 @@ class Table extends Component {
             <Row data={tableAttributes}/>
           </thead>
           <tbody>
-            {this.filter()}
+            {this.props.rowData.map(i => <StateRow key={i.name} stateData={i}/>)}
           </tbody>
         </table>
       </React.Fragment>
@@ -50,12 +31,9 @@ class Table extends Component {
   }
 }
 
-// searchKeyword is the search text user entered
-const mapStatesToProps = state => {
-  console.log(state);
+const mapStatesToProps = ({ data }) => {
   return {
-    searchKeyword: state.search.filterText,
-    searchType: state.search.filterType
+    rowData: data
   }
 }
 
