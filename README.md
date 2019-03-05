@@ -41,10 +41,10 @@ Main
 
 - JS oriented
     - Use **React**.
-    - Use CSS or SASS/SCSS or any **CSS** framework as you like.
+    - Use CSS or SASS or any **CSS** framework as you like.
 - CSS oriented
     - Use any **JS** framework as you like.
-    - Use **SASS/SCSS**.
+    - Use **SASS**.
 
 ### Bonus
 
