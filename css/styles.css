@@ -7,10 +7,15 @@ body {
 
 }
 
+b {
+  font-weight: bold;
+}
+
 .nav {
   height: 57px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.table{
+.nav_table{
   width: 100%;
   height: 100%;
   display: grid;
@@ -38,7 +43,115 @@ body {
   text-align: center;
 }
 
-.main{
+.main {
   background-color: #575B71;
-  height: 1118px;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 10%;
+}
+
+.content {
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 9%;
+  background-color: #FFFFFF;
+  border: 2px;
+  width: 80%;
+  height: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.search_container {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 110px auto 40px;
+  grid-column-gap: 0;
+}
+
+.search_row {
+  display: inline-grid;
+  border: 1px solid #D0D6E1;
+}
+
+.table_header {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 35% 16.25% 16.25% 16.25% 16.25%;
+  grid-column-gap: 0;
+}
+.table_header_title, .table_header_content {
+  display: inline-grid;
+  border: 1px solid #D0D6E1;
+  border-bottom: 1.5px solid #000000;
+  line-height: 60px;
+  font-weight: bold;
+  height: 60px;
+  overflow-y: hidden;
+}
+
+.table_header_title {
+  padding-left: 12px;
+}
+
+.table_header_content{
+  text-align: center;
+}
+
+.table_row, .table_row_district, .table_row_township {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 35% 16.25% 16.25% 16.25% 16.25%;
+  grid-column-gap: 0;
+}
+
+.table_row_district, .table_row_township {
+  display: none;
+}
+
+.table_row_data, .table_row_title{
+  border: 1px solid #D0D6E1;
+  line-height: 60px;
+  display: inline-grid;
+}
+
+.table_row_data{
+  text-align: center;
+}
+
+.table_row_title{
+  padding-left: 12px;
+}
+
+.table_row_district .table_row_title{
+  padding-left: 36px;
+}
+
+.table_row_township .table_row_title{
+  padding-left: 60px;
+}
+
+.table_row_title_content{
+  display: inline;
+  overflow-x: hidden;
+}
+
+.table_row_state_select, .table_row_district_select {
+  float: right;
+  padding-right: 24px;
+  width: 110px;
+
+}
+
+.select_left {
+  float: left;
+  text-align: left;
+}
+
+.select_right {
+  float: right;
+  text-align: right;
 }
