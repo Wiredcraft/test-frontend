@@ -1,0 +1,44 @@
+body {
+  font-family: "Open Sans";
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: normal;
+  color: #575B71;
+
+}
+
+.nav {
+  height: 57px;
+}
+.table{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 57px 65% auto auto;
+  grid-column-gap: 0;
+
+}
+
+.nav_row{
+  display: inline-grid;
+  border: 1px solid #D0D6E1;
+}
+
+#nav_logo_content {
+  padding-left: 12px;
+  padding-top: 12px;
+  overflow: hidden;
+}
+.title_heading {
+  line-height: 55px;
+  padding-left: 12px;
+}
+.title_content {
+  line-height: 55px;
+  text-align: center;
+}
+
+.main{
+  background-color: #575B71;
+  height: 1118px;
+}
