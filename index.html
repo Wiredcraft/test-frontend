@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Reports</title>
+  <meta charset="UTF-8">
+  <link rel="icon" href="images/logo.svg" sizes="any" type="image/svg+xml">
   <!-- Stylesheet for removing browser specific configurations from http://meyerweb.com/eric/tools/css/reset/ -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -9,26 +11,1337 @@
 <body>
   <!-- The division for the navigation section. -->
   <div class="nav">
-    <div class="table">
-        <div class="nav_row" id="nav_logo">
-          <div id="nav_logo_content">
-            <img src="images/logo.svg" alt="Myanmar Union Election Commission Logo">
-          </div>
+    <!-- Division in grid format for the navigation bar. -->
+    <div class="nav_table">
+      <!-- The row division that holds the nav -->
+        <div class="nav_row">
+          <!-- Wrapped image for adjusting position. -->
+          <div id="nav_logo_content"><img src="images/logo.svg" alt="Myanmar Union Election Commission Logo"></div>
         </div>
-        <div class="nav_row title_heading">
-          Reports
-        </div>
-        <div class="nav_row title_content">
-          Overall
-        </div>
-        <div class="nav_row title_content">
-          Specific
-        </div>
+        <div class="nav_row title_heading">Reports</div>
+        <div class="nav_row title_content">Overall</div>
+        <div class="nav_row title_content">Specific</div>
     </div>
   </div>
+
   <div class="main">
     <div class="content">
+      <div class="search_container">
+        <div class="search_row">
+          <input value="Filter" id="search_selector">
+        </div>
+        <div class="search_row">
+          <input placeholder="Search" id="search_input">
+        </div>
+        <div class="search_row">
+          <button id="search_button"><img src="images/search.svg" alt="search button"></button>
+        </div>
+      </div>
 
+      <div class="main_table">
+        <div class="table_header">
+          <div class="table_header_title">Region</div>
+          <div class="table_header_content">Last Input</div>
+          <div class="table_header_content">Number of Forms</div>
+          <div class="table_header_content">Number of Voters</div>
+          <div class="table_header_content">Update</div>
+        </div>
+        <div class="table_content">
+          <!-- Table row for state level with one district -->
+          <div class="table_row">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/state_symbol.svg">
+                &nbsp;Shan state&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_state_select"><span class="select_left"><b>1</b> District</span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+
+          <!-- Table row for state level with four districts -->
+          <div class="table_row">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/state_symbol.svg">
+                &nbsp;Shan state&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_state_select"><span class="select_left"><b>4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+
+          <!-- Table row for state level with four districts -->
+          <div class="table_row">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/state_symbol.svg">
+                &nbsp;Shan state&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_state_select"><span class="select_left"><b>4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+
+          <!-- Table row for state level with four districts -->
+          <div class="table_row">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/state_symbol.svg">
+                &nbsp;Shan state&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_state_select"><span class="select_left"><b>4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+
+          <!-- Table row for state level with four districts -->
+          <div class="table_row">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/state_symbol.svg">
+                &nbsp;Shan state&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_state_select"><span class="select_left"><b>4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+
+          <!-- Table row for state level with four districts -->
+          <div class="table_row">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/state_symbol.svg">
+                &nbsp;Shan state&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_state_select"><span class="select_left"><b>4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+
+          <!-- Table row for state level with four districts -->
+          <div class="table_row">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/state_symbol.svg">
+                &nbsp;Shan state&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_state_select"><span class="select_left"><b>4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for district level -->
+          <div class="table_row_district">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/district_symbol.svg">
+                &nbsp;Aunglan&nbsp;
+                <img src="images/download.svg">
+                <span class="table_row_district_select"><span class="select_left"><b>1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+          <!-- Table row for township level -->
+          <div class="table_row_township">
+            <div class="table_row_title">
+              <div class="table_row_title_content">
+                <img src="images/township_symbol.svg">
+                &nbsp;Loilen&nbsp;
+                <img src="images/download.svg">
+              </div>
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+            <div class="table_row_data">
+              123,456
+            </div>
+            <div class="table_row_data">
+              342,456
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </body>
