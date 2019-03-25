@@ -16,11 +16,11 @@
       <!-- The row division that holds the nav -->
         <div class="nav_row">
           <!-- Wrapped image for adjusting position. -->
-          <div id="nav_logo_content"><img src="images/logo.svg" alt="Myanmar Union Election Commission Logo"></div>
+          <div id="nav_logo_content"><a href="./index.html"><img src="images/logo.svg" alt="Myanmar Union Election Commission Logo"></a></div>
         </div>
-        <div class="nav_row title_heading">Reports</div>
-        <div class="nav_row title_content">Overall</div>
-        <div class="nav_row title_content">Specific</div>
+        <div class="nav_row title_heading"><a href="#">Reports</a></div>
+        <div class="nav_row title_content"><a href="#">Overall</a></div>
+        <div class="nav_row title_content"><a href="#">Specific</a></div>
     </div>
   </div>
 
@@ -28,7 +28,14 @@
     <div class="content">
       <div class="search_container">
         <div class="search_row">
-          <input value="Filter" id="search_selector">
+          <select id="search_select"><img src="images/search.svg">
+            <option selected disabled hidden>Filter</option>
+            <option value="option_1">Region</option>
+            <option value="option_2">Last Input</option>
+            <option value="option_3">Number of Forms</option>
+            <option value="option_4">Number of Voters</option>
+            <option value="option_5">Update</option>
+          </select>
         </div>
         <div class="search_row">
           <input placeholder="Search" id="search_input">

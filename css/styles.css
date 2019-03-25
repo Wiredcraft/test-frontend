@@ -1,5 +1,6 @@
 body {
   font-family: "Open Sans";
+
   font-size: 16px;
   line-height: 18px;
   font-weight: normal;
@@ -11,6 +12,10 @@ b {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .nav {
   height: 57px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -66,13 +71,67 @@ b {
   width: 100%;
   height: 60px;
   display: grid;
-  grid-template-columns: 110px auto 40px;
+  grid-template-columns: 180px auto 40px;
   grid-column-gap: 0;
 }
 
 .search_row {
   display: inline-grid;
-  border: 1px solid #D0D6E1;
+  /* border: 1px solid #D0D6E1; */
+}
+#search_select, #search_input {
+  color: inherit;
+  padding-left: 12px;
+  font: inherit;
+}
+
+#search_select {
+  border: 1.5px solid #D0D6E1;
+  border-top-left-radius: 5px;
+   background-image:
+     linear-gradient(45deg, transparent 50%, gray 50%),
+     linear-gradient(135deg, gray 50%, transparent 50%),
+     linear-gradient(to right, #ccc, #ccc);
+   background-position:
+   calc(55% - 20px) 1.7em,
+ calc(55% - 15px) 1.7em,
+ 0;
+   background-size:
+     5px 5px,
+     5px 5px,
+     1px 1.5em;
+   background-repeat: no-repeat;
+}
+
+#search_select:focus{
+  background-image:
+      linear-gradient(45deg, #575B71 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, #575B71 50%),
+      linear-gradient(to right, #ccc, #ccc);
+    background-position:
+    calc(55% - 15px) 1.7em,
+  calc(55% - 20px) 1.7em,
+  0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+
+    outline: 0;
+}
+
+#search_input {
+  border: 1.5px solid #D0D6E1;
+  border-right: 0px;
+}
+#search_button{
+  border: 0;
+  border-top-right-radius: 5px;
+  border-top: 1.5px solid #D0D6E1;
+  border-bottom: 1.5px solid #D0D6E1;
+  background: #FFFFFF;
+
 }
 
 .table_header {
