@@ -133,6 +133,14 @@ a {
   background: #FFFFFF;
 
 }
+#reset_button{
+  border: 0;
+  border-top-right-radius: 5px;
+  border-top: 1.5px solid #D0D6E1;
+  border-bottom: 1.5px solid #D0D6E1;
+  background: #FFFFFF;
+
+}
 
 .table_header {
   width: 100%;
@@ -164,20 +172,20 @@ a {
   height: 60px;
   display: grid;
   grid-template-columns: 35% 16.25% 16.25% 16.25% 16.25%;
-  grid-column-gap: 0;
+  grid-gap: 0;
 }
 
 .table_row_district, .table_row_township {
   display: none;
 }
 
-.table_row_data, .table_row_title{
+.table_row_data_1, .table_row_data_2, .table_row_data_3, .table_row_data_4, .table_row_title{
   border: 1px solid #D0D6E1;
   line-height: 60px;
-  display: inline-grid;
+  display: inline;
 }
 
-.table_row_data{
+.table_row_data_1, .table_row_data_2, .table_row_data_3, .table_row_data_4{
   text-align: center;
 }
 
@@ -203,6 +211,15 @@ a {
   padding-right: 24px;
   width: 110px;
 
+}
+
+[drop_down="enabled"] {
+  background-color: #dbdfeb;
+
+
+}
+[drop_down="disabled"] {
+  background-color: inherit;
 }
 
 .select_left {
