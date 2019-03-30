@@ -5,7 +5,7 @@ This website has been created with reference to the following mockup.
 ![wiredcraft-front-end-test-mock](https://cldup.com/JM3lLBAS5V.jpg)
 
 ## Live Demo
-![surge.sh](https://uetuluk.surge.sh)
+[DEMO](https://uetuluk.surge.sh)
 
 ## Structure
 
