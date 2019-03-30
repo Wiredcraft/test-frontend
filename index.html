@@ -12,25 +12,25 @@
 
   <script>
   // Adding the town files
-    $(function(){
-      var a = [[1,1], [4,1], [4,1], [4,1], [4,1], [4,1], [4,1]];
-      $(".table_content:first").text(" ");
-      $.each(a, function(index, value){
-        $(".table_content:first").append($("<div>", {"class":"table_row"}).load("snippets/state.html"));
-        for(var i = 0; i < value[0]; i++){
-          $(".table_content:first").append($("<div>", {"class":"table_row_district"}).load("snippets/district.html"));
-          // for(var j = 0; j < value[1]; j++ ){
-            $(".table_content:first").append($("<div>", {"class":"table_row_township"}).load("snippets/township.html"));
-          // };
-        };
-        });
-    });
-    $(function(){
-      var a = [[1,1], [4,1], [4,1], [4,1], [4,1], [4,1], [4,1]];
-      $.each(a, function(index, value){
-        $(".district_number:eq("+ index +")").text(value[0]);
-      });
-    });
+    // $(function(){
+    //   var a = [[1,1], [4,1], [4,1], [4,1], [4,1], [4,1], [4,1]];
+    //   $(".table_content:first").text(" ");
+    //   $.each(a, function(index, value){
+    //     $(".table_content:first").append($("<div>", {"class":"table_row"}).load("snippets/state.html"));
+    //     for(var i = 0; i < value[0]; i++){
+    //       $(".table_content:first").append($("<div>", {"class":"table_row_district"}).load("snippets/district.html"));
+    //       // for(var j = 0; j < value[1]; j++ ){
+    //         $(".table_content:first").append($("<div>", {"class":"table_row_township"}).load("snippets/township.html"));
+    //       // };
+    //     };
+    //     });
+    // });
+    // $(function(){
+    //   var a = [[1,1], [4,1], [4,1], [4,1], [4,1], [4,1], [4,1]];
+    //   $.each(a, function(index, value){
+    //     $(".district_number:eq("+ index +")").text(value[0]);
+    //   });
+    // });
   //Enabling the dropdown
     $(function(){
       // Dropdwon for states
@@ -200,7 +200,1136 @@
           <div class="table_header_content">Number of Voters</div>
           <div class="table_header_content">Update</div>
         </div>
-        <div class="table_content"></div>
+        <div class="table_content"> <div class="table_row"><!-- Table row for state level with a number of district"-->
+
+<div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/state_symbol.svg">
+      <span>Shan state</span>
+    <img src="images/download.svg">
+    <span class="table_row_state_select" drop_down="disabled"><span class="select_left"><b class="district_number">1</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district" style="display: none;"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select" drop_down="disabled"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township" style="display: none;"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row"><!-- Table row for state level with a number of district"-->
+
+<div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/state_symbol.svg">
+      <span>Shan state</span>
+    <img src="images/download.svg">
+    <span class="table_row_state_select"><span class="select_left"><b class="district_number">4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row"><!-- Table row for state level with a number of district"-->
+
+<div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/state_symbol.svg">
+      <span>Shan state</span>
+    <img src="images/download.svg">
+    <span class="table_row_state_select"><span class="select_left"><b class="district_number">4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row"><!-- Table row for state level with a number of district"-->
+
+<div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/state_symbol.svg">
+      <span>Shan state</span>
+    <img src="images/download.svg">
+    <span class="table_row_state_select"><span class="select_left"><b class="district_number">4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row"><!-- Table row for state level with a number of district"-->
+
+<div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/state_symbol.svg">
+      <span>Shan state</span>
+    <img src="images/download.svg">
+    <span class="table_row_state_select"><span class="select_left"><b class="district_number">4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row"><!-- Table row for state level with a number of district"-->
+
+<div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/state_symbol.svg">
+      <span>Shan state</span>
+    <img src="images/download.svg">
+    <span class="table_row_state_select"><span class="select_left"><b class="district_number">4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row"><!-- Table row for state level with a number of district"-->
+
+<div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/state_symbol.svg">
+      <span>Shan state</span>
+    <img src="images/download.svg">
+    <span class="table_row_state_select"><span class="select_left"><b class="district_number">4</b> Districts</span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_district"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/district_symbol.svg">
+    <span>Aunglan</span>
+    <img src="images/download.svg">
+    <span class="table_row_district_select"><span class="select_left"><b class="township_number">1</b> Townships </span> <span class="select_right"><b>+</b></span></span>
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div><div class="table_row_township"><div class="table_row_title">
+  <div class="table_row_title_content">
+    <img src="images/township_symbol.svg">
+    <span>Loilen</span>
+    <img src="images/download.svg">
+  </div>
+</div>
+<div class="table_row_data_1">
+  123,456
+</div>
+<div class="table_row_data_2">
+  342,456
+</div>
+<div class="table_row_data_3">
+  123,456
+</div>
+<div class="table_row_data_4">
+  342,456
+</div>
+</div></div>
       </div>
     </div>
   </div>
