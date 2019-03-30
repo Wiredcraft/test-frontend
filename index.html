@@ -4,6 +4,7 @@
   <title>Reports</title>
   <meta charset="UTF-8">
   <link rel="icon" href="images/logo.png" sizes="any" type="image/png">
+
   <!-- Stylesheet for removing browser specific configurations from http://meyerweb.com/eric/tools/css/reset/ -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -34,7 +35,7 @@
 
         <div class="search_row">
           <select id="search_select"><img src="images/search.svg">
-            <option selected disabled hidden>Filter</option>
+            <option selected disabled hidden value="filter">Filter</option>
             <option value="option_1">Region</option>
             <option value="option_2">Last Input</option>
             <option value="option_3">Number of Forms</option>
@@ -49,7 +50,7 @@
           <button id="search_button"><img src="images/search.svg" alt="search button"></button>
         </div>
       </div>
-
+      <div id="search_alert"></div>
       <div class="main_table">
         <div class="table_header">
           <div class="table_header_title">Region</div>

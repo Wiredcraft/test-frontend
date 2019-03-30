@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 body {
   font-family: "Open Sans";
 
@@ -5,6 +8,7 @@ body {
   line-height: 18px;
   font-weight: normal;
   color: #575B71;
+  min-height: 100%;
 
 }
 
@@ -18,9 +22,11 @@ a {
 }
 .nav {
   height: 57px;
+  z-index: 3;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .nav_table{
+  z-index: inherit;
   width: 100%;
   height: 100%;
   display: grid;
@@ -71,7 +77,7 @@ a {
   width: 100%;
   height: 60px;
   display: grid;
-  grid-template-columns: 180px auto 40px;
+  grid-template-columns: 15% auto 5%;
   grid-column-gap: 0;
 }
 
@@ -80,51 +86,34 @@ a {
   /* border: 1px solid #D0D6E1; */
 }
 #search_select, #search_input {
-  color: inherit;
   padding-left: 12px;
   font: inherit;
+  color: #adb4c3;
 }
 
-#search_select {
-  border: 1.5px solid #D0D6E1;
-  border-top-left-radius: 5px;
-   background-image:
-     linear-gradient(45deg, transparent 50%, gray 50%),
-     linear-gradient(135deg, gray 50%, transparent 50%),
-     linear-gradient(to right, #ccc, #ccc);
-   background-position:
-   calc(55% - 20px) 1.7em,
- calc(55% - 15px) 1.7em,
- 0;
-   background-size:
-     5px 5px,
-     5px 5px,
-     1px 1.5em;
-   background-repeat: no-repeat;
-}
-
-#search_select:focus{
-  background-image:
-      linear-gradient(45deg, #575B71 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, #575B71 50%),
-      linear-gradient(to right, #ccc, #ccc);
-    background-position:
-    calc(55% - 15px) 1.7em,
-  calc(55% - 20px) 1.7em,
-  0;
-    background-size:
-      5px 5px,
-      5px 5px,
-      1px 1.5em;
-    background-repeat: no-repeat;
-
-    outline: 0;
+option{
+  color: #575B71;
 }
 
 #search_input {
   border: 1.5px solid #D0D6E1;
   border-right: 0px;
+  color: inherit;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #adb4c3;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #adb4c3;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #adb4c3;
+}
+
 #search_button{
   border: 0;
   border-top-right-radius: 5px;
@@ -140,6 +129,10 @@ a {
   border-bottom: 1.5px solid #D0D6E1;
   background: #FFFFFF;
 
+}
+
+#search_alert {
+  color: red;
 }
 
 .table_header {
@@ -169,10 +162,11 @@ a {
 
 .table_row, .table_row_district, .table_row_township {
   width: 100%;
-  height: 60px;
+
   display: grid;
   grid-template-columns: 35% 16.25% 16.25% 16.25% 16.25%;
   grid-gap: 0;
+
 }
 
 .table_row_district, .table_row_township {
@@ -215,8 +209,9 @@ a {
 
 [drop_down="enabled"] {
   background-color: #dbdfeb;
-
-
+  border-radius: 5px;
+  line-height: 40px;
+  margin: 10px;
 }
 [drop_down="disabled"] {
   background-color: inherit;

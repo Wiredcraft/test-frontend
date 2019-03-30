@@ -70,6 +70,16 @@
   //Search function
   $(function(){
     $("#search_button").click(function(){
+      //Get the Filter
+      var filter = $("#search_select option:selected").text();
+      console.log(filter);
+      //If filter is empty do not do anything
+      if (filter == "Filter") {
+        console.log("no filter");
+        $("#search_alert").text("Please select a filter.");
+        return false;
+      };
+
       //Change the button to x
       $("#search_button").attr("id", "reset_button");
       $("#reset_button").html("<span>X</span>");
@@ -77,9 +87,7 @@
         location.reload();
       });
       // $(".table_row_district_select").click();
-      //Get the Filter
-      var filter = $("#search_select option:selected").text();
-      console.log(filter);
+
       //Get the search string
       var search_string = $("#search_input").val();
       console.log(search_string);
