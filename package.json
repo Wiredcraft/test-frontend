@@ -1,0 +1,23 @@
+{
+  "name": "test-frontend",
+  "version": "1.0.0",
+  "description": "This website has been created with reference to the following mockup.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uetuluk/test-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uetuluk/test-frontend/issues"
+  },
+  "homepage": "https://github.com/uetuluk/test-frontend#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
+}

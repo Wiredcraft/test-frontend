@@ -1,0 +1,232 @@
+//Reset.scss
+@import 'reset';
+
+$font-stack: "Open Sans", sans-serif;
+$primary-color: #575B71;
+$highlight-color: #dbdfeb;
+$border-color: #D0D6E1;
+$search-color: #adb4c3;
+
+
+html {
+  height: 100%;
+}
+
+body {
+  font: normal 16px/18px $font-stack;
+  min-height: 100%;
+}
+
+b {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav {
+  height: 57px;
+  z-index: -3;
+  // box-shadow: 1 4px 8px 0 black, 0 6px 20px 0 black;
+}
+
+%grid-common {
+  width: 100%;
+  display: grid;
+  grid-column-gap: 0;
+}
+
+.nav_table {
+  @extend %grid-common;
+  z-index: inherit;
+  height: 100%;
+  grid-template-columns: 57px 65% auto auto;
+}
+
+.nav_row {
+  display: inline-grid;
+  border: 1px solid $border-color;
+}
+
+%left-padding {
+  padding-left: 12px;
+}
+
+#nav_logo_content {
+  @extend %left-padding;
+  padding-top: 12px;
+  overflow: hidden;
+}
+
+%common-line-height{
+  line-height: 55px;
+}
+
+.title_heading{
+  @extend %common-line-height;
+  @extend %left-padding;
+}
+
+.title_content{
+  @extend %common-line-height;
+  text-align: center;
+}
+
+.main {
+  background-color: $primary-color;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 10%;
+}
+
+.content {
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 9%;
+  background-color: #FFFFFF;
+  border: 2px;
+  width: 80%;
+  height: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+.search_container {
+  @extend %grid-common;
+  height: 60px;
+  grid-template-columns: 15% auto 5%;
+}
+
+.search_row{
+  display: inline-grid;
+}
+
+#search_select, #search_input{
+  @extend %left-padding;
+  color: $primary-color;
+}
+
+#search_select{
+  border-top-left-radius: 5px;
+}
+
+option{
+  color: $primary-color;
+}
+
+#search_input {
+  border: 1.5px solid #D0D6E1;
+  border-right: 0px;
+  color: inherit;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $primary-color;
+  opacity: 1; /* Firefox */
+}
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder ,::-ms-input-placeholder { /* Microsoft Edge */
+  color: $primary-color;
+}
+
+#search_button, #reset_button{
+  border: 0;
+  border-top-right-radius: 5px;
+  border-top: 1.5px solid #D0D6E1;
+  border-bottom: 1.5px solid #D0D6E1;
+  background: #FFFFFF;
+}
+
+#search_alert {
+  color: #FF0000;
+}
+
+.table_header{
+  @extend %grid-common;
+  height: 60px;
+  grid-template-columns: 35% 16.25% 16.25% 16.25% 16.25%;
+}
+
+.table_header_title, .table_header_content {
+  display: inline-grid;
+  border: 1px solid #D0D6E1;
+  border-bottom: 1.5px solid #000000;
+  line-height: 60px;
+  font-weight: bold;
+  height: 60px;
+  overflow-y: hidden;
+}
+
+.table_header_title {
+  @extend %left-padding;
+}
+
+.table_header_content{
+  text-align: center;
+}
+
+.table_row, .table_row_district, .table_row_township {
+  @extend %grid-common;
+  grid-template-columns: 35% 16.25% 16.25% 16.25% 16.25%;
+}
+
+.table_row_district, .table_row_township {
+  display: none;
+}
+
+.table_row_data_1, .table_row_data_2, .table_row_data_3, .table_row_data_4, .table_row_title{
+  border: 1px solid #D0D6E1;
+  line-height: 60px;
+  display: inline;
+}
+
+.table_row_data_1, .table_row_data_2, .table_row_data_3, .table_row_data_4{
+  text-align: center;
+}
+
+@mixin shift-padding($padding-shift) {
+  padding-left: 12px + ($padding-shift) * 24px;
+}
+.table_row_title{
+  @include shift-padding(0);
+}
+
+.table_row_district .table_row_title{
+  @include shift-padding(1);
+}
+
+.table_row_township .table_row_title{
+  @include shift-padding(2);
+}
+
+.table_row_title_content{
+  display: inline;
+  overflow-x: hidden;
+}
+
+.table_row_state_select, .table_row_district_select {
+  float: right;
+  padding-right: 24px;
+  width: 110px;
+}
+
+[drop_down="enabled"] {
+  background-color: #dbdfeb;
+  border-radius: 5px;
+  line-height: 40px;
+  margin: 10px;
+}
+[drop_down="disabled"] {
+  background-color: inherit;
+}
+
+@mixin select_($side){
+  float: $side;
+  text-align: $side;
+}
+
+.select_left{ @include select_(left); }
+
+.select_right{ @include select_(right); }
