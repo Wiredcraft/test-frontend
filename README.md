@@ -10,7 +10,7 @@ This website has been created with reference to the following mockup.
 ## Structure
 
 ### Languages Used
-HTML has been used for the shell, which has been made interactive via JavaScript and JQuery, and prettified with CSS.
+HTML has been used for the shell, which has been made interactive via JavaScript and JQuery, and prettified with SCSS. Packaged with parcel.
 
 ### Page Structure
 
