@@ -1,0 +1,58 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-19 12:14:38 
+ * @Desc:  Flexbox based layout and grid
+ */
+
+ @include update-screen(tiny-screens){
+    .container{width: 300px;}
+    .row{flex-direction: column;}
+    .row .col{padding: 0.5em;}
+    .not-mobile{display: none;}
+}
+
+@include update-screen(small-screens){
+    .container{width: 360px;}
+}
+
+@include update-screen(medium-screens){
+    .container{width: 684px;}
+    .row{flex-direction: row;}
+    .row .col{padding: 0.75em;}
+    .not-mobile{display: inline !important;}
+}
+
+@include update-screen(large-screens){
+    .container{width: 1020px;}
+}
+
+ @include update-screen(wide-screens){
+    max-width: 2000px;
+ }
+
+.container{
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+
+    .col1{flex:1;}
+    .col2{flex:2;}
+    .col3{flex:3;}
+    .col4{flex:4;}
+    .col5{flex:5;}
+    .col6{flex:6;}
+}
+
+.wrap{
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    .col1{flex-basis: 100%; flex-grow:0;}
+    .col2{flex-basis: 46%;flex-grow:0;}
+    .col3{flex-basis: 29%;flex-grow:0;}
+    .col4{flex-basis: 20%;flex-grow:0;}
+    .col5{flex-basis: 16.444%;flex-grow:0;}
+    .col6{flex-basis: 13%;flex-grow:0;}
+}

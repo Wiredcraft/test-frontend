@@ -1,0 +1,23 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-19 16:06:52 
+ * @Desc: Form structure and input types 
+ */
+
+.input-object{
+    // padding: 1em;
+
+    .input{
+        width: 100%;
+        height: 100%;
+        padding: .75rem;
+        box-sizing: border-box;
+        border: 1px solid $athens-gray;
+        -webkit-appearance: none;
+        background-color: $white;
+        border-radius: 0;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px; 
+        -o-border-radius: 0px; 
+    }
+}

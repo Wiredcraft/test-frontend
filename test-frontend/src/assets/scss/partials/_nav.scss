@@ -1,0 +1,46 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-19 12:13:15 
+ * @Desc:  Nav items contained in the navbar
+ */
+
+.nav{
+    padding: 3px 0;
+    align-items: center;
+    padding-left: 20px;
+
+    &-logo{
+        max-width: 55px;
+        justify-content: center;
+        align-items: center;
+        padding: 0 !important;
+    }
+
+    &-buttons{
+        width:100%;
+        justify-content: flex-end;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        li{
+            box-sizing: content-box;
+            padding: 0px 70px;
+            height: 100%;
+            border-left: 1px solid $athens-gray;
+            &:first-child{
+                background: $catskill-white;
+            }
+            a{
+                padding-top:1em;
+                display: block;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+
+    li{
+        display: inline-block;
+        list-style-type: none;
+    }
+}

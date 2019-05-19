@@ -1,0 +1,30 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-18 16:59:40 
+ * @Desc: Basic mixins that may be used throughout the system 
+ */
+
+/**
+* Tiny:   From 320px. Older Iphones and Android devices.
+* Small:  From 370px - around 450. Modern Mobile screens.
+* Medium: Tablets and Smaller laptops
+* Large:  Desktops and larger laptops
+* Wide:   Large Desktop/TV Screens
+*/
+@mixin update-screen($media){
+    @if $media == tiny-screens {
+        @media only screen and (min-width: 320px) { @content; }
+    }
+    @else if $media == small-screens {
+        @media only screen and (min-width: 370px) and (max-width: 1024px) { @content; }
+    }
+    @else if $media == medium-screens {
+        @media only screen and (min-width: 768px) { @content; }
+    }
+    @else if $media == large-screens {
+        @media only screen and (min-width: 1024px) { @content; }
+    }
+    @else if $media == wide-screens {
+        @media only screen and (min-width: 1824px) { @content; }
+    }
+}

@@ -1,0 +1,19 @@
+
+<svg width="37px" height="20px" viewBox="0 0 37 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Report" transform="translate(-187.000000, -313.000000)">
+            <g id="T" transform="translate(188.000000, 313.000000)">
+                <g id="Township">
+                    <rect id="Rectangle-87" fill="#897AD0" fill-rule="evenodd" x="16" y="0" width="20" height="20" rx="10"></rect>
+                    <text id="T" font-family=".SFNSText, .SF NS Text" font-size="14" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="22" y="15">T</tspan>
+                    </text>
+                    <path d="M6,13 L0.990777969,13 C0.443586406,13 0,12.5490248 0,12.009222 L0,7" id="Rectangle-108" stroke="#D0D6E1" stroke-width="1" style="mix-blend-mode: multiply;"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

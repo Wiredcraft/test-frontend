@@ -1,0 +1,18 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-19 12:13:48 
+ * @Desc: Navigation menu wrapper 
+ */
+
+.navbar{
+    background: $white;
+    margin-bottom: 2.75rem;
+    font-size: 1.14em;
+    align-items: center;
+    justify-content: center;
+
+    .nav{
+        border-right: 1px solid $athens-gray;
+        
+    }
+}

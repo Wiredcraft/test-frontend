@@ -1,13 +1,15 @@
 
-<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Report" transform="translate(-266.000000, -215.000000)">
+        <g id="Report" transform="translate(-265.000000, -214.000000)">
             <g id="icon-download" transform="translate(265.000000, 214.000000)">
                 <g id="Rectangle-131-+-ic_file_download_24px">
+                    <rect id="Rectangle-131" fill="#3BBB8D" x="0" y="0" width="20" height="20" rx="2"></rect>
                     <g id="ic_file_download_24px" transform="translate(1.623932, 1.623932)">
+                        <path d="M13.263462,6.28269251 L10.4711542,6.28269251 L10.4711542,2.09423084 L6.28269251,2.09423084 L6.28269251,6.28269251 L3.49038473,6.28269251 L8.37692334,11.1692311 L13.263462,6.28269251 L13.263462,6.28269251 Z M3.49038473,12.565385 L3.49038473,13.9615389 L13.263462,13.9615389 L13.263462,12.565385 L3.49038473,12.565385 L3.49038473,12.565385 Z" id="Shape" fill="#FFFFFF"></path>
                         <polygon id="Shape" points="0 0 16.7538467 0 16.7538467 16.7538467 0 16.7538467"></polygon>
                     </g>
                 </g>
