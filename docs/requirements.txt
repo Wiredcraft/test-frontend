@@ -1,0 +1,5 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-18 15:31:39 
+ * @Desc: List of packages required by the project 
+ */
