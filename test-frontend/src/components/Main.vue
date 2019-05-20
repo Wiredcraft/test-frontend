@@ -8,7 +8,7 @@
                         <SearchFilter v-bind:regionTypes="regionTypes"></SearchFilter>
                     </div>
                     <div class="col6 input-object">
-                        <input type="text" name="search" id="search" placeholder="Search" class="input" v-model="keyword">
+                        <KeywordSearch v-model="keywords"></KeywordSearch>
                     </div>
                 </div>
                 <div>
@@ -17,7 +17,7 @@
                         <TableHeader :dataCategories="dataCategories" :firstRow="firstRow" :otherRows="otherRows"></TableHeader>
 
                         <tbody>
-                            <State v-for="(state, index) in states" 
+                            <State v-for="(state, index) in filteredCategories" 
                                    :state="state" :index="index" 
                                    :key="state.id" 
                                    :districts="districts" 
@@ -32,17 +32,18 @@
 
 <script>
 import SearchFilter from "./SearchFilter.vue"
+import KeywordSearch from "./KeywordSearch.vue"
 import TableHeader from "./TableHeader.vue"
 import State from "./State.vue"
 
 export default {
     data() {
         return {
-            regionTypes: ['State', 'District', 'Township'],
+            regionTypes: ['States', 'Districts', 'Townships'],
             dataCategories: ['Region', 'Last input', 'Number of forms', 'Number of Voters', 'Update'],
             firstRow: 'col2 align-left',
             otherRows: 'col1',
-            keyword: '',
+            keywords: "",
             states:[
                 {
                     id: '1',
@@ -54,7 +55,7 @@ export default {
                 },
                 {
                     id: '2',
-                    name: 'Shan state', 
+                    name: 'Pols state', 
                     lastInput: '123,456', 
                     formCount: '342,456', 
                     voterCount: '123,546', 
@@ -62,7 +63,7 @@ export default {
                 },
                 {
                     id: '3',
-                    name: 'Shan state', 
+                    name: 'Cnfg state', 
                     lastInput: '123,456', 
                     formCount: '342,456', 
                     voterCount: '123,546', 
@@ -157,7 +158,14 @@ export default {
         }
     },
     components: {
-        SearchFilter, TableHeader, State
-    }
+        SearchFilter, KeywordSearch, TableHeader, State
+    },
+    computed: {
+        filteredCategories: function() {
+            return this.states.filter((state) => {
+                return state.name.match(this.keywords)
+            })
+        }
+    },
 }
 </script>

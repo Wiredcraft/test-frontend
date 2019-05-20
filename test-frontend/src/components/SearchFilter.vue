@@ -21,7 +21,8 @@ export default {
     },
     watch: {
         selectedFilter: function(){
-            console.log("watching")
+            console.log(this.selectedFilter.toLowerCase())
+            // EMIT event to parent component with the category type to be searched
         }
     },
 }
