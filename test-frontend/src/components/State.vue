@@ -6,7 +6,9 @@
                     <div class="col1"><img src="./../assets/images/stateIcon.svg" alt="State"></div>
                     <div class="col2">{{ state.name }}</div>
                     <div class="col1"><img src="./../assets/images/download.svg" alt=""></div>
-                    <div class="col3 align-right"><button>{{ assignedDistricts.length }} Districts <img src="./../assets/images/add.svg" alt="Expand"></button></div>
+                    <div class="col3 align-right">
+                        <button v-on:click="toggleStatus">{{ assignedDistricts.length }} Districts <img src="./../assets/images/add.svg" alt="Expand"></button>
+                        </div>
                 </div>
             </td>
             <td class="col1">{{ state.lastInput }}</td>
@@ -18,7 +20,8 @@
                    :district="district" 
                    :districtIndex="districtIndex" 
                    :key="state.id+'-'+districtIndex"
-                   :townships="townships"></District>
+                   :townships="townships"
+                   v-show="showDistricts"></District>
     </div>
 </template>
 
@@ -48,6 +51,17 @@ export default {
             return this.districts.filter(function(district){
                 return district.stateId == currentState.id;
             })
+        }
+    },
+    data() {
+        return {
+            showDistricts: false,
+        }
+    },
+
+    methods: {
+        toggleStatus(){
+            this.showDistricts = !this.showDistricts
         }
     },
 }

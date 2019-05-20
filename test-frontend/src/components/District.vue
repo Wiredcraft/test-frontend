@@ -6,7 +6,9 @@
                     <div class="col1"><img src="./../assets/images/districtIcon.svg" alt="District"></div>
                     <div class="col2">{{ district.name }}</div>
                     <div class="col1"><img src="./../assets/images/download.svg" alt=""></div>
-                    <div class="col3 align-right"><button>{{ assignedTownships.length }} Townships <img src="./../assets/images/add.svg" alt="Expand"></button></div>
+                    <div class="col3 align-right">
+                        <button v-on:click="toggleStatus">{{ assignedTownships.length }} Townships <img src="./../assets/images/add.svg" alt="Expand"></button>
+                    </div>
                 </div>
             </td>
             <td class="col1">{{ district.lastInput }}</td>
@@ -16,8 +18,9 @@
         </tr>
 
         <Township v-for="(township, townshipIndex) in assignedTownships" 
-                :township="township" 
-                :key="district.stateId+district.id+'-township'+townshipIndex"></Township>
+                  :township="township" 
+                  :key="district.stateId+district.id+'-township'+townshipIndex"
+                  v-show="showTownships"></Township>
     </div>
 
 </template>
@@ -31,7 +34,6 @@ export default {
             type: Object,
             required: true
         },
-
         townships:{
             type: Array,
         }
@@ -45,6 +47,16 @@ export default {
             return this.townships.filter(function(township){
                 return township.districtId == currentDistrict.id;
             })
+        }
+    },
+    data() {
+        return {
+            showTownships: false,
+        }
+    },
+    methods: {
+        toggleStatus(){
+            this.showTownships = !this.showTownships
         }
     },
 }
