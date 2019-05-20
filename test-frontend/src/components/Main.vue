@@ -21,59 +21,7 @@
                                    :state="state" :index="index" 
                                    :key="state.id" 
                                    :districts="districts" 
-                                   :townships="townships"></State>
-                            
-                            <!-- Load each tr as a component -->
-                            <!-- <template v-for="(state, index) in stateData"> -->
-                                <!-- STATES -->
-                                <!-- <tr class="row" :key="index">
-                                    <td class="col2 align-left">
-                                        <div class="row ">
-                                            <div class="col1"><img src="./../assets/images/stateIcon.svg" alt="State"></div>
-                                            <div class="col2">{{ state.name }}</div>
-                                            <div class="col1"><img src="./../assets/images/download.svg" alt=""></div>
-                                            <div class="col3 align-right"><button>{{ state.districts.length }} Districts <img src="./../assets/images/remove.svg" alt="Expand"></button></div>
-                                        </div>
-                                    </td>
-                                    <td class="col1">{{ state.lastInput }}</td>
-                                    <td class="col1">{{ state.formCount }}</td>
-                                    <td class="col1">{{ state.voterCount }}</td>
-                                    <td class="col1">{{ state.update }}</td>
-                                </tr> -->
-                                <!-- <template v-for="(district, districtIndex) in state.districts"> -->
-                                    
-                                    <!-- <tr class="row" :key="index+'-'+districtIndex">
-                                        <td class="col2 align-left">
-                                            <div class="row ">
-                                                <div class="col1"><img src="./../assets/images/districtIcon.svg" alt="District"></div>
-                                                <div class="col2">{{ district.name }}</div>
-                                                <div class="col1"><img src="./../assets/images/download.svg" alt=""></div>
-                                                <div class="col3 align-right"><button>{{ district.townships.length }} Townships <img src="./../assets/images/remove.svg" alt="Expand"></button></div>
-                                            </div>
-                                        </td>
-                                        <td class="col1">{{ district.lastInput }}</td>
-                                        <td class="col1">{{ district.formCount }}</td>
-                                        <td class="col1">{{ district.voterCount }}</td>
-                                        <td class="col1">{{ district.update }}</td>
-                                    </tr> -->
-
-                                    <!-- <tr class="row" v-for="(township, townshipIndex) in district.townships" :key="index+districtIndex+'-township'+townshipIndex">
-                                        <td class="col2 align-left">
-                                            <div class="row ">
-                                                <div class="col1"><img src="./../assets/images/townshipIcon.svg" alt="Township"></div>
-                                                <div class="col2">{{ township.name }}</div>
-                                                <div class="col1"><img src="./../assets/images/download.svg" alt=""></div>
-                                                <div class="col3 align-right"></div>
-                                            </div>
-                                        </td>
-                                        <td class="col1">{{ township.lastInput }}</td>
-                                        <td class="col1">{{ township.formCount }}</td>
-                                        <td class="col1">{{ township.voterCount }}</td>
-                                        <td class="col1">{{ township.update }}</td>
-                                    </tr>
-                                </template> -->
-                            <!-- </template> -->
-                            
+                                   :townships="townships"></State>                            
                         </tbody>
                     </table>
                 </div>
@@ -86,7 +34,6 @@
 import SearchFilter from "./SearchFilter.vue"
 import TableHeader from "./TableHeader.vue"
 import State from "./State.vue"
-import District from "./District.vue"
 
 export default {
     data() {
@@ -210,7 +157,7 @@ export default {
         }
     },
     components: {
-        SearchFilter, TableHeader, State, District
+        SearchFilter, TableHeader, State
     }
 }
 </script>
