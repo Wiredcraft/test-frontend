@@ -1,0 +1,12 @@
+.button{
+    &-collapse{
+        width: 100%;
+        padding: 5px 5px;
+        background: $catskill-white;
+        border-radius: 3px;
+        max-width: 110px;
+        font-size: 12px;
+        border: none;
+        color: $comet;
+    }
+}

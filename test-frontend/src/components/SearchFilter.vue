@@ -12,6 +12,9 @@ export default {
         regionTypes: {
             type: Array,
             required: true
+        },
+        value:{
+            type: String
         }
     },
     data() {
@@ -21,8 +24,8 @@ export default {
     },
     watch: {
         selectedFilter: function(){
-            console.log(this.selectedFilter.toLowerCase())
             // EMIT event to parent component with the category type to be searched
+            this.$emit('updateFilter', this.selectedFilter.toLowerCase());
         }
     },
 }

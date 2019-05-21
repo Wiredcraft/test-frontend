@@ -14,15 +14,13 @@ export default {
         dataCategories:{
             type: Array,
             required: true
-        },
-        firstRow: {
-            type: String,
-            required: true
-        },
-        otherRows: {
-            type: String,
-            required: true
         }
-    }
+    },
+    data() {
+        return {
+            firstRow: 'col5 align-left',
+            otherRows: 'col2',
+        }
+    },
 }
 </script>

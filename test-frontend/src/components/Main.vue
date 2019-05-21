@@ -5,7 +5,7 @@
                 <div class="row">
                     <!-- Table Filter -->
                     <div class="col1 input-object">
-                        <SearchFilter v-bind:regionTypes="regionTypes"></SearchFilter>
+                        <SearchFilter v-bind:regionTypes="regionTypes" v-on:updateFilter="selectedFilter = $event"></SearchFilter>
                     </div>
                     <div class="col6 input-object">
                         <KeywordSearch v-model="keywords"></KeywordSearch>
@@ -14,14 +14,27 @@
                 <div>
                     <table class="table">
                         <!-- Table Header -->
-                        <TableHeader :dataCategories="dataCategories" :firstRow="firstRow" :otherRows="otherRows"></TableHeader>
+                        <TableHeader :dataCategories="dataCategories"></TableHeader>
 
                         <tbody>
-                            <State v-for="(state, index) in filteredCategories" 
+                            <State v-for="(state, index) in filteredStates" 
                                    :state="state" :index="index" 
                                    :key="state.id" 
                                    :districts="districts" 
-                                   :townships="townships"></State>                            
+                                   :townships="townships"
+                                   v-show="selectedFilter == 'states' || selectedFilter == ''"></State>
+
+                            <District  v-for="(district, districtIndex) in filteredStates" 
+                                       :district="district" 
+                                       :districtIndex="districtIndex" 
+                                       :key="district.id+'-'+districtIndex"
+                                       :townships="townships"
+                                       v-show="selectedFilter == 'districts'"></District>
+
+                            <Township v-for="(township, townshipIndex) in filteredStates" 
+                                      :township="township" 
+                                      :key="township.districtId+township.id+'-township'+townshipIndex"
+                                      v-show="selectedFilter == 'townships'"></Township>
                         </tbody>
                     </table>
                 </div>
@@ -35,15 +48,16 @@ import SearchFilter from "./SearchFilter.vue"
 import KeywordSearch from "./KeywordSearch.vue"
 import TableHeader from "./TableHeader.vue"
 import State from "./State.vue"
+import District from "./District.vue"
+import Township from "./Township.vue"
 
 export default {
     data() {
         return {
             regionTypes: ['States', 'Districts', 'Townships'],
             dataCategories: ['Region', 'Last input', 'Number of forms', 'Number of Voters', 'Update'],
-            firstRow: 'col2 align-left',
-            otherRows: 'col1',
-            keywords: "",
+            keywords: '',
+            selectedFilter: '',
             states:[
                 {
                     id: '1',
@@ -82,7 +96,7 @@ export default {
                 },
                 {
                     id: '2',
-                    name: 'Aunglan',
+                    name: 'Mapsdf',
                     lastInput: '123,456', 
                     formCount: '342,456', 
                     voterCount: '123,546', 
@@ -158,13 +172,29 @@ export default {
         }
     },
     components: {
-        SearchFilter, KeywordSearch, TableHeader, State
+        SearchFilter, KeywordSearch, TableHeader, State, District, Township
     },
     computed: {
-        filteredCategories: function() {
-            return this.states.filter((state) => {
-                return state.name.match(this.keywords)
-            })
+        filteredStates: function() {
+            switch (this.selectedFilter) {
+                case 'districts':
+                    return this.districts.filter((district) => {
+                        return district.name.match(this.keywords)
+                    })
+                    break;
+                
+                case 'townships':
+                    return this.townships.filter((township) => {
+                        return township.name.match(this.keywords)
+                    })
+                    break;
+            
+                default:
+                    return this.states.filter((state) => {
+                        return state.name.match(this.keywords)
+                    })
+                    break;
+            }
         }
     },
 }
