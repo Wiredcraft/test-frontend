@@ -5,17 +5,23 @@
  */
 
  .bg-white{background: $white;}
- .bg-gun-powder{background: $gun-powder !important;}
+ .bg-gun-powder{background: $gun-powder;}
+ .bg-dark{background: darken($catskill-white, 10%) !important;}
+ .bg-light{background: $catskill-white !important;}
 
  .border-rounded{border-radius: 3px;}
-//  border-top-left-radius: 3px; For the table and input corners
 
- .align-left{
+.align-left{
      text-align: left;
      justify-content: flex-start;
-    }
+}
 
- .align-right{
+.align-right{
      text-align: right;
      justify-content: flex-end;
+}
+
+.align-center{
+    text-align: center;
+    justify-content: center;
 }

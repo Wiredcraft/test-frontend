@@ -1,7 +1,7 @@
 <template>
     <header class="navbar">
         <nav class="row">
-            <div class="nav col1 nav-logo row">
+            <div class="nav col1 nav-logo row not-mobile">
                 <span>
                     <img src="./../assets/images/logo.jpg" alt="Navigation Logo">
                 </span>

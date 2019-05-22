@@ -6,20 +6,24 @@
 
  @include update-screen(tiny-screens){
     .container{width: 300px;}
-    .row{flex-direction: column;}
+    .row{
+        flex-direction: column;
+        .mobile-row-direction{flex-direction: row;}
+    }
     .row .col{padding: 0.5em;}
-    .not-mobile{display: none;}
+    body .not-mobile{display: none;}
 }
 
 @include update-screen(small-screens){
     .container{width: 360px;}
+    .mobile-row-direction{flex-direction: row;}
 }
 
 @include update-screen(medium-screens){
     .container{width: 684px;}
     .row{flex-direction: row;}
     .row .col{padding: 0.75em;}
-    .not-mobile{display: inline !important;}
+    body .not-mobile{display: flex;}
 }
 
 @include update-screen(large-screens){

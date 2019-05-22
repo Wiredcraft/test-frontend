@@ -4,6 +4,14 @@
  * @Desc: Navigation menu wrapper 
  */
 
+@include update-screen(small-screens){
+    .navbar{
+        .nav{
+            border-right: none;
+        }
+    }
+}
+
 .navbar{
     background: $white;
     margin-bottom: 2.75rem;

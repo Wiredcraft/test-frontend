@@ -2,18 +2,18 @@
     <div>
         <tr class="row">
             <td class="col5 align-left">
-                <div class="row ">
+                <div class="row mobile-row-direction">
                     <div class="col1"><img src="./../assets/images/stateIcon.svg" alt="State"></div>
                     <div class="col2">{{ state.name }}</div>
                     <div class="col1"><img src="./../assets/images/download.svg" alt=""></div>
                     <div class="col3 align-right">
-                        <button v-bind:class="{ 'bg-gun-powder': showDistricts }" class="button button-collapse" v-on:click="toggleStatus">
+                        <button v-bind:class="{ 'bg-dark': showDistricts }" class="button button-collapse" v-on:click="toggleStatus">
                             <div class="row flex-center">
-                                <div class=" align-left">
+                                <div class="">
                                     <b>{{ assignedDistricts.length }}</b> Districts 
                                 </div>
                                 
-                                <div class="row col1 align-right">
+                                <div class="row col1 image-wrapper">
                                     <img v-show="showDistricts" 
                                     src="./../assets/images/remove.svg" 
                                     alt="Expand">

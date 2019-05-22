@@ -4,6 +4,43 @@
  * @Desc:  Nav items contained in the navbar
  */
 
+
+
+ @include update-screen(tiny-screens){
+    body .nav-buttons{
+        box-sizing: border-box;
+        
+        li{
+            box-sizing: content-box;
+            border: 1px solid $athens-gray;
+            display: block;
+            a{
+                padding: 15px 0;
+                text-align: center;
+            }
+        }
+    }
+ }
+ 
+ @include update-screen(medium-screens){
+     body .nav-buttons{
+         box-sizing: border-box;
+         
+         li{
+             box-sizing: content-box;
+             border-left: 1px solid $athens-gray !important;
+             border: none;
+             display: inline-block;
+             a{
+                 // padding: 15px 0;
+                 // display: block;
+                 // text-align: center;
+             }
+         }
+     }
+ }
+ 
+
 .nav{
     padding: 3px 0;
     align-items: center;

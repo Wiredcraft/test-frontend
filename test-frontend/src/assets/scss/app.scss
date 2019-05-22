@@ -1,9 +1,21 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-22 21:25:26 
+ * @Desc: Where all the smaller components come together 
+ */
+
+
+// Reset
 @import 'partials/reset';
+
+// Variables
 @import 'modules/colours';
 @import 'modules/fonts';
+
+// Partials
+@import 'partials/mixins';
 @import 'partials/main';
 @import 'partials/utilities';
-@import 'partials/mixins';
 @import 'partials/layout';
 @import 'partials/navbar';
 @import 'partials/nav';

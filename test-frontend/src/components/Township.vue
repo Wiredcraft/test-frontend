@@ -1,7 +1,7 @@
 <template>
     <tr class="row">
         <td class="col5 align-left">
-            <div class="row ">
+            <div class="row  mobile-row-direction">
                 <div class="col1"></div>
                 <div class="col1"><img src="./../assets/images/townshipIcon.svg" alt="Township"></div>
                 <div class="col2">{{ township.name }}</div>

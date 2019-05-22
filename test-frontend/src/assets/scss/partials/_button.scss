@@ -1,3 +1,9 @@
+/** 
+ * @Author: Christiane Celeste 
+ * @Date: 2019-05-22 21:25:01 
+ * @Desc: Buttons and button styles 
+ */
+
 .button{
     &-collapse{
         width: 100%;
@@ -8,5 +14,10 @@
         font-size: 12px;
         border: none;
         color: $comet;
+
+        .image-wrapper{
+            text-align: right;
+            justify-content: flex-end;
+        }
     }
 }

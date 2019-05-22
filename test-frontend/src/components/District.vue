@@ -2,22 +2,22 @@
     <div>
         <tr class="row">
             <td class="col5 align-left">
-                <div class="row ">
+                <div class="row  mobile-row-direction">
                     <div class="col1"><img src="./../assets/images/districtIcon.svg" alt="District"></div>
                     <div class="col2">{{ district.name }}</div>
                     <div class="col1"><img src="./../assets/images/download.svg" alt=""></div>
                     <div class="col3 align-right">
-                        <button class="button button-collapse" v-on:click="toggleStatus">
+                        <button v-bind:class="{ 'bg-dark': showTownships }" class="button button-collapse" v-on:click="toggleStatus">
                             <div class="row flex-center">
-                                <div class=" align-left">
+                                <div class="align-left">
                                     <b>{{ assignedTownships.length }}</b> Townships 
                                 </div>
                                 
-                                <div class="row col1 align-right">
+                                <div class="row col1 image-wrapper">
                                     <img v-show="showTownships" 
                                     src="./../assets/images/remove.svg" 
                                     alt="Expand">
-                                <img v-show="!showTownships" 
+                                    <img v-show="!showTownships" 
                                     src="./../assets/images/add.svg" 
                                     alt="Expand">
                                 </div>

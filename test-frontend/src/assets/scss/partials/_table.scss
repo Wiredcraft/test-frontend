@@ -1,12 +1,20 @@
 /** 
  * @Author: Christiane Celeste 
  * @Date: 2019-05-19 12:20:06 
- * @Desc:  
+ * @Desc:  Table structure & row/column layout
  */
 
 .table{
     width: 100%;
     border-collapse: collapse;
+
+    tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+    
+    tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+    }
 
     thead{
         tr{
@@ -16,7 +24,7 @@
     
     tbody{
         tr{
-            border: 1px solid $athens-gray;
+            border-top: 1px solid $athens-gray;
         }
     }
 
@@ -24,8 +32,15 @@
         text-align: center;
         td, th{
             padding: 15px 10px;
-            border-left: 1px solid $athens-gray;
-            border-right: 1px solid $athens-gray;
+
+            &:not(:first-of-type){
+                border-left: 1px solid $athens-gray;
+            }
+
+            &:not(:last-child){
+                border-right: 1px solid $athens-gray;
+            }
+            
         }
         
     }
