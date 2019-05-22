@@ -3,3 +3,19 @@
  * @Date: 2019-05-18 15:31:39 
  * @Desc: List of packages required by the project 
  */
+
+
+This app was built using the following technologies:
+NPM
+Vuejs - using Vue CLI and Vue UI
+SASS - compiled and minified in VS Code and saved to src/assets/css/app.min.css
+HTML
+
+
+Installing the vue cli:
+1. Run: npm install -g @vue/cli
+2. With the vue CLI installed, run `vue ui` in the main directory. This will start
+   the GUI project manager for vue which will allow you to start/build the vue project.
+
+Otherwise, for further reference, here is a useful tutorial on how to install and use Vue UI:
+https://scotch.io/tutorials/creating-vue-apps-with-the-vue-ui-tool
