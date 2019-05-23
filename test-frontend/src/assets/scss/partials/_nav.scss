@@ -14,6 +14,7 @@
             box-sizing: content-box;
             border: 1px solid $athens-gray;
             display: block;
+            height: initial;
             a{
                 padding: 15px 0;
                 text-align: center;
@@ -31,11 +32,7 @@
              border-left: 1px solid $athens-gray !important;
              border: none;
              display: inline-block;
-             a{
-                 // padding: 15px 0;
-                 // display: block;
-                 // text-align: center;
-             }
+             height: 100%;
          }
      }
  }
