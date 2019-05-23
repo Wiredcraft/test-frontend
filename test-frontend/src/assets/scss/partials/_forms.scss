@@ -30,4 +30,23 @@
     #filter{
         border-top-left-radius: 3px;
     }
+
+    .dropdown{
+        position: relative;
+        overflow: hidden;
+        display: inline;
+    
+        &:before {
+            top: 50%;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid $comet;
+            content: "";
+            position: absolute;
+            left: calc(100% - 35px);
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+        }
+    }
 }

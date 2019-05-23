@@ -1,8 +1,10 @@
 <template>
-    <select name="filter" id="filter" placeholder="Filter" class="input" v-model="selectedFilter">
-        <option value="" selected disabled>Filter</option>
-        <option v-for="regionType in regionTypes" :key="regionType">{{ regionType }}</option>
-    </select>
+    <div class="dropdown">
+        <select name="filter" id="filter" placeholder="Filter" class="input" v-model="selectedFilter">
+            <option value="" selected disabled>Filter</option>
+            <option v-for="regionType in regionTypes" :key="regionType">{{ regionType }}</option>
+        </select>
+    </div>
 </template>
 
 
