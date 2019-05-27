@@ -16,6 +16,7 @@
                         <!-- Table Header -->
                         <TableHeader :dataCategories="dataCategories"></TableHeader>
 
+                        <!-- Table Rows (States, Districts, Townships) -->
                         <tbody>
                             <State v-for="(state, index) in filteredStates" 
                                    :state="state" :index="index" 
@@ -24,6 +25,7 @@
                                    :townships="townships"
                                    v-show="selectedFilter == 'states' || selectedFilter == ''"></State>
 
+                            <!-- Hidden until selected by the filter -->
                             <District  v-for="(district, districtIndex) in filteredStates" 
                                        :district="district" 
                                        :districtIndex="districtIndex" 
