@@ -18,7 +18,7 @@ export default {
     },
     data() {
         return {
-            firstRow: 'col5 align-left',
+            firstRow: 'col5',
             otherRows: 'col2',
         }
     },

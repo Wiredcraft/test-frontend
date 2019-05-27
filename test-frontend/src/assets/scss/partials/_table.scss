@@ -19,6 +19,11 @@
     thead{
         tr{
             border: 1px solid darken($athens-gray, 15%);
+            th{
+                &:first-child{
+                    text-align: left;
+                }
+            }
         }
     }
     
@@ -43,5 +48,32 @@
             
         }
         
+    }
+}
+
+@include update-screen(tiny-screens){
+    .table{
+        thead{
+            tr{
+                th{
+                    &:first-child{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@include update-screen(medium-screens){
+    .table{
+        thead{
+            tr{
+                th{
+                    &:first-child{
+                        text-align: left;
+                    }
+                }
+            }
+        }
     }
 }
