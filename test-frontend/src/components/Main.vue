@@ -183,19 +183,16 @@ export default {
                     return this.districts.filter((district) => {
                         return district.name.match(this.keywords)
                     })
-                    break;
                 
                 case 'townships':
                     return this.townships.filter((township) => {
                         return township.name.match(this.keywords)
                     })
-                    break;
             
                 default:
                     return this.states.filter((state) => {
                         return state.name.match(this.keywords)
                     })
-                    break;
             }
         }
     },
