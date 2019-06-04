@@ -22,6 +22,6 @@ export default {
 }
 </script>
 
-<style lang="css">
-     @import 'assets/css/app.min.css';
+<style lang="scss">
+    @import "assets/scss/app.scss";
 </style>
