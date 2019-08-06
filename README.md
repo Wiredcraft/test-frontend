@@ -1,6 +1,6 @@
 # Wiredcraft Front-end Developer Coding Test
 
-Make sure you read **all** of this document carefully, and follow the guidelines in it.
+Make sure you read the whole document carefully and follow the guidelines in it.
 
 ## Context
 
@@ -33,9 +33,9 @@ Main
 
 ### Functionality
 
-* Static page header (navigation bar), no extra features needed.
-* The table filter needs to be able to filter the result in the table by the type and keywords.
-* The table is nested, and grouped by state, district, township.
+- Static page header (navigation bar), no extra features needed.
+- The table filter needs to be able to filter the result in the table by the type and keywords.
+- The table is nested, and grouped by state, district, township.
 
 ### Tech stack
 
@@ -55,22 +55,22 @@ Main
 
 ## What We Care About
 
-Feel free to use any libraries you would use if this were a real production App, but remember we're interested in your code & the way you solve the problem, not how well you can use a particular library.
+Feel free to use any open-source library as you see fit, but remember that we are evaluating your coding skills and problem solving skills.
 
 We're interested in your method and how you approach the problem just as much as we're interested in the end result.
 
 Here's what you should aim for:
 
 - Good use of current HTML, CSS, and JavaScript & performance best practices.
-- Solid testing approach.
+- Good testing approach.
 - Extensible code.
 
-## Q&A
+## FAQ
 
 > Where should I send back the result when I'm done?
 
-Fork this repo and send us a pull request when you think you are done. We don't have a deadline for the task.
+Fork this repo and send us a pull request when you think it's ready for review. You don't have to finish everything prior and you can continue to work on it. We don't have a deadline for the task.
 
 > What if I have a question?
 
-Create a new issue in the repo and we will get back to you very quickly.
+Create a new issue in the repo and we will get back to you shortly.
