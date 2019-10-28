@@ -3,6 +3,7 @@ import stateIcon from './state-icon.png';
 import districtIcon from './district-icon.png';
 import townshipIcon from './township-icon.png';
 import downloadIcon from './download-icon.png';
+import searchIcon from './search-icon.png';
 
 export default {
   navbarLogo,
@@ -10,4 +11,5 @@ export default {
   districtIcon,
   townshipIcon,
   downloadIcon,
+  searchIcon,
 };

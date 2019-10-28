@@ -4,9 +4,10 @@
 $color-white: #FFFFFF;
 $border-color: #D8D8D8;
 $font-color: #575B71;
+$placeholder-color: #BAC0CC;
 $btn-color: #81869C;
 $btn-bg-color: #DBDFEB;
-
+$tab-bg-color: #F0F2F8;
 
 // Layout
 .container {
@@ -77,7 +78,7 @@ $btn-bg-color: #DBDFEB;
     padding: 21px 69px 17px 67px;
   }
   .bg-color-tab {
-    background-color: #F0F2F8;
+    background-color: $tab-bg-color;
   }
 }
 
@@ -133,4 +134,48 @@ table {
   margin-right: 20px;
   padding-left: 16px;
   padding-right: 16px;
+}
+.expanded {
+  color: 'red' !important;
+}
+.collapsed {
+  font-size: 20px;
+}
+
+// Filter and Search
+.Dropdown-control {
+  border: none !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  padding: 8px 16px !important;
+  text-align: left !important;
+  border-right: 1px solid $border-color !important;
+}
+.Dropdown-menu {
+  text-align: left !important;
+}
+
+.filter-select {
+  width: 142px;
+}
+.search-container {
+  text-align: left;
+}
+.search-input {
+  height: 100%;
+  width: 90%;
+  border-width: 0 !important;
+  border-style: 0 !important;
+  font-size: 14px;
+  padding: 0 16px;
+}
+input:focus {
+  outline: none !important;
+}
+.search-icon {
+  float: right;
+  padding: 8px 16px;
+}
+.search-img {
+  padding: 0;
 }

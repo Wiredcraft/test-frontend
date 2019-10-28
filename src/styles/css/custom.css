@@ -139,4 +139,55 @@ table td.township {
   padding-right: 16px;
 }
 
+.expanded {
+  color: "red" !important;
+}
+
+.collapsed {
+  font-size: 20px;
+}
+
+.Dropdown-control {
+  border: none !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  padding: 8px 16px !important;
+  text-align: left !important;
+  border-right: 1px solid #D8D8D8 !important;
+}
+
+.Dropdown-menu {
+  text-align: left !important;
+}
+
+.filter-select {
+  width: 142px;
+}
+
+.search-container {
+  text-align: left;
+}
+
+.search-input {
+  height: 100%;
+  width: 90%;
+  border-width: 0 !important;
+  border-style: 0 !important;
+  font-size: 14px;
+  padding: 0 16px;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+.search-icon {
+  float: right;
+  padding: 8px 16px;
+}
+
+.search-img {
+  padding: 0;
+}
+
 /*# sourceMappingURL=custom.css.map */

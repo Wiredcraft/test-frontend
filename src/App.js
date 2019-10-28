@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import './styles/css/custom.css';
+import Dropdown from 'react-dropdown';
 import Images from './assets/index';
 import TableData from './data/table-data.json';
+import 'react-dropdown/style.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
+      filterValue: '',
+      filterOptions: ['State', 'District', 'Township'],
     };
   }
 
@@ -17,7 +21,25 @@ class App extends Component {
     }
   }
 
-  onClickDistrict = (data) => {
+  getInitState = () => {
+    const { data } = this.state;
+
+    data.map((state) => {
+      state.visible = true;
+      if (state.districts) {
+        state.districts.map((district) => {
+          district.visible = false;
+          if (district.townships) {
+            district.townships.map((township) => {
+              township.visible = false;
+            });
+          }
+        });
+      }
+    });
+  }
+
+  toggleDistrict = (data) => {
     const { districts } = data;
 
     districts.map((district) => {
@@ -39,7 +61,7 @@ class App extends Component {
     this.forceUpdate();
   }
 
-  onClickTownship = (data) => {
+  toggleTownship = (data) => {
     const { townships } = data;
 
     townships.map((township) => {
@@ -70,7 +92,7 @@ class App extends Component {
 
     return (
       <tbody>
-        <tr>
+        <tr style={{ display: data.visible ? 'table-row' : 'none' }} id="state-row">
           <td className="state">
             <div className="row justify-content-between">
               <div>
@@ -83,7 +105,7 @@ class App extends Component {
                 <button
                   className="btn-row"
                   type="button"
-                  onClick={() => this.onClickDistrict(data)}
+                  onClick={() => this.toggleDistrict(data)}
                 >
                   <div className="row justify-content-between">
                     <div>{`${data.districts.length} Districts `}</div>
@@ -107,7 +129,7 @@ class App extends Component {
   }
 
   buildDistrictRow = (data) => (
-    <tr style={{ display: data.visible ? 'table-row' : 'none' }}>
+    <tr style={{ display: data.visible ? 'table-row' : 'none' }} id="district-row">
       <td className="district">
         <div className="row justify-content-between">
           <div>
@@ -120,7 +142,9 @@ class App extends Component {
             <button
               className="btn-row"
               type="button"
-              onClick={() => this.onClickTownship(data)}
+              onClick={() => {
+                this.toggleTownship(data);
+              }}
             >
               <div className="row justify-content-between">
                 <div>{`${data.townships.length} Townships`}</div>
@@ -140,7 +164,7 @@ class App extends Component {
 
 
   buildTownshipRow = (data) => (
-    <tr style={{ display: data.visible ? 'table-row' : 'none' }}>
+    <tr style={{ display: data.visible ? 'table-row' : 'none' }} id="township-row">
       <td className="township">
         <img src={Images.townshipIcon} alt="township" height="20" />
         <span>{data.region}</span>
@@ -153,11 +177,53 @@ class App extends Component {
     </tr>
   )
 
-  render() {
+  filterTable = (e) => {
     const { data } = this.state;
-    const tableRows = data.map(this.buildStateRow);
 
-    // console.log(data);
+    this.setState({ filterValue: e.value });
+
+    this.getInitState();
+
+    if (e.value === 'State') {
+      data.map((state) => {
+        state.visible = true;
+        if (state.districts) {
+          state.districts.map((district) => {
+            district.visible = false;
+          });
+        }
+      });
+    }
+    if (e.value === 'District') {
+      data.map((state) => {
+        state.visible = false;
+        if (state.districts) {
+          state.districts.map((district) => {
+            district.visible = true;
+          });
+        }
+      });
+    }
+    if (e.value === 'Township') {
+      data.map((state) => {
+        state.visible = false;
+        if (state.districts) {
+          state.districts.map((district) => {
+            district.visible = false;
+            if (district.townships) {
+              district.townships.map((township) => {
+                township.visible = true;
+              });
+            }
+          });
+        }
+      });
+    }
+  }
+
+  render() {
+    const { data, filterOptions, filterValue } = this.state;
+    const tableRows = data.map(this.buildStateRow);
 
     return (
       <div className="container">
@@ -181,7 +247,30 @@ class App extends Component {
           <div className="row justify-content-center">
             <table>
               <tr className="filter-search" colSpan="5">
-                <td className="px-2" colSpan="5">Filter and search</td>
+                <td colSpan="5">
+                  <div className="row">
+
+                    <div className="col-1 filter-select">
+                      <Dropdown
+                        options={filterOptions}
+                        value={filterValue}
+                        placeholder="Filter"
+                        onChange={this.filterTable}
+                      />
+                    </div>
+
+                    <div className="col-5 search-container">
+                      <input
+                        className="search-input"
+                        placeholder="Search"
+                      />
+
+                      <div className="search-icon">
+                        <img className="search-img" src={Images.searchIcon} alt="search" height="20" width="20" />
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th className="text-left px-2">Region</th>
