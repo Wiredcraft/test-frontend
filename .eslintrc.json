@@ -1,0 +1,79 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "airbnb"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": [
+            1,
+            2
+        ],
+        "brace-style": [
+            1,
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "keyword-spacing": [
+            1,
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "space-before-blocks": [
+            1,
+            "always"
+        ],
+        "key-spacing": [
+            1,
+            {
+                "afterColon": true
+            }
+        ],
+        "object-curly-spacing": [
+            1,
+            "always"
+        ],
+        "no-trailing-spaces": [
+            1,
+            {
+                "skipBlankLines": false
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "no-param-reassign": [
+            0
+        ],
+        "array-callback-return": [
+            0
+        ]
+    }
+}

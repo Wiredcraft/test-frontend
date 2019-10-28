@@ -1,0 +1,142 @@
+.container {
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: #575B71;
+  color: #575B71;
+  font-family: Helvetica;
+}
+
+.row {
+  display: flex;
+}
+
+.col-1 {
+  flex: 1;
+}
+
+.col-2 {
+  flex: 2;
+}
+
+.col-3 {
+  flex: 3;
+}
+
+.col-4 {
+  flex: 4;
+}
+
+.col-5 {
+  flex: 5;
+}
+
+.col-6 {
+  flex: 6;
+}
+
+.body {
+  padding-top: 40px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.px-1 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.px-2 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.align-self-end {
+  align-self: end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.navbar {
+  background-color: #FFFFFF;
+  color: #575B71;
+}
+.navbar .navbar-logo {
+  padding: 12px;
+  height: 32px;
+  width: 32px;
+  border-right: 1px solid #D8D8D8;
+}
+.navbar .navbar-header {
+  padding: 19px 0 19px 16.5px;
+  width: 835px;
+}
+.navbar .navbar-tab {
+  border-left: 1px solid #D8D8D8;
+  padding: 21px 69px 17px 67px;
+}
+.navbar .bg-color-tab {
+  background-color: #F0F2F8;
+}
+
+table {
+  background-color: #FFFFFF;
+  margin-left: 130px;
+  margin-right: 130px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  display: inline-table;
+}
+table th, table td {
+  border: 1px solid #D8D8D8;
+  height: 50px;
+}
+table th {
+  font-weight: normal;
+  border-bottom: 1px solid #575B71;
+}
+table td img {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+table td {
+  text-align: center;
+}
+table td.state {
+  text-align: left;
+}
+table td.district {
+  padding-left: 12px;
+  text-align: left;
+}
+table td.township {
+  padding-left: 43px;
+  text-align: left;
+}
+
+.filter-search {
+  height: 48px;
+}
+
+.btn-row {
+  height: 26px;
+  width: 107px;
+  color: #81869C;
+  background-color: #DBDFEB;
+  border: 0;
+  border-radius: 2px;
+  margin-right: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/*# sourceMappingURL=custom.css.map */

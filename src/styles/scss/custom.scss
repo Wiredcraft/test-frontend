@@ -1,0 +1,136 @@
+// Created by Lucia Ma
+
+// Variables
+$color-white: #FFFFFF;
+$border-color: #D8D8D8;
+$font-color: #575B71;
+$btn-color: #81869C;
+$btn-bg-color: #DBDFEB;
+
+
+// Layout
+.container {
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: $font-color;
+  color: $font-color;
+  font-family: Helvetica;
+}
+
+.row {
+  display: flex;
+}
+
+.col-1 { flex: 1 }
+.col-2 { flex: 2 }
+.col-3 { flex: 3 }
+.col-4 { flex: 4 }
+.col-5 { flex: 5 }
+.col-6 { flex: 6 }
+
+.body {
+  padding-top: 40px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.px-1 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.px-2 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.align-self-end {
+  align-self: end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+
+// Navigation bar
+.navbar {
+  background-color: $color-white;
+  color: $font-color;
+
+  .navbar-logo {
+    padding: 12px;
+    height: 32px;
+    width: 32px;
+    border-right: 1px solid $border-color;
+  }
+  .navbar-header {
+    padding: 19px 0 19px 16.5px;
+    width: 835px;
+    // border-right: 1px solid $border-color;
+  }
+  .navbar-tab {
+    border-left: 1px solid $border-color;
+    padding: 21px 69px 17px 67px;
+  }
+  .bg-color-tab {
+    background-color: #F0F2F8;
+  }
+}
+
+// Table
+table {
+  background-color: $color-white;
+  margin-left: 130px;
+  margin-right: 130px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  display: inline-table;
+
+  th, td {
+    border: 1px solid $border-color;
+    height: 50px;
+  }
+  th {
+    font-weight: normal;
+    border-bottom: 1px solid $font-color;
+  }
+  td img {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  td {
+    text-align: center;
+  }
+  td.state {
+    text-align: left;
+  }
+  td.district {
+    padding-left: 12px;
+    text-align: left;
+  }
+  td.township {
+    padding-left: 43px;
+    text-align: left;
+  }
+}
+.filter-search {
+  height: 48px;
+}
+
+// Buttons
+.btn-row {
+  height: 26px;
+  width: 107px;
+  color: $btn-color;
+  background-color: $btn-bg-color;
+  border: 0;
+  border-radius: 2px;
+  margin-right: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+}

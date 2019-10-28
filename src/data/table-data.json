@@ -1,0 +1,99 @@
+[
+  {
+    "region": "Shan state",
+    "lastInput": "123,456",
+    "numberOfForms": "342,456",
+    "numberOfVoters": "123,456",
+    "update": "342,456",
+    "visible": true,
+    "districts": [
+      {
+        "region": "Aunglan",
+        "lastInput": "123,456",
+        "numberOfForms": "342,456",
+        "numberOfVoters": "123,456",
+        "update": "342,456",
+        "visible": false,
+        "townships": [
+          {
+            "type": "township",
+            "region": "Loilen",
+            "lastInput": "123,456",
+            "numberOfForms": "342,456",
+            "numberOfVoters": "123,456",
+            "update": "342,456",
+            "visible": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "region": "Shan state",
+    "lastInput": "123,456",
+    "numberOfForms": "342,456",
+    "numberOfVoters": "123,456",
+    "update": "342,456",
+    "visible": true,
+    "districts": [
+      {
+        "region": "Aunglan",
+        "lastInput": "123,456",
+        "numberOfForms": "342,456",
+        "numberOfVoters": "123,456",
+        "update": "342,456",
+        "visible": false
+      },
+      {
+        "region": "Aunglan",
+        "lastInput": "123,456",
+        "numberOfForms": "342,456",
+        "numberOfVoters": "123,456",
+        "update": "342,456",
+        "visible": false
+      },
+      {
+        "region": "Aunglan",
+        "lastInput": "123,456",
+        "numberOfForms": "342,456",
+        "numberOfVoters": "123,456",
+        "update": "342,456",
+        "visible": false
+      },
+      {
+        "region": "Aunglan",
+        "lastInput": "123,456",
+        "numberOfForms": "342,456",
+        "numberOfVoters": "123,456",
+        "update": "342,456",
+        "visible": false
+      }
+    ]
+  },
+  {
+    "region": "Shanghai state",
+    "lastInput": "123,456",
+    "numberOfForms": "342,456",
+    "numberOfVoters": "123,456",
+    "update": "342,456",
+    "visible": true,
+    "districts": [
+      {
+        "region": "Jingan",
+        "lastInput": "123,456",
+        "numberOfForms": "342,456",
+        "numberOfVoters": "123,456",
+        "update": "342,456",
+        "visible": false
+      },
+      {
+        "region": "Xuhui",
+        "lastInput": "123,456",
+        "numberOfForms": "342,456",
+        "numberOfVoters": "123,456",
+        "update": "342,456",
+        "visible": false
+      }
+    ]
+  }
+]
