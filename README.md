@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Wiredcraft Front-end Developer Coding Test
 
-## Available Scripts
+Make sure you read the whole document carefully and follow the guidelines in it.
 
-In the project directory, you can run:
+# install dependencies
+yarn install
 
-### `yarn start`
+# run
+yarn start
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Context
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Use HTML, CSS, and JavaScript to implement the following mockup.
 
-### `yarn test`
+![wiredcraft-front-end-test-mock](https://cldup.com/JM3lLBAS5V.jpg)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Mockup source Sketch file](https://cldup.com/2wo0ktkbxJ.sketch)
 
-### `yarn build`
+## Requirements
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Page Structure
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+Header(Navigation)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Main
+  - Table Filter
+    - Search Filter (dropdown component)
+    - Search Keywords (input field)
+  - Table
+    - Table Header
+    - Table Body
+      - Table Row
+        - Collapsable Row (State -> Distract -> Township)
+          - State Level (Show by default)
+            - District Level (Hide by default, show by clicking the button in state level)
+              - Township Level (Hide by default, show by clicking the button in district level)
+```
 
-### `yarn eject`
+### Functionality
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Static page header (navigation bar), no extra features needed.
+- The table filter needs to be able to filter the result in the table by the type and keywords.
+- The table is nested, and grouped by state, district, township.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Tech stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- JS oriented
+    - Use **React**.
+    - Use CSS or SASS or any **CSS** framework as you like.
+- CSS oriented
+    - Use any **JS** framework as you like.
+    - Use **SASS**.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Bonus
 
-## Learn More
+- Write clear **documentation** on how it's designed and how to run the code.
+- Provide proper unit tests.
+- Write good commit messages.
+- An online demo is always welcome.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## What We Care About
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to use any open-source library as you see fit, but remember that we are evaluating your coding skills and problem solving skills.
 
-### Code Splitting
+We're interested in your method and how you approach the problem just as much as we're interested in the end result.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Here's what you should aim for:
 
-### Analyzing the Bundle Size
+- Good use of current HTML, CSS, and JavaScript & performance best practices.
+- Good testing approach.
+- Extensible code.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## FAQ
 
-### Making a Progressive Web App
+> Where should I send back the result when I'm done?
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Fork this repo and send us a pull request when you think it's ready for review. You don't have to finish everything prior and you can continue to work on it. We don't have a deadline for the task.
 
-### Advanced Configuration
+> What if I have a question?
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Create a new issue in the repo and we will get back to you shortly.
