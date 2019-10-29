@@ -4,6 +4,8 @@ import districtIcon from './district-icon.png';
 import townshipIcon from './township-icon.png';
 import downloadIcon from './download-icon.png';
 import searchIcon from './search-icon.png';
+import expandIcon from './expand-icon.png';
+import collapseIcon from './collapse-icon.png';
 
 export default {
   navbarLogo,
@@ -12,4 +14,6 @@ export default {
   townshipIcon,
   downloadIcon,
   searchIcon,
+  expandIcon,
+  collapseIcon,
 };

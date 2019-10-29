@@ -1,9 +1,10 @@
+// Created by Lucia Ma
 import React, { Component } from 'react';
-import './styles/css/custom.css';
 import Dropdown from 'react-dropdown';
 import Images from './assets/index';
 import TableData from './data/table-data.json';
 import 'react-dropdown/style.css';
+import './styles/css/custom.css';
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends Component {
       data: [],
       filterValue: '',
       filterOptions: ['State', 'District', 'Township'],
+      searchValue: '',
     };
   }
 
@@ -39,8 +41,14 @@ class App extends Component {
     });
   }
 
-  toggleDistrict = (data) => {
+  toggleDistrict = (data, id) => {
     const { districts } = data;
+
+    if (document.getElementById(id).src == Images.expandIcon) {
+      document.getElementById(id).src = Images.collapseIcon;
+    } else {
+      document.getElementById(id).src = Images.expandIcon;
+    }
 
     districts.map((district) => {
       // If expand districts onClick, show districts
@@ -61,8 +69,14 @@ class App extends Component {
     this.forceUpdate();
   }
 
-  toggleTownship = (data) => {
+  toggleTownship = (data, id) => {
     const { townships } = data;
+
+    if (document.getElementById(id).src == Images.expandIcon) {
+      document.getElementById(id).src = Images.collapseIcon;
+    } else {
+      document.getElementById(id).src = Images.expandIcon;
+    }
 
     townships.map((township) => {
       // If expand townships onClick, show townships
@@ -76,9 +90,10 @@ class App extends Component {
     this.forceUpdate();
   }
 
-  buildStateRow = (data) => {
+  buildStateRow = (data, key) => {
     let districtRows;
     let townshipRows;
+    const symbolId = `btn-district-${key}`;
 
     if (data.districts) {
       districtRows = data.districts.map(this.buildDistrictRow);
@@ -105,15 +120,16 @@ class App extends Component {
                 <button
                   className="btn-row"
                   type="button"
-                  onClick={() => this.toggleDistrict(data)}
+                  onClick={() => this.toggleDistrict(data, symbolId)}
                 >
                   <div className="row justify-content-between">
-                    <div>{`${data.districts.length} Districts `}</div>
-                    <div>+</div>
+                    <div className="col">{`${data.districts.length} Districts`}</div>
+                    <div className="col">
+                      <img className="btn-icon p-0" src={Images.expandIcon} id={symbolId} alt="btn-icon" height="14" width="14" />
+                    </div>
                   </div>
                 </button>
               )}
-
             </div>
 
           </td>
@@ -128,39 +144,43 @@ class App extends Component {
     );
   }
 
-  buildDistrictRow = (data) => (
-    <tr style={{ display: data.visible ? 'table-row' : 'none' }} id="district-row">
-      <td className="district">
-        <div className="row justify-content-between">
-          <div>
-            <img src={Images.districtIcon} alt="district" height="20" />
-            <span>{data.region}</span>
-            <img src={Images.downloadIcon} alt="download" height="20" width="20" />
+  buildDistrictRow = (data, key) => {
+    const symbolId = `btn-township-${key}`;
+
+    return (
+      <tr style={{ display: data.visible ? 'table-row' : 'none' }} id="district-row">
+        <td className="district">
+          <div className="row justify-content-between">
+            <div>
+              <img src={Images.districtIcon} alt="district" height="20" />
+              <span>{data.region}</span>
+              <img src={Images.downloadIcon} alt="download" height="20" width="20" />
+            </div>
+
+            {data.townships && (
+              <button
+                className="btn-row"
+                type="button"
+                onClick={() => this.toggleTownship(data, symbolId)}
+              >
+                <div className="row justify-content-between">
+                  <div className="col">{`${data.townships.length} Townships`}</div>
+                  <div className="col">
+                    <img className="btn-icon p-0" src={Images.expandIcon} id={symbolId} alt="btn-icon" height="14" width="14" />
+                  </div>
+                </div>
+
+              </button>
+            )}
           </div>
-
-          {data.townships && (
-            <button
-              className="btn-row"
-              type="button"
-              onClick={() => {
-                this.toggleTownship(data);
-              }}
-            >
-              <div className="row justify-content-between">
-                <div>{`${data.townships.length} Townships`}</div>
-                <div>+</div>
-              </div>
-
-            </button>
-          )}
-        </div>
-      </td>
-      <td>{data.lastInput}</td>
-      <td>{data.numberOfForms}</td>
-      <td>{data.numberOfVoters}</td>
-      <td>{data.update}</td>
-    </tr>
-  )
+        </td>
+        <td>{data.lastInput}</td>
+        <td>{data.numberOfForms}</td>
+        <td>{data.numberOfVoters}</td>
+        <td>{data.update}</td>
+      </tr>
+    );
+  }
 
 
   buildTownshipRow = (data) => (
@@ -221,13 +241,62 @@ class App extends Component {
     }
   }
 
+  searchTable = () => {
+    const { data, searchValue } = this.state;
+
+    data.map((state) => {
+      if (state.region.toLowerCase().includes(searchValue)) {
+        state.visible = true;
+      } else {
+        state.visible = false;
+      }
+      if (state.districts) {
+        state.districts.map((district) => {
+          if (district.region.toLowerCase().includes(searchValue)) {
+            district.visible = true;
+          } else {
+            district.visible = false;
+          }
+          if (district.townships) {
+            district.townships.map((township) => {
+              if (township.region.toLowerCase().includes(searchValue)) {
+                township.visible = true;
+              } else {
+                township.visible = false;
+              }
+            });
+          }
+        });
+      }
+    });
+    this.forceUpdate();
+  }
+
+  handleSearchInput = (e) => {
+    this.setState({ searchValue: e.target.value });
+
+    if (e.target.value === '') {
+      this.getInitState();
+    }
+
+    // Detect Enter keypress event to search keyword
+    document.getElementById('search-input').onkeypress = (event) => {
+      if (!event) event = window.event;
+      const keyCode = event.keyCode || event.which;
+      if (keyCode == '13') {
+        this.searchTable();
+      }
+    };
+  }
+
   render() {
-    const { data, filterOptions, filterValue } = this.state;
+    const {
+      data, filterOptions, filterValue, searchValue,
+    } = this.state;
     const tableRows = data.map(this.buildStateRow);
 
     return (
       <div className="container">
-
         <div className="navbar">
           <div className="row">
             <div className="col">
@@ -262,12 +331,19 @@ class App extends Component {
                     <div className="col-5 search-container">
                       <input
                         className="search-input"
+                        id="search-input"
                         placeholder="Search"
+                        value={searchValue}
+                        onChange={this.handleSearchInput}
                       />
 
-                      <div className="search-icon">
+                      <button
+                        className="search-icon"
+                        type="button"
+                        onClick={this.searchTable}
+                      >
                         <img className="search-img" src={Images.searchIcon} alt="search" height="20" width="20" />
-                      </div>
+                      </button>
                     </div>
                   </div>
                 </td>

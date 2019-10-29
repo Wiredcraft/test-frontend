@@ -1,7 +1,7 @@
 .container {
   flex: 1;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #575B71;
   color: #575B71;
   font-family: Helvetica;
@@ -37,10 +37,15 @@
 
 .body {
   padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .text-left {
   text-align: left;
+}
+
+.p-0 {
+  padding: 0 !important;
 }
 
 .px-1 {
@@ -87,6 +92,30 @@
   background-color: #F0F2F8;
 }
 
+.btn-row {
+  height: 26px;
+  min-width: 107px;
+  color: #81869C;
+  background-color: #DBDFEB;
+  border: 0;
+  border-radius: 2px;
+  margin-right: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.expanded {
+  color: "red" !important;
+}
+
+.collapsed {
+  font-size: 20px;
+}
+
+.btn-icon {
+  color: #575B71;
+}
+
 table {
   background-color: #FFFFFF;
   margin-left: 130px;
@@ -127,26 +156,6 @@ table td.township {
   height: 48px;
 }
 
-.btn-row {
-  height: 26px;
-  width: 107px;
-  color: #81869C;
-  background-color: #DBDFEB;
-  border: 0;
-  border-radius: 2px;
-  margin-right: 20px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.expanded {
-  color: "red" !important;
-}
-
-.collapsed {
-  font-size: 20px;
-}
-
 .Dropdown-control {
   border: none !important;
   border-radius: 0 !important;
@@ -183,7 +192,11 @@ input:focus {
 
 .search-icon {
   float: right;
-  padding: 8px 16px;
+  padding: 4px 8px;
+  margin: 4px 8px;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .search-img {
