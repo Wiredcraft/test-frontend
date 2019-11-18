@@ -1,0 +1,75 @@
+@import "../assets/sbaredStyles/breakpoints.scss";
+// $small: 520px;
+// $medium: 820px;
+// $large: 1199px;
+// $xlarge: 1200px;
+
+.Header-Container {
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        height: 50px;
+        padding: 5px;
+        border-right: 1px solid #D0D6E0;
+        @include breakpoint(small) {
+            height: 54px;
+        }
+        @include breakpoint(medium) {
+            height: 57px
+        }
+        @include breakpoint(large) {
+            height: 59px
+        }
+    }
+    h2{
+        color: #707070;
+        font-weight: 300;
+        font-family: Helvetica;
+        font-size: 1rem;
+        letter-spacing: -0.5px;
+    }
+    #report {
+        padding: 0 25vw 0 1vw;
+        margin: 5.5vh 0 0 0;
+        height: 100%;
+        @include breakpoint(small) {
+            padding: 0 20vw 0 20px;
+        }
+        @include breakpoint(medium) {
+            padding: 0 35vw 0 20px;
+        }
+        @include breakpoint(large){
+            padding: 0 40vw 0 20px;
+        }
+    }
+    #overall, #specific {
+        height: 40%;
+    }
+    
+    #overall {
+        padding: 2.8vh 6vw 2vh 6vw;
+        background: #F0F1F7;
+        border-right: 1px solid #D0D6E0;
+        border-left: 1px solid #D0D6E0;
+        @include breakpoint(small) {
+            padding: 2.8vh 7.5vw 2vh 7.5vw;
+            margin-left: 10vw;
+        }
+        @include breakpoint(medium) {
+            padding: 2.8vh 7.5vw 2vh 7.5vw;
+            margin-left: 10vw;
+        }
+    }
+
+    #specific{
+        padding: 2.8vh 5vw 2vh 5vw;
+        @include breakpoint(small) {
+            padding: 2.8vh 7vw 2vh 4vw;
+        }
+    }
+
+}
