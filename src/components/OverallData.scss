@@ -1,0 +1,40 @@
+.Overall-White-Container {
+    background: white;
+    height: 95%;
+    width: 90%;
+    border-radius: 2px;
+}
+
+.table {
+    width: 100%;
+}
+
+.region-list, .district-list, .township-list{
+list-style: none;
+display: flex;
+flex-direction: row;
+}
+
+.regions {
+    display: flex;
+    flex-direction: column;
+}
+
+.districts{
+    display: none;
+    flex-direction: column;
+    background: greenyellow;
+td{
+    border: solid 0.5px #D0D6E0;
+}
+}
+
+
+.townships{
+    background: pink;
+    display: none;
+    flex-direction: column;
+td{
+    border: solid 0.5px #D0D6E0;
+}
+}

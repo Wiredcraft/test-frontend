@@ -1,15 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
-import Data from './components/Data';
+import Data from './pages/Overall';
+import Home from './pages/Home';
+import Specific from './pages/Specific';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
-      <Data />
-    </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/overall" component={Data} />
+        <Route path="/specific" component={Specific} />
+
+      </Switch>
+    </>
   );
 }
 

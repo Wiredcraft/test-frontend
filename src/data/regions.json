@@ -1,5 +1,112 @@
 [
     {
-        
+        "id": "r1",
+        "region": "Shan state",
+        "districts": [
+            {
+                "id": "d1",
+                "district": "Aunglan",
+                "townships": [
+                    {
+                        "id": "t1",
+                        "township": "Loilen",
+                        "lastinput": 123456,
+                        "formnumbers": 342456,
+                        "voternumbers": 123456,
+                        "update": 342456
+                    }
+                ],
+                "lastinput": 123456,
+                "formnumbers": 342456,
+                "voternumbers": 123456,
+                "update": 342456
+            }
+        ],
+        "lastinput": 123456,
+        "formnumbers": 342456,
+        "voternumbers": 123456,
+        "update": 342456
+    },
+    {
+        "id": "r2",
+        "region": "Shan state",
+        "districts": [
+            {
+                "id": "d2",
+                "district": "Aunglan",
+                "townships": [
+                    {
+                        "id": "t2",
+                        "township": "Loilen",
+                        "lastinput": 123456,
+                        "formnumbers": 342456,
+                        "voternumbers": 123456,
+                        "update": 342456
+                    },
+                    {
+                        "id": "t3",
+                        "township": "Loilen",
+                        "lastinput": 123456,
+                        "formnumbers": 342456,
+                        "voternumbers": 123456,
+                        "update": 342456
+                    }
+                ],
+                "lastinput": 123456,
+                "formnumbers": 342456,
+                "voternumbers": 123456,
+                "update": 342456
+            }
+        ],
+        "lastinput": 123456,
+        "formnumbers": 342456,
+        "voternumbers": 123456,
+        "update": 342456
+    },
+    {
+        "id": "r3",
+        "region": "Shan state",
+        "districts": [
+            {
+                "id": "d3",
+                "district": "Aunglan",
+                "townships": [
+                    {
+                        "id": "t4",
+                        "township": "Loilen",
+                        "lastinput": 123456,
+                        "formnumbers": 342456,
+                        "voternumbers": 123456,
+                        "update": 342456
+                    }
+                ],
+                "lastinput": 123456,
+                "formnumbers": 342456,
+                "voternumbers": 123456,
+                "update": 342456
+            },
+            {
+                "id": "d4",
+                "district": "Aunglan",
+                "townships": [
+                    {
+                        "id": "t5",
+                        "township": "Loilen",
+                        "lastinput": 123456,
+                        "formnumbers": 342456,
+                        "voternumbers": 123456,
+                        "update": 342456
+                    }
+                ],
+                "lastinput": 123456,
+                "formnumbers": 342456,
+                "voternumbers": 123456,
+                "update": 342456
+            }
+        ],
+        "lastinput": 123456,
+        "formnumbers": 342456,
+        "voternumbers": 123456,
+        "update": 342456
     }
 ]
