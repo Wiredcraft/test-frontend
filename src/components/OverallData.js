@@ -1,101 +1,68 @@
 import React, { Component } from 'react'
-import regions from "../data/regions.json"
 import "./OverallData.scss"
-import Region from "./Region"
 
-export default class OverallData extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            regions: regions
+export default class OverallData2 extends Component {
+    // constructor(props) {
+    //     super(props)
+    //     this.handleClick = this.handleClick.bind(this)
+    // }
+
+
+    handleClick = (e) => {
+        let parent = e.currentTarget.parentElement.parentElement.parentElement
+        let children = parent.childNodes
+        for (let i = 0; i < children.length; i++) {
+            if (children[i].className === "districts") {
+                children[i].style.display === "none" ? children[i].style.display = "flex" : children[i].style.display = "none"
+            } else if (children[i].className === "townships") {
+                children[i].style.display === "none" ? children[i].style.display = "flex" : children[i].style.display = "none"
+            }
         }
-        this.handleRowClick = this.handleRowClick.bind(this)
-    }
-
-
-    handleRowClick = (e) => {
-
     }
 
 
     render() {
         return (
-            <div className="Overall-White-Container" >
+            // <div className="Overall-White-Container" >
+            //     {this.props.region.map((region) => {
+            //         return (
+            <>
+                <div className="regions" >
+                    <ul className="region-list">
+                        <li>{this.props.region.region} <button onClick={this.handleClick}>{this.props.region.districts.length} districts</button></li>
+                        <li>{this.props.region.lastinput}</li>
+                        <li>{this.props.region.formnumbers}</li>
+                        <li>{this.props.region.voternumbers}</li>
+                        <li>{this.props.region.update}</li>
+                    </ul>
 
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>Region</th>
-                            <th>Last Input</th>
-                            <th>Form Numbers</th>
-                            <th>Voter Numbers</th>
-                            <th>Update</th>
-                        </tr>
-                    </thead>
-
-                    {this.state.regions.map((region, index) => {
+                    {this.props.region.districts.map((district) => {
                         return (
-                            <>
-                                <tbody>
-                                    {/* <Region
-                                        region={region}
-                                        index={index}
-                                    /> */}
-                                    <tr className="table-region">
-                                        <td>
-                                            {region.region}
-                                            <p onClick={this.handleRowClick}>{region.districts.length} districts +</p>
-                                        </td>
-                                        <td>{index}</td>
-                                        <td>{region.lastinput}</td>
-                                        <td>{region.formnumbers}</td>
-                                        <td>{region.voternumbers}</td>
-                                        <td>{region.update}</td>
-                                    </tr>
-                                    <>
-                                        {region.districts.map((district) => {
-                                            return (
-                                                <>
-                                                    <tr className="table-district">
-                                                        <td>
-                                                            {district.district}
-                                                            <p> {district.townships.length} townships</p>
-                                                        </td>
-                                                        <td>{index}</td>
-                                                        <td>{district.lastinput}</td>
-                                                        <td>{district.formnumbers}</td>
-                                                        <td>{district.voternumbers}</td>
-                                                        <td>{district.update}</td>
-                                                    </tr>
+                            <div className="districts" style={{ display: "none" }}>
+                                <ul onClick={this.handleClick} className="district-list">
+                                    <li>{district.district} <button onClick={this.handleClick}>{district.townships.length} districts</button></li>
+                                    <li>{district.lastinput}</li>
+                                </ul>
 
-                                                    <>
-                                                        {district.townships.map((township) => {
-                                                            return (
-                                                                <>
-                                                                    < tr className="table-township" >
-                                                                        <td>{township.township}</td>
-                                                                        <td>{index}</td>
-                                                                        <td>{township.lastinput}</td>
-                                                                        <td>{township.formnumbers}</td>
-                                                                        <td>{township.voternumbers}</td>
-                                                                        <td>{township.update}</td>
-                                                                    </tr>
-                                                                </>
+                                {district.townships.map((township) => {
+                                    return (
+                                        <div className="townships" style={{ display: "none" }} >
+                                            <ul className="township-list">
+                                                <li>{township.township}</li>
+                                            </ul>
+                                        </div>
 
-                                                            )
-                                                        })}
-                                                    </>
-                                                </>
-                                            )
-                                        })}
-                                    </>
-                                </tbody>
-                            </>
+                                    )
+                                })}
+                            </div>
                         )
                     })}
-
-                </table>
-            </div >
+                </div>
+            </>
+            //     )
+            // })
+            // }
+            // </div > 
         )
     }
 }

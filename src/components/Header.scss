@@ -17,7 +17,7 @@
     img{
         height: 50px;
         padding: 5px;
-        border-right: 1px solid #D0D6E0;
+        border-right: 1px solid;
         @include breakpoint(small) {
             height: 54px;
         }
