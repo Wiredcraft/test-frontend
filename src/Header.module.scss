@@ -1,0 +1,59 @@
+@use "./constants.scss" as *;
+
+$header-height: 56px;
+
+.header {
+    width: 100%;
+    height: $header-height;
+    background: #ffffff;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    > *:not(:last-child) {
+        border-right: $light-line;
+    }
+}
+
+.logo-container {
+    @include flex-center;
+    flex-shrink: 0;
+    height: $header-height;
+    width: $header-height;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+@mixin text-area {
+    @include flex-center;
+    height: $header-height;
+
+    &[active='true'] {
+        background: #f0f2f8;
+    }
+
+    > span {
+        @include base-text;
+    }
+}
+
+.reports {
+    @include text-area;
+    justify-content: flex-start;
+    width: 100%;
+    > * {
+        margin-left: 1em;
+    }
+}
+
+.overal,
+.specific {
+    @include text-area;
+    @include phone {
+        flex-shrink: unset;
+    }
+    flex-shrink: 0;
+    width: 188px;
+}

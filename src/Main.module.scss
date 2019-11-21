@@ -1,0 +1,11 @@
+@use './constants.scss' as *;
+
+.main {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    @include desktop {
+        padding: 32px;
+        @include flex-center;
+    }
+}
