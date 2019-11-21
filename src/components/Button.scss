@@ -1,0 +1,25 @@
+button {
+    color: #575B71;
+    width: 40%;
+    height: 28px;
+    border-radius: 2px;
+    background: #F0F1F7;
+ //    background: #dadeea;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    span{
+     font-size: 1rem;
+ }
+  }
+
+  .close {
+      background: #F0F1F7;
+  }
+
+  .open {
+      background: #dadeea;
+  }

@@ -1,13 +1,94 @@
-
+@import "../assets/sbaredStyles/breakpoints.scss";
 
 .table {
     width: 100%;
+    font-family: sans-serif;
 }
 
 .region-list, .district-list, .township-list{
 list-style: none;
 display: flex;
 flex-direction: row;
+align-items: center;
+justify-content: space-between;
+margin: 0 2vw 0;
+padding-inline-start: 0;
+border-bottom: solid 1px #D0D6E1;
+overflow: visible;
+padding: 0 0;
+ li {
+     color: #575B71;
+     font-family: sans-serif;
+     padding: 0 0;
+ }
+ .Data-Columns {
+    width: 13vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid #F0F1F7;
+    margin: 0 0;
+    padding: 2.5vh 0.5vw;
+}
+
+.region-list {
+    margin: 0 0;
+}
+ button {
+   color: #575B71;
+   width: 40%;
+   height: 28px;
+   border-radius: 2px;
+   background: #F0F1F7;
+   border: none;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 0.8rem;
+   span{
+    font-size: 1rem;
+}
+ }
+ .Invisible-Box {
+    width: 40%;
+    height: 20px;
+    background: white;
+    border: none;
+ }
+}
+
+.Region-Column {
+    width: 33vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    .Region-Title{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 125px;
+    }
+    img {
+        width: 22px;
+    }
+    .District-Rectangle {
+        width: 6px;
+        height: 6px;
+        border-left: 1px #D0D6E0 solid;
+        border-bottom: 1px #D0D6E0 solid;
+        margin-left: 2vw;
+    }
+    .Township-Rectangle {
+        width: 6px;
+        height: 6px;
+        border-left: 1px #D0D6E0 solid;
+        border-bottom: 1px #D0D6E0 solid;
+        margin-left: 5vw;
+    }
+
 }
 
 .regions {
@@ -18,7 +99,6 @@ flex-direction: row;
 .districts{
     display: none;
     flex-direction: column;
-    background: greenyellow;
 td{
     border: solid 0.5px #D0D6E0;
 }
@@ -26,10 +106,10 @@ td{
 
 
 .townships{
-    background: pink;
     display: none;
     flex-direction: column;
 td{
     border: solid 0.5px #D0D6E0;
 }
 }
+
