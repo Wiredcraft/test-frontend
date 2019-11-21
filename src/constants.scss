@@ -40,6 +40,14 @@ $dark-bg: #575b71;
     color: #575b71;
 }
 
+@mixin bold-text {
+    color: #575b71;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
 @mixin no-scrollbar {
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;

@@ -1,0 +1,43 @@
+@use "./constants.scss" as *;
+
+$cell-height: 56px;
+
+.table {
+    @include no-scrollbar;
+    overflow: scroll;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+}
+
+@mixin flex-stretch {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.header {
+    @include flex-stretch;
+    width: 100%;
+    height: $cell-height;
+    > .cell {
+        border-bottom: $dark-line;
+    }
+}
+
+.row {
+    @include flex-stretch;
+    width: 100%;
+    height: $cell-height;
+}
+
+.cell {
+    @include flex-center;
+    @include base-text;
+    width: 100%;
+    height: $cell-height;
+    &:not(:last-child) {
+        border-right: $light-line;
+    }
+    border-bottom: $light-line;
+}

@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import createStore from './utils/createStore'
-import { getRegions } from './server'
+import React from 'react'
 import styles from './Main.module.scss'
+import RegionsTable from './RegionsTable'
 
-export const useRegionsStore = createStore([])
-const Main = () => {
-    const [regions, setRegions] = useRegionsStore()
-    useEffect(() => void getRegions().then(setRegions), [])
-
-    return <main className={styles.main}></main>
-}
+const Main = () => (
+    <main className={styles.main}>
+        <RegionsTable></RegionsTable>
+    </main>
+)
 
 export default Main

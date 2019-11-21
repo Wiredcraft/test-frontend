@@ -1,0 +1,54 @@
+@use '../constants.scss' as *;
+
+.regions {
+    @include desktop {
+        @include flex-center;
+        max-width: 1024px;
+    }
+}
+
+.name-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.icon {
+    @include bold-text;
+    @include flex-center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #897ad0;
+    color: white;
+    margin-right: 1em;
+}
+
+.name {
+    @include base-text;
+    @include flex-center;
+    &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-image: url('../assets/download.png');
+        background-size: 100% 100%;
+        margin: 0 1em;
+    }
+}
+
+.expantion-button {
+    @include flex-center;
+    height: 26px;
+    background: #f0f2f8;
+    padding: 1em;
+    box-sizing: border-box;
+
+    @include bold-text;
+    & > span {
+        @include base-text;
+        margin: 0 1em;
+    }
+}
