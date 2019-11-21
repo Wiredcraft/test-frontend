@@ -1,0 +1,51 @@
+$light-line: solid 1px #d0d6e1;
+$dark-line: 1px solid black;
+$dark-bg: #575b71;
+
+@mixin phone {
+    @media screen and (max-width: 768px) {
+        & {
+            @content;
+        }
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1281px) {
+        & {
+            @content;
+        }
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 769px) and (max-width: 1280px) {
+        & {
+            @content;
+        }
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin base-text {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 14px;
+    color: #575b71;
+}
+
+@mixin no-scrollbar {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
