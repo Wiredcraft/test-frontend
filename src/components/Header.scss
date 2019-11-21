@@ -5,27 +5,58 @@
 // $xlarge: 1200px;
 
 .Header-Container {
-    height: 8vh;
+    height: 7.5vh;
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-family: sans-serif;
     a{
         text-decoration: none;
+        height: 100%;
+        margin: 0 0;
+        #overall, #specific {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        #overall {
+            padding: 2.8vh 6vw 2vh 6vw;
+            height: 35.5%;
+            background: #F0F1F7;
+            border-right: 1px solid #D0D6E0;
+            border-left: 1px solid #D0D6E0;
+            @include breakpoint(small) {
+                padding: 2.8vh 7.5vw 2vh 7.5vw;
+                margin-left: 10vw;
+            }
+            @include breakpoint(medium) {
+                padding: 2.8vh 7.5vw 2vh 7.5vw;
+                margin-left: 10vw;
+            }
+        }
+    
+        #specific{
+            padding: 2.8vh 5vw 2vh 5vw;
+            @include breakpoint(small) {
+                padding: 2.8vh 7vw 2vh 4vw;
+            }
+        }
     }
     img{
-        height: 50px;
-        padding: 5px;
-        border-right: 1px solid;
+        height: 44px;
+        padding: 9px;
+        border-right: 1px solid #D0D6E0;
+        filter: opacity(40%) brightness(120%);
         @include breakpoint(small) {
-            height: 54px;
+            height: 45px;
         }
         @include breakpoint(medium) {
-            height: 57px
+            height: 46px
         }
         @include breakpoint(large) {
-            height: 59px
+            height: 47px
         }
     }
     h2{
@@ -49,30 +80,6 @@
             padding: 0 40vw 0 20px;
         }
     }
-    #overall, #specific {
-        height: 40%;
-    }
     
-    #overall {
-        padding: 2.8vh 6vw 2vh 6vw;
-        background: #F0F1F7;
-        border-right: 1px solid #D0D6E0;
-        border-left: 1px solid #D0D6E0;
-        @include breakpoint(small) {
-            padding: 2.8vh 7.5vw 2vh 7.5vw;
-            margin-left: 10vw;
-        }
-        @include breakpoint(medium) {
-            padding: 2.8vh 7.5vw 2vh 7.5vw;
-            margin-left: 10vw;
-        }
-    }
-
-    #specific{
-        padding: 2.8vh 5vw 2vh 5vw;
-        @include breakpoint(small) {
-            padding: 2.8vh 7vw 2vh 4vw;
-        }
-    }
 
 }

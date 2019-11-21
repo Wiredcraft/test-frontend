@@ -6,8 +6,8 @@
 // $xlarge: 1200px;
 
 .Mobile-Data{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background: #575B71;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@
 .Mobile-Overall-White-Container {
     background: white;
     height: 90%;
-    width: 100vw;
+    width: 95%;
     border-radius: 2px;
     margin: 5vh 0;
 }
@@ -35,7 +35,7 @@
     align-items: center;
     margin: 0 2vw 0;
     padding: 0 0;
-    .Mobile-Header-Region-Column, .Header-Data-Columns {
+    .Mobile-Header-Region-Column, .Mobile-Header-Data-Columns {
         color: #575B71;
         font-family: sans-serif;
         display: flex;
@@ -56,8 +56,6 @@
     }
 }
 
-
-
 .Mobile-filter {
     display: flex;
     flex-direction: row;
@@ -66,7 +64,7 @@
         border: none ;
         color: #999999;
         font-size: 1rem;
-        width: 80vw;
+        width: 60%;
     }
     input::placeholder {
         color: #999999;
@@ -77,11 +75,12 @@
         margin: 0 0; 
         color: #999999;
         font-size: 1rem;
+        width: 30%;
         font-family: sans-serif;
     }
     .Mobile-input-class {
         border-right: 1px solid #F0F1F7;
-        padding: 2vh;
+        padding: 2vh 0;
     }
 }
 

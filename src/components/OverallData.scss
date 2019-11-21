@@ -1,5 +1,8 @@
 @import "../assets/sbaredStyles/breakpoints.scss";
-
+// $small: 520px;
+// $medium: 820px;
+// $large: 1199px;
+// $xlarge: 1200px;
 .table {
     width: 100%;
     font-family: sans-serif;
@@ -13,9 +16,9 @@ align-items: center;
 justify-content: space-between;
 margin: 0 2vw 0;
 padding-inline-start: 0;
-border-bottom: solid 1px #D0D6E1;
 overflow: visible;
 padding: 0 0;
+border-bottom: 1px solid #D0D6E0;
  li {
      color: #575B71;
      font-family: sans-serif;
@@ -28,7 +31,11 @@ padding: 0 0;
     justify-content: center;
     border-left: 1px solid #F0F1F7;
     margin: 0 0;
-    padding: 2.5vh 0.5vw;
+    padding: 4vh 0.5vw;
+    @include breakpoint(medium){
+        padding: 2.5vh 0.5vw;
+    }
+    
 }
 
 .region-list {
@@ -36,7 +43,7 @@ padding: 0 0;
 }
  button {
    color: #575B71;
-   width: 40%;
+   width: 99px;
    height: 28px;
    border-radius: 2px;
    background: #F0F1F7;
@@ -49,44 +56,79 @@ padding: 0 0;
    span{
     font-size: 1rem;
 }
+@include breakpoint(medium){
+    width:107px;
+}
+@include breakpoint(large){
+    margin-right: 2vw;
+}
  }
  .Invisible-Box {
+    display: none;
     width: 40%;
     height: 20px;
     background: white;
     border: none;
+    @include breakpoint(medium){
+        display: block;
+    }
  }
 }
 
 .Region-Column {
     width: 33vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    height: 60px;
+    @include breakpoint(medium){
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    @include breakpoint(large){
+        justify-content: space-between;
+    }
     .Region-Title{
         display: flex;
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-between;
-        width: 125px;
+        width: 130px;
+        @include breakpoint(medium){
+            width: 55%;
+        }
+        @include breakpoint(large){
+            width: 60%px;
+        }
     }
     img {
         width: 22px;
     }
     .District-Rectangle {
+        display: none;
         width: 6px;
         height: 6px;
         border-left: 1px #D0D6E0 solid;
         border-bottom: 1px #D0D6E0 solid;
-        margin-left: 2vw;
+        margin-left:2vw;
+        
+        @include breakpoint(medium){
+           display: block;
+        }
     }
     .Township-Rectangle {
+        display: none;
         width: 6px;
         height: 6px;
         border-left: 1px #D0D6E0 solid;
         border-bottom: 1px #D0D6E0 solid;
         margin-left: 5vw;
+        margin-right: 1vw;
+        
+        @include breakpoint(medium){
+            display: block;
+         }
     }
 
 }

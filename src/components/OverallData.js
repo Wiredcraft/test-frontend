@@ -65,10 +65,13 @@ export default class OverallData2 extends Component {
                             <div className="districts" style={{ display: "none" }}>
                                 <ul className="district-list">
                                     <li className="Region-Column">
-                                        <div className="District-Rectangle"></div>
-                                        <img src={districtImg} alt="District Icon" />
-                                        {district.district}
-                                        <img src={downloadImg} alt="Download icon" />
+
+                                        <div className="Region-Title">
+                                            <div className="District-Rectangle"></div>
+                                            <img src={districtImg} alt="District Icon" />
+                                            {district.district}
+                                            <img src={downloadImg} alt="Download icon" />
+                                        </div>
                                         <button onClick={this.handleClick}>
                                             {district.townships.length} Townships
                                         <span>+</span>
@@ -84,7 +87,15 @@ export default class OverallData2 extends Component {
                                     return (
                                         <div className="townships" style={{ display: "none" }} >
                                             <ul className="township-list">
-                                                <li className="Region-Column"><div className="Township-Rectangle"></div> <img src={townshipImg} alt="Township icon" />{township.township} <img src={downloadImg} alt="Download icon" /><div className="Invisible-Box"></div></li>
+                                                <li className="Region-Column">
+                                                    <div className="Region-Title">
+                                                        <div className="Township-Rectangle"></div>
+                                                        <img src={townshipImg} alt="Township icon" />
+                                                        {township.township}
+                                                        <img src={downloadImg} alt="Download icon" />
+                                                    </div>
+                                                    <div className="Invisible-Box"></div>
+                                                </li>
                                                 <li className="Data-Columns">{township.lastinput}</li>
                                                 <li className="Data-Columns">{township.formnumbers}</li>
                                                 <li className="Data-Columns">{township.voternumbers}</li>
@@ -99,6 +110,7 @@ export default class OverallData2 extends Component {
                         )
                     })}
                 </div>
+
             </>
         )
     }

@@ -114,9 +114,9 @@ export default class Data extends Component {
                                             <option value="update">Update</option>
                                         </select>
                                     </div>
-                                    <input className="Mobile-DataSeaarch" onChange={this.searchHandler} type="text" placeholder="Search" />
+                                    <input className="Mobile-Data-Seaarch" onChange={this.searchHandler} type="text" placeholder="Search" />
                                 </div>
-                                <div>
+                                <div className="Mobile-Row-Container">
                                     <div className="Mobile-Table-Header-Container">
                                         <ul className="Mobile-Table-Header">
                                             <li className="Mobile-Header-Region-Column">Region</li>
@@ -126,13 +126,13 @@ export default class Data extends Component {
                                             <li className="Mobile-Header-Data-Columns">Update</li>
                                         </ul>
                                     </div>
-                                    {/* {
+                                    {
                                         this.state.searchedRegions.map((region) =>
                                             <OverallData
                                                 region={region}
                                             />
                                         )
-                                    } */}
+                                    }
                                 </div>
                             </div>
                         </div>
