@@ -30,7 +30,7 @@ $header-height: 56px;
     @include flex-center;
     height: $header-height;
 
-    &[active='true'] {
+    &[data-active='true'] {
         background: #f0f2f8;
     }
 
