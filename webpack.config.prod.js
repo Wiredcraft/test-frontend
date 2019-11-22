@@ -1,13 +1,14 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/App.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         pathinfo: true,
-        filename: 'static/js/[name].[hash].js'
+        filename: '[name].[hash].js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json']
@@ -17,7 +18,8 @@ module.exports = {
             {
                 test: /\.module\.s[ac]ss$/i,
                 use: [
-                    { loader: 'style-loader' },
+                    // { loader: 'style-loader' },
+                    { loader: MiniCssExtractPlugin.loader },
                     { loader: 'css-loader', options: { modules: true } },
                     { loader: 'sass-loader', options: { implementation: require('dart-sass') } }
                 ]
@@ -26,7 +28,8 @@ module.exports = {
                 test: /\.s[ac]ss$/i,
                 exclude: /\.module\.s[ac]ss$/i,
                 use: [
-                    { loader: 'style-loader' },
+                    // { loader: 'style-loader' },
+                    { loader: MiniCssExtractPlugin.loader },
                     { loader: 'css-loader' },
                     { loader: 'sass-loader', options: { implementation: require('dart-sass') } }
                 ]
@@ -45,10 +48,13 @@ module.exports = {
             }
         ]
     },
-
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'index.html')
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[hash].css',
+            chunkFilename: '[id].[hash].css'
         })
     ]
 }

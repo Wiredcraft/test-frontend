@@ -3,15 +3,9 @@ import { Table, TableHeader, TableBody } from '../Table'
 import NameCol from './NameCol'
 import NameColCell from './NameColCell'
 import RestColCell from './RestColCell'
-import { getRegions } from '../server'
-import useRegions from '../useRegions'
-import styles from './index.module.scss'
 
-const RegionsTable = props => {
-    const [regions, setRegions] = useRegions()
-    useEffect(() => void getRegions().then(setRegions), [])
+const RegionsTable = ({ regions, ...props }) => {
     const [expantion, setExpantion] = useState({})
-    const hashExpantionKey = (regionKey, type) => `${regionKey} - ${type}`
 
     return (
         <Table {...props}>
@@ -29,28 +23,34 @@ const RegionsTable = props => {
                             key={region.state.key}
                             area={region.state}
                             iconText="S"
-                            withExpandtionButton
-                            count={region.distracts.length}
-                            toExpand="Distract"
-                            expand={() => setExpantion}
-                            expanded={expantion[hashExpantionKey(region.key, 'distract')]}
+                            {...(region.districts.length && {
+                                withExpandtionButton: true,
+                                count: region.districts.length,
+                                toExpand: 'District',
+                                expand: () => setExpantion(prev => ({ ...prev, [region.key]: !expantion[region.key] })),
+                                expanded: expantion[region.key]
+                            })}
                         ></NameCol>
-                        {expantion[hashExpantionKey(region.key, 'distract')] &&
-                            regions.distracts.map(distract => (
-                                <NameCol
-                                    key={distract.key}
-                                    area={distract}
-                                    iconText="D"
-                                    count={region.township.length}
-                                    toExpand="Township"
-                                    expand={() => setExpantion}
-                                    expanded={expantion[hashExpantionKey(region.key, 'township')]}
-                                ></NameCol>
-                            ))}
-                        {expantion[hashExpantionKey(region.key, 'distract')] &&
-                            expantion[hashExpantionKey(region.key, 'township')] &&
-                            regions.distracts.map(township => (
-                                <NameCol key={township.key} area={township} iconText="T" withExpandtionButton></NameCol>
+                        {expantion[region.key] &&
+                            region.districts.map(district => (
+                                <>
+                                    <NameCol
+                                        key={district.key}
+                                        area={district}
+                                        iconText="D"
+                                        {...(district.townships.length && {
+                                            withExpandtionButton: true,
+                                            count: district.townships.length,
+                                            toExpand: 'Township',
+                                            expand: () => setExpantion(prev => ({ ...prev, [district.key]: !expantion[district.key] })),
+                                            expanded: expantion[district.key]
+                                        })}
+                                    ></NameCol>
+                                    {expantion[district.key] &&
+                                        district.townships.map(township => (
+                                            <NameCol key={township.key} area={township} iconText="T" withExpandtionButton></NameCol>
+                                        ))}
+                                </>
                             ))}
                     </>
                 ))}

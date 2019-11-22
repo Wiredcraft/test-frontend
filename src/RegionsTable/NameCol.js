@@ -9,11 +9,17 @@ const NameCol = ({ area, iconText, toExpand, expanded, expand, count }) => (
         <NameColCell>
             <div className={styles['name-container']}>
                 <div className={styles['name']}>
-                    <div className={styles['icon']}>{iconText}</div>
+                    <div
+                        role="button"
+                        className={styles['icon']}
+                        style={{ marginLeft: `${2 * (iconText == 'S' ? 0 : iconText == 'D' ? 1 : 2)}em` }}
+                    >
+                        {iconText}
+                    </div>
                     <span>{area.name}</span>
                 </div>
                 {toExpand && (
-                    <div onClick={expand} className={styles['expantion-button']}>
+                    <div role="button" onClick={expand} className={styles['expantion-button']}>
                         {count} <span>{toExpand}</span>
                         {expanded ? '-' : '+'}
                     </div>

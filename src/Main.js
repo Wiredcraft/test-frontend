@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './Main.module.scss'
-import RegionsTable from './RegionsTable'
+import Regions from './Regions'
 
 const Main = () => (
     <main className={styles.main}>
-        <RegionsTable></RegionsTable>
+        <Regions></Regions>
     </main>
 )
 

@@ -6,7 +6,6 @@ import useLocation from './utils/useLocation'
 const Header = () => {
     const [location, goto] = useLocation()
     const pathname = location.pathname[location.pathname.length - 1] == '/' ? location.pathname : location.pathname + '/'
-    console.log(pathname, new RegExp('/overal', 'i').test(pathname), new RegExp('/specific', 'i').test(pathname))
 
     return (
         <header className={styles.header}>

@@ -21,6 +21,7 @@ $cell-height: 56px;
     width: 100%;
     height: $cell-height;
     > .cell {
+        @include bold-text;
         border-bottom: $dark-line;
     }
 }
