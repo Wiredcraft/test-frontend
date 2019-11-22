@@ -1,0 +1,19 @@
+This is a javascript oriented implementation.
+It's based on React and with no other external dependencies.
+
+Since I don't have `sketch` installed on my machine, the styles I got may be slightly differenet.
+Some part of the styles/fonts files/icon files described in the sketch file may be missing,
+and some of the styles attributes like `padding` are arbitraryly chosed.
+
+---
+
+The page's divided into three parts: the header, the filter, the table.
+
+The header should respond to the location changes.
+
+The filter bar can be used to search by types or by keywords.
+    - what `type` exactly means is not specified, so I use two self-defined types: big and small, 
+        depending on if the `lsat input` is bigger than 100.
+    - by click on the search button, only the regions with its state name containning the input text will be shown.
+
+The table is responsive, it also works on phone.
