@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UX Response Demo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-main" role="document">
+  <!-- =header: start -->
+  <header class="header" role="banner">
+    <div class="wraper-full">
+      <!-- =navigator-brand: start -->
+      <aside class="navigator-brand" role="complementary">
+        <a class="logo" title="site home" href="index.html">
+          <i class="icon icon-logo" aria-label="site title"></i>
+        </a>
+        <h1 class="title" role="heading">site title</h1>
+      </aside>
+      <!-- =navigator-brand: end -->
+
+      <!-- =navigator: start -->
+      <nav class="navigator" role="navigation">
+        <button class="navigator-toggle">
+          <span class="visually-hidden">toggle navigator</span>
+          <i class="line"></i>
+          <i class="line"></i>
+          <i class="line"></i>
+        </button>
+        <ul class="navigator-list" role="menubar">
+          <li class="item" role="menuitem">
+            <a class="item-link active" href="#"><span class="item-txt">overall</span></a>
+          </li>
+          <li class="item" role="menuitem">
+            <a class="item-link" href="#"><span class="item-txt">specific</span></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- =navigator: end -->
+    </div>
+  </header>
+  <!-- =header: end -->
+
+  <!-- =main: start -->
+  <main class="main">
+    <div class="wraper">
+      <div class="row row-full">
+        <div class="col">
+          <!-- =data-filter-search: start -->
+          <div class="data-filter-search">
+            <form action="#">
+              <fieldset>
+                <legend class="visually-hidden">data filter & search</legend>
+                <div class="field">
+                  <label class="visually-hidden" for="region">region:</label>
+                  <span class="select-ui">
+                    <select name="region" id="region">
+                      <option value="all">All Region</option>
+                      <option value="region-nc">North China</option>
+                      <option value="region-ec">East China</option>
+                    </select>
+                  </span>
+                  <label class="visually-hidden" for="search">search:</label>
+                  <input type="search" class="form-input" name="search" id="search" placeholder="name of city">
+                  <button class="btn" id="search-submit">
+                    <span class="visually-hidden">search</span>
+                    <i class="icon icon-search" aria-label=""></i>
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <!-- =data-filter-search: end -->
+
+          <!-- =data-show: start -->
+          <div class="table-wraper data-show">
+            <table>
+              <caption class="visually-hidden">data show</caption>
+              <colgroup>
+                <col class="col-region">
+                <col class="col-update">
+                <col class="col-download">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>region</th>
+                  <th>update</th>
+                  <th>download</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <!-- =data-show: end -->
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- =main: end -->
+
+  <!-- =script: start -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/ux.js"></script>
+  <!-- =script: end -->
+</body>
+</html>
