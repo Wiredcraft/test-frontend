@@ -18,20 +18,21 @@ button {
 
 header {
   display: flex;
-  /* push left and right items to far edges, item in the middle, space between two */
-  /* justify-content: space-between; */
   justify-content: space-between;
   align-items: center;
   color: white;
-  padding: 30px 10%;
+  padding: 30px 5%;
 }
 
 .logo {
   cursor: pointer;
-  margin-right: auto;
+  vertical-align: middle;
+  height: 5vh;
 }
 
 .title {
+  display: flex;
+  justify-content: flex-start;
   margin: 0;
 }
 
