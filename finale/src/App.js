@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/navbar";
+import Table from "./components/table";
 
 function App() {
   return (
     <React.Fragment>
       <Navbar />
+      <Table />
     </React.Fragment>
   );
 }
