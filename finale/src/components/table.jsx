@@ -21,15 +21,16 @@ class Table extends Component {
     //Iterate over array of area objects to display information 
     return this.state.students.map((student, index) => {
 
+      //Grab name of keys from area object 
+      let col = Object.keys(student)
+
       //Using object destructuring to extract keys from array of objects and assign the values to local variables
-      const { id, name, age, email, update } = student //object destructuring for table data
+      // const { id, name, age, email, update } = student //object destructuring for table data
       return (
-        <tr key={id}>
-          <td>{id}</td>
-          <td>{name}</td>
-          <td>{age}</td>
-          <td>{email}</td>
-          <td>{update}</td>
+        <tr key={student.id}>
+          {col.map((val, index) => {
+            return <td key={index}>{student[col[index]]}</td>
+          })}
         </tr>
       )
     })
