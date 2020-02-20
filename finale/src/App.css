@@ -60,7 +60,7 @@ header {
   font-family: arial, sans-serif;
 }
 
-#students {
+.area {
   text-align: center;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -68,21 +68,21 @@ header {
   width: 100%;
 }
 
-#students td,
-#students th {
+.area td,
+.area th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#students tr:nth-child(even) {
+.area tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#students tr:hover {
+.area tr:hover {
   background-color: #ddd;
 }
 
-#students th {
+.area th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
