@@ -5,12 +5,12 @@ class Table extends Component {
     super(props)
     this.state = {
 
-      //Rename students to area
-      students: [
-        { id: 1, name: 'Wasif', age: 21, email: 'wasif@email.com', update: '342,456' },
-        { id: 2, name: 'Ali', age: 19, email: 'ali@email.com', update: '342,456' },
-        { id: 3, name: 'Saad', age: 16, email: 'saad@email.com', update: '342,456' },
-        { id: 4, name: 'Asad', age: 25, email: 'asad@email.com', update: '342,456' }
+      //Rows of data for the table
+      area: [
+        { id: 1, region: 'Wasif', last_Input: 21, email: 'wasif@email.com', update: '342,456' },
+        { id: 2, region: 'Ali', last_Input: 19, email: 'ali@email.com', update: '342,456' },
+        { id: 3, region: 'Saad', last_Input: 16, email: 'saad@email.com', update: '342,456' },
+        { id: 4, region: 'Asad', last_Input: 25, email: 'asad@email.com', update: '342,456' }
       ]
     }
   }
@@ -19,13 +19,13 @@ class Table extends Component {
   renderTableData() {
 
     //Iterate over array of area objects to display information 
-    return this.state.students.map((student, index) => {
+    return this.state.area.map((student, index) => {
 
-      //Grab name of keys from area object 
+      //Grab region of keys from area object 
       let col = Object.keys(student)
 
       //Using object destructuring to extract keys from array of objects and assign the values to local variables
-      // const { id, name, age, email, update } = student //object destructuring for table data
+      // const { id, region, last_Input, email, update } = student //object destructuring for table data
       return (
         <tr key={student.id}>
           {col.map((val, index) => {
@@ -40,7 +40,7 @@ class Table extends Component {
   renderTableHeader() {
 
     //Get keys from area array
-    let header = Object.keys(this.state.students[0])
+    let header = Object.keys(this.state.area[0])
     return header.map((key, index) => {
       return <th key={index}>{key.toUpperCase()}</th>
     })
@@ -50,7 +50,7 @@ class Table extends Component {
     return (
       <div>
         <h1>Test Table</h1>
-        <table id="students">
+        <table class="area">
           <tbody>
             <tr>{this.renderTableHeader()}</tr>
             {this.renderTableData()}
