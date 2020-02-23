@@ -14,7 +14,6 @@ class TableHeader extends Component {
   //Get names of columns and render table header
   renderTableHeader() {
     let header = Object.values(this.state.names);
-    console.log(header);
     return header.map((key, index) => {
       return <th key={index}>{key}</th>
     })
