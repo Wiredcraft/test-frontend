@@ -60,7 +60,7 @@ header {
   font-family: arial, sans-serif;
 }
 
-.area {
+.names {
   text-align: center;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -68,21 +68,21 @@ header {
   width: 100%;
 }
 
-.area td,
-.area th {
+.names td,
+.names th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-.area tr:nth-child(even) {
+.names tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.area tr:hover {
+.names tr:hover {
   background-color: #ddd;
 }
 
-.area th {
+.names th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
