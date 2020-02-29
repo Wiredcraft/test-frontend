@@ -22,7 +22,7 @@ class TableHeader extends Component {
   render() {
     return (
       <div>
-        <table class="names">
+        <table className="names">
           <tbody>
             <tr>{this.renderTableHeader()}</tr>
           </tbody>
