@@ -53,6 +53,12 @@ header {
   color: aqua;
 }
 
+.toggle-btn {
+  margin-left: 20px;
+  padding: 5px;
+  display: inline;
+}
+
 /* Static table styling */
 
 #title {
