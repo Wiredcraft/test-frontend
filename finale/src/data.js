@@ -1,7 +1,7 @@
 export default [
   {
     id: "0001",
-    title: "Shanghai State",
+    title: "Shan State",
     level: "State",
     lastIn: "2020/02/02",
     numForms: "123,456",
@@ -11,38 +11,17 @@ export default [
     subRegions: [
       {
         id: "00011",
-        title: "Jingan District",
+        title: "Aunglan District",
         level: "District",
         lastIn: "2020/02/02",
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
         isHidden: true,
-        subRegions: []
-      },
-      {
-        id: "00012",
-        title: "Pudong District",
-        level: "District",
-        lastIn: "2020/02/02",
-        numForms: "123,456",
-        numVotes: "123,456",
-        update: "342,456",
         subRegions: [
           {
-            id: "000121",
-            title: "Lujiazui Township",
-            level: "Township",
-            lastIn: "2020/02/02",
-            numForms: "123,456",
-            numVotes: "123,456",
-            update: "342,456",
-            isHidden: true,
-            subRegions: []
-          },
-          {
-            id: "000122",
-            title: "Zhangjiang Township",
+            id: "000111",
+            title: "Loilen Township",
             level: "Township",
             lastIn: "2020/02/02",
             numForms: "123,456",
@@ -55,6 +34,7 @@ export default [
       }
     ]
   },
+
   {
     id: "0002",
     title: "Beijing State",
