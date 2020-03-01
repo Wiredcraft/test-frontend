@@ -4,7 +4,6 @@ import data from "../data"
 class District extends Component {
   constructor() {
     super();
-
     this.state = {
       data: [
         {
@@ -64,7 +63,7 @@ class District extends Component {
     const itemRows = [
       <tr className="names" key={"row-data-" + item.id}>
         <td> {item.title}
-          <button className="toggle-btn" onClick={clickCallback}>1 Township</button>
+          <button className="toggle-btn" onClick={clickCallback}>{item.subRegions.length}Townships</button>
         </td>
         <td>{item.lastIn}</td>
         <td>{item.numForms}</td>
@@ -73,8 +72,8 @@ class District extends Component {
       </tr>
     ];
 
-    //Toggle for rendering township rows of the district
-    if (this.state.expandedRows.includes(item.id)) {
+    //Toggle for rendering township rows of the district if there are townships under the district
+    if (item.subRegions.length > 0 && this.state.expandedRows.includes(item.id)) {
       for (let i = 0; i < item.subRegions.length; i++) {
         itemRows.push(
           <tr className="names" key={"row-expanded-" + item.id}>
