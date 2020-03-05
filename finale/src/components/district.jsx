@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Township from './township';
 import data from "../data"
 
 class District extends Component {
@@ -7,8 +8,8 @@ class District extends Component {
     this.state = {
       data: [
         {
-          id: "00032",
-          title: "Hankou District",
+          id: "00022",
+          title: "dongcheng District",
           level: "District",
           lastIn: "2020/02/02",
           numForms: "123,456",
@@ -17,8 +18,8 @@ class District extends Component {
           isHidden: true,
           subRegions: [
             {
-              id: "000321",
-              title: "hanyang Township",
+              id: "000221",
+              title: "congwen Township",
               level: "Township",
               lastIn: "2020/02/02",
               numForms: "123,456",
@@ -28,8 +29,8 @@ class District extends Component {
               subRegions: []
             },
             {
-              id: "000322",
-              title: "hanyang2 Township",
+              id: "000222",
+              title: "jianguo Township",
               level: "Township",
               lastIn: "2020/02/02",
               numForms: "123,456",
@@ -37,9 +38,10 @@ class District extends Component {
               update: "342,456",
               isHidden: true,
               subRegions: []
-            },
+            }
           ]
-        }
+        },
+
       ],
       expandedRows: []
     };
@@ -60,10 +62,11 @@ class District extends Component {
   //Rendering function for district row
   renderItem(item) {
     const clickCallback = () => this.handleRowClick(item.id);
+
     const itemRows = [
       <tr className="names" key={"row-data-" + item.id}>
         <td> {item.title}
-          <button className="toggle-btn" onClick={clickCallback}>{item.subRegions.length}Townships</button>
+          <button className="toggle-btn" onClick={clickCallback}>{item.subRegions.length} Townships</button>
         </td>
         <td>{item.lastIn}</td>
         <td>{item.numForms}</td>
@@ -76,13 +79,7 @@ class District extends Component {
     if (item.subRegions.length > 0 && this.state.expandedRows.includes(item.id)) {
       for (let i = 0; i < item.subRegions.length; i++) {
         itemRows.push(
-          <tr className="names" key={"row-expanded-" + item.id}>
-            <td>{item.subRegions[i].title}</td>
-            <td>{item.subRegions[i].lastIn}</td>
-            <td>{item.subRegions[i].numForms}</td>
-            <td>{item.subRegions[i].numVotes}</td>
-            <td>{item.subRegions[i].update}</td>
-          </tr>
+          <Township />
         )
       }
     }
@@ -92,7 +89,7 @@ class District extends Component {
   render() {
     let allItemRows = [];
 
-    this.state.data.forEach(item => {
+    data.forEach(item => {
       const perItemRows = this.renderItem(item);
       allItemRows = allItemRows.concat(perItemRows);
     });
