@@ -42,6 +42,44 @@ class District extends Component {
           ]
         },
 
+        //2nd object 
+        {
+          id: "00022",
+          title: "dongcheng District",
+          level: "District",
+          lastIn: "2020/02/02",
+          numForms: "123,456",
+          numVotes: "123,456",
+          update: "342,456",
+          isHidden: true,
+          subRegions: [
+            {
+              id: "000221",
+              title: "congwen Township",
+              level: "Township",
+              lastIn: "2020/02/02",
+              numForms: "123,456",
+              numVotes: "123,456",
+              update: "342,456",
+              isHidden: true,
+              subRegions: []
+            },
+            {
+              id: "000222",
+              title: "jianguo Township",
+              level: "Township",
+              lastIn: "2020/02/02",
+              numForms: "123,456",
+              numVotes: "123,456",
+              update: "342,456",
+              isHidden: true,
+              subRegions: []
+            }
+          ]
+        },
+
+
+
       ],
       expandedRows: []
     };
@@ -88,11 +126,25 @@ class District extends Component {
 
   render() {
     let allItemRows = [];
+    let numStates = data.length;
 
-    data.forEach(item => {
-      const perItemRows = this.renderItem(item);
-      allItemRows = allItemRows.concat(perItemRows);
-    });
+    // for(let i = 0; i < allItemRows.length; i++){
+    //   let perItemRows = this.renderItem(data[i].subRegions)
+    // }
+
+    for (let i = 0; i < numStates; i++) {
+      let numDist = data[i].subRegions.length;
+
+      for (let dist = 0; dist < numDist; dist++) {
+        let perItemRows = this.renderItem(data[i].subRegions[dist]);
+        allItemRows = allItemRows.concat(perItemRows);
+      }
+    }
+
+    // data.forEach(item => {
+    //   const perItemRows = this.renderItem(item);
+    //   allItemRows = allItemRows.concat(perItemRows);
+    // });
 
     return (
       <tr>{allItemRows}</tr>
