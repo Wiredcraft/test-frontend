@@ -1,87 +1,14 @@
 import React, { Component } from 'react';
-import Township from './township';
 import data from "../data"
+import Township from './township';
 import Township2 from './township2';
+import Township3 from './township3';
+import Township4 from './township4';
 
 class District extends Component {
   constructor() {
     super();
     this.state = {
-      data: [
-        {
-          id: "00022",
-          title: "dongcheng District",
-          level: "District",
-          lastIn: "2020/02/02",
-          numForms: "123,456",
-          numVotes: "123,456",
-          update: "342,456",
-          isHidden: true,
-          subRegions: [
-            {
-              id: "000221",
-              title: "congwen Township",
-              level: "Township",
-              lastIn: "2020/02/02",
-              numForms: "123,456",
-              numVotes: "123,456",
-              update: "342,456",
-              isHidden: true,
-              subRegions: []
-            },
-            {
-              id: "000222",
-              title: "jianguo Township",
-              level: "Township",
-              lastIn: "2020/02/02",
-              numForms: "123,456",
-              numVotes: "123,456",
-              update: "342,456",
-              isHidden: true,
-              subRegions: []
-            }
-          ]
-        },
-
-        //2nd object 
-        {
-          id: "00022",
-          title: "dongcheng District",
-          level: "District",
-          lastIn: "2020/02/02",
-          numForms: "123,456",
-          numVotes: "123,456",
-          update: "342,456",
-          isHidden: true,
-          subRegions: [
-            {
-              id: "000221",
-              title: "congwen Township",
-              level: "Township",
-              lastIn: "2020/02/02",
-              numForms: "123,456",
-              numVotes: "123,456",
-              update: "342,456",
-              isHidden: true,
-              subRegions: []
-            },
-            {
-              id: "000222",
-              title: "jianguo Township",
-              level: "Township",
-              lastIn: "2020/02/02",
-              numForms: "123,456",
-              numVotes: "123,456",
-              update: "342,456",
-              isHidden: true,
-              subRegions: []
-            }
-          ]
-        },
-
-
-
-      ],
       expandedRows: []
     };
   }

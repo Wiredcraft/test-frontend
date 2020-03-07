@@ -11,29 +11,31 @@ class Township extends Component {
     //Number of states
     let numStates = sta.length;
 
-    for (let i = 0; i < numStates; i++) {
+    for (let staInd = 0; staInd < numStates; staInd++) {
 
-      console.log("state " + sta[i]);
+      console.log("state " + sta[staInd]);
+
       //Number of districts
-      let numDist = sta[i].subRegions.length;
+      let numDist = sta[staInd].subRegions.length;
 
-      for (let dist = 0; dist < numDist; dist++) {
-
-        // console.log(sta[i].subRegions[dist]);
+      for (let distInd = 0; distInd < numDist; distInd++) {
 
         //Number of towns
-        let numTown = sta[i].subRegions[dist].subRegions.length;
+        let numTown = sta[staInd].subRegions[distInd].subRegions.length;
 
-        for (let town = 0; town < numTown; town++) {
-          console.log(sta[i].subRegions[dist].subRegions[town]);
-          return sta[i].subRegions[dist].subRegions.map((key, i) => {
+
+        for (let townInd = 0; townInd < numTown; townInd++) {
+          console.log(sta[staInd].subRegions[distInd].subRegions[townInd]);
+
+          let townArray = sta[staInd].subRegions[distInd].subRegions;
+          return townArray.map((key, staInd) => {
             return (
-              <tr className="names" key={"town-" + sta[i].subRegions[dist].subRegions[town].id}>
-                <td>{sta[i].subRegions[dist].subRegions[town].title}</td>
-                <td>{sta[i].subRegions[dist].subRegions[town].lastIn}</td>
-                <td>{sta[i].subRegions[dist].subRegions[town].numForms}</td>
-                <td>{sta[i].subRegions[dist].subRegions[town].numVotes}</td>
-                <td>{sta[i].subRegions[dist].subRegions[town].update}</td>
+              <tr className="names" >
+                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].title}</td>
+                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].lastIn}</td>
+                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].numForms}</td>
+                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].numVotes}</td>
+                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].update}</td>
               </tr>
             )
           });
