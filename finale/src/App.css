@@ -29,11 +29,11 @@ header {
   height: 5vh;
 }
 
-/* .title {
+.title {
   display: flex;
   justify-content: flex-start;
   margin: 0;
-} */
+}
 
 .nav_links {
   list-style: none;
