@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Township from './township';
 import data from "../data"
+import Township2 from './township2';
 
 class District extends Component {
   constructor() {
@@ -137,7 +138,11 @@ class District extends Component {
 
       for (let dist = 0; dist < numDist; dist++) {
         let perItemRows = this.renderItem(data[i].subRegions[dist]);
+
         allItemRows = allItemRows.concat(perItemRows);
+
+        //Once you fix bug on township row to get town objects from right subRegion - put this line of code back 
+        // allItemRows = perItemRows;
       }
     }
 
