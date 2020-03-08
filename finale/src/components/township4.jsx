@@ -2,78 +2,85 @@ import React, { Component } from 'react';
 import data from "../data"
 
 class Township4 extends Component {
+  constructor() {
+    super();
 
-  state = {
-    isHidden: true,
+    //Dummy data
+    this.state = {
+      data: [
+        {
+          name: "dist1",
+          subRegions: [
+            { townName: "town11" },
+            { townName: "town12" },
+          ]
+        },
+        {
+          name: "dist2",
+          subRegions: [
+            { townName: "town21" },
+            { townName: "town22" },
+          ]
+        },
+      ]
+    }
   }
 
-  //   renderTownRow(sta) {
-  //     //Number of states
-  //     let numStates = sta.length;
-
-  //     for (let i = 0; i < numStates; i++) {
-
-  //       console.log("state " + sta[i]);
-  //       //Number of districts
-  //       let numDist = sta[i].subRegions.length;
-
-  //       for (let dist = 0; dist < numDist; dist++) {
-
-  //         //Number of towns
-  //         let numTown = sta[i].subRegions[dist].subRegions.length;
-
-  //         let distArray = sta[i].subRegions;
-
-  //         {
-  //           distArray.map((town) =>
-  //             <div>{town.title}</div>
-  //           )
-  //         }
-  //       }
-
-  //     }
-  //   }
-  // }
-
-  render() {
-    let numStates = data.length;
-    for (let i = 0; i < numStates; i++) {
-
-      console.log("state " + data[i]);
-      //Number of districts
-      let numDist = data[i].subRegions.length;
-
-      for (let dist = 0; dist < numDist; dist++) {
-
-        //Number of towns
-        let numTown = data[i].subRegions[dist].subRegions.length;
-
-        let distArray = data[i].subRegions;
-
+  renderTownRow(districtArray) {
+    return (
+      <div>
         {
-          return distArray.map((dist) =>
-            <div>{dist.title}
-              <ul>
-                {dist.subRegions.map((subDist) =>
-                  <tr className="names">
-                    <td>{subDist.title}</td>
-                    <td>{subDist.lastIn}</td>
-                    <td>{subDist.numForms}</td>
-                    <td>{subDist.numVotes}</td>
-                    <td>{subDist.update}</td>
-                  </tr>
-                )}
-              </ul>
-            </div>
+          districtArray.map((district) =>
+            <tr className="names">
+              {district.subRegions.map((town) =>
+                <tr>
+                  <td>{town.title}</td>
+                  <td>{town.lastIn}</td>
+                  <td>{town.numForms}</td>
+                  <td>{town.numVotes}</td>
+                  <td>{town.update}</td>
+                </tr>
+              )}
+            </tr>
           )
         }
-      }
+      </div>
+    )
+  }
 
+  getDistArray() {
+    let numStates = data.length;
+    let distArray = [];
+
+    for (let stateInd = 0; stateInd < numStates; stateInd++) {
+      let numDist = data[stateInd].subRegions.length;
+      for (let dist = 0; dist < numDist; dist++) {
+        let tempDistArray = data[stateInd].subRegions;
+        distArray = tempDistArray;
+      }
+    }
+    return distArray;
+  }
+
+  render() {
+    let allItemRows = [];
+    let numStates = data.length;
+
+    for (let stateInd = 0; stateInd < numStates; stateInd++) {
+      let perItemRows = this.renderTownRow(data[stateInd].subRegions)
+      console.log(perItemRows);
+      let currDistRow = data[stateInd].subRegions;
+
+      // allItemRows = allItemRows.concat(currDistRow)
+      allItemRows = currDistRow.concat(perItemRows);
+
+      //Once you fix bug on township row to get town objects from right subRegion - put this line of code back 
+      // allItemRows = perItemRows;
     }
 
-    // return (
-    //   this.renderTownRow(data)
-    // )
+    return (
+      <tr> {allItemRows}</tr>
+    )
   }
 }
 
