@@ -13,8 +13,6 @@ class Township extends Component {
 
     for (let staInd = 0; staInd < numStates; staInd++) {
 
-      console.log("state " + sta[staInd]);
-
       //Number of districts
       let numDist = sta[staInd].subRegions.length;
 
@@ -23,11 +21,11 @@ class Township extends Component {
         //Number of towns
         let numTown = sta[staInd].subRegions[distInd].subRegions.length;
 
-
         for (let townInd = 0; townInd < numTown; townInd++) {
           console.log(sta[staInd].subRegions[distInd].subRegions[townInd]);
 
           let townArray = sta[staInd].subRegions[distInd].subRegions;
+
           return townArray.map((key, staInd) => {
             return (
               <tr className="names" >
