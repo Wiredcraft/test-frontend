@@ -178,10 +178,10 @@ console.log(data[0].subRegions[0]);
 let numStates = data.length;
 
 //Accessing district array
-// for (let i = 0; i < numStates; i++) {
-//   let numDist = data[i].subRegions.length;
-//   for (let dist = 0; dist < numDist; dist++) {}
-// }
+for (let i = 0; i < numStates; i++) {
+  let numDist = data[i].subRegions.length;
+  for (let dist = 0; dist < numDist; dist++) {}
+}
 
 //Accessing town array
 for (let i = 0; i < numStates; i++) {
