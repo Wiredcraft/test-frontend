@@ -1,8 +1,8 @@
+//Testing to render data for district and towns belong to district
+
 import React, { Component } from 'react';
 import data from "../data"
 import Township from './township';
-import Township2 from './township2';
-import Township3 from './township3';
 import Township4 from './township4';
 
 class District2 extends Component {
@@ -11,64 +11,108 @@ class District2 extends Component {
     this.state = {
       data: [
         {
-          disName: "state1",
+          id: "0001",
+          title: "Aunglan District",
+          level: "District",
+          lastIn: "2020/02/02",
+          numForms: "123,456",
+          numVotes: "123,456",
+          update: "342,456",
+          isHidden: true,
           subRegions: [
-            { townName: "dist11" },
-            { townName: "dist12" },
-            { townName: "dist12" },
-          ]
-        },
-        {
-          disName: "state2",
-          subRegions: [
-            { townName: "dist21" },
-            { townName: "dist22" },
-            { townName: "dist23" },
+            {
+              id: "00012",
+              title: "Loilen Township",
+              level: "Township",
+              lastIn: "2020/02/02",
+              numForms: "123,456",
+              numVotes: "123,456",
+              update: "342,456",
+              isHidden: true,
+              subRegions: []
+            }
           ]
         },
 
+        {
+          id: "0002",
+          title: "Aunglan District2",
+          level: "District",
+          lastIn: "2020/02/02",
+          numForms: "123,456",
+          numVotes: "123,456",
+          update: "342,456",
+          isHidden: true,
+          subRegions: [
+            {
+              id: "00021",
+              title: "Loilen Township2",
+              level: "Township",
+              lastIn: "2020/02/02",
+              numForms: "123,456",
+              numVotes: "123,456",
+              update: "342,456",
+              isHidden: true,
+              subRegions: []
+            }
+          ]
+        },
       ]
     };
   }
 
-
-
-  //Rendering function for district row
-  // renderTownRow(districtArray) {
-  //   districtArray.map((district) =>
-  //     <tr className="names">{district.title}
-  //       <tr className="names">
-  //         {district.subRegions.map((town) =>
-  //           <tr>
-  // <td>{town.title}</td>
-  // <td>{town.lastIn}</td>
-  // <td>{town.numForms}</td>
-  // <td>{town.numVotes}</td>
-  // <td>{town.update}</td>
-  //           </tr>
-  //         )}
-  //       </tr>
-  //       )
-  //     </tr>
-  //   )
-  // }
+  renderDisAndTownRows(districtArray) {
+    districtArray.map((district) =>
+      <table className="names">
+        <tr>
+          <td>{district.title}</td>
+          <td>{district.lastIn}</td>
+          <td>{district.numForms}</td>
+          <td>{district.numVotes}</td>
+          <td>{district.update}</td>
+        </tr>
+        {
+          district.subRegions.map((town) =>
+            <tr className="names">
+              <td>{town.title}</td>
+              <td>{town.lastIn}</td>
+              <td>{town.numForms}</td>
+              <td>{town.numVotes}</td>
+              <td>{town.update}</td>
+            </tr>
+          )
+        }
+      </table>
+    )
+  }
 
   render() {
     return (
       this.state.data.map((district) =>
-        <tr className="names">
-          <p>{district.disName}</p>
+        <table>
+          <tr className="names">
+            <td>{district.title}</td>
+            <td>{district.lastIn}</td>
+            <td>{district.numForms}</td>
+            <td>{district.numVotes}</td>
+            <td>{district.update}</td>
+          </tr>
           {
             district.subRegions.map((town) =>
               <tr className="names">
-                <td>{town.townName}</td>
+                <td>{town.title}</td>
+                <td>{town.lastIn}</td>
+                <td>{town.numForms}</td>
+                <td>{town.numVotes}</td>
+                <td>{town.update}</td>
               </tr>
             )
           }
-        </tr>
+        </table >
       )
-    );
+    )
   }
+
 }
 
 export default District2;
