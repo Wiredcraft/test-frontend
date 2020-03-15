@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import District from './district';
+import District5 from './district5';
 import data from "../data"
 
-class State extends Component {
+class State5 extends Component {
   constructor() {
     super();
     this.state = {
@@ -40,17 +40,8 @@ class State extends Component {
     //Toggle for rendering township rows of the district if there are townships under the district
     if (sta.subRegions.length > 0 && this.state.expandedRows.includes(sta.id)) {
       stateRow.push(
-
-        // <District   />
-
         sta.subRegions.map((district) =>
-          <tr className="names" key={"row-expanded-" + district.id}>
-            <td>{district.title}</td>
-            <td>{district.lastIn}</td>
-            <td>{district.numForms}</td>
-            <td>{district.numVotes}</td>
-            <td>{district.update}</td>
-          </tr>
+          <District5 district={district} />
         )
       )
     }
@@ -66,9 +57,9 @@ class State extends Component {
     });
 
     return (
-      <tr>{allItemRows}</tr>
+      <table>{allItemRows}</table>
     );
   }
 }
 
-export default State;
+export default State5;

@@ -24,58 +24,60 @@ class District extends Component {
     this.setState({ expandedRows: newExpandedRows });
   }
 
-  //Rendering function for district row
-  renderItem(district) {
-    const clickCallback = () => this.handleRowClick(district.id);
-
-    const itemRows = [
-      <tr className="names" key={"row-data-" + district.id}>
-        <td> {district.title}
-
-          <button className="toggle-btn" onClick={clickCallback}>{district.subRegions.length} Townships</button>
-
-        </td>
+  getDistRow(sta) {
+    return sta.subRegions.map((district) =>
+      <tr className="names" key={"row-data-" + sta.id}>
+        <td>{district.title}</td>
         <td>{district.lastIn}</td>
         <td>{district.numForms}</td>
         <td>{district.numVotes}</td>
         <td>{district.update}</td>
       </tr>
+    )
+  }
+
+  //Rendering function for sta row
+  renderItem(sta) {
+    const clickCallback = () => this.handleRowClick(sta.id);
+
+    // let itemRows = this.getDistRow(sta);
+    // console.log(itemRows)
+
+    const itemRows = [
+      <tr className="names" key={"row-data-" + sta.id}>
+        <td> {sta.title}
+          <button className="toggle-btn" onClick={clickCallback}>{sta.subRegions.length} Townships</button>
+        </td>
+        <td>{sta.lastIn}</td>
+        <td>{sta.numForms}</td>
+        <td>{sta.numVotes}</td>
+        <td>{sta.update}</td>
+      </tr>
     ];
 
-    //Toggle for rendering township rows of the district if there are townships under the district
-    if (district.subRegions.length > 0 && this.state.expandedRows.includes(district.id)) {
-      for (let i = 0; i < district.subRegions.length; i++) {
-        itemRows.push(
-          <Township4 />
+    //Toggle for rendering township rows of the sta if there are townships under the sta
+    if (this.state.expandedRows.includes(sta.id)) {
+      itemRows.push(
+        sta.subRegions.map((sta) =>
+          <div>
+            {sta.subRegions.map((town) =>
+              <Township5 town={town} />
+            )}
+          </div >
         )
-      }
+      )
     }
     return itemRows;
   }
 
+
   render() {
     let allItemRows = [];
-    let numStates = data.length;
 
-    for (let stateInd = 0; stateInd < numStates; stateInd++) {
-      let numDist = data[stateInd].subRegions.length;
-      console.log(stateInd)
-
-      for (let dist = 0; dist < numDist; dist++) {
-
-        console.log(dist)
-
-        let perItemRows = this.renderItem(data[stateInd].subRegions[dist]);
-
-        allItemRows = allItemRows.concat(perItemRows);
-
-        // console.log(perItemRows);
-
-        // allItemRows = allItemRows.concat(perItemRows);
-        return allItemRows;
-      }
-
-    }
+    data.forEach(sta => {
+      const perStateRow = this.renderItem(sta);
+      allItemRows = allItemRows.concat(perStateRow);
+    });
 
     return (
       <tr>{allItemRows}</tr>
