@@ -13,8 +13,11 @@ class District5 extends Component {
   //Click handler for expanding rows
   handleRowClick(rowId) {
     const currentExpandedRows = this.state.expandedRows;
+
+    //If false that means that there is no district expanded row at the time of this click handler
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
 
+    //If isRowCurrentlyExpanded is false state row will expand
     const newExpandedRows = isRowCurrentlyExpanded ?
       currentExpandedRows.filter(id => id !== rowId) :
       currentExpandedRows.concat(rowId);
@@ -27,9 +30,15 @@ class District5 extends Component {
     const clickCallback = () => this.handleRowClick(this.props.district.id);
 
     const itemRows = [
-      <tr className="names" key={"row-data-" + this.props.district.id}>
+      <tr className="names" key={"district-row-data-" + this.props.district.id}>
         <td> {this.props.district.title}
-          <button className="toggle-btn" onClick={clickCallback}>{this.props.district.subRegions.length} Townships</button>
+          {this.props.district.subRegions.length > 0 &&
+            <button
+              className="toggle-btn"
+              onClick={clickCallback}>{this.props.district.subRegions.length} Townships
+              {this.state.expandedRows > 0 ? " -" : " +"}
+            </button>
+          }
         </td>
         <td>{this.props.district.lastIn}</td>
         <td>{this.props.district.numForms}</td>
@@ -57,7 +66,9 @@ class District5 extends Component {
     });
 
     return (
-      <tr>{allItemRows}</tr>
+      <tbody>
+        {allItemRows}
+      </tbody>
     );
   }
 }

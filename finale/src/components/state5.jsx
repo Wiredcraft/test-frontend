@@ -13,11 +13,17 @@ class State5 extends Component {
   //Click handler for expanding rows
   handleRowClick(rowId) {
     const currentExpandedRows = this.state.expandedRows;
+    console.log(currentExpandedRows);
+
+    //If false that means that there is no district expanded row at the time of this click handler
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
 
+    //If isRowCurrentlyExpanded is false state row will expand
     const newExpandedRows = isRowCurrentlyExpanded ?
       currentExpandedRows.filter(id => id !== rowId) :
       currentExpandedRows.concat(rowId);
+
+    console.log(newExpandedRows);
 
     this.setState({ expandedRows: newExpandedRows });
   }
@@ -26,9 +32,15 @@ class State5 extends Component {
   renderItem(sta) {
     const clickCallback = () => this.handleRowClick(sta.id);
     const stateRow = [
-      <tr className="names" key={"row-data-" + sta.id}>
+      <tr className="names" key={"state-row-data-" + sta.id}>
         <td> {sta.title}
-          <button className="toggle-btn" onClick={clickCallback}>{sta.subRegions.length} Districts</button>
+          {sta.subRegions.length > 0 &&
+            <button
+              className="toggle-btn"
+              onClick={clickCallback}>{sta.subRegions.length} District
+              {this.state.expandedRows > 0 ? " -" : " +"}
+            </button>
+          }
         </td>
         <td>{sta.lastIn}</td>
         <td>{sta.numForms}</td>

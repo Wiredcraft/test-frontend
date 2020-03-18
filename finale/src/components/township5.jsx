@@ -9,7 +9,7 @@ class Township5 extends Component {
 
   render() {
     return (
-      <tr className="names" key={"row-expanded-" + this.props.town.id}>
+      <tr className="names" key={"town-row-data-" + this.props.town.id}>
         <td>{this.props.town.title}</td>
         <td>{this.props.town.lastIn}</td>
         <td>{this.props.town.numForms}</td>
