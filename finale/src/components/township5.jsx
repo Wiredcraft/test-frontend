@@ -10,17 +10,19 @@ class Township5 extends Component {
   }
 
   render() {
+    const { title, id, lastIn, numForms, numVotes, update } = this.props.town;
+
     return (
-      <tr className="names" key={"town-row-data-" + this.props.town.id}>
+      <tr className="names" key={"town-row-data-" + id}>
         <td>
           <img className="dl_logo" src={town_logo} alt="town_logo" />
-          <span>{this.props.town.title}</span>
+          <span>{title}</span>
           <img className="dl_logo" src={dl_logo} alt="dl_icon" />
         </td>
-        <td>{this.props.town.lastIn}</td>
-        <td>{this.props.town.numForms}</td>
-        <td>{this.props.town.numVotes}</td>
-        <td>{this.props.town.update}</td>
+        <td>{lastIn}</td>
+        <td>{numForms}</td>
+        <td>{numVotes}</td>
+        <td>{update}</td>
       </tr>
     )
   }

@@ -33,12 +33,14 @@ class State5 extends Component {
   //Rendering function for district row
   renderItem(sta) {
     const clickCallback = () => this.handleRowClick(sta.id);
+
     const stateRow = [
       <tr className="names" key={"state-row-data-" + sta.id}>
         <td>
           <img className="dl_logo" src={state_logo} alt="state_logo" />
           <span>{sta.title}</span>
           <img className="dl_logo" src={dl_logo} alt="dl_icon" />
+
           {sta.subRegions.length > 0 &&
             <button
               className="toggle-btn"

@@ -30,33 +30,35 @@ class District5 extends Component {
 
   //Rendering function for sta row
   renderItem(sta) {
-    const clickCallback = () => this.handleRowClick(this.props.district.id);
+    const { title, id, lastIn, numForms, numVotes, update, subRegions } = this.props.district;
+
+    const clickCallback = () => this.handleRowClick(id);
 
     const itemRows = [
-      <tr className="names" key={"district-row-data-" + this.props.district.id}>
+      <tr className="names" key={"district-row-data-" + id}>
         <td>
           <img className="dl_logo" src={dist_logo} alt="dist_logo" />
-          <span>{this.props.district.title}</span>
+          <span>{title}</span>
           <img className="dl_logo" src={dl_logo} alt="dl_icon" />
-          {this.props.district.subRegions.length > 0 &&
+          {subRegions.length > 0 &&
             <button
               className="toggle-btn"
-              onClick={clickCallback}>{this.props.district.subRegions.length} Townships
+              onClick={clickCallback}>{subRegions.length} Townships
               {this.state.expandedRows > 0 ? " -" : " +"}
             </button>
           }
         </td>
-        <td>{this.props.district.lastIn}</td>
-        <td>{this.props.district.numForms}</td>
-        <td>{this.props.district.numVotes}</td>
-        <td>{this.props.district.update}</td>
+        <td>{lastIn}</td>
+        <td>{numForms}</td>
+        <td>{numVotes}</td>
+        <td>{update}</td>
       </tr>
     ];
 
     //Toggle for rendering township rows of the sta if there are townships under the sta
-    if (this.props.district.subRegions.length > 0 && this.state.expandedRows.includes(this.props.district.id)) {
+    if (subRegions.length > 0 && this.state.expandedRows.includes(id)) {
       itemRows.push(
-        this.props.district.subRegions.map((town) =>
+        subRegions.map((town) =>
           <Township5 town={town} />
         )
       )
