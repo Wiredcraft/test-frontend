@@ -32,6 +32,7 @@ class District extends Component {
   renderItem(sta) {
     const { title, id, lastIn, numForms, numVotes, update, subRegions } = this.props.district;
 
+    //id is the callback and handleRowClick is function that accepts callback to expand or collapse a row
     const clickCallback = () => this.handleRowClick(id);
 
     const itemRows = [

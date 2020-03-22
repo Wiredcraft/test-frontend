@@ -32,6 +32,8 @@ class State extends Component {
 
   //Rendering function for district row
   renderItem(sta) {
+
+    //id is the callback and handleRowClick is function that accepts callback to expand or collapse a row
     const clickCallback = () => this.handleRowClick(sta.id);
 
     const stateRow = [
