@@ -6,6 +6,7 @@ class Township4 extends Component {
     super();
     this.state = {
       isHidden: true,
+      startInd: 0,
     }
   }
 
@@ -13,9 +14,9 @@ class Township4 extends Component {
   renderTownRow(districtArray) {
     return (
       districtArray.map((district) =>
-        <tr className="names">
+        <div>
           {district.subRegions.map((town) =>
-            <tr>
+            <tr className="names">
               <td>{town.title}</td>
               <td>{town.lastIn}</td>
               <td>{town.numForms}</td>
@@ -23,7 +24,7 @@ class Township4 extends Component {
               <td>{town.update}</td>
             </tr>
           )}
-        </tr>
+        </div>
       )
     )
   }
@@ -36,9 +37,11 @@ class Township4 extends Component {
     for (let stateInd = 0; stateInd < numStates; stateInd++) {
       console.log(stateInd);
 
-      let distArray = data[stateInd].subRegions
+      let distArray = data[stateInd].subRegions;
 
-      allTownRows = this.renderTownRow(distArray)
+      allTownRows = this.renderTownRow(distArray);
+
+      // this.setState(this.state.startInd + 1)
       return allTownRows;
     }
 

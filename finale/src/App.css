@@ -59,6 +59,12 @@ header {
   display: inline;
 }
 
+.dl_logo {
+  height: 20px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
 /* Static table styling */
 
 #title {
@@ -67,11 +73,12 @@ header {
 }
 
 .names {
+  background-color: white;
   text-align: center;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 3px solid #ddd;
-  width: 100%;
+  width: 80%;
 }
 
 .names td,

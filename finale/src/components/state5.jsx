@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import District5 from './district5';
 import data from "../data"
+import dl_logo from "../img/download_icon.png"
+import state_logo from "../img/State_logo.png"
 
 class State5 extends Component {
   constructor() {
@@ -33,7 +35,10 @@ class State5 extends Component {
     const clickCallback = () => this.handleRowClick(sta.id);
     const stateRow = [
       <tr className="names" key={"state-row-data-" + sta.id}>
-        <td> {sta.title}
+        <td>
+          <img className="dl_logo" src={state_logo} alt="state_logo" />
+          <span>{sta.title}</span>
+          <img className="dl_logo" src={dl_logo} alt="dl_icon" />
           {sta.subRegions.length > 0 &&
             <button
               className="toggle-btn"
@@ -69,7 +74,7 @@ class State5 extends Component {
     });
 
     return (
-      <table>{allItemRows}</table>
+      <table className="names">{allItemRows}</table>
     );
   }
 }

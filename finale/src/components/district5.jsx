@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import data from "../data"
 import Township5 from './township5';
+import data from "../data"
+import dl_logo from "../img/download_icon.png"
+import dist_logo from "../img/Dist_logo.png"
+
 
 class District5 extends Component {
   constructor() {
@@ -31,7 +34,10 @@ class District5 extends Component {
 
     const itemRows = [
       <tr className="names" key={"district-row-data-" + this.props.district.id}>
-        <td> {this.props.district.title}
+        <td>
+          <img className="dl_logo" src={dist_logo} alt="dist_logo" />
+          <span>{this.props.district.title}</span>
+          <img className="dl_logo" src={dl_logo} alt="dl_icon" />
           {this.props.district.subRegions.length > 0 &&
             <button
               className="toggle-btn"
