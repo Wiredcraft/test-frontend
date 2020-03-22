@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import data from "../data"
 import Township from './township';
-import Township4 from './township4';
-import Township5 from './township5';
+import data from "../data"
+import dl_logo from "../img/download_icon.png"
+import dist_logo from "../img/Dist_logo.png"
+
 
 class District extends Component {
   constructor() {
@@ -15,8 +16,11 @@ class District extends Component {
   //Click handler for expanding rows
   handleRowClick(rowId) {
     const currentExpandedRows = this.state.expandedRows;
+
+    //If false that means that there is no district expanded row at the time of this click handler
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
 
+    //If isRowCurrentlyExpanded is false state row will expand
     const newExpandedRows = isRowCurrentlyExpanded ?
       currentExpandedRows.filter(id => id !== rowId) :
       currentExpandedRows.concat(rowId);
@@ -24,63 +28,55 @@ class District extends Component {
     this.setState({ expandedRows: newExpandedRows });
   }
 
-  getDistRow(sta) {
-    return sta.subRegions.map((district) =>
-      <tr className="names" key={"row-data-" + sta.id}>
-        <td>{district.title}</td>
-        <td>{district.lastIn}</td>
-        <td>{district.numForms}</td>
-        <td>{district.numVotes}</td>
-        <td>{district.update}</td>
-      </tr>
-    )
-  }
-
   //Rendering function for sta row
   renderItem(sta) {
-    const clickCallback = () => this.handleRowClick(sta.id);
+    const { title, id, lastIn, numForms, numVotes, update, subRegions } = this.props.district;
 
-    // let itemRows = this.getDistRow(sta);
-    // console.log(itemRows)
+    const clickCallback = () => this.handleRowClick(id);
 
     const itemRows = [
-      <tr className="names" key={"row-data-" + sta.id}>
-        <td> {sta.title}
-          <button className="toggle-btn" onClick={clickCallback}>{sta.subRegions.length} Townships</button>
+      <tr className="names" key={"district-row-data-" + id}>
+        <td>
+          <img className="dl_logo" src={dist_logo} alt="dist_logo" />
+          <span>{title}</span>
+          <img className="dl_logo" src={dl_logo} alt="dl_icon" />
+          {subRegions.length > 0 &&
+            <button
+              className="toggle-btn"
+              onClick={clickCallback}>{subRegions.length} Townships
+              {this.state.expandedRows > 0 ? " -" : " +"}
+            </button>
+          }
         </td>
-        <td>{sta.lastIn}</td>
-        <td>{sta.numForms}</td>
-        <td>{sta.numVotes}</td>
-        <td>{sta.update}</td>
+        <td>{lastIn}</td>
+        <td>{numForms}</td>
+        <td>{numVotes}</td>
+        <td>{update}</td>
       </tr>
     ];
 
     //Toggle for rendering township rows of the sta if there are townships under the sta
-    if (this.state.expandedRows.includes(sta.id)) {
+    if (subRegions.length > 0 && this.state.expandedRows.includes(id)) {
       itemRows.push(
-        sta.subRegions.map((sta) =>
-          <div>
-            {sta.subRegions.map((town) =>
-              <Township5 town={town} />
-            )}
-          </div >
+        subRegions.map((town) =>
+          <Township town={town} />
         )
       )
     }
     return itemRows;
   }
 
-
   render() {
     let allItemRows = [];
 
     data.forEach(sta => {
-      const perStateRow = this.renderItem(sta);
-      allItemRows = allItemRows.concat(perStateRow);
+      allItemRows = this.renderItem(sta);
     });
 
     return (
-      <tr>{allItemRows}</tr>
+      <tbody>
+        {allItemRows}
+      </tbody>
     );
   }
 }

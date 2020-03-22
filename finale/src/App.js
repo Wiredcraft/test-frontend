@@ -4,14 +4,14 @@ import React from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
 import TableHeader from "./components/tableHeader";
-import State5 from "./components/state5";
+import State from "./components/state";
 
 function App() {
   return (
     <React.Fragment>
       <Navbar />
       <TableHeader />
-      <State5 />
+      <State />
     </React.Fragment>
   );
 }

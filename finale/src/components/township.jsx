@@ -1,50 +1,29 @@
 import React, { Component } from 'react';
-import data from "../data"
+import dl_logo from "../img/download_icon.png"
+import town_logo from "../img/Town_logo.png"
 
 class Township extends Component {
-
-  state = {
-    isHidden: true,
-  }
-
-  renderTownRow(sta) {
-    //Number of states
-    let numStates = sta.length;
-
-    for (let staInd = 0; staInd < numStates; staInd++) {
-
-      //Number of districts
-      let numDist = sta[staInd].subRegions.length;
-
-      for (let distInd = 0; distInd < numDist; distInd++) {
-
-        //Number of towns
-        let numTown = sta[staInd].subRegions[distInd].subRegions.length;
-
-        for (let townInd = 0; townInd < numTown; townInd++) {
-          console.log(sta[staInd].subRegions[distInd].subRegions[townInd]);
-
-          let townArray = sta[staInd].subRegions[distInd].subRegions;
-
-          return townArray.map((key, staInd) => {
-            return (
-              <tr className="names" >
-                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].title}</td>
-                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].lastIn}</td>
-                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].numForms}</td>
-                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].numVotes}</td>
-                <td>{sta[staInd].subRegions[distInd].subRegions[townInd].update}</td>
-              </tr>
-            )
-          });
-        }
-      }
+  constructor() {
+    super();
+    this.state = {
     }
   }
 
   render() {
+    const { title, id, lastIn, numForms, numVotes, update } = this.props.town;
+
     return (
-      this.renderTownRow(data)
+      <tr className="names" key={"town-row-data-" + id}>
+        <td>
+          <img className="dl_logo" src={town_logo} alt="town_logo" />
+          <span>{title}</span>
+          <img className="dl_logo" src={dl_logo} alt="dl_icon" />
+        </td>
+        <td>{lastIn}</td>
+        <td>{numForms}</td>
+        <td>{numVotes}</td>
+        <td>{update}</td>
+      </tr>
     )
   }
 }
