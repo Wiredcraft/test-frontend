@@ -15,7 +15,6 @@ class State extends Component {
   //Click handler for expanding rows
   handleRowClick(rowId) {
     const currentExpandedRows = this.state.expandedRows;
-    console.log(currentExpandedRows);
 
     //If false that means that there is no district expanded row at the time of this click handler
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
