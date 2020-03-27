@@ -17,14 +17,13 @@ class App extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.setState({ selectedRegLevel: "State" });
-  // }
+  //Default state when page is loaded
+  componentDidMount() {
+    this.setState({ selectedRegLevel: "State" });
+  }
 
   handleLevel(level) {
     this.setState({ selectedRegLevel: level });
-
-    console.log("currentLevel is   " + this.state.selectedRegLevel);
   }
 
   render() {
@@ -34,27 +33,18 @@ class App extends Component {
     if (selectedLevel === "State") {
       renderRegion = <State />;
     } else if (selectedLevel === "District") {
-      renderRegion = null;
-      // renderRegion.map(town => <Township town={town} />);
+      renderRegion = <State />;
       // renderRegion = <District district={district} />;
     } else {
-      renderRegion = null;
+      renderRegion = <State />;
       // renderRegion.map(town => <Township town={town} />);
     }
 
     return (
       <React.Fragment>
         <Navbar />
-
-        {/* <select onChange={event => this.handleLevel(event.target.value)}>
-          <option value="State">State</option>
-          <option value="District">District</option>
-          <option value="Township">Township</option>
-        </select> */}
-
         <DropFilter2
           // selectedLevel={this.state.selectedRegLevel}
-          // onLevelSelect={selLevel => this.handleLevel(selLevel)}
           handleLevel={selLevel => this.handleLevel(selLevel)}
         />
 

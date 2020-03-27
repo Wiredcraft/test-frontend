@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 
 class DropFilter2 extends Component {
 
-  // handleChange(event) {
-  //   console.log(event);
-  //   this.props.onChange(event.target.value)
-  // }
-
   handleSelect = (event) => {
     this.props.handleLevel(event.target.value);
   }
