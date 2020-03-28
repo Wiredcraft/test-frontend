@@ -6,6 +6,7 @@ import DropFilter2 from "./components/dropFilter2";
 import State from "./components/state";
 import District from "./components/district";
 import Township from "./components/township";
+import SearchBox from "./components/searchBox";
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class App extends Component {
           // selectedLevel={this.state.selectedRegLevel}
           handleLevel={selLevel => this.handleLevel(selLevel)}
         />
+        <SearchBox />
 
         <TableHeader />
 
