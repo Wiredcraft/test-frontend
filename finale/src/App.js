@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./App.scss";
 import Navbar from "./components/navbar";
 import TableHeader from "./components/tableHeader";
 import DropFilter2 from "./components/dropFilter2";

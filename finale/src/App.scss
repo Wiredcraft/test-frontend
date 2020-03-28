@@ -1,10 +1,10 @@
-/* Color of background: #585a6f*/
+$mainColor: #585a6f;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #585a6f;
+  background-color: $mainColor;
 }
 
 li,
@@ -58,6 +58,13 @@ header {
   padding: 5px;
   display: inline;
 }
+
+/* Header styling */
+
+/* .rightHeader .active {
+  width: 160px;
+  border-left: 2px solid #dbdee8;
+} */
 
 .dl_logo {
   height: 20px;
