@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.scss";
-import Navbar from "./components/navbar";
+import "./styles/App.scss";
+import Navbar from "./components/navbar2";
 import TableHeader from "./components/tableHeader";
 import DropFilter2 from "./components/dropFilter2";
 import State from "./components/state";
