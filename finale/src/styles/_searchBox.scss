@@ -1,0 +1,11 @@
+.searchContainer {
+  width: 75%;
+  background-color: $tableBGcolor;
+
+  .searchBox {
+    width: 100%;
+    height: 40px;
+    background: url("../img/search_icon.png") right no-repeat;
+    background-size: 45px;
+  }
+}

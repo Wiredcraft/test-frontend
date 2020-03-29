@@ -43,6 +43,7 @@ body {
   border-style: solid;
 }
 
+/* tableFilter styling */
 .tableFilter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,7 +57,7 @@ body {
   margin-top: 50px;
 }
 
-/* searchBox styling */
+/* dropFilter styling */
 .dropFilter {
   height: 45px;
   width: 120px;
@@ -75,7 +76,7 @@ body {
   background-position-y: 50%;
 }
 
-/* dropFilter styling */
+/* searchBox styling */
 .searchContainer {
   width: 75%;
   background-color: #fff;
