@@ -1,5 +1,4 @@
 import React from 'react';
-import searchIcon from "../img/search_icon.png"
 
 const SearchBox = ({ value, onChange }) => {
   return (
