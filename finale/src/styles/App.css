@@ -43,12 +43,25 @@ body {
   border-style: solid;
 }
 
-/* dropFilter styling */
+.tableFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
+
+/* searchBox styling */
 .dropFilter {
   height: 45px;
   width: 120px;
   background: #fff;
-  border: none;
+  border: 1px solid #dbdee8;
   border-radius: 0;
   cursor: pointer;
   display: inline-block;
@@ -60,6 +73,19 @@ body {
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 50%;
+}
+
+/* dropFilter styling */
+.searchContainer {
+  width: 75%;
+  background-color: #fff;
+}
+
+.searchContainer .searchBox {
+  width: 100%;
+  height: 40px;
+  background: url("../img/search_icon.png") right no-repeat;
+  background-size: 45px;
 }
 
 /* Static table styling */
