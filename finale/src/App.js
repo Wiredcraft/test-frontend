@@ -44,11 +44,13 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <DropFilter
-          // selectedLevel={this.state.selectedRegLevel}
-          handleLevel={selLevel => this.handleLevel(selLevel)}
-        />
-        <SearchBox />
+        <div className="tableFilter">
+          <DropFilter
+            // selectedLevel={this.state.selectedRegLevel}
+            handleLevel={selLevel => this.handleLevel(selLevel)}
+          />
+          <SearchBox />
+        </div>
 
         <TableHeader />
 
