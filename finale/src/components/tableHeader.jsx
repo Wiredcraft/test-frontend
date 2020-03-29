@@ -15,19 +15,15 @@ class TableHeader extends Component {
   renderTableHeader() {
     let header = Object.values(this.state.names);
     return header.map((key, index) => {
-      return <th key={index}>{key}</th>
+      return <td key={index}>{key}</td>
     })
   }
 
   render() {
     return (
-      <div>
-        <table className="names">
-          <tbody>
-            <tr>{this.renderTableHeader()}</tr>
-          </tbody>
-        </table>
-      </div>
+      <thead>
+        <tr>{this.renderTableHeader()}</tr>
+      </thead>
     )
   }
 }
