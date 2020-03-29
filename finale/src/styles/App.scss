@@ -1,7 +1,11 @@
 $backgroundColor: #585a6f;
 $tableBGcolor: #fff;
 $borderColor: #dbdee8;
+$borderColorTH: #aaa9b7;
+$fontFamily: "Trebuchet MS", Arial, Helvetica, sans-serif;
 $tableFontSize: 16px;
+$capitalColor: #975dd1;
+
 @mixin flexCenter() {
   display: flex;
   justify-content: center;
@@ -13,7 +17,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: $fontFamily;
 }
 
 /* Navbar styling */
@@ -45,32 +49,72 @@ body {
   display: inline-block;
 }
 
-.names {
-  background-color: white;
+.capital {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
   text-align: center;
+  border-radius: 50%;
+  margin: 0 15px;
+  color: $tableBGcolor;
+  background-color: $capitalColor;
+}
+
+.capitalDist {
+  margin-left: 50px;
+}
+
+.capitalTown {
+  margin-left: 80px;
+}
+
+table {
+  width: 1016px;
+  margin: 0 auto;
   border-collapse: collapse;
-  border: 3px solid #ddd;
-  width: 80%;
-}
+  border-color: $borderColor;
+  border-style: solid;
+  border-width: 1px;
+  background-color: $tableBGcolor;
 
-.names td,
-.names th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+  thead > tr {
+    td {
+      border-bottom-color: $borderColorTH;
+      &:first-child {
+        text-align: left;
+        padding-left: 20px;
+      }
+    }
+  }
 
-.names tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+  tr {
+    .districtRow {
+      padding-right: 45px;
+    }
 
-.names tr:hover {
-  background-color: #ddd;
-}
+    td {
+      border-color: $borderColor;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      padding: 10px 0;
+      text-align: center;
+      line-height: 30px;
+      &:first-child {
+        width: 40%;
+        text-align: left;
+      }
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(6) {
+        width: 15%;
+      }
+    }
+  }
 
-.names th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #4caf50;
-  color: white;
+  .townshipRow {
+    margin-left: 75px;
+  }
+
+  //closing bracket for table
 }
