@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import dl_logo from "../img/download_icon.png"
-import town_logo from "../img/Town_logo.png"
 
 class Township extends Component {
   constructor() {
@@ -13,9 +12,9 @@ class Township extends Component {
     const { title, id, lastIn, numForms, numVotes, update } = this.props.town;
 
     return (
-      <tr className="names" key={"town-row-data-" + id}>
+      <tr className="townshipRow" key={"town-row-data-" + id}>
         <td>
-          <img className="dl_logo" src={town_logo} alt="town_logo" />
+          <span className="capital capitalTown">T</span>
           <span>{title}</span>
           <img className="dl_logo" src={dl_logo} alt="dl_icon" />
         </td>

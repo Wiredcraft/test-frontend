@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import District from './district';
 import data from "../data"
 import dl_logo from "../img/download_icon.png"
-import state_logo from "../img/State_logo.png"
+import TableHeader from './tableHeader';
 
 class State extends Component {
   constructor() {
@@ -36,9 +36,9 @@ class State extends Component {
     const clickCallback = () => this.handleRowClick(sta.id);
 
     const stateRow = [
-      <tr className="names" key={"state-row-data-" + sta.id}>
+      <tr className="stateRow" key={"state-row-data-" + sta.id}>
         <td>
-          <img className="dl_logo" src={state_logo} alt="state_logo" />
+          <span className="capital Sta">S</span>
           <span>{sta.title}</span>
           <img className="dl_logo" src={dl_logo} alt="dl_icon" />
 
@@ -77,7 +77,12 @@ class State extends Component {
     });
 
     return (
-      <table className="names">{allItemRows}</table>
+      <table>
+        <TableHeader />
+        <tbody>
+          {allItemRows}
+        </tbody>
+      </table>
     );
   }
 }

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Township from './township';
 import data from "../data"
 import dl_logo from "../img/download_icon.png"
-import dist_logo from "../img/Dist_logo.png"
-
 
 class District extends Component {
   constructor() {
@@ -36,9 +34,9 @@ class District extends Component {
     const clickCallback = () => this.handleRowClick(id);
 
     const itemRows = [
-      <tr className="names" key={"district-row-data-" + id}>
+      <tr className="districtRow" key={"district-row-data-" + id}>
         <td>
-          <img className="dl_logo" src={dist_logo} alt="dist_logo" />
+          <span className="capital capitalDist">D</span>
           <span>{title}</span>
           <img className="dl_logo" src={dl_logo} alt="dl_icon" />
           {subRegions.length > 0 &&
@@ -75,9 +73,9 @@ class District extends Component {
     });
 
     return (
-      <tbody>
+      <React.Fragment>
         {allItemRows}
-      </tbody>
+      </React.Fragment>
     );
   }
 }
