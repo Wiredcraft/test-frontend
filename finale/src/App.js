@@ -52,8 +52,6 @@ class App extends Component {
           <SearchBox />
         </div>
 
-        <TableHeader />
-
         {renderRegion}
 
         {/* <State /> */}
