@@ -90,16 +90,41 @@ body {
 }
 
 /* Static table styling */
-.toggle-btn {
-  margin-left: 20px;
-  padding: 5px;
-  display: inline;
+table {
+  width: 84.5vw;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-color: #dbdee8;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
 }
 
-.dl_logo {
-  height: 20px;
-  margin-left: 10px;
-  display: inline-block;
+table thead > tr td {
+  border-bottom-color: #aaa9b7;
+}
+
+table thead > tr td:first-child {
+  text-align: left;
+  padding-left: 20px;
+}
+
+table tr td {
+  border-color: #dbdee8;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  padding: 10px 0;
+  text-align: center;
+  line-height: 30px;
+}
+
+table tr td:first-child {
+  width: 40%;
+  text-align: left;
+}
+
+table tr td:nth-child(2), table tr td:nth-child(3), table tr td:nth-child(4), table tr td:nth-child(6) {
+  width: 15%;
 }
 
 .capital {
@@ -121,48 +146,21 @@ body {
   margin-left: 80px;
 }
 
-table {
-  width: 1016px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  border-color: #dbdee8;
-  border-style: solid;
-  border-width: 1px;
-  background-color: #fff;
+.dl_logo {
+  height: 20px;
+  margin-left: 15px;
+  display: inline-block;
 }
 
-table thead > tr td {
-  border-bottom-color: #aaa9b7;
-}
-
-table thead > tr td:first-child {
-  text-align: left;
-  padding-left: 20px;
-}
-
-table tr .districtRow {
-  padding-right: 45px;
-}
-
-table tr td {
-  border-color: #dbdee8;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  padding: 10px 0;
-  text-align: center;
-  line-height: 30px;
-}
-
-table tr td:first-child {
-  width: 40%;
-  text-align: left;
-}
-
-table tr td:nth-child(2), table tr td:nth-child(3), table tr td:nth-child(4), table tr td:nth-child(6) {
-  width: 15%;
-}
-
-table .townshipRow {
-  margin-left: 75px;
+.toggle-btn {
+  font-weight: bold;
+  width: 96px;
+  background-color: #dbdfeb;
+  color: #585a6f;
+  line-height: 20px;
+  border-radius: 4px;
+  margin-right: 30px;
+  float: right;
+  cursor: pointer;
 }
 /*# sourceMappingURL=App.css.map */

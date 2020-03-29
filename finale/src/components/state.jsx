@@ -45,7 +45,7 @@ class State extends Component {
           {sta.subRegions.length > 0 &&
             <button
               className="toggle-btn"
-              onClick={clickCallback}>{sta.subRegions.length} District
+              onClick={clickCallback}>{sta.subRegions.length} Districts
               {this.state.expandedRows > 0 ? " -" : " +"}
             </button>
           }

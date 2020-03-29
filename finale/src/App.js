@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./styles/App.scss";
 import Navbar from "./components/navbar2";
-import TableHeader from "./components/tableHeader";
 import DropFilter from "./components/dropFilter";
 import State from "./components/state";
 import District from "./components/district";
@@ -53,7 +52,6 @@ class App extends Component {
         </div>
 
         {renderRegion}
-
         {/* <State /> */}
       </React.Fragment>
     );
