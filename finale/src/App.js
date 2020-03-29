@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./styles/App.scss";
 import Navbar from "./components/navbar2";
 import TableHeader from "./components/tableHeader";
-import DropFilter2 from "./components/dropFilter2";
+import DropFilter from "./components/dropFilter";
 import State from "./components/state";
 import District from "./components/district";
 import Township from "./components/township";
@@ -19,9 +19,9 @@ class App extends Component {
   }
 
   //Default state when page is loaded
-  componentDidMount() {
-    this.setState({ selectedRegLevel: "State" });
-  }
+  // componentDidMount() {
+  //   this.setState({ selectedRegLevel: "State" });
+  // }
 
   handleLevel(level) {
     this.setState({ selectedRegLevel: level });
@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <DropFilter2
+        <DropFilter
           // selectedLevel={this.state.selectedRegLevel}
           handleLevel={selLevel => this.handleLevel(selLevel)}
         />
