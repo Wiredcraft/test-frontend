@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./styles/App.scss";
-import Navbar from "./components/navbar2";
+import Navbar from "./components/navbar";
 import DropFilter from "./components/dropFilter";
+import SearchBox from "./components/searchBox";
 import State from "./components/state";
 import District from "./components/district";
 import Township from "./components/township";
-import SearchBox from "./components/searchBox";
 
 class App extends Component {
   constructor(props) {
@@ -18,10 +18,11 @@ class App extends Component {
   }
 
   //Default state when page is loaded
-  // componentDidMount() {
-  //   this.setState({ selectedRegLevel: "State" });
-  // }
+  componentDidMount() {
+    this.setState({ selectedRegLevel: "State" });
+  }
 
+  //Change selected level based on what user selects in dropFilter
   handleLevel(level) {
     this.setState({ selectedRegLevel: level });
   }
@@ -30,6 +31,7 @@ class App extends Component {
     const selectedLevel = this.state.selectedRegLevel;
     let renderRegion = [];
 
+    //Conditional rendering based on selectedLevel - work in progress
     if (selectedLevel === "State") {
       renderRegion = <State />;
     } else if (selectedLevel === "District") {
@@ -50,9 +52,7 @@ class App extends Component {
           />
           <SearchBox />
         </div>
-
         {renderRegion}
-        {/* <State /> */}
       </React.Fragment>
     );
   }

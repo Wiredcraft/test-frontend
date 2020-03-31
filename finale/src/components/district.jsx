@@ -7,7 +7,8 @@ class District extends Component {
   constructor() {
     super();
     this.state = {
-      expandedRows: []
+      expandedRows: [],
+      isHidden: true,
     };
   }
 
@@ -23,11 +24,13 @@ class District extends Component {
       currentExpandedRows.filter(id => id !== rowId) :
       currentExpandedRows.concat(rowId);
 
+    this.setState({ isHidden: !this.state.isHidden });
     this.setState({ expandedRows: newExpandedRows });
   }
 
+
   //Rendering function for sta row
-  renderItem(sta) {
+  renderRows(sta) {
     const { title, id, lastIn, numForms, numVotes, update, subRegions } = this.props.district;
 
     //id is the callback and handleRowClick is function that accepts callback to expand or collapse a row
@@ -43,7 +46,7 @@ class District extends Component {
             <button
               className="toggle-btn"
               onClick={clickCallback}>{subRegions.length} Townships
-              {this.state.expandedRows > 0 ? " -" : " +"}
+               {this.state.isHidden ? " +" : " -"}
             </button>
           }
         </td>
@@ -69,7 +72,7 @@ class District extends Component {
     let allItemRows = [];
 
     data.forEach(sta => {
-      allItemRows = this.renderItem(sta);
+      allItemRows = this.renderRows(sta);
     });
 
     return (

@@ -1,9 +1,12 @@
+//Styling adapted from https://codepen.io/wxiaojie45/pen/zwMjxE/
+
 $activeColor: #f0f1f8;
+$headerColor: #fff;
 
 .header {
   width: 100%;
   height: 10vh;
-  background-color: #fff;
+  background-color: $headerColor;
 
   span {
     display: inline-block;

@@ -1,10 +1,8 @@
 $backgroundColor: #585a6f;
 $tableBGcolor: #fff;
 $borderColor: #dbdee8;
-$borderColorTH: #aaa9b7;
 $fontFamily: "Trebuchet MS", Arial, Helvetica, sans-serif;
 $tableFontSize: 16px;
-$capitalColor: #975dd1;
 
 @mixin flexCenter() {
   display: flex;
@@ -24,7 +22,6 @@ body {
 @import "./_navbar";
 
 /* tableFilter styling */
-
 .tableFilter {
   @include flexCenter();
   margin-top: 50px;

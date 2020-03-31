@@ -1,4 +1,8 @@
+//Styling adapted from https://codepen.io/wxiaojie45/pen/zwMjxE/
+
 $btn-color: #dbdfeb;
+$borderColorTH: #aaa9b7;
+$capitalColor: #975dd1;
 
 table {
   width: 84.5vw;
@@ -9,7 +13,7 @@ table {
   border-width: 1px;
   background-color: $tableBGcolor;
 
-  thead > tr {
+  thead tr {
     td {
       border-bottom-color: $borderColorTH;
       &:first-child {
