@@ -1,68 +1,85 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend Test Wiredcraft
 
-## Available Scripts
+![Project Image](./src/img/projectImg.png)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### Table of Contents
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Description](#description)
+- [How To Use](#how-to-use)
+- [Components](#components)
+- [References](#references)
+- [Author Info](#author-info)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Description
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this project, the user can view the regions of a country which are divided through the following hierarchy:
 
-### `npm run build`
+```
+1. State
+2. District
+3. Township
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The user can use the dropdown menu to filter the regions by its preference. The user can also use the search bar to look for a region based on what he/she selected in the dropdown menu.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- HTML
+- Javascript
+- SASS
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# How To Use
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### 1. Install dependencies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm install`
 
-## Learn More
+#### 2. Run in local server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Components
 
-### Code Splitting
+- Navbar.jsx
+- dropFilter.jsx
+- searchBox.jsx
+- state.jsx
+- district.jsx
+- township.jsx
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### Component Description
 
-### Analyzing the Bundle Size
+- **navbar.jsx:** static navigation
+- **dropFilter.jsx:** Filter the table by region selected by the user, displays the component based on the state through conditional rendering, for example will render state.jsx component if user selects "State" in the dropFilter. By default, the selection is set to "State" (work in progress)
+- **searchBox.jsx:** Filter the region by what the user types in the search bar (work in progress)
+- **state.jsx:** Displays state level regions
+- **district.jsx:** Displays district level regions. This component has properties (props) that are passed to the state.jsx component and is rendered only if the state level region has a district region.
+- **township.jsx:** Displays township level regions. This component has properties (props) that are passed to the district.jsx component and is rendered only if the district level region has a township region.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+#### Styling
 
-### Making a Progressive Web App
+- **\_navbar.scss:** Styling for navbar.jsx
+- **\_dropFilter.scss:** Styling for dropFilter.jsx
+- **\_searchBox.scss:** Styling for searchBox.jsx
+- **\_table.scss:** Styling for entire table
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Online Demo
 
-### Advanced Configuration
+## References
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+[Table Logic Inspiration](https://gist.github.com/markerikson/bd9f03e0808558c5951e02f1aa98c563)
 
-### Deployment
+[Styling of Table and Navbar](https://codepen.io/wxiaojie45/pen/zwMjxE/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Author Info
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Yi Zu](http://zuyi.me/)
