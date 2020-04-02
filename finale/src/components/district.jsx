@@ -15,7 +15,7 @@ class District extends Component {
   handleRowClick(rowId) {
     const currentExpandedRows = this.state.expandedRows;
 
-    //If false that means that there is no district expanded row at the time of this click handler
+    //If false that means that district level expanded rows are not expanded when this click handler is called
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
 
     //If isRowCurrentlyExpanded is false state row will expand
@@ -55,7 +55,7 @@ class District extends Component {
       </tr>
     ];
 
-    //Toggle for rendering township rows of the sta if there are townships under the sta
+    //Toggle for rendering township rows of the district if there are townships under the district
     if (subRegions.length > 0 && this.state.expandedRows.includes(id)) {
       itemRows.push(
         subRegions.map((town) =>

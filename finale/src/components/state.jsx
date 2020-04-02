@@ -17,7 +17,7 @@ class State extends Component {
     const currentExpandedRows = this.state.expandedRows;
     console.log(currentExpandedRows);
 
-    //If false that means that there is no district expanded row at the time of this click handler
+    //If false that means that state level expanded rows are not expanded when this click handler is called
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
 
 
@@ -42,7 +42,6 @@ class State extends Component {
           <span className="capital">S</span>
           <span>{sta.title}</span>
           <img className="dl_logo" src={dl_logo} alt="dl_icon" />
-
           {sta.subRegions.length > 0 &&
             <button
               className="toggle-btn"
@@ -58,7 +57,7 @@ class State extends Component {
       </tr>
     ];
 
-    //Toggle for rendering township rows of the district if there are townships under the district
+    //Toggle for rendering township rows of the district if it district has townships
     if (sta.subRegions.length > 0 && this.state.expandedRows.includes(sta.id)) {
       stateRow.push(
         sta.subRegions.map((district) =>

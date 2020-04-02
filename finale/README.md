@@ -61,6 +61,7 @@ The user can use the dropdown menu to filter the regions by its preference. The 
 - **navbar.jsx:** static navigation
 - **dropFilter.jsx:** Filter the table by region selected by the user, displays the component based on the state through conditional rendering, for example will render state.jsx component if user selects "State" in the dropFilter. By default, the selection is set to "State" (work in progress)
 - **searchBox.jsx:** Filter the region by what the user types in the search bar (work in progress)
+- **tableHeader.jsx:** Table header of the table
 - **state.jsx:** Displays state level regions
 - **district.jsx:** Displays district level regions. This component has properties (props) that are passed to the state.jsx component and is rendered only if the state level region has a district region.
 - **township.jsx:** Displays township level regions. This component has properties (props) that are passed to the district.jsx component and is rendered only if the district level region has a township region.
