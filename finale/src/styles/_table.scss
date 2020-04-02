@@ -11,7 +11,7 @@ table {
   border-width: 1px;
   background-color: $tableBGcolor;
 
-  thead tr {
+  thead > tr {
     td {
       border-bottom-color: $borderColorTH;
       &:first-child {
