@@ -9,7 +9,6 @@ class State extends Component {
     super();
     this.state = {
       expandedRows: [],
-      isHidden: true,
     };
   }
 
@@ -21,12 +20,12 @@ class State extends Component {
     //If false that means that there is no district expanded row at the time of this click handler
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
 
+
     //If isRowCurrentlyExpanded is false state row will expand
     const newExpandedRows = isRowCurrentlyExpanded ?
       currentExpandedRows.filter(id => id !== rowId) :
       currentExpandedRows.concat(rowId);
 
-    this.setState({ isHidden: !this.state.isHidden });
     this.setState({ expandedRows: newExpandedRows });
   }
 
@@ -35,6 +34,7 @@ class State extends Component {
 
     //id is the callback and handleRowClick is function that accepts callback to expand or collapse a row
     const clickCallback = () => this.handleRowClick(sta.id);
+    const isRowCurrentlyExpanded = this.state.expandedRows.includes(sta.id);
 
     const stateRow = [
       <tr className="stateRow" key={"state-row-data-" + sta.id}>
@@ -47,7 +47,7 @@ class State extends Component {
             <button
               className="toggle-btn"
               onClick={clickCallback}>{sta.subRegions.length} Districts
-               {this.state.isHidden ? " +" : " -"}
+               {isRowCurrentlyExpanded ? " -" : " +"}
             </button>
           }
         </td>
