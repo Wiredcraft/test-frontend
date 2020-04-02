@@ -24,7 +24,7 @@ In this project, the user can view the regions of a country which are divided th
 3. Township
 ```
 
-The user can use the dropdown menu to filter the regions by its preference. The user can also use the search bar to look for a region based on what he/she selected in the dropdown menu.
+The user can use the dropdown menu to filter the regions by its preference. The user can also use the search bar to look for a region based on what he/she selected in the dropdown menu. (work in progress for dropdown Menu and search Bar functionality)
 
 #### Technologies
 
@@ -74,6 +74,8 @@ The user can use the dropdown menu to filter the regions by its preference. The 
 - **\_table.scss:** Styling for entire table
 
 ## Online Demo
+
+[Video walkthrough](https://www.loom.com/share/7054fba921154d9e92773e0560c8d6a3)
 
 ## References
 
