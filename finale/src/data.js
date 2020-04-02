@@ -47,7 +47,7 @@ export default [
     subRegions: [
       {
         id: "00021",
-        title: "xichen District",
+        title: "Xichen District",
         level: "District",
         lastIn: "2020/02/02",
         numForms: "123,456",
@@ -58,7 +58,7 @@ export default [
       },
       {
         id: "00022",
-        title: "dongcheng District",
+        title: "Dongcheng District",
         level: "District",
         lastIn: "2020/02/02",
         numForms: "123,456",
@@ -68,7 +68,7 @@ export default [
         subRegions: [
           {
             id: "000221",
-            title: "congwen Township",
+            title: "Congwen Township",
             level: "Township",
             lastIn: "2020/02/02",
             numForms: "123,456",
@@ -79,7 +79,7 @@ export default [
           },
           {
             id: "000222",
-            title: "jianguo Township",
+            title: "Jianguo Township",
             level: "Township",
             lastIn: "2020/02/02",
             numForms: "123,456",
@@ -125,7 +125,7 @@ export default [
         subRegions: [
           {
             id: "000321",
-            title: "hanyang Township",
+            title: "Hanyang Township",
             level: "Township",
             lastIn: "2020/02/02",
             numForms: "123,456",
@@ -136,7 +136,7 @@ export default [
           },
           {
             id: "000322",
-            title: "wudaokou Township",
+            title: "Wudaokou Township",
             level: "Township",
             lastIn: "2020/02/02",
             numForms: "123,456",
