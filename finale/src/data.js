@@ -7,7 +7,6 @@ export default [
     numForms: "123,456",
     numVotes: "123,456",
     update: "342,456",
-    isHidden: false,
     subRegions: [
       {
         id: "00011",
@@ -17,7 +16,6 @@ export default [
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
-        isHidden: true,
         subRegions: [
           {
             id: "000111",
@@ -27,7 +25,6 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            isHidden: true,
             subRegions: []
           }
         ]
@@ -43,7 +40,6 @@ export default [
     numForms: "123,456",
     numVotes: "123,456",
     update: "342,456",
-    isHidden: false,
     subRegions: [
       {
         id: "00021",
@@ -53,7 +49,6 @@ export default [
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
-        isHidden: true,
         subRegions: []
       },
       {
@@ -64,7 +59,6 @@ export default [
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
-        isHidden: true,
         subRegions: [
           {
             id: "000221",
@@ -74,7 +68,6 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            isHidden: true,
             subRegions: []
           },
           {
@@ -85,7 +78,6 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            isHidden: true,
             subRegions: []
           }
         ]
@@ -100,7 +92,6 @@ export default [
     numForms: "123,456",
     numVotes: "123,456",
     update: "342,456",
-    isHidden: false,
     subRegions: [
       {
         id: "00031",
@@ -110,7 +101,6 @@ export default [
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
-        isHidden: true,
         subRegions: []
       },
       {
@@ -121,7 +111,6 @@ export default [
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
-        isHidden: true,
         subRegions: [
           {
             id: "000321",
@@ -131,7 +120,6 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            isHidden: true,
             subRegions: []
           },
           {
@@ -142,7 +130,6 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            isHidden: true,
             subRegions: []
           }
         ]
@@ -157,7 +144,6 @@ export default [
     numForms: "123,456",
     numVotes: "123,456",
     update: "342,456",
-    isHidden: false,
     subRegions: []
   },
   {
@@ -168,7 +154,6 @@ export default [
     numForms: "123,456",
     numVotes: "123,456",
     update: "342,456",
-    isHidden: false,
     subRegions: []
   }
 ];
