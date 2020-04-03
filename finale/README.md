@@ -96,6 +96,13 @@ subRegions: array[Objects]
 - **\_searchBox.scss:** Styling for searchBox.jsx
 - **\_table.scss:** Styling for entire table
 
+## Scrum Board
+
+As of April 2, here is the status of the project:
+
+![ToDo-Wip](./src/img/toDo_wip.png)
+![Done](./src/img/done.png)
+
 ## Online Demo
 
 [Video walkthrough](https://www.loom.com/share/7054fba921154d9e92773e0560c8d6a3)
