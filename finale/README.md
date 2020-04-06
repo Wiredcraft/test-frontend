@@ -101,8 +101,8 @@ subRegions: array[Objects]
 
 As of April 2, here is the status of the project:
 
-![ToDo-Wip](./src/img/toDo_wip.png)
-![Done](./src/img/done.png)
+![ToDo-Wip](./src/img/toDo-WIP.jpg)
+![Done](./src/img/completed.jpg)
 
 ## Online Demo
 
