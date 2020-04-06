@@ -68,12 +68,13 @@ The user can use the dropdown menu to filter the regions by its preference. The 
 
 #### Data
 
-The data.js file contains the data for the table. Each json object represents one specific region (state, district, township) in the table row. The parameters are listed below with their data types.
-
-subRegions is an array of objects for the child regions.
+The data.js file contains the data for the table. Each json object represents one specific region (state, district, township) in the table row.
+State level regions are an `array of objects`, the `subRegions` key includes an array of objects for the child regions.
 
 - subRegions of state are districts
 - subRegions of district are townships
+
+The parameters are listed below with their data types:
 
 ```
 {
