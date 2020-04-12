@@ -3,11 +3,11 @@ import "./styles/App.scss";
 import Navbar from "./components/navbar";
 import DropFilter from "./components/dropFilter";
 import SearchBox from "./components/searchBox";
+import TableHeader from "./components/tableHeader";
 import State from "./components/state";
 import District from "./components/district";
 import Township from "./components/township";
 import data from "./data";
-import dl_logo from "./img/download_icon.png";
 
 class App extends Component {
   constructor(props) {
@@ -52,7 +52,10 @@ class App extends Component {
           />
           <SearchBox />
         </div>
-        {renderRegion}
+        <table>
+          <TableHeader />
+          <tbody>{renderRegion}</tbody>
+        </table>
       </React.Fragment>
     );
   }

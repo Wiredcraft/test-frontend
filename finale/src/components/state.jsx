@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TableHeader from './tableHeader';
 import District from './district';
 import data from "../data";
 import dl_logo from "../img/download_icon.png";
@@ -68,20 +67,17 @@ class State extends Component {
   }
 
   render() {
-    let allItemRows = [];
+    let allStateRows = [];
 
     data.forEach(sta => {
       const perStateRow = this.renderRows(sta);
-      allItemRows = allItemRows.concat(perStateRow);
+      allStateRows = allStateRows.concat(perStateRow);
     });
 
     return (
-      <table>
-        <TableHeader />
-        <tbody>
-          {allItemRows}
-        </tbody>
-      </table>
+      <React.Fragment>
+        {allStateRows}
+      </React.Fragment>
     );
   }
 }

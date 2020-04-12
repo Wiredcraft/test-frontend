@@ -67,15 +67,15 @@ class District extends Component {
   }
 
   render() {
-    let allItemRows = [];
+    let allDistRows = [];
 
     data.forEach(sta => {
-      allItemRows = this.renderRows(sta);
+      allDistRows = this.renderRows(sta);
     });
 
     return (
       <React.Fragment>
-        {allItemRows}
+        {allDistRows}
       </React.Fragment>
     );
   }
