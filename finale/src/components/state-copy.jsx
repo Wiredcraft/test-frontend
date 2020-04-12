@@ -20,6 +20,7 @@ class State extends Component {
     //If false that means that state level expanded rows are not expanded when this click handler is called
     const isRowCurrentlyExpanded = currentExpandedRows.includes(rowId);
 
+
     //If isRowCurrentlyExpanded is false state row will expand
     const newExpandedRows = isRowCurrentlyExpanded ?
       currentExpandedRows.filter(id => id !== rowId) :

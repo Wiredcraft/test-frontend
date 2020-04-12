@@ -25,11 +25,11 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            subRegions: []
-          }
-        ]
-      }
-    ]
+            subRegions: [],
+          },
+        ],
+      },
+    ],
   },
 
   {
@@ -49,7 +49,7 @@ export default [
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
-        subRegions: []
+        subRegions: [],
       },
       {
         id: "00022",
@@ -68,7 +68,7 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            subRegions: []
+            subRegions: [],
           },
           {
             id: "000222",
@@ -78,11 +78,11 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            subRegions: []
-          }
-        ]
-      }
-    ]
+            subRegions: [],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "0003",
@@ -101,7 +101,7 @@ export default [
         numForms: "123,456",
         numVotes: "123,456",
         update: "342,456",
-        subRegions: []
+        subRegions: [],
       },
       {
         id: "00032",
@@ -120,7 +120,7 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            subRegions: []
+            subRegions: [],
           },
           {
             id: "000322",
@@ -130,11 +130,11 @@ export default [
             numForms: "123,456",
             numVotes: "123,456",
             update: "342,456",
-            subRegions: []
-          }
-        ]
-      }
-    ]
+            subRegions: [],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "0004",
@@ -144,7 +144,7 @@ export default [
     numForms: "123,456",
     numVotes: "123,456",
     update: "342,456",
-    subRegions: []
+    subRegions: [],
   },
   {
     id: "0005",
@@ -154,6 +154,6 @@ export default [
     numForms: "123,456",
     numVotes: "123,456",
     update: "342,456",
-    subRegions: []
-  }
+    subRegions: [],
+  },
 ];

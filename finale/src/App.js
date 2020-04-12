@@ -6,6 +6,8 @@ import SearchBox from "./components/searchBox";
 import State from "./components/state";
 import District from "./components/district";
 import Township from "./components/township";
+import data from "./data";
+import dl_logo from "./img/download_icon.png";
 
 class App extends Component {
   constructor(props) {
@@ -13,13 +15,8 @@ class App extends Component {
     this.handleLevel = this.handleLevel.bind(this);
 
     this.state = {
-      selectedRegLevel: "State"
+      selectedRegLevel: "State",
     };
-  }
-
-  //Default state when page is loaded
-  componentDidMount() {
-    this.setState({ selectedRegLevel: "State" });
   }
 
   //Change selected level based on what user selects in dropFilter
@@ -29,17 +26,20 @@ class App extends Component {
 
   render() {
     const selectedLevel = this.state.selectedRegLevel;
+    const onlyDistArr = data.map(({ subRegions }) => subRegions).flat();
+    const onlyTownArr = onlyDistArr.map(({ subRegions }) => subRegions).flat();
     let renderRegion = [];
 
-    //Conditional rendering based on selectedLevel - work in progress
+    //Renders State or District or Township component based on what user selects in DropFilter
     if (selectedLevel === "State") {
+      console.log(data);
       renderRegion = <State />;
     } else if (selectedLevel === "District") {
-      renderRegion = <State />;
-      // renderRegion = <District district={district} />;
+      renderRegion = onlyDistArr.map((district) => (
+        <District district={district} />
+      ));
     } else {
-      renderRegion = <State />;
-      // renderRegion.map(town => <Township town={town} />);
+      renderRegion = onlyTownArr.map((town) => <Township town={town} />);
     }
 
     return (
@@ -48,7 +48,7 @@ class App extends Component {
         <div className="tableFilter">
           <DropFilter
             // selectedLevel={this.state.selectedRegLevel}
-            handleLevel={selLevel => this.handleLevel(selLevel)}
+            handleLevel={(selLevel) => this.handleLevel(selLevel)}
           />
           <SearchBox />
         </div>
