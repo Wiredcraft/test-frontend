@@ -7,7 +7,7 @@ const Navbar = () => {
       <span className="title_left">Reports</span>
       <div className="header_right">
         <span className="active">Overall</span>
-        <span className>Specific</span>
+        <span>Specific</span>
       </div>
     </div>
   );

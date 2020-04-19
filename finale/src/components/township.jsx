@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import dl_logo from "../img/download_icon.png"
-
 
 const Township = (props) => {
   const { title, id, lastIn, numForms, numVotes, update } = props.town;

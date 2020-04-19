@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./styles/App.scss";
+import data from "./data";
 import Navbar from "./components/navbar";
 import DropFilter from "./components/dropFilter";
 import SearchBox from "./components/searchBox";
 import TableHeader from "./components/tableHeader";
 import State from "./components/state";
-import District from "./components/district";
+import DistrictHook from "./components/districtHook";
 import Township from "./components/township";
-import data from "./data";
+// import District from "./components/district";
 
 class App extends Component {
   constructor(props) {
@@ -32,12 +33,9 @@ class App extends Component {
 
     //Renders State or District or Township component based on what user selects in DropFilter
     if (selectedLevel === "State") {
-      console.log(data);
       renderRegion = <State />;
     } else if (selectedLevel === "District") {
-      renderRegion = onlyDistArr.map((district) => (
-        <District district={district} />
-      ));
+      renderRegion = <DistrictHook />;
     } else {
       renderRegion = onlyTownArr.map((town) => <Township town={town} />);
     }
