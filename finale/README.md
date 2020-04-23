@@ -64,6 +64,7 @@ The user can use the dropdown menu to filter the regions by its preference. The 
 - **tableHeader.jsx:** Table header of the table
 - **state.jsx:** Displays state level regions
 - **district.jsx:** Displays district level regions. This component has properties (props) that are passed to the state.jsx component and is rendered only if the state level region has a district region.
+- **districtHook.jsx:** Displays district level regions. Refactored `district.jsx` to a functional component with the useState from React Hooks. The useState hook was used for expanding and collapsing townships rows. This component will render when user selects `District` in the dropdown menu.
 - **township.jsx:** Displays township level regions. This component has properties (props) that are passed to the district.jsx component and is rendered only if the district level region has a township region.
 
 #### Data
