@@ -21,7 +21,7 @@ export const Regions = [
   },
   {
     id: 2,
-    name: "Han state",
+    name: "River state",
     districts: [
       {
         id: 20,

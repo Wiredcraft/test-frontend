@@ -3,12 +3,13 @@ import React from "react";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 
-const TownshipRow = ({ township }) => {
+const TownshipRow = ({ township, townshipStyle }) => {
   return (
-    <TableRow key={township.id}>
+    <TableRow style={townshipStyle} key={township.id}>
       <TableCell component="th" scope="row">
         {township.name}
       </TableCell>
+      <TableCell />
       <TableCell>{township.lastInput}</TableCell>
       <TableCell>{township.formNumbers}</TableCell>
       <TableCell>{township.voterNumbers}</TableCell>

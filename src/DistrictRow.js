@@ -2,20 +2,25 @@ import React, { useState } from "react";
 
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
-import Collapse from "@material-ui/core/Collapse";
 
 import TownshipRow from "./TownshipRow";
 
-const DistrictRow = ({ district }) => {
+const DistrictRow = ({ district, query, setQuery, districtStyle }) => {
   const [openTownships, setOpenTownships] = useState([]);
 
   const handleTownshipClick = (index) => {
-    setOpenTownships([...openTownships, ...index]);
+    if (openTownships.length > 0) {
+      setOpenTownships([]);
+      setQuery(null);
+    } else {
+      setOpenTownships([...openTownships, ...index]);
+      setQuery(null);
+    }
   };
 
   return (
     <React.Fragment>
-      <TableRow>
+      <TableRow style={districtStyle}>
         <TableCell component="th" scope="row">
           {district.name}
         </TableCell>
@@ -36,22 +41,43 @@ const DistrictRow = ({ district }) => {
         <TableCell>blank</TableCell>
         <TableCell>blank</TableCell>
       </TableRow>
-      <Collapse
-        in={
-          openTownships[openTownships.length - 1] === "undefined"
-            ? false
-            : openTownships[openTownships.length - 1] ===
-              district.townships.map((township) => township)[
-                district.townships.map((township) => township).length - 1
-              ]
-            ? true
-            : false
-        }
-      >
-        {district.townships.map((township) => (
-          <TownshipRow township={township} />
-        ))}
-      </Collapse>
+      {query === null || query === undefined || query === ""
+        ? district.townships.map((township) => (
+            <TownshipRow
+              township={township}
+              townshipStyle={
+                openTownships[openTownships.length - 1] === undefined
+                  ? { display: "none" }
+                  : districtStyle.display === "none"
+                  ? { display: "none" }
+                  : openTownships[openTownships.length - 1] ===
+                    district.townships.map((township) => township)[
+                      district.townships.map((township) => township).length - 1
+                    ]
+                  ? { display: "table-row" }
+                  : { display: "none" }
+              }
+            />
+          ))
+        : district.townships
+            .filter((township) => township.name.toLowerCase().includes(query))
+            .map((queriedTownship) => (
+              <TownshipRow
+                township={queriedTownship}
+                townshipStyle={
+                  queriedTownship.name.toLowerCase().includes(query) ||
+                  openTownships[openTownships.length - 1] ===
+                    district.townships.map((township) => township)[
+                      district.townships.map((township) => township).length - 1
+                    ]
+                    ? { display: "table-row" }
+                    : openTownships[openTownships.length - 1] === undefined &&
+                      queriedTownship.name.toLowerCase().includes(query)
+                    ? { display: "table-row" }
+                    : { display: "none" }
+                }
+              />
+            ))}
     </React.Fragment>
   );
 };
