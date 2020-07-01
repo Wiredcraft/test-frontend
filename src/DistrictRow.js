@@ -9,14 +9,15 @@ const DistrictRow = ({ district, query, setQuery, districtStyle }) => {
   const [openTownships, setOpenTownships] = useState([]);
 
   const handleTownshipClick = (index) => {
-    if (openTownships.length > 0) {
+    if (openTownships.length > 0 || query.length === 0) {
       setOpenTownships([]);
-      setQuery(null);
     } else {
       setOpenTownships([...openTownships, ...index]);
-      setQuery(null);
     }
   };
+
+  console.log(openTownships);
+  console.log(query);
 
   return (
     <React.Fragment>
@@ -41,7 +42,12 @@ const DistrictRow = ({ district, query, setQuery, districtStyle }) => {
         <TableCell>blank</TableCell>
         <TableCell>blank</TableCell>
       </TableRow>
-      {query === null || query === undefined || query === ""
+      {query === null ||
+      query === undefined ||
+      query === "" ||
+      district.townships
+        .map((township) => township.name.toLowerCase().includes(query))
+        .every((func) => func === false)
         ? district.townships.map((township) => (
             <TownshipRow
               township={township}

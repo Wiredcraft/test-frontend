@@ -9,7 +9,7 @@ const RegionRow = ({ region, query, setQuery }) => {
   const [openDistricts, setOpenDistricts] = useState([]);
 
   const handleDistrictClick = (index) => {
-    if (openDistricts.length > 0) {
+    if (openDistricts.length > 0 || query.length === 0) {
       setOpenDistricts([]);
       setQuery(null);
     } else {

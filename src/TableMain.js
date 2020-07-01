@@ -16,6 +16,10 @@ export default function TableMain({ Regions }) {
     setQuery(e.target.value);
   };
 
+  const handleReset = () => {
+    setQuery("");
+  };
+
   return (
     <TableContainer>
       <input
@@ -24,6 +28,7 @@ export default function TableMain({ Regions }) {
         value={query}
         onChange={handleChange}
       />
+      <button onClick={handleReset}>Reset Search</button>
       <Table aria-label="table">
         <TableHead>
           <TableCell>Region</TableCell>
