@@ -13,6 +13,19 @@ const RegionRow = ({
   areCommonElements,
   regionStyle,
 }) => {
+  const regionNumbers = [
+    region.districts
+      .map((district) => district.townships.map((township) => township))
+      .flat(2)
+      .reduce(function (prev, current) {
+        return {
+          lastInput: prev.lastInput + current.lastInput,
+          formNumbers: prev.formNumbers + current.formNumbers,
+          voterNumbers: prev.voterNumbers + current.voterNumbers,
+          update: prev.update + current.update,
+        };
+      }),
+  ];
   return (
     <React.Fragment>
       <TableRow style={regionStyle}>
@@ -27,11 +40,14 @@ const RegionRow = ({
             Show Districts
           </button>
         </TableCell>
-
-        <TableCell>blank</TableCell>
-        <TableCell>blank</TableCell>
-        <TableCell>blank</TableCell>
-        <TableCell>blank</TableCell>
+        {regionNumbers.map((input) => (
+          <React.Fragment>
+            <TableCell>{input.lastInput}</TableCell>
+            <TableCell>{input.formNumbers}</TableCell>
+            <TableCell>{input.voterNumbers}</TableCell>
+            <TableCell>{input.update}</TableCell>
+          </React.Fragment>
+        ))}
       </TableRow>
       {region.districts.map((district) => (
         <DistrictRow
@@ -39,11 +55,6 @@ const RegionRow = ({
           query={query}
           districtStyle={
             areCommonElements(open, [district])
-              ? { display: "table-row" }
-              : areCommonElements(
-                  open,
-                  district.townships.map((township) => township)
-                )
               ? { display: "table-row" }
               : { display: "none" }
           }

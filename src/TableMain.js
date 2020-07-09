@@ -189,21 +189,6 @@ export default function TableMain({ Regions }) {
               regionStyle={
                 areCommonElements(open, [region])
                   ? { display: "table-row" }
-                  : !open ||
-                    !query ||
-                    areCommonElements(
-                      open,
-                      region.districts.map((district) => district)
-                    ) ||
-                    areCommonElements(
-                      open,
-                      region.districts
-                        .map((district) =>
-                          district.townships.map((township) => township)
-                        )
-                        .flat(2)
-                    )
-                  ? { display: "table-row" }
                   : { display: "none" }
               }
             />

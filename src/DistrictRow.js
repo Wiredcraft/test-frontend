@@ -13,6 +13,19 @@ const DistrictRow = ({
   handleOpenClick,
   areCommonElements,
 }) => {
+  const townshipNumbers = [
+    district.townships
+      .map((township) => township)
+      .flat(2)
+      .reduce(function (prev, current) {
+        return {
+          lastInput: prev.lastInput + current.lastInput,
+          formNumbers: prev.formNumbers + current.formNumbers,
+          voterNumbers: prev.voterNumbers + current.voterNumbers,
+          update: prev.update + current.update,
+        };
+      }),
+  ];
   return (
     <React.Fragment>
       <TableRow style={districtStyle}>
@@ -30,10 +43,14 @@ const DistrictRow = ({
             Show Townships
           </button>
         </TableCell>
-        <TableCell>blank</TableCell>
-        <TableCell>blank</TableCell>
-        <TableCell>blank</TableCell>
-        <TableCell>blank</TableCell>
+        {townshipNumbers.map((input) => (
+          <React.Fragment>
+            <TableCell>{input.lastInput}</TableCell>
+            <TableCell>{input.formNumbers}</TableCell>
+            <TableCell>{input.voterNumbers}</TableCell>
+            <TableCell>{input.update}</TableCell>
+          </React.Fragment>
+        ))}
       </TableRow>
       {district.townships.map((township) => (
         <TownshipRow
