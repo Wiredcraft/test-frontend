@@ -7,6 +7,7 @@ const TownshipRow = ({ township, townshipStyle }) => {
   return (
     <TableRow style={townshipStyle} key={township.id}>
       <TableCell component="th" scope="row">
+        ------------
         {township.name}
       </TableCell>
       <TableCell />
