@@ -24,7 +24,12 @@ const ResetButton = ({
     <Button
       onClick={handleResetButton}
       endIcon={<AutoRenewIcon />}
-      style={{ padding: 22, margin: 0, textTransform: "none" }}
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        fontSize: "1rem",
+        textTransform: "none",
+      }}
     >
       Reset
     </Button>

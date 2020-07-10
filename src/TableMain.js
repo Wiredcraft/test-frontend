@@ -158,14 +158,19 @@ export default function TableMain({ Regions }) {
       className={styles.tableContainer}
       style={{ textAlign: "center" }}
     >
-      <Grid container xs={12}>
-        <Grid item xs={1}>
+      <Grid container>
+        <Grid item xs={6} md={2} style={{ textAlign: "center" }}>
           <FilterMenu
             selectedIndex={selectedIndex}
             handleMenuItemClick={handleMenuItemClick}
           />
         </Grid>
-        <Grid item xs={1} style={{ textAlign: "center" }}>
+        <Grid
+          item
+          xs={6}
+          md={1}
+          style={{ textAlign: "center", paddingTop: 16, paddingBottom: 16 }}
+        >
           <ResetButton
             open={open}
             setSelectedIndex={setSelectedIndex}
@@ -174,10 +179,9 @@ export default function TableMain({ Regions }) {
             Regions={Regions}
           />
         </Grid>
-        <Grid item xs={10} style={{ textAlign: "center" }}>
+        <Grid item xs={12} md={9} style={{ textAlign: "center" }}>
           <TextField
             id="filled-full-width"
-            style={{ padding: 16, margin: 0 }}
             placeholder="Search"
             fullWidth
             margin="normal"
@@ -197,35 +201,33 @@ export default function TableMain({ Regions }) {
             }}
           />
         </Grid>
-        <Grid item xs={12}>
-          <Table aria-label="table">
-            <TableHead>
-              <TableCell>Region</TableCell>
-              <TableCell />
-              <TableCell>Last Input</TableCell>
-              <TableCell>Number of Forms</TableCell>
-              <TableCell>Number of Voters</TableCell>
-              <TableCell>Update</TableCell>
-            </TableHead>
-            <TableBody>
-              {Regions.map((region) => (
-                <RegionRow
-                  key={region.id}
-                  region={region}
-                  open={open}
-                  handleOpenClick={handleOpenClick}
-                  areCommonElements={areCommonElements}
-                  regionStyle={
-                    areCommonElements(open, [region])
-                      ? { display: "table-row" }
-                      : { display: "none" }
-                  }
-                />
-              ))}
-            </TableBody>
-          </Table>
-        </Grid>
       </Grid>
+      <Table aria-label="table">
+        <TableHead>
+          <TableCell>Region</TableCell>
+          <TableCell />
+          <TableCell>Last Input</TableCell>
+          <TableCell>Number of Forms</TableCell>
+          <TableCell>Number of Voters</TableCell>
+          <TableCell>Update</TableCell>
+        </TableHead>
+        <TableBody>
+          {Regions.map((region) => (
+            <RegionRow
+              key={region.id}
+              region={region}
+              open={open}
+              handleOpenClick={handleOpenClick}
+              areCommonElements={areCommonElements}
+              regionStyle={
+                areCommonElements(open, [region])
+                  ? { display: "table-row" }
+                  : { display: "none" }
+              }
+            />
+          ))}
+        </TableBody>
+      </Table>
     </TableContainer>
   );
 }
