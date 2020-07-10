@@ -5,6 +5,13 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
+import Paper from "@material-ui/core/Paper";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import SearchIcon from "@material-ui/icons/Search";
+import InputAdornment from "@material-ui/core/InputAdornment";
+
+import styles from "./Styles/tablemainstyles.module.css";
 
 import RegionRow from "./RegionRow";
 import FilterMenu from "./FilterMenu";
@@ -19,8 +26,6 @@ export default function TableMain({ Regions }) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(Regions.map((region) => region));
   const [selectedIndex, setSelectedIndex] = useState(0);
-
-  console.log();
 
   useEffect(() => {
     if (
@@ -147,54 +152,80 @@ export default function TableMain({ Regions }) {
     }
   };
 
-  console.log(open, "open");
-
   return (
-    <TableContainer>
-      <input
-        type="text"
-        placeholder="Search"
-        value={query}
-        onChange={handleChange}
-      />
-      <ResetButton
-        open={open}
-        setSelectedIndex={setSelectedIndex}
-        setOpen={setOpen}
-        setQuery={setQuery}
-        Regions={Regions}
-      />
-      <FilterMenu
-        selectedIndex={selectedIndex}
-        handleMenuItemClick={handleMenuItemClick}
-      />
-      <Table aria-label="table">
-        <TableHead>
-          <TableCell>Region</TableCell>
-          <TableCell />
-          <TableCell>Last Input</TableCell>
-          <TableCell>Number of Forms</TableCell>
-          <TableCell>Number of Voters</TableCell>
-          <TableCell>Update</TableCell>
-        </TableHead>
-        <TableBody>
-          {Regions.map((region) => (
-            <RegionRow
-              key={region.id}
-              region={region}
-              query={query}
-              open={open}
-              handleOpenClick={handleOpenClick}
-              areCommonElements={areCommonElements}
-              regionStyle={
-                areCommonElements(open, [region])
-                  ? { display: "table-row" }
-                  : { display: "none" }
-              }
-            />
-          ))}
-        </TableBody>
-      </Table>
+    <TableContainer
+      component={Paper}
+      className={styles.tableContainer}
+      style={{ textAlign: "center" }}
+    >
+      <Grid container xs={12}>
+        <Grid item xs={1}>
+          <FilterMenu
+            selectedIndex={selectedIndex}
+            handleMenuItemClick={handleMenuItemClick}
+          />
+        </Grid>
+        <Grid item xs={1} style={{ textAlign: "center" }}>
+          <ResetButton
+            open={open}
+            setSelectedIndex={setSelectedIndex}
+            setOpen={setOpen}
+            setQuery={setQuery}
+            Regions={Regions}
+          />
+        </Grid>
+        <Grid item xs={10} style={{ textAlign: "center" }}>
+          <TextField
+            id="filled-full-width"
+            style={{ padding: 16, margin: 0 }}
+            placeholder="Search"
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            variant="standard"
+            onChange={handleChange}
+            value={query}
+            style={{ maxWidth: "95%" }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Table aria-label="table">
+            <TableHead>
+              <TableCell>Region</TableCell>
+              <TableCell />
+              <TableCell>Last Input</TableCell>
+              <TableCell>Number of Forms</TableCell>
+              <TableCell>Number of Voters</TableCell>
+              <TableCell>Update</TableCell>
+            </TableHead>
+            <TableBody>
+              {Regions.map((region) => (
+                <RegionRow
+                  key={region.id}
+                  region={region}
+                  open={open}
+                  handleOpenClick={handleOpenClick}
+                  areCommonElements={areCommonElements}
+                  regionStyle={
+                    areCommonElements(open, [region])
+                      ? { display: "table-row" }
+                      : { display: "none" }
+                  }
+                />
+              ))}
+            </TableBody>
+          </Table>
+        </Grid>
+      </Grid>
     </TableContainer>
   );
 }

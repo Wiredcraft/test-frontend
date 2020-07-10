@@ -1,0 +1,7 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+  justify-content: center;
+  align-items: center;
+}

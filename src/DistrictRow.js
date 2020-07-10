@@ -2,12 +2,14 @@ import React from "react";
 
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
 
 import TownshipRow from "./TownshipRow";
 
 const DistrictRow = ({
   district,
-  query,
   districtStyle,
   open,
   handleOpenClick,
@@ -26,6 +28,7 @@ const DistrictRow = ({
         };
       }),
   ];
+
   return (
     <React.Fragment>
       <TableRow style={districtStyle}>
@@ -34,14 +37,26 @@ const DistrictRow = ({
           {district.name}
         </TableCell>
         <TableCell>
-          <button
+          <Button
             aria-label="expand row"
-            onClick={() =>
-              handleOpenClick(district.townships.map((township) => township))
+            variant="contained"
+            style={{ padding: 8, margin: 0, textTransform: "none" }}
+            endIcon={
+              areCommonElements(
+                open,
+                district.townships.map((township) => township)
+              ) ? (
+                <RemoveIcon />
+              ) : (
+                <AddIcon />
+              )
             }
+            onClick={() => {
+              handleOpenClick(district.townships.map((township) => township));
+            }}
           >
-            Show Townships
-          </button>
+            {district.townships.length} Townships
+          </Button>
         </TableCell>
         {townshipNumbers.map((input) => (
           <React.Fragment>
@@ -55,7 +70,6 @@ const DistrictRow = ({
       {district.townships.map((township) => (
         <TownshipRow
           township={township}
-          query={query}
           townshipStyle={
             areCommonElements(open, [township])
               ? { display: "table-row" }

@@ -1,5 +1,8 @@
 import React from "react";
 
+import Button from "@material-ui/core/Button";
+import AutoRenewIcon from "@material-ui/icons/Autorenew";
+
 const ResetButton = ({
   open,
   setSelectedIndex,
@@ -17,7 +20,15 @@ const ResetButton = ({
     }
   };
 
-  return <button onClick={handleResetButton}>Reset</button>;
+  return (
+    <Button
+      onClick={handleResetButton}
+      endIcon={<AutoRenewIcon />}
+      style={{ padding: 22, margin: 0, textTransform: "none" }}
+    >
+      Reset
+    </Button>
+  );
 };
 
 export default ResetButton;

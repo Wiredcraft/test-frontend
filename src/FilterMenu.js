@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
+import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 const options = ["Region", "District", "Township"];
 
@@ -20,7 +22,7 @@ const FilterMenu = ({ selectedIndex, handleMenuItemClick }) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <List component="nav" aria-label="Filter tags">
         <ListItem
           button
@@ -29,10 +31,8 @@ const FilterMenu = ({ selectedIndex, handleMenuItemClick }) => {
           aria-label="set filter"
           onClick={handleClickListItem}
         >
-          <ListItemText
-            primary="Set Filter"
-            secondary={options[selectedIndex]}
-          />
+          <ListItemText primary="Set Filter"></ListItemText>
+          <ArrowDropDownIcon />
         </ListItem>
       </List>
       <Menu
@@ -52,7 +52,7 @@ const FilterMenu = ({ selectedIndex, handleMenuItemClick }) => {
           </MenuItem>
         ))}
       </Menu>
-    </div>
+    </React.Fragment>
   );
 };
 

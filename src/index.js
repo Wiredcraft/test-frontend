@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import TableMain from "./TableMain";
-import { Regions } from "./Regions.js";
+import App from "./App";
 
-ReactDOM.render(
-  <TableMain Regions={Regions} />,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));

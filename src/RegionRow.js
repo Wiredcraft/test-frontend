@@ -2,12 +2,14 @@ import React from "react";
 
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
 
 import DistrictRow from "./DistrictRow";
 
 const RegionRow = ({
   region,
-  query,
   open,
   handleOpenClick,
   areCommonElements,
@@ -31,14 +33,26 @@ const RegionRow = ({
       <TableRow style={regionStyle}>
         <TableCell>{region.name}</TableCell>
         <TableCell>
-          <button
+          <Button
             aria-label="expand row"
-            onClick={() =>
-              handleOpenClick(region.districts.map((district) => district))
+            variant="contained"
+            style={{ padding: 8, margin: 0, textTransform: "none" }}
+            endIcon={
+              areCommonElements(
+                open,
+                region.districts.map((district) => district)
+              ) ? (
+                <RemoveIcon />
+              ) : (
+                <AddIcon />
+              )
             }
+            onClick={() => {
+              handleOpenClick(region.districts.map((district) => district));
+            }}
           >
-            Show Districts
-          </button>
+            {region.districts.length} Districts
+          </Button>
         </TableCell>
         {regionNumbers.map((input) => (
           <React.Fragment>
@@ -52,7 +66,6 @@ const RegionRow = ({
       {region.districts.map((district) => (
         <DistrictRow
           district={district}
-          query={query}
           districtStyle={
             areCommonElements(open, [district])
               ? { display: "table-row" }
