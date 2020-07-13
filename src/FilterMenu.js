@@ -6,11 +6,21 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import { makeStyles } from "@material-ui/core/styles";
 
 const options = ["Region", "District", "Township"];
 
+const useStyles = makeStyles((theme) => ({
+  filterText: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+}));
+
 const FilterMenu = ({ selectedIndex, handleMenuItemClick }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const classes = useStyles();
 
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
@@ -30,7 +40,10 @@ const FilterMenu = ({ selectedIndex, handleMenuItemClick }) => {
           aria-label="set filter"
           onClick={handleClickListItem}
         >
-          <ListItemText primary="Set Filter"></ListItemText>
+          <ListItemText
+            className={classes.filterText}
+            primary="Set Filter"
+          ></ListItemText>
           <ArrowDropDownIcon />
         </ListItem>
       </List>

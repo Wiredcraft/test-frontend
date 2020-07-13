@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -6,16 +6,12 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import Paper from "@material-ui/core/Paper";
-import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-import SearchIcon from "@material-ui/icons/Search";
-import InputAdornment from "@material-ui/core/InputAdornment";
-
-import styles from "./Styles/tablemainstyles.module.css";
 
 import RegionRow from "./RegionRow";
 import FilterMenu from "./FilterMenu";
 import ResetButton from "./ResetButton";
+import SearchBar from "./SearchBar";
 
 const areCommonElements = (arr1, arr2) => {
   const arr2Set = new Set(arr2);
@@ -26,75 +22,6 @@ export default function TableMain({ Regions }) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(Regions.map((region) => region));
   const [selectedIndex, setSelectedIndex] = useState(0);
-
-  useEffect(() => {
-    if (
-      Regions.map((region) =>
-        region.name.toLowerCase().includes(query)
-      ).includes(true)
-    ) {
-      setOpen(
-        Regions.filter((region) => region.name.toLowerCase().includes(query))
-      );
-    } else if (
-      Regions.map((region) =>
-        region.districts.map((district) =>
-          district.name.toLowerCase().includes(query)
-        )
-      )
-        .flat()
-        .includes(true)
-    ) {
-      setOpen([
-        ...Regions.filter((region) =>
-          region.districts
-            .map((district) => district)
-            .some((district) => district.name.toLowerCase().includes(query))
-        ),
-        ...Regions.map((region) =>
-          region.districts.filter((district) =>
-            district.name.toLowerCase().includes(query)
-          )
-        ).flat(),
-      ]);
-    } else if (
-      Regions.map((region) =>
-        region.districts.map((district) =>
-          district.townships.map((township) =>
-            township.name.toLowerCase().includes(query)
-          )
-        )
-      )
-        .flat(2)
-        .includes(true)
-    ) {
-      setOpen([
-        ...Regions.filter((region) =>
-          region.districts
-            .map((district) => district.townships.map((township) => township))
-            .flat()
-            .some((township) => township.name.toLowerCase().includes(query))
-        ),
-        ...Regions.map((region) => region.districts.map((district) => district))
-          .flat()
-          .filter((district) =>
-            district.townships
-              .map((township) => township)
-              .flat(2)
-              .some((township) => township.name.toLowerCase().includes(query))
-          ),
-        ...Regions.map((region) =>
-          region.districts.map((district) =>
-            district.townships.filter((township) =>
-              township.name.toLowerCase().includes(query)
-            )
-          )
-        ).flat(2),
-      ]);
-    } else {
-      return;
-    }
-  }, [query]);
 
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -120,11 +47,6 @@ export default function TableMain({ Regions }) {
         ).flat(2),
       ]);
     }
-  };
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setQuery(e.target.value);
   };
 
   const handleOpenClick = (index) => {
@@ -153,13 +75,14 @@ export default function TableMain({ Regions }) {
   };
 
   return (
-    <TableContainer
-      component={Paper}
-      className={styles.tableContainer}
-      style={{ textAlign: "center" }}
-    >
-      <Grid container>
-        <Grid item xs={6} md={2} style={{ textAlign: "center" }}>
+    <Grid container direction="column" component={Paper}>
+      <Grid item container spacing={5} direction="row">
+        <Grid
+          item
+          xs={1}
+          md={2}
+          style={{ textAlign: "center", margin: "auto" }}
+        >
           <FilterMenu
             selectedIndex={selectedIndex}
             handleMenuItemClick={handleMenuItemClick}
@@ -167,9 +90,9 @@ export default function TableMain({ Regions }) {
         </Grid>
         <Grid
           item
-          xs={6}
-          md={1}
-          style={{ textAlign: "center", paddingTop: 16, paddingBottom: 16 }}
+          xs={1}
+          md={2}
+          style={{ textAlign: "center", margin: "auto" }}
         >
           <ResetButton
             open={open}
@@ -179,55 +102,50 @@ export default function TableMain({ Regions }) {
             Regions={Regions}
           />
         </Grid>
-        <Grid item xs={12} md={9} style={{ textAlign: "center" }}>
-          <TextField
-            id="filled-full-width"
-            placeholder="Search"
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            variant="standard"
-            onChange={handleChange}
-            value={query}
-            style={{ maxWidth: "95%" }}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-            }}
+        <Grid
+          item
+          xs={10}
+          md={8}
+          style={{ textAlign: "center", margin: "auto" }}
+        >
+          <SearchBar
+            Regions={Regions}
+            setQuery={setQuery}
+            query={query}
+            setOpen={setOpen}
           />
         </Grid>
       </Grid>
-      <Table aria-label="table">
-        <TableHead>
-          <TableCell>Region</TableCell>
-          <TableCell />
-          <TableCell>Last Input</TableCell>
-          <TableCell>Number of Forms</TableCell>
-          <TableCell>Number of Voters</TableCell>
-          <TableCell>Update</TableCell>
-        </TableHead>
-        <TableBody>
-          {Regions.map((region) => (
-            <RegionRow
-              key={region.id}
-              region={region}
-              open={open}
-              handleOpenClick={handleOpenClick}
-              areCommonElements={areCommonElements}
-              regionStyle={
-                areCommonElements(open, [region])
-                  ? { display: "table-row" }
-                  : { display: "none" }
-              }
-            />
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+      <Grid item container>
+        <TableContainer style={{ textAlign: "center" }}>
+          <Table aria-label="table" size="small">
+            <TableHead>
+              <TableCell>Region</TableCell>
+              <TableCell />
+              <TableCell>Last Input</TableCell>
+              <TableCell>Number of Forms</TableCell>
+              <TableCell>Number of Voters</TableCell>
+              <TableCell>Update</TableCell>
+            </TableHead>
+            <TableBody>
+              {Regions.map((region) => (
+                <RegionRow
+                  key={region.id}
+                  region={region}
+                  open={open}
+                  handleOpenClick={handleOpenClick}
+                  areCommonElements={areCommonElements}
+                  regionStyle={
+                    areCommonElements(open, [region])
+                      ? { display: "table-row" }
+                      : { display: "none" }
+                  }
+                />
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Grid>
+    </Grid>
   );
 }

@@ -5,8 +5,23 @@ import TableRow from "@material-ui/core/TableRow";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import { makeStyles } from "@material-ui/core/styles";
 
 import TownshipRow from "./TownshipRow";
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    padding: 8,
+    margin: "auto",
+    textTransform: "none",
+    textAlign: "center",
+  },
+  buttonText: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+}));
 
 const DistrictRow = ({
   district,
@@ -15,6 +30,7 @@ const DistrictRow = ({
   handleOpenClick,
   areCommonElements,
 }) => {
+  const classes = useStyles();
   const townshipNumbers = [
     district.townships
       .map((township) => township)
@@ -31,16 +47,15 @@ const DistrictRow = ({
 
   return (
     <React.Fragment>
-      <TableRow style={districtStyle}>
-        <TableCell component="th" scope="row">
-          ---
+      <TableRow style={districtStyle} hover>
+        <TableCell component="th" scope="row" style={{ paddingLeft: "2rem" }}>
           {district.name}
         </TableCell>
         <TableCell>
           <Button
             aria-label="expand row"
             variant="contained"
-            style={{ padding: 8, margin: 0, textTransform: "none" }}
+            className={classes.button}
             endIcon={
               areCommonElements(
                 open,
@@ -55,7 +70,11 @@ const DistrictRow = ({
               handleOpenClick(district.townships.map((township) => township));
             }}
           >
-            {district.townships.length} Townships
+            <span className={classes.buttonText}>
+              {district.townships.length === 1
+                ? "1 Township"
+                : `${district.townships.length} Townships`}
+            </span>
           </Button>
         </TableCell>
         {townshipNumbers.map((input) => (

@@ -5,8 +5,23 @@ import TableRow from "@material-ui/core/TableRow";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import { makeStyles } from "@material-ui/core/styles";
 
 import DistrictRow from "./DistrictRow";
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    padding: 8,
+    margin: "auto",
+    textTransform: "none",
+    textAlign: "center",
+  },
+  buttonText: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+}));
 
 const RegionRow = ({
   region,
@@ -15,6 +30,7 @@ const RegionRow = ({
   areCommonElements,
   regionStyle,
 }) => {
+  const classes = useStyles();
   const regionNumbers = [
     region.districts
       .map((district) => district.townships.map((township) => township))
@@ -30,13 +46,13 @@ const RegionRow = ({
   ];
   return (
     <React.Fragment>
-      <TableRow style={regionStyle}>
+      <TableRow style={regionStyle} hover>
         <TableCell>{region.name}</TableCell>
         <TableCell>
           <Button
             aria-label="expand row"
             variant="contained"
-            style={{ padding: 8, margin: 0, textTransform: "none" }}
+            className={classes.button}
             endIcon={
               areCommonElements(
                 open,
@@ -51,7 +67,11 @@ const RegionRow = ({
               handleOpenClick(region.districts.map((district) => district));
             }}
           >
-            {region.districts.length} Districts
+            <span className={classes.buttonText}>
+              {region.districts.length === 1
+                ? "1 District"
+                : `${region.districts.length} Districts`}
+            </span>
           </Button>
         </TableCell>
         {regionNumbers.map((input) => (

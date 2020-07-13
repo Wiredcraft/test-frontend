@@ -5,9 +5,8 @@ import TableRow from "@material-ui/core/TableRow";
 
 const TownshipRow = ({ township, townshipStyle }) => {
   return (
-    <TableRow style={townshipStyle} key={township.id}>
-      <TableCell component="th" scope="row">
-        ------------
+    <TableRow style={townshipStyle} key={township.id} hover>
+      <TableCell component="th" scope="row" style={{ paddingLeft: "4rem" }}>
         {township.name}
       </TableCell>
       <TableCell />
