@@ -78,7 +78,7 @@ const SearchBar = ({ Regions, setQuery, query, setOpen }) => {
   return (
     <TextField
       placeholder="Search"
-      // style={{ width: "95%" }}
+      style={{ marginRight: ".5rem" }}
       InputLabelProps={{
         shrink: true,
       }}

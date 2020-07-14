@@ -8,10 +8,10 @@ import TableHead from "@material-ui/core/TableHead";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
-import RegionRow from "./RegionRow";
-import FilterMenu from "./FilterMenu";
-import ResetButton from "./ResetButton";
-import SearchBar from "./SearchBar";
+import RegionRow from "../Components/RegionRow";
+import FilterMenu from "../Components/FilterMenu";
+import ResetButton from "../Components/ResetButton";
+import SearchBar from "../Components/SearchBar";
 
 const areCommonElements = (arr1, arr2) => {
   const arr2Set = new Set(arr2);

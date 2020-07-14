@@ -1,7 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import TableMain from "./TableMain";
-import Header from "./Header";
+import Header from "./Components/Header";
+import TableMain from "./Pages/TableMain";
+import TableMainSpecificPage from "./Pages/TableMainSpecificPage";
+import ErrorPage from "./Pages/ErrorPage";
 
 import Grid from "@material-ui/core/Grid";
 import {
@@ -10,26 +13,50 @@ import {
   ThemeProvider,
 } from "@material-ui/core/styles";
 
-import { Regions } from "./Regions.js";
+import { Regions } from "./Data/Regions.js";
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container direction="column">
-        <Grid item container direction="row">
-          <Header />
-        </Grid>
-        <Grid item container>
-          <Grid item xs={false} sm={2} />
-          <Grid item container xs={12} sm={8} style={{ paddingTop: "2rem" }}>
-            <TableMain Regions={Regions} />
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Grid container direction="column">
+          <Grid item container direction="row">
+            <Header />
           </Grid>
-          <Grid item container xs={false} sm={2} />
+          <Grid item container>
+            <Grid item xs={false} sm={2} />
+            <Grid item container xs={12} sm={8} style={{ paddingTop: "2rem" }}>
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={(props) => <TableMain {...props} Regions={Regions} />}
+                />
+                <Route
+                  exact
+                  path="/overall"
+                  render={(props) => <TableMain {...props} Regions={Regions} />}
+                />
+                <Route
+                  exact
+                  path="/specific"
+                  render={(props) => (
+                    <TableMainSpecificPage
+                      {...props}
+                      Regions={Regions.slice(0, 2)}
+                    />
+                  )}
+                />
+                <Route component={ErrorPage} />
+              </Switch>
+            </Grid>
+            <Grid item container xs={false} sm={2} />
+          </Grid>
         </Grid>
-      </Grid>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
