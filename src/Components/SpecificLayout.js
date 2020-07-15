@@ -17,7 +17,7 @@ const SpecificLayout = ({ Regions }) => {
   return (
     <Grid container spacing={4}>
       {townships.map((township) => (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid key={township.id} item xs={12} sm={6} md={4}>
           <Specific township={township} />
         </Grid>
       ))}
