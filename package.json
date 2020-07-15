@@ -1,31 +1,27 @@
 {
+  "homepage": "http://camerondm.github.io/wiredcraft-frontend-test",
   "name": "wiredcraft-frontend-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.5",
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.10.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "apollo-boost": "^0.4.9",
-    "axios": "^0.19.2",
-    "graphql": "^15.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --verbose",
-    "test:watch": "jest --watchAll --verbose",
-    "test:coverage": "jest --verbose --coverage",
-    "eject": "react-scripts eject",
-    "server": "json-server -p3001 --watch db.json"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,13 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "babel-jest": "^26.1.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "jest": "^26.1.0",
-    "json-server": "^0.16.1",
+    "gh-pages": "^3.1.0",
     "react-test-renderer": "^16.13.1"
   }
 }

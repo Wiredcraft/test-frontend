@@ -31,6 +31,8 @@ const RegionRow = ({
   regionStyle,
 }) => {
   const classes = useStyles();
+
+  //This array outputs the sum of each entry nested deepest in the array.
   const regionNumbers = [
     region.districts
       .map((district) => district.townships.map((township) => township))
@@ -53,6 +55,7 @@ const RegionRow = ({
             aria-label="expand row"
             variant="contained"
             className={classes.button}
+            //If the row is opened, include a remove sign over the button to hide row, otherwise include an add sign to show row
             endIcon={
               areCommonElements(
                 open,

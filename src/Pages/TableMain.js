@@ -13,6 +13,7 @@ import FilterMenu from "../Components/FilterMenu";
 import ResetButton from "../Components/ResetButton";
 import SearchBar from "../Components/SearchBar";
 
+//Function to compare arrays; specifically, for the queried array (whether from the search bar, filter menu, or dropdown buttons) and the array that is already open
 const areCommonElements = (arr1, arr2) => {
   const arr2Set = new Set(arr2);
   return arr1.some((el) => arr2Set.has(el));
@@ -20,9 +21,10 @@ const areCommonElements = (arr1, arr2) => {
 
 export default function TableMain({ Regions }) {
   const [query, setQuery] = useState("");
-  const [open, setOpen] = useState(Regions.map((region) => region));
+  const [open, setOpen] = useState(Regions.map((region) => region)); //Initial state shows the items at the top of the nested array; in this case, the "Regions"
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  //This function allows user to sort items by type Region, District, or Township. For example, if the Township filter is selected, all townships are set open including their parent districts and their grandparent regions.
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
     if (index === 0) {
@@ -49,6 +51,7 @@ export default function TableMain({ Regions }) {
     }
   };
 
+  //This function allows the user to show child items via a dropdown click. Clicking again hides the child. It works by first checking whether the user is clicking an already opened row and that row does not have children itself. In which case, the opened array is filtered out by the indexed array (the array associated with the row where the button is located). Then, it checks if the user is clicking an already opened row and that row does have children. In which case, the opened array is filtered out by the indexed array and any of its children that might have been opened. If none of these conditions are true, it adds the indexed array to the opened array.
   const handleOpenClick = (index) => {
     if (
       areCommonElements(open, index) &&
@@ -77,13 +80,23 @@ export default function TableMain({ Regions }) {
   return (
     <Grid container direction="column" component={Paper}>
       <Grid item container spacing={2} direction="row">
-        <Grid item xs={1} style={{ textAlign: "center", margin: "auto" }}>
+        <Grid
+          item
+          xs={2}
+          md={2}
+          style={{ textAlign: "center", margin: "auto" }}
+        >
           <FilterMenu
             selectedIndex={selectedIndex}
             handleMenuItemClick={handleMenuItemClick}
           />
         </Grid>
-        <Grid item xs={1} style={{ textAlign: "center", margin: "auto" }}>
+        <Grid
+          item
+          xs={1}
+          md={1}
+          style={{ textAlign: "center", margin: "auto" }}
+        >
           <ResetButton
             open={open}
             setSelectedIndex={setSelectedIndex}
@@ -92,11 +105,12 @@ export default function TableMain({ Regions }) {
             Regions={Regions}
           />
         </Grid>
+        <Grid item xs={3} md={6} />
         <Grid
           item
-          xs={10}
+          xs={6}
+          md={3}
           style={{
-            textAlign: "right",
             margin: "auto",
           }}
         >
@@ -120,6 +134,7 @@ export default function TableMain({ Regions }) {
               <TableCell>Update</TableCell>
             </TableHead>
             <TableBody>
+              {/* The rows are displayed by comparing the "opened" array and the array specific to the type of row */}
               {Regions.map((region) => (
                 <RegionRow
                   key={region.id}

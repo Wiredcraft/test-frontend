@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./Components/Header";
 import TableMain from "./Pages/TableMain";
-import TableMainSpecificPage from "./Pages/TableMainSpecificPage";
 import ErrorPage from "./Pages/ErrorPage";
 
 import Grid from "@material-ui/core/Grid";
@@ -44,11 +43,8 @@ export default function App() {
                   exact
                   path="/specific"
                   render={(props) => (
-                    <TableMainSpecificPage
-                      {...props}
-                      Regions={Regions.slice(0, 2)}
-                    />
-                  )}
+                    <TableMain {...props} Regions={Regions.slice(0, 2)} />
+                  )} //The "specific" tab is a dummy link option. It just displays the same table but with spliced data.
                 />
                 <Route component={ErrorPage} />
               </Switch>

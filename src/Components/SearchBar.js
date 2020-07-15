@@ -8,6 +8,8 @@ const SearchBar = ({ Regions, setQuery, query, setOpen }) => {
   const handleChange = (e) => {
     e.preventDefault();
     setQuery(e.target.value);
+
+    // The search functionality ensures that the queried result also displays (i.e. includes in the "opened" array) any parent arrays. E.g., if the search result is a township, the table unfolds to display the townships parent district, and that district's parent region
     if (
       Regions.map((region) =>
         region.name.toLowerCase().includes(query)
@@ -35,7 +37,7 @@ const SearchBar = ({ Regions, setQuery, query, setOpen }) => {
           region.districts.filter((district) =>
             district.name.toLowerCase().includes(query)
           )
-        ).flat(),
+        ).flat(), // The .flat() method is a new feature of ECMA; it flattens any nested array and returns a linear array with their key-value pairs
       ]);
     } else if (
       Regions.map((region) =>

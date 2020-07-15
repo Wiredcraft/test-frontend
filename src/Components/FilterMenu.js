@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const options = ["Region", "District", "Township"];
 
+//Removes tagline text for menu options on smaller screens
 const useStyles = makeStyles((theme) => ({
   filterText: {
     [theme.breakpoints.down("sm")]: {
