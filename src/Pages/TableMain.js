@@ -27,16 +27,16 @@ export default function TableMain({ Regions }) {
   //This function allows user to sort items by type Region, District, or Township. For example, if the Township filter is selected, all townships are set open including their parent districts and their grandparent regions.
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
-    if (index === 0) {
+    if (index === 1) {
       setOpen(Regions.map((region) => region));
-    } else if (index === 1) {
+    } else if (index === 2) {
       setOpen([
         ...Regions.map((region) => region),
         ...Regions.map((region) =>
           region.districts.map((district) => district)
         ).flat(),
       ]);
-    } else if (index === 2) {
+    } else if (index === 3 || index === 0) {
       setOpen([
         ...Regions.map((region) => region),
         ...Regions.map((region) =>

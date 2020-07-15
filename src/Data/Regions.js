@@ -113,15 +113,15 @@ export const Regions = [
   },
   {
     id: 3,
-    name: "River state",
+    name: "Hawaiian state",
     districts: [
       {
         id: 30,
-        name: "Old Aunglan",
+        name: "Old Westford",
         townships: [
           {
             id: 300,
-            name: "Greenwich",
+            name: "Frogtown",
             lastInput: 30865,
             formNumbers: 22012,
             voterNumbers: 30865,
@@ -131,11 +131,11 @@ export const Regions = [
       },
       {
         id: 31,
-        name: "New Aunglan",
+        name: "Newtown",
         townships: [
           {
             id: 310,
-            name: "Nolita",
+            name: "Sotheby",
             lastInput: 30865,
             formNumbers: 88131,
             voterNumbers: 30865,
@@ -145,11 +145,11 @@ export const Regions = [
       },
       {
         id: 32,
-        name: "West Aunglan",
+        name: "Tempe",
         townships: [
           {
             id: 320,
-            name: "South Bay",
+            name: "Tempe Town Bay",
             lastInput: 30865,
             formNumbers: 10231,
             voterNumbers: 30865,
@@ -159,11 +159,11 @@ export const Regions = [
       },
       {
         id: 33,
-        name: "East Aunglan",
+        name: "Easter Island",
         townships: [
           {
             id: 330,
-            name: "Bridgeport",
+            name: "La Jolla",
             lastInput: 30865,
             formNumbers: 33921,
             voterNumbers: 30865,
@@ -171,7 +171,7 @@ export const Regions = [
           },
           {
             id: 331,
-            name: "Brockford",
+            name: "Cove Rock",
             lastInput: 30865,
             formNumbers: 33921,
             voterNumbers: 30865,
@@ -183,68 +183,68 @@ export const Regions = [
   },
   {
     id: 4,
-    name: "River state",
+    name: "Golden state",
     districts: [
       {
         id: 40,
-        name: "Old Aunglan",
+        name: "Flagstaff",
         townships: [
           {
             id: 400,
-            name: "Greenwich",
-            lastInput: 30865,
+            name: "Grumble Junction",
+            lastInput: 23999,
             formNumbers: 22012,
-            voterNumbers: 30865,
+            voterNumbers: 12341,
             update: 11002,
           },
         ],
       },
       {
         id: 41,
-        name: "New Aunglan",
+        name: "New Phoenix",
         townships: [
           {
             id: 410,
-            name: "Nolita",
-            lastInput: 30865,
+            name: "La Mesa",
+            lastInput: 88442,
             formNumbers: 88131,
-            voterNumbers: 30865,
+            voterNumbers: 12341,
             update: 21392,
           },
         ],
       },
       {
         id: 42,
-        name: "West Aunglan",
+        name: "Santos Domingos",
         townships: [
           {
             id: 420,
-            name: "South Bay",
-            lastInput: 30865,
+            name: "Los Cruces",
+            lastInput: 888421,
             formNumbers: 10231,
-            voterNumbers: 30865,
+            voterNumbers: 3123,
             update: 23001,
           },
         ],
       },
       {
         id: 43,
-        name: "East Aunglan",
+        name: "New Bedford",
         townships: [
           {
             id: 430,
-            name: "Bridgeport",
-            lastInput: 30865,
+            name: "Redhook",
+            lastInput: 35885,
             formNumbers: 33921,
-            voterNumbers: 30865,
+            voterNumbers: 1003,
             update: 15400,
           },
           {
             id: 431,
-            name: "Brockford",
-            lastInput: 30865,
+            name: "Dumbo upon Hastings",
+            lastInput: 712300,
             formNumbers: 33921,
-            voterNumbers: 30865,
+            voterNumbers: 100,
             update: 15400,
           },
         ],

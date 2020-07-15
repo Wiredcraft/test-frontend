@@ -13,6 +13,7 @@ import {
 } from "@material-ui/core/styles";
 
 import { Regions } from "./Data/Regions.js";
+import SpecificLayout from "./Components/SpecificLayout";
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -43,8 +44,8 @@ export default function App() {
                   exact
                   path="/wiredcraft-frontend-test/specific"
                   render={(props) => (
-                    <TableMain {...props} Regions={Regions.slice(0, 2)} />
-                  )} //The "specific" tab is a dummy link option. It just displays the same table but with spliced data.
+                    <SpecificLayout {...props} Regions={Regions} />
+                  )}
                 />
                 <Route component={ErrorPage} />
               </Switch>
