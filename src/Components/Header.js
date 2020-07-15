@@ -28,7 +28,7 @@ const Header = () => {
         </Grid>
         <Divider orientation="vertical" flexItem />
         <Grid item xs={2} sm={1} className={classes.textStyles}>
-          <Link to="/" className={classes.linkStyles}>
+          <Link to="/wiredcraft-frontend-test" className={classes.linkStyles}>
             <Typography>Reports</Typography>
           </Link>
         </Grid>
@@ -36,13 +36,19 @@ const Header = () => {
         <Grid item xs={4} sm={8} />
         <Divider orientation="vertical" flexItem />
         <Grid item xs={2} sm={1} className={classes.textStyles}>
-          <Link to="/overall" className={classes.linkStyles}>
+          <Link
+            to="/wiredcraft-frontend-test/overall"
+            className={classes.linkStyles}
+          >
             <Typography>Overall</Typography>
           </Link>
         </Grid>
         <Divider orientation="vertical" flexItem />
         <Grid item xs={2} sm={1} className={classes.textStyles}>
-          <Link to="/specific" className={classes.linkStyles}>
+          <Link
+            to="/wiredcraft-frontend-test/specific"
+            className={classes.linkStyles}
+          >
             <Typography>Specific</Typography>
           </Link>
         </Grid>
