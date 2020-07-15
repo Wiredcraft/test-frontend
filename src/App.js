@@ -31,17 +31,17 @@ export default function App() {
               <Switch>
                 <Route
                   exact
-                  path="/"
+                  path="/wiredcraft-frontend-test/"
                   render={(props) => <TableMain {...props} Regions={Regions} />}
                 />
                 <Route
                   exact
-                  path="/overall"
+                  path="/wiredcraft-frontend-test/overall"
                   render={(props) => <TableMain {...props} Regions={Regions} />}
                 />
                 <Route
                   exact
-                  path="/specific"
+                  path="/wiredcraft-frontend-test/specific"
                   render={(props) => (
                     <TableMain {...props} Regions={Regions.slice(0, 2)} />
                   )} //The "specific" tab is a dummy link option. It just displays the same table but with spliced data.
