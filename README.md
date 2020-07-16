@@ -2,6 +2,7 @@
 
 ### Context
 
+Test
 Use HTML, CSS, and JavaScript to implement the following mockup.
 
 ![wiredcraft-front-end-test-mock](https://cldup.com/JM3lLBAS5V.jpg)
@@ -31,17 +32,17 @@ Main
 
 #### Functionality
 
-* Static page header \(navigation bar\), no extra features needed.
-* The table filter needs to be able to filter the result in the table by the type and keywords.
-* The table is nested, and grouped by state, district, township.
+- Static page header \(navigation bar\), no extra features needed.
+- The table filter needs to be able to filter the result in the table by the type and keywords.
+- The table is nested, and grouped by state, district, township.
 
 #### Tech stack
 
-* Use **React**.
-* Use **SASS**.
+- Use **React**.
+- Use **SASS**.
 
 #### Advanced requirements
 
 _These are used for some further challenges. You can safely skip them if you are not asked to do any, but feel free to try out._
 
-* Make it responsive.
+- Make it responsive.
