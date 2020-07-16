@@ -1,68 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Description # 
+This app is my open submission for Wiredcraft's Frontend Test, found here: https://github.com/ugglr/wiredcraft-frontend-test. It uses React, React Router, and Material UI. 
+The assigned mockup for the project is here: 
+![Mockup Image](https://camo.githubusercontent.com/e4fae5c535d915ec68cf15d07251183f461d39f6/68747470733a2f2f636c6475702e636f6d2f4a4d336c4c42415335562e6a7067)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Functionality ##
+Given a database, the app renders a dynamic table with a dropdown filter to sort by type of data, a search bar, and a reset button. The "specific" tab takes you to a layout of cards that are dynamically rendered from the last node in the database (i.e. "township, La Mesa") and its associated information. 
 
-### `npm start`
+The app is built using only functional components and a single shared state for displaying/rendering the table data given the above mentioned options. This way, future functionalities can be easily implemented (e.g. filtering by a different keyword or carrying over filter logic to a different component such as the "specific" card layouts) since there's a single source of truth at the top of the component tree. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For the styling, I used Material UI and followed their guidelines. Specifically, I am using CSS-in-JSS to futher specify styles within components. This makes it easy to understand the CSS specificity hierarchy, i.e., where styles are coming from. Global rules are contained within the MUI "theme" component, which I've included as a template but didn't alter any of its values. The site is also mobile responsive, but best practices for displaying tables on mobile is a long-standing problem, so I didn't delve too deep into it. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Future Considerations ##
+Ideally, the state mangagement system I've built could be simplified using Redux or the useReducer hook. The data pulled into the table could also be formatted as a JSON file, but given the small amount of entries, I didn't feel it was necessary for this project. I'd also like to clean up some of the styling and integrate SASS with MUI. I didn't include much metadata either; I'd use React Helmet for that though. Finally, I didn't style the 404 page, but it's there. 
 
-### `npm test`
+## Demo ##
+You can demo the app at https://camerondm.github.io/wiredcraft-frontend-test. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
