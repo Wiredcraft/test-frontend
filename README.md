@@ -6,8 +6,8 @@ The assigned mockup for the project is here:
 ![Assigned Mockup Image](https://camo.githubusercontent.com/e4fae5c535d915ec68cf15d07251183f461d39f6/68747470733a2f2f636c6475702e636f6d2f4a4d336c4c42415335562e6a7067)
 
 My results look like this:
-![Final Preview](/wiredcraft-frontend-test/src/Images/Overall_Preview.png)
-![Final Preview Specific Page](/wiredcraft-frontend-test/Images/Specific_Page_Preview.png)
+![Final Preview](https://github.com/camerondm/wiredcraft-frontend-test/blob/master/src/Images/Overall%20Preview.png)
+![Final Preview Specific Page](https://github.com/camerondm/wiredcraft-frontend-test/blob/master/src/Images/Specific%20Page%20Preview.png)
 
 ## Functionality
 
