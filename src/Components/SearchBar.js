@@ -78,23 +78,26 @@ const SearchBar = ({ Regions, setQuery, query, setOpen }) => {
     }
   };
   return (
-    <TextField
-      placeholder="Search"
-      style={{ marginRight: ".5rem" }}
-      InputLabelProps={{
-        shrink: true,
-      }}
-      variant="standard"
-      onChange={handleChange}
-      value={query}
-      InputProps={{
-        endAdornment: (
-          <InputAdornment position="end">
-            <SearchIcon />
-          </InputAdornment>
-        ),
-      }}
-    />
+    <form noValidate>
+      <TextField
+        placeholder="Search"
+        style={{ marginRight: ".5rem" }}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        variant="standard"
+        onChange={handleChange}
+        value={query}
+        type="search"
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
+    </form>
   );
 };
 

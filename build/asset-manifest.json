@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/wiredcraft-frontend-test/static/js/main.1c3c4c1b.chunk.js",
-    "main.js.map": "/wiredcraft-frontend-test/static/js/main.1c3c4c1b.chunk.js.map",
+    "main.js": "/wiredcraft-frontend-test/static/js/main.edec8daf.chunk.js",
+    "main.js.map": "/wiredcraft-frontend-test/static/js/main.edec8daf.chunk.js.map",
     "runtime-main.js": "/wiredcraft-frontend-test/static/js/runtime-main.a16b4003.js",
     "runtime-main.js.map": "/wiredcraft-frontend-test/static/js/runtime-main.a16b4003.js.map",
     "static/js/2.e317c406.chunk.js": "/wiredcraft-frontend-test/static/js/2.e317c406.chunk.js",
     "static/js/2.e317c406.chunk.js.map": "/wiredcraft-frontend-test/static/js/2.e317c406.chunk.js.map",
     "index.html": "/wiredcraft-frontend-test/index.html",
-    "precache-manifest.7984cd0f6785e86948a5d7e266aad1c5.js": "/wiredcraft-frontend-test/precache-manifest.7984cd0f6785e86948a5d7e266aad1c5.js",
+    "precache-manifest.11d6fdec54e3d24e6e46dc5cf23aeacb.js": "/wiredcraft-frontend-test/precache-manifest.11d6fdec54e3d24e6e46dc5cf23aeacb.js",
     "service-worker.js": "/wiredcraft-frontend-test/service-worker.js",
     "static/js/2.e317c406.chunk.js.LICENSE.txt": "/wiredcraft-frontend-test/static/js/2.e317c406.chunk.js.LICENSE.txt",
     "static/media/400.jpg": "/wiredcraft-frontend-test/static/media/400.dd7294ea.jpg",
@@ -19,6 +19,6 @@
   "entrypoints": [
     "static/js/runtime-main.a16b4003.js",
     "static/js/2.e317c406.chunk.js",
-    "static/js/main.1c3c4c1b.chunk.js"
+    "static/js/main.edec8daf.chunk.js"
   ]
 }
