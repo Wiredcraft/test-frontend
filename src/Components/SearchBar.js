@@ -88,7 +88,7 @@ const SearchBar = ({ Regions, setQuery, query, setOpen }) => {
         variant="standard"
         onChange={handleChange}
         value={query}
-        type="search"
+        type="text"
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
