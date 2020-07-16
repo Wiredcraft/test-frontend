@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/wiredcraft-frontend-test/static/js/main.362fc936.chunk.js",
-    "main.js.map": "/wiredcraft-frontend-test/static/js/main.362fc936.chunk.js.map",
+    "main.js": "/wiredcraft-frontend-test/static/js/main.3a2b516f.chunk.js",
+    "main.js.map": "/wiredcraft-frontend-test/static/js/main.3a2b516f.chunk.js.map",
     "runtime-main.js": "/wiredcraft-frontend-test/static/js/runtime-main.a16b4003.js",
     "runtime-main.js.map": "/wiredcraft-frontend-test/static/js/runtime-main.a16b4003.js.map",
-    "static/js/2.e317c406.chunk.js": "/wiredcraft-frontend-test/static/js/2.e317c406.chunk.js",
-    "static/js/2.e317c406.chunk.js.map": "/wiredcraft-frontend-test/static/js/2.e317c406.chunk.js.map",
+    "static/js/2.30e064fd.chunk.js": "/wiredcraft-frontend-test/static/js/2.30e064fd.chunk.js",
+    "static/js/2.30e064fd.chunk.js.map": "/wiredcraft-frontend-test/static/js/2.30e064fd.chunk.js.map",
     "index.html": "/wiredcraft-frontend-test/index.html",
-    "precache-manifest.4e7afd79d92f05b163304cfe697178e0.js": "/wiredcraft-frontend-test/precache-manifest.4e7afd79d92f05b163304cfe697178e0.js",
+    "precache-manifest.d1b185afe474c59a4cdf96f800dc7b4c.js": "/wiredcraft-frontend-test/precache-manifest.d1b185afe474c59a4cdf96f800dc7b4c.js",
     "service-worker.js": "/wiredcraft-frontend-test/service-worker.js",
-    "static/js/2.e317c406.chunk.js.LICENSE.txt": "/wiredcraft-frontend-test/static/js/2.e317c406.chunk.js.LICENSE.txt",
+    "static/js/2.30e064fd.chunk.js.LICENSE.txt": "/wiredcraft-frontend-test/static/js/2.30e064fd.chunk.js.LICENSE.txt",
     "static/media/400.jpg": "/wiredcraft-frontend-test/static/media/400.dd7294ea.jpg",
     "static/media/410.jpg": "/wiredcraft-frontend-test/static/media/410.5c3f5b2e.jpg",
     "static/media/420.jpg": "/wiredcraft-frontend-test/static/media/420.3b55161e.jpg",
@@ -18,7 +18,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.a16b4003.js",
-    "static/js/2.e317c406.chunk.js",
-    "static/js/main.362fc936.chunk.js"
+    "static/js/2.30e064fd.chunk.js",
+    "static/js/main.3a2b516f.chunk.js"
   ]
 }

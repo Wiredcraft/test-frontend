@@ -15,6 +15,7 @@ import {
 import { Regions } from "./Data/Regions.js";
 import SpecificLayout from "./Components/SpecificLayout";
 
+//This would create global styles.
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 
