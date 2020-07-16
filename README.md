@@ -3,11 +3,11 @@
 This app is my open submission for Wiredcraft's Frontend Test, found here: https://github.com/ugglr/wiredcraft-frontend-test. It uses React, React Router, and Material UI.
 The assigned mockup for the project is here:
 
-![Assigned Mockup Image](https://camo.githubusercontent.com/e4fae5c535d915ec68cf15d07251183f461d39f6/68747470733a2f2f636c6475702e636f6d2f4a4d336c4c42415335562e6a7067){width=400px}
+![Assigned Mockup Image](https://camo.githubusercontent.com/e4fae5c535d915ec68cf15d07251183f461d39f6/68747470733a2f2f636c6475702e636f6d2f4a4d336c4c42415335562e6a7067)
 
 My results look like this:
-![Final Preview](./Images/Overall_Preview.png){width=400px}
-![Final Preview Specific Page](./Images/Specific_Page_Preview.png){width=400px}
+![Final Preview](/wiredcraft-frontend-test/src/Images/Overall_Preview.png)
+![Final Preview Specific Page](/wiredcraft-frontend-test/Images/Specific_Page_Preview.png)
 
 ## Functionality
 
