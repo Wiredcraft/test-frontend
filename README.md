@@ -29,4 +29,3 @@ Ideally, the state mangagement system I've built could be simplified using Redux
 ## Demo
 
 You can demo the app at https://camerondm.github.io/wiredcraft-frontend-test.
->>>>>>> wiredcraft-frontend-test-copy/master
