@@ -78,7 +78,7 @@ const RegionRow = ({
           </Button>
         </TableCell>
         {regionNumbers.map((input) => (
-          <React.Fragment>
+          <React.Fragment key={input.id}>
             <TableCell>{input.lastInput}</TableCell>
             <TableCell>{input.formNumbers}</TableCell>
             <TableCell>{input.voterNumbers}</TableCell>
@@ -88,6 +88,7 @@ const RegionRow = ({
       </TableRow>
       {region.districts.map((district) => (
         <DistrictRow
+          key={district.id}
           district={district}
           districtStyle={
             areCommonElements(open, [district])

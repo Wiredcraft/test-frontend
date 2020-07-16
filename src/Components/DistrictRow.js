@@ -78,7 +78,7 @@ const DistrictRow = ({
           </Button>
         </TableCell>
         {townshipNumbers.map((input) => (
-          <React.Fragment>
+          <React.Fragment key={input.id}>
             <TableCell>{input.lastInput}</TableCell>
             <TableCell>{input.formNumbers}</TableCell>
             <TableCell>{input.voterNumbers}</TableCell>
@@ -88,6 +88,7 @@ const DistrictRow = ({
       </TableRow>
       {district.townships.map((township) => (
         <TownshipRow
+          key={township.id}
           township={township}
           townshipStyle={
             areCommonElements(open, [township])

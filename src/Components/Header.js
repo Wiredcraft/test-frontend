@@ -38,38 +38,31 @@ const Header = () => {
   }, [location]);
 
   return (
-    <AppBar position="static" color="transparent" sticky>
+    <AppBar position="static" color="transparent">
       <Toolbar disableGutters>
-        <Grid item xs={2} sm={1} className={classes.iconStyles}>
+        <Grid item xs={2} md={1} className={classes.iconStyles}>
           <LibraryBooksIcon />
         </Grid>
         <Divider orientation="vertical" flexItem />
-        <Grid
-          item
-          xs={2}
-          sm={1}
-          alignItems="center"
-          className={classes.textStyles}
-        >
+        <Grid item xs={2} md={1} className={classes.textStyles}>
           <ButtonBase centerRipple>
             <Link to="/wiredcraft-frontend-test" className={classes.linkStyles}>
               <Typography>Reports</Typography>
             </Link>
           </ButtonBase>
         </Grid>
-        <Grid item xs={4} sm={8} />
+        <Grid item xs={4} md={8} />
         <Divider orientation="vertical" flexItem />
         <Grid
           item
           xs={2}
-          sm={1}
+          md={1}
           className={classes.textStyles}
           style={
             pathname.match("/wiredcraft-frontend-test/overall")
               ? { backgroundColor: "#F2F2F2" }
               : null
           }
-          alignItems="center"
         >
           <ButtonBase centerRipple>
             <Link
@@ -84,14 +77,13 @@ const Header = () => {
         <Grid
           item
           xs={2}
-          sm={1}
+          md={1}
           className={classes.textStyles}
           style={
             pathname.match("/wiredcraft-frontend-test/specific")
               ? { backgroundColor: "#F2F2F2" }
               : null
           }
-          alignItems="center"
         >
           <ButtonBase centerRipple>
             <Link

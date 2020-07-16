@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
+import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
@@ -126,15 +127,17 @@ export default function TableMain({ Regions }) {
         <TableContainer style={{ textAlign: "center" }}>
           <Table aria-label="table" size="small">
             <TableHead>
-              <TableCell>Region</TableCell>
-              <TableCell />
-              <TableCell>Last Input</TableCell>
-              <TableCell>Number of Forms</TableCell>
-              <TableCell>Number of Voters</TableCell>
-              <TableCell>Update</TableCell>
+              <TableRow>
+                <TableCell>Region</TableCell>
+                <TableCell />
+                <TableCell>Last Input</TableCell>
+                <TableCell>Number of Forms</TableCell>
+                <TableCell>Number of Voters</TableCell>
+                <TableCell>Update</TableCell>
+              </TableRow>
             </TableHead>
             <TableBody>
-              {/* The rows are displayed by comparing the "opened" array and the array specific to the type of row */}
+              {/* The rows are displayed by comparing the "opened" array to the array specific to the type of row */}
               {Regions.map((region) => (
                 <RegionRow
                   key={region.id}

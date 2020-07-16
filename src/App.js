@@ -27,8 +27,8 @@ export default function App() {
             <Header />
           </Grid>
           <Grid item container>
-            <Grid item xs={false} sm={2} />
-            <Grid item container xs={12} sm={8} style={{ paddingTop: "2rem" }}>
+            <Grid item xs={false} md={2} />
+            <Grid item container xs={12} md={8} style={{ paddingTop: "2rem" }}>
               <Switch>
                 <Route
                   exact
@@ -50,7 +50,7 @@ export default function App() {
                 <Route component={ErrorPage} />
               </Switch>
             </Grid>
-            <Grid item container xs={false} sm={2} />
+            <Grid item container xs={false} md={2} />
           </Grid>
         </Grid>
       </ThemeProvider>
