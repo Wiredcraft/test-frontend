@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595560072397" clover="3.2.0">
-  <project timestamp="1595560072397" name="All files">
-    <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1" elements="11" coveredelements="9" complexity="0" loc="9" ncloc="9" packages="1" files="2" classes="2"/>
-    <file name="index.ts" path="/Users/pangmaosong/Documents/interview-test/Wiredcraft/test-frontend/src/components/navBar/index.ts">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
+<coverage generated="1595576711953" clover="3.2.0">
+  <project timestamp="1595576711953" name="All files">
+    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="7" coveredelements="7" complexity="0" loc="6" ncloc="6" packages="1" files="2" classes="2"/>
+    <file name="image.tsx" path="/Users/pangmaosong/Documents/interview-test/Wiredcraft/test-frontend/src/components/image/image.tsx">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
     </file>
-    <file name="navBar.tsx" path="/Users/pangmaosong/Documents/interview-test/Wiredcraft/test-frontend/src/components/navBar/navBar.tsx">
-      <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+    <file name="index.ts" path="/Users/pangmaosong/Documents/interview-test/Wiredcraft/test-frontend/src/components/image/index.ts">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <line num="7" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="16" count="8" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
-      <line num="21" count="8" type="stmt"/>
-      <line num="49" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
