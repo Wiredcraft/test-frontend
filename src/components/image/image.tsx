@@ -6,6 +6,8 @@
 
 import React, { FC } from 'react'
 
+import './image.scss'
+
 interface ImageProps {
   placeholder?: string;
   src: string;
@@ -14,7 +16,7 @@ interface ImageProps {
 const Image: FC<ImageProps> = ({ placeholder, src }) => {
   return (
     <div className='image-container'>
-      <img data-lazy={placeholder} src={src} alt='' />
+      <img className='image' data-lazy={placeholder} src={src} alt='' />
     </div>
   )
 }

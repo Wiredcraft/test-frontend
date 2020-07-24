@@ -1,0 +1,14 @@
+/**
+ * Image css
+ * Fri Jul 24 15:50:18 2020
+ * by xiaoT
+ */
+
+.image-container {
+  border-radius: rem(13);
+  overflow: hidden;
+  display: inline-block;
+  .image {
+    display: block;
+  }
+}
