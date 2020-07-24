@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Test should be match the snapshot 1`] = `"<div class=\\"nav-bar\\"><div data-justify=\\"flex-end\\" data-align=\\"center\\" class=\\"nav-bar-inner flex\\"><form><div data-align=\\"center\\" class=\\"form-item flex\\"><i class=\\"icon icon-search\\"></i><input type=\\"text\\" value=\\"\\" name=\\"searchKey\\" class=\\"flex-1\\" placeholder=\\"请输入关键字\\"/></div></form><i class=\\"icon icon-home\\"></i><i class=\\"icon icon-bell\\"></i><i class=\\"icon icon-avatar\\"></i></div></div>"`;

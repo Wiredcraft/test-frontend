@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      // "es6",
+      "es2018",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@Components/*": ["src/components/*"],
+      "@CSS": ["./src/common/css"],
+      "@JS": ["./src/common/js"],
+      "@JS/*": ["./src/common/js/*"],
+      "@Routes": ["./src/router"],
+      "@Store/*": ["./src/store/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

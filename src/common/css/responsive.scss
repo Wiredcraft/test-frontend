@@ -1,0 +1,20 @@
+/**
+ * responsive css
+ * Thu Jul 23 13:42:29 2020
+ * by xiaot
+ */
+
+html {
+  font-size: 10px;
+  font-family: -apple-system,Helvetica Neue,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+}
+
+@media (max-width: 768px) {
+  /*
+    mobile base font size: 10px;
+    10 / 375 * 100
+   */
+  html {
+    font-size: 2.66667vw;
+  }
+}

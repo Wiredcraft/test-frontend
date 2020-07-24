@@ -1,0 +1,21 @@
+/**
+ * common layout css
+ * Thu Jul 23 13:39:43 2020
+ * by xiaoT
+ */
+
+.flex {
+  display: flex;
+  .flex-1 {
+    flex: 1;
+  }
+  &[data-justify='center'] {
+    justify-content: center;
+  }
+  &[data-justify='flex-end'] {
+    justify-content: flex-end;
+  }
+  &[data-align='center'] {
+    align-items: center;
+  }
+}

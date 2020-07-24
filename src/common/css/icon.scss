@@ -1,0 +1,36 @@
+/**
+ * common icon css
+ * Thu Jul 23 13:57:42 2020
+ * by xiaoT
+ */
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+      url('iconfont.woff2') format('woff2'),
+      url('iconfont.woff') format('woff'),
+      url('iconfont.ttf') format('truetype'),
+      url('iconfont.svg#iconfont') format('svg');
+}
+
+.icon {
+  font-family: "iconfont" !important;
+  font-size: rem(24);
+  color: #8A8A8A;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.icon-home:before {
+    content: "\e6fe";
+  }
+  &.icon-avatar:before {
+    content: "\e603";
+  }
+  &.icon-search:before {
+    content: "\e625";
+  }
+  &.icon-bell:before {
+    content: "\e601";
+  }
+}

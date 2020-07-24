@@ -1,0 +1,5 @@
+/**
+ * styleMock.js
+ */
+
+module.exports = {}
