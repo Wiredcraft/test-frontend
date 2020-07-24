@@ -22,9 +22,9 @@ describe('NavBar Test', () => {
     navBar.unmount()
   })
   // should be match the snapshot
-  /*it('should be match the snapshot', () => {
+  it('should be match the snapshot', () => {
     expect(navBar.html()).toMatchSnapshot()
-  })*/
+  })
   // NavBar should be have an avatar icon
   it('should be have an avatar icon', () => {
     const avatar = navBar.find('.icon-avatar')

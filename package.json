@@ -146,7 +146,8 @@
       "**/?(*.)+(spec|test).ts?(x)"
     ],
     "moduleNameMapper": {
-      "^.+\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+      "^.+\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "^@Components(.*)$": "<rootDir>/src/components$1"
     },
     "setupFiles": [
       "./setupJest.js"
