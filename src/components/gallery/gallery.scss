@@ -1,0 +1,16 @@
+/**
+ * gallery css
+ * Sat Jul 25 00:23:45 2020
+ * by xiaoT
+ */
+
+.gallery {
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: grid;
+  padding: rem(18) rem(20) rem(18);
+  grid-template-columns: repeat(auto-fill, minmax(rem(201), 1fr));
+  grid-auto-rows: rem(50);
+  grid-gap: rem(14);
+}

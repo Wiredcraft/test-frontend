@@ -4,6 +4,6 @@
  * by xiaoT
  */
 
-import Gallery from './gallery'
+import Gallery from './container'
 
 export default Gallery

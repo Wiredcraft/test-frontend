@@ -7,7 +7,7 @@ import React, { FC } from 'react'
 import ReactDom from 'react-dom'
 import { shallow, mount } from 'enzyme'
 
-import Gallery from './'
+import Gallery from './gallery'
 
 const images = [
   {

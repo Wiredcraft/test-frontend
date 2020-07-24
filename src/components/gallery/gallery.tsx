@@ -9,6 +9,8 @@ import React, { FC } from 'react'
 import NavBar from '@Components/navBar/'
 import Image from '@Components/image/'
 
+import './gallery.scss'
+
 const imagePlacholeder = 'https://gblobscdn.gitbook.com/spaces%2F-LceGMK-Zxa6_-QeGdy1%2Favatar.png?alt=media'
 
 interface ImageInfoProps {
@@ -22,18 +24,20 @@ interface GalleryProps {
   images: ImageInfoProps[]
 }
 
-const Gallery:FC<GalleryProps> = ({ images }):JSX.Element => {
+const Gallery:FC<GalleryProps> = ({ images = [] }):JSX.Element => {
   return (
-    <div className='gallery'>
+    <>
       <NavBar onSearch={(e) => {
         e.preventDefault()
       }} />
-      {
-        images.map((item: ImageInfoProps) => {
-          return <Image key={item._id} src={item.src} placeholder={imagePlacholeder} />
-        })
-      }
-    </div>
+      <div className='gallery'>
+        {
+          images.map((item: ImageInfoProps) => {
+            return <Image key={item._id} src={item.src} placeholder={imagePlacholeder} />
+          })
+        }
+      </div>
+    </>
   )
 }
 
