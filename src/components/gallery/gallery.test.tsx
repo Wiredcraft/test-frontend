@@ -24,11 +24,17 @@ const images = [
   }
 ]
 
+const defaultGridRowRect = {
+  gridRowGap: 10,
+  gridRowHeight: 350,
+  gridColumnWidth: 245
+}
+
 describe('Gallery Test', () => {
   let galleryComponent: any
 
   beforeEach(() => {
-    galleryComponent  = shallow(<Gallery images={images} />)
+    galleryComponent  = shallow(<Gallery gridRowRect={defaultGridRowRect} images={images} />)
   })
   afterEach(() => {
     galleryComponent.unmount()
@@ -44,7 +50,7 @@ describe('Gallery Test', () => {
     expect(NavBar.length).toEqual(1)
   })
   // Gallery should be have two Image compoent
-  it('should be have a NavBar', () => {
+  it('Gallery should be have two Image compoent', () => {
     const Image = galleryComponent.find('Image')
 
     expect(Image.length).toEqual(images.length)

@@ -7,11 +7,37 @@
 import React, { FC, useState, useEffect } from 'react'
 import axios from 'axios'
 
-import Gallery from './gallery'
+import Gallery, { GridRowRect } from './gallery'
 
+const defaultGridRowRect:GridRowRect = {
+  gridRowGap: 10,
+  gridRowHeight: 50,
+  gridColumnWidth: 50
+}
 const GalleryContainer:FC<{}> = ():JSX.Element => {
   let [images, setImages] = useState<[]>([])
-
+  const [gridRowRect, setGridRowRect] = useState<GridRowRect>(defaultGridRowRect)
+  /**
+   * calc grid row size
+   * gridRowGap: grid row gap
+   * gridRowHeight: grid row height
+   * gridColumnWidth: grid column widht
+   */
+  const calcGridRowRect = ():void => {
+    // get gallery grid css
+    const gallery = document.querySelector('.gallery')
+    const galleryStyle = window.getComputedStyle(gallery)
+    const gridRowGap = parseInt(galleryStyle.getPropertyValue('grid-row-gap'), 10)
+    const gridRowHeight = parseInt(galleryStyle.getPropertyValue('grid-auto-rows'), 10)
+    // image container
+    const imageContainer = gallery.querySelectorAll('.image-container')[0]
+    const imageWidth = imageContainer.getBoundingClientRect().width
+    setGridRowRect({
+      gridRowGap,
+      gridRowHeight,
+      gridColumnWidth: imageWidth
+    })
+  }
   // get gallery of images
   const getGallery = () => {
     axios.get('/api/gallery')
@@ -21,9 +47,12 @@ const GalleryContainer:FC<{}> = ():JSX.Element => {
   }
   useEffect(() => {
     getGallery()
+    window.onload = ():void => {
+      calcGridRowRect()
+    }
   }, [])
   return (
-    <Gallery images={images} />
+    <Gallery images={images} gridRowRect={gridRowRect} />
   )
 }
 

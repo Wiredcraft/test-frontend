@@ -4,7 +4,7 @@
  * by xiaoT
  */
 
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC } from 'react'
 
 import NavBar from '@Components/navBar/'
 import Image from '@Components/image/'
@@ -22,35 +22,18 @@ interface ImageInfoProps {
   src: string;
 }
 
-interface GalleryProps {
-  images: ImageInfoProps[]
+export interface GridRowRect {
+  gridRowGap: number;
+  gridRowHeight: number;
+  gridColumnWidth: number;
 }
 
-const Gallery:FC<GalleryProps> = ({ images = [] }):JSX.Element => {
-  const [gridRowSize, setGridRowSize] = useState<any>({})
-  // calc grid row size
-  // gap: grid row gap
-  // height: grid row height
-  const calcGridRowSize = ():void => {
-    // get gallery grid css
-    const gallery = document.querySelector('.gallery')
-    const galleryStyle = window.getComputedStyle(gallery)
-    const gridRowGap = parseInt(galleryStyle.getPropertyValue('grid-row-gap'), 10)
-    const gridRowHeight = parseInt(galleryStyle.getPropertyValue('grid-auto-rows'), 10)
-    // image container
-    const imageContainer = gallery.querySelectorAll('.image-container')[0]
-    const imageWidth = imageContainer.getBoundingClientRect().width
-    setGridRowSize({
-      gap: gridRowGap,
-      height: gridRowHeight,
-      width: imageWidth
-    })
-  }
-  useEffect(() => {
-    window.onload = () => {
-      calcGridRowSize()
-    }
-  }, [])
+interface GalleryProps {
+  images: ImageInfoProps[];
+  gridRowRect: GridRowRect;
+}
+
+const Gallery:FC<GalleryProps> = ({ images = [], gridRowRect }):JSX.Element => {
   return (
     <>
       <NavBar onSearch={(e) => {
@@ -59,11 +42,11 @@ const Gallery:FC<GalleryProps> = ({ images = [] }):JSX.Element => {
       <div className='gallery'>
         {
           images.map((item: ImageInfoProps) => {
-            const { gap, height, width } = gridRowSize
+            const { gridRowGap, gridRowHeight, gridColumnWidth } = gridRowRect
             // via image.src calc width and height
             const imageSize = calcImageSize(item.src)
-            //
-            const gridRowEnd = `span ${Math.floor((imageSize.height + gap) * width / imageSize.width / (gap + height))}`
+            // via image size calc grid row end
+            const gridRowEnd = `span ${Math.floor((imageSize.height + gridRowGap) * gridColumnWidth / imageSize.width / (gridRowGap + gridRowHeight))}`
             return <Image style={{ gridRowEnd }} key={item._id} src={item.src} placeholder={imagePlacholeder} />
           })
         }
