@@ -4,10 +4,12 @@
  * by xiaoT
  */
 
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
 import NavBar from '@Components/navBar/'
 import Image from '@Components/image/'
+
+import { calcImageSize } from '@JS/units'
 
 import './gallery.scss'
 
@@ -25,6 +27,30 @@ interface GalleryProps {
 }
 
 const Gallery:FC<GalleryProps> = ({ images = [] }):JSX.Element => {
+  const [gridRowSize, setGridRowSize] = useState<any>({})
+  // calc grid row size
+  // gap: grid row gap
+  // height: grid row height
+  const calcGridRowSize = ():void => {
+    // get gallery grid css
+    const gallery = document.querySelector('.gallery')
+    const galleryStyle = window.getComputedStyle(gallery)
+    const gridRowGap = parseInt(galleryStyle.getPropertyValue('grid-row-gap'), 10)
+    const gridRowHeight = parseInt(galleryStyle.getPropertyValue('grid-auto-rows'), 10)
+    // image container
+    const imageContainer = gallery.querySelectorAll('.image-container')[0]
+    const imageWidth = imageContainer.getBoundingClientRect().width
+    setGridRowSize({
+      gap: gridRowGap,
+      height: gridRowHeight,
+      width: imageWidth
+    })
+  }
+  useEffect(() => {
+    window.onload = () => {
+      calcGridRowSize()
+    }
+  }, [])
   return (
     <>
       <NavBar onSearch={(e) => {
@@ -33,7 +59,12 @@ const Gallery:FC<GalleryProps> = ({ images = [] }):JSX.Element => {
       <div className='gallery'>
         {
           images.map((item: ImageInfoProps) => {
-            return <Image key={item._id} src={item.src} placeholder={imagePlacholeder} />
+            const { gap, height, width } = gridRowSize
+            // via image.src calc width and height
+            const imageSize = calcImageSize(item.src)
+            //
+            const gridRowEnd = `span ${Math.floor((imageSize.height + gap) * width / imageSize.width / (gap + height))}`
+            return <Image style={{ gridRowEnd }} key={item._id} src={item.src} placeholder={imagePlacholeder} />
           })
         }
       </div>

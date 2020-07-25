@@ -147,7 +147,8 @@
     ],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
-      "^@Components(.*)$": "<rootDir>/src/components$1"
+      "^@Components(.*)$": "<rootDir>/src/components$1",
+      "^@JS(.*)$": "<rootDir>/src/common/js$1"
     },
     "setupFiles": [
       "./setupJest.js"

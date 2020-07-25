@@ -14,7 +14,7 @@ import '@CSS/common.scss'
 
 const Loading = () => {
   return (
-    <span>加载中...</span>
+    <div className='loading'>加载中...</div>
   )
 }
 

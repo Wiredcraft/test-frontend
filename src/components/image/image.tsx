@@ -11,11 +11,12 @@ import './image.scss'
 interface ImageProps {
   placeholder?: string;
   src: string;
+  style?: any;
 }
 
-const Image: FC<ImageProps> = ({ placeholder, src }) => {
+const Image: FC<ImageProps> = ({ placeholder, src, style }) => {
   return (
-    <div className='image-container'>
+    <div style={style} className='image-container'>
       <img className='image' data-lazy={placeholder} src={src} alt='' />
     </div>
   )
