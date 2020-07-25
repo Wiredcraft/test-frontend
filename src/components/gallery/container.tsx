@@ -5,8 +5,10 @@
  */
 
 import React, { FC, useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 
+import { updateImages } from '@Store/actions'
 import Gallery, { GridRowRect } from './gallery'
 
 const defaultGridRowRect:GridRowRect = {
@@ -15,7 +17,10 @@ const defaultGridRowRect:GridRowRect = {
   gridColumnWidth: 50
 }
 const GalleryContainer:FC<{}> = ():JSX.Element => {
-  let [images, setImages] = useState<[]>([])
+  // store dispatch
+  const dispatch = useDispatch()
+  const images = useSelector(state => state.images)
+  // component self state
   const [gridRowRect, setGridRowRect] = useState<GridRowRect>(defaultGridRowRect)
   /**
    * calc grid row size
@@ -42,7 +47,7 @@ const GalleryContainer:FC<{}> = ():JSX.Element => {
   const getGallery = () => {
     axios.get('/api/gallery')
       .then((res: any) => {
-        setImages(res.data)
+        dispatch(updateImages(res.data))
       })
   }
   useEffect(() => {

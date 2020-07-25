@@ -25,9 +25,10 @@
   "author": "xiaoT",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
     "antd": "^4.2.0",
     "area-data": "^5.0.6",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "history": "^4.7.2",
     "http": "0.0.1-security",
     "koa": "^2.11.0",
@@ -37,10 +38,9 @@
     "react": "^16.13.1",
     "react-area-linkage": "^3.0.0",
     "react-dom": "^16.13.1",
-    "react-redux": "^5.1.1",
+    "react-redux": "^7.2.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "redux": "^4.0.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
@@ -75,7 +75,7 @@
     "image-webpack-loader": "^4.3.1",
     "jest": "^25.3.0",
     "mini-css-extract-plugin": "^0.4.2",
-    "mocker-api": "^2.0.4",
+    "mocker-api": "^2.2.0",
     "postcss": "^7.0.2",
     "postcss-css-variables": "^0.12.0",
     "postcss-functions": "^3.0.0",
@@ -92,8 +92,8 @@
     "ts-loader": "^7.0.2",
     "url-loader": "^1.1.1",
     "webpack": "^4.37.0",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "engines": {
     "node": "11.14.0",
