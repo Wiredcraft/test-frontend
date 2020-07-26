@@ -41,7 +41,7 @@ describe('Image Test', () => {
   // Image should be have a src attribute
   it('should be have a src attribute', () => {
     const src = imageEle.prop('src')
-    expect(src).toEqual(testPorps.src)
+    expect(src).toEqual(testPorps.placeholder)
   })
   // Image alt attribute should be equal testPorps.alt
   it('Image alt attribute should be equal testPorps.alt', () => {
@@ -56,6 +56,6 @@ describe('Image Test', () => {
   // Image should be have a data-lazy attribute
   it('should be have a data-lazy attribute', () => {
     const dataLazy = imageEle.prop('data-lazy')
-    expect(dataLazy).toEqual(testPorps.placeholder)
+    expect(dataLazy).toEqual(testPorps.src)
   })
 })

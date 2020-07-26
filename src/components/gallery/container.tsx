@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import _ from 'lodash'
 
+import Lazyload from '@Components/lazyload'
 import { updateImages } from '@Store/actions'
 import Gallery, { GridRowRect } from './gallery'
 
@@ -76,4 +77,4 @@ const GalleryContainer:FC<{}> = ():JSX.Element => {
   )
 }
 
-export default GalleryContainer
+export default Lazyload()(GalleryContainer)

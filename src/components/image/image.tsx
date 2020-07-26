@@ -18,7 +18,7 @@ interface ImageProps {
 const Image: FC<ImageProps> = ({ placeholder, src, style, alt }) => {
   return (
     <div style={style} className='image-container'>
-      <img className='image' data-lazy={placeholder} src={src} alt={alt} />
+      <img className='image' data-lazy={src} src={placeholder} alt={alt} />
     </div>
   )
 }

@@ -137,7 +137,9 @@
       "JSX",
       "HTMLInputElement",
       "Element",
-      "HTMLTextAreaElement"
+      "HTMLTextAreaElement",
+      "HTMLElement",
+      "HTMLImageElement"
     ],
     "parser": "babel-eslint"
   },
