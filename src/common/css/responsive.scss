@@ -9,6 +9,10 @@ html {
   font-family: -apple-system,Helvetica Neue,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 }
 
+#app {
+  padding-top: rem(71);
+}
+
 @media (max-width: 768px) {
   /*
     mobile base font size: 10px;
@@ -16,5 +20,15 @@ html {
    */
   html {
     font-size: 2.66667vw;
+  }
+
+  #app {
+    padding-top: rem(50);
+  }
+  /**
+   * nav bar
+   */
+  .nav-bar {
+    height: rem(50);
   }
 }

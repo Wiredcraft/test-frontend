@@ -24,7 +24,7 @@ const NavBar: FC<NavbarProps> = ({ onSearch }): JSX.Element => {
     throttleChange(e.currentTarget.value)
   }
   // throttle input change
-  const throttleChange = useCallback(_.throttle((filterKey) => {
+  const throttleChange = useCallback(_.throttle((filterKey: string) => {
     dispatch(filterImages(filterKey))
   }, 500), [])
   return (

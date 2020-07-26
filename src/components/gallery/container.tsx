@@ -4,9 +4,10 @@
  * by xiaoT
  */
 
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
+import _ from 'lodash'
 
 import { updateImages } from '@Store/actions'
 import Gallery, { GridRowRect } from './gallery'
@@ -44,17 +45,31 @@ const GalleryContainer:FC<{}> = ():JSX.Element => {
     })
   }
   // get gallery of images
-  const getGallery = () => {
+  const getGallery = ():void => {
     axios.get('/api/gallery')
       .then((res: any) => {
         dispatch(updateImages(res.data))
       })
   }
+  // throttle calcGridRowRect
+  const throttleCalcGridRowRect = useCallback(_.throttle(():void => {
+    calcGridRowRect()
+  }, 500), [])
   useEffect(() => {
     getGallery()
-    window.onload = ():void => {
+    /**
+     * calc grid info
+     * reset image grid-row-end
+     */
+    window.addEventListener('load', () => {
       calcGridRowRect()
-    }
+    }, false)
+    /**
+     * window resize reset image grid-row-end
+     */
+    window.addEventListener('resize', () => {
+      throttleCalcGridRowRect()
+    }, false)
   }, [])
   return (
     <Gallery images={images} gridRowRect={gridRowRect} />
