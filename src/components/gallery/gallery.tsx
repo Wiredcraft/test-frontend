@@ -47,7 +47,7 @@ const Gallery:FC<GalleryProps> = ({ images = [], gridRowRect }):JSX.Element => {
             const imageSize = calcImageSize(item.src)
             // via image size calc grid row end
             const gridRowEnd = `span ${Math.floor((imageSize.height + gridRowGap) * gridColumnWidth / imageSize.width / (gridRowGap + gridRowHeight))}`
-            return <Image style={{ gridRowEnd }} key={item._id} src={item.src} placeholder={imagePlacholeder} />
+            return <Image style={{ gridRowEnd }} key={item._id} src={item.src} alt={item.name} placeholder={imagePlacholeder} />
           })
         }
       </div>

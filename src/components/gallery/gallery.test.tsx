@@ -7,6 +7,7 @@ import React, { FC } from 'react'
 import ReactDom from 'react-dom'
 import { shallow, mount } from 'enzyme'
 
+import mountWithProvider from '@Store/mockStore'
 import Gallery from './gallery'
 
 const images = [
@@ -34,7 +35,7 @@ describe('Gallery Test', () => {
   let galleryComponent: any
 
   beforeEach(() => {
-    galleryComponent  = shallow(<Gallery gridRowRect={defaultGridRowRect} images={images} />)
+    galleryComponent  = mountWithProvider(<Gallery gridRowRect={defaultGridRowRect} images={images} />)()
   })
   afterEach(() => {
     galleryComponent.unmount()
@@ -54,5 +55,11 @@ describe('Gallery Test', () => {
     const Image = galleryComponent.find('Image')
 
     expect(Image.length).toEqual(images.length)
+  })
+  // Gallery prop gridRowRect shoule be equql defaultGridRowRect
+  it('Gallery prop gridRowRect shoule be equql defaultGridRowRect', () => {
+    const gridRowRectProp = galleryComponent.props().children.props.gridRowRect
+
+    expect(gridRowRectProp).toEqual(defaultGridRowRect)
   })
 })

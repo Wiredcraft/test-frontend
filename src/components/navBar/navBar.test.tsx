@@ -9,14 +9,15 @@ import { shallow, mount } from 'enzyme'
 import { act } from 'react-dom/test-utils'
 import { getByLabelText, fireEvent } from '@testing-library/react'
 
+import mountWithProvider from '@Store/mockStore'
 import NavBar from './'
 
 describe('NavBar Test', () => {
   let navBar: any
   const submitFn: () => void = jest.fn()
-
+  // const ConnectedNavBar = connect()(NavBar)
   beforeEach(() => {
-    navBar  = shallow(<NavBar onSearch={submitFn} />)
+    navBar  = mountWithProvider(<NavBar onSearch={submitFn} />)()
   })
   afterEach(() => {
     navBar.unmount()
@@ -66,72 +67,6 @@ describe('NavBar Test', () => {
     const formEle = navBar.find('form')
     formEle.simulate('submit')
     expect(submitFn).toHaveBeenCalled()
-  })
-})
-
-describe('NavBart State Test', () => {
-  let navBar: any
-  let container: any
-  const submitFn: () => void = jest.fn()
-  
-  beforeEach(() => {
-    container = document.createElement('div')
-    document.body.appendChild(container)
-  })
-  afterEach(() => {
-    document.body.removeChild(container)
-    container = null
-    // navBar.unmount()
-  })
-  // test input change event
-  it('input shoule be change NavBar State.searchKey', async () => {
-    // navBar  = mount(<NavBar onSearch={submitFn} />)
-    await act(async () => {
-      ReactDom.render(<NavBar onSearch={submitFn} />, container)
-    })
-    let inputEle = container.querySelector('input')
-    // let inputProps = inputEle.props()
-    // inputEle.simulate('change', {
-    //   currentTarget: {
-    //     value: 'search images',
-    //     name: 'searchKey'
-    //   },
-    //   target: {
-    //     value: 'search images',
-    //     name: 'searchKey'
-    //   }
-    // })
-    console.log(inputEle.value, 'before')
-    await act(async () => {
-      await fireEvent.change(inputEle, {
-        currentTarget: {
-          value: 'search images'
-        }
-      })
-      // inputEle.dispatchEvent(new Event('change', {
-      //   currentTarget: {
-      //     value: 'search images'
-      //   },
-      //   target: {
-      //     value: 'search images'
-      //   }
-      // } as any))
-      
-      // inputEle.prop('onChange')({
-      //   currentTarget: {
-      //     value: 'search images',
-      //     name: 'searchKey'
-      //   }
-      // })
-    })
-    console.log(inputEle.value, '---')
-    // inputEle.get(0)value = 'search imagessss'
-    // console.log('*****')
-    // let currentValue = inputEle.prop('value')
-    // console.log(currentValue)
-
-    // expect(inputEle.value).toEqual('search images')
-    // console.log(inputEle.props(), '++++')
   })
 })
 
