@@ -17,7 +17,7 @@ export const updateImages = (images: []): {type: string; images: []} => {
 }
 
 /**
- * search filter images 
+ * search filter images
  * @type {[type]}
  */
 export const filterImages = (filterKey: string): {type: string; filterKey: string} => {

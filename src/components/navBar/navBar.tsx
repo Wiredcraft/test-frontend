@@ -4,8 +4,9 @@
  * by xiaoT
  */
 
-import React, { FC, useState, FormEvent } from 'react'
+import React, { FC, useState, useCallback, FormEvent } from 'react'
 import { useDispatch } from 'react-redux'
+import _ from 'lodash'
 
 import { filterImages } from '@Store/actions'
 import './navBar.scss'
@@ -20,8 +21,12 @@ const NavBar: FC<NavbarProps> = ({ onSearch }): JSX.Element => {
 
   function handleInputChange (e: FormEvent<HTMLInputElement>) {
     setSearchKey(e.currentTarget.value)
-    dispatch(filterImages(e.currentTarget.value))
+    throttleChange(e.currentTarget.value)
   }
+  // throttle input change
+  const throttleChange = useCallback(_.throttle((filterKey) => {
+    dispatch(filterImages(filterKey))
+  }, 500), [])
   return (
     <div className='nav-bar'>
       <div
