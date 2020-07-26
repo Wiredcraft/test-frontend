@@ -5,7 +5,9 @@
  */
 
 import React, { FC, useState, FormEvent } from 'react'
+import { useDispatch } from 'react-redux'
 
+import { filterImages } from '@Store/actions'
 import './navBar.scss'
 
 interface NavbarProps {
@@ -14,9 +16,11 @@ interface NavbarProps {
 
 const NavBar: FC<NavbarProps> = ({ onSearch }): JSX.Element => {
   const [searchKey, setSearchKey] = useState<string>('')
+  const dispatch = useDispatch()
 
   function handleInputChange (e: FormEvent<HTMLInputElement>) {
     setSearchKey(e.currentTarget.value)
+    dispatch(filterImages(e.currentTarget.value))
   }
   return (
     <div className='nav-bar'>
