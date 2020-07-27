@@ -36,13 +36,12 @@ const GalleryContainer:FC<{}> = ():JSX.Element => {
     const galleryStyle = window.getComputedStyle(gallery)
     const gridRowGap = parseInt(galleryStyle.getPropertyValue('grid-row-gap'), 10)
     const gridRowHeight = parseInt(galleryStyle.getPropertyValue('grid-auto-rows'), 10)
+    const gridColumnWidth = parseInt(galleryStyle.getPropertyValue('grid-template-columns').split(' ')[0], 10)
     // image container
-    const imageContainer = gallery.querySelectorAll('.image-container')[0]
-    const imageWidth = imageContainer.getBoundingClientRect().width
     setGridRowRect({
       gridRowGap,
       gridRowHeight,
-      gridColumnWidth: imageWidth
+      gridColumnWidth
     })
   }
   // get gallery of images
