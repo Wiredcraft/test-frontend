@@ -5,24 +5,35 @@
 }
 
 .header {
-  height: 40px;
+  height: 71px;
   padding: 0px 20px;
   box-shadow: 0px 2px 3px rgb(0, 0, 0, .2);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   &__icon {
     color: rgb(0, 0, 0, .5);
-    margin: 0px 5px;
+    margin: 0px 10px;
     cursor: pointer;
+    font-size: 25px;
     &:hover {
       opacity: .7;
+    }
+  }
+  @media screen and (min-width: 640px) {
+    justify-content: flex-end;
+    padding: 0px 60px;
+    &__icon {
+      margin: 0px 5px;
+      font-size: 20px;
     }
   }
 }
 
 .search {
   position: relative;
+  display: block;
+  width: 100%;
   &__icon {
     position: absolute;
     top: 50%;
@@ -36,16 +47,26 @@
     border-radius: 20px;
     background-color: rgb(0, 0, 0, .1);
     padding-left: 32px;
+    width: 80%;
+  }
+  @media screen and (min-width: 640px) {
+    width: unset;
+    margin-right: 15px;
+    &__input {
+      width: unset;
+    }
   }
 }
 
 .image-container {
-  padding: 40px;
+  padding: 18px 20px 40px 20px;
   column-count: 2;
   @media screen and (min-width: 640px) {
+    padding: 18px 35px 40px 35px;
     column-count: 4;
   }
   @media screen and (min-width: 1024px) {
+    padding: 18px 80px 40px 80px;
     column-count: 6;
   }
   column-gap: 10px;

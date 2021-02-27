@@ -15,8 +15,9 @@ const Search = (props) => {
 				e.preventDefault()
         const s = document.getElementById('searchbar')
         if (s.value) {
+          // update location to user's search
           props.history.push(`/?q=${s.value}`)
-          fetchImages(s.value)
+          // fetchImages(s.value)
         }
 			}
 		}

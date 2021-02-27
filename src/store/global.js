@@ -3,7 +3,7 @@ import json from '../utils/images.json'
 
 // intialApplication state values
 const initialState = {
-  searchResults: []
+  searchResults: json
 }
 
 // We pass the name of our provider, and the subscriber function

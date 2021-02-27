@@ -1,20 +1,19 @@
 import React from 'react'
-import { render } from '../enzyme'
-import '../../__mocks__/intersectionObserver'
-import Home from '../../Home'
+import { shallow, render } from '../enzyme'
+import Search from '../Search'
 import { MemoryRouter } from 'react-router-dom'
 import { GlobalProvider } from '../../store/global'
 
-describe('Home test', () => {
-
-  it('home renders', () => {
+describe('Search test', () => {
+  
+  it('search renders', () => {
     render(
       <GlobalProvider>
         <MemoryRouter>
-          <Home />
+          <Search />
         </MemoryRouter>
       </GlobalProvider>
     )
+  
   })
-
 })

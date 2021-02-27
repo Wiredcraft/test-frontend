@@ -14,7 +14,7 @@ export default function Image(props) {
 		<div className={`image-wrapper ${pulse ? 'pulse' : ''}`}>
 			<img
         className="image"
-        alt={src}
+        datasrc={src}
         style={{ height: `${getHeight()}px` }}
         onLoad={() => setPulse(false)}
       />
