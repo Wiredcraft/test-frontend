@@ -6,7 +6,7 @@ import queryString from 'query-string'
 
 const Home = (props) => {
 
-  const { fetchImages } = useGlobalContext()
+  const { fetchImages, searchResults } = useGlobalContext()
 
   useEffect(() => {
     const { search } = props.location
@@ -20,7 +20,7 @@ const Home = (props) => {
 
 
   return (
-    <ImageContainer />
+    <ImageContainer images={searchResults} />
   )
 
 }
