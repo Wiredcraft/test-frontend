@@ -1,0 +1,45 @@
+
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.header {
+  height: 40px;
+  padding: 0px 20px;
+  box-shadow: 0px 2px 3px rgb(0, 0, 0, .2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &__icon {
+    color: rgb(0, 0, 0, .5);
+    margin: 0px 5px;
+    &--selected { 
+      color: blue;
+    }
+  }
+}
+
+.search {
+  position: relative;
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0, .5);
+  }
+  &__input {
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 0, .1);
+    padding-left: 32px;
+  }
+}
+
+// @media (min-width: 640px) {
+
+// }
