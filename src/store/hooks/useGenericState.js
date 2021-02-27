@@ -1,5 +1,7 @@
 import React from 'react'
 
+// useGenericState takes a function that takes a setState function and an initial state
+// it returns a state reducer. it is passed into createContextStore as the context store
 const useGenericState = (
   buildStateApi = ({ state, setState }) => ({ state, setState }),
   initialState = {}
@@ -8,11 +10,7 @@ const useGenericState = (
     (prevState, stateSlice) => ({ ...prevState, ...stateSlice }),
     initialState
   )
-  // return React.useMemo(() => buildStateApi({ state, setState }), [
-  //   state,
-  //   setState,
-  //   buildStateApi,
-  // ])
+
   return buildStateApi({ state, setState })
 }
 
