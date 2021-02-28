@@ -3,7 +3,10 @@ import json from '../utils/images.json'
 
 // intialApplication state values
 const initialState = {
-  searchResults: json
+  searchResults: json,
+  modalType: '',
+  modalOpen: false,
+  zoomedImage: null
 }
 
 // We pass the name of our provider, and the subscriber function
@@ -18,10 +21,35 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
       })
     }
 
+    const openModal = (modalType, zoomedImage = null) => {
+      setState({
+        modalOpen: true,
+        modalType,
+        zoomedImage
+      })
+      // document.getElementById('html').classList.add('noscroll')
+      // document.getElementById('body').classList.add('noscroll')
+    }
+
+    const closeModal = () => {
+      setState({
+        modalOpen: false,
+        modalType: '',
+        zoomedImage: null
+      })
+      // document.getElementById('html').classList.remove('noscroll')
+      // document.getElementById('body').classList.remove('noscroll')
+    } 
+
     // return methods and values components can use
     return {
       fetchImages,
-      searchResults: state.searchResults
+      searchResults: state.searchResults,
+      modalType: state.modalType,
+      modalOpen: state.modalOpen,
+      zoomedImage: state.zoomedImage,
+      openModal,
+      closeModal
     }
   },
   initialState

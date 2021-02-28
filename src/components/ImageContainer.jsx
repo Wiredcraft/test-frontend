@@ -3,7 +3,7 @@ import Image from './Image'
 import { io } from '../utils/io'
 
 export default function ImageContainer(props) {
-  const { images } = props
+  const { images, openModal } = props
 
   useEffect(() => {
     const imageTags = Array.from(document.getElementsByClassName('image'))
@@ -20,7 +20,7 @@ export default function ImageContainer(props) {
 	return (
 		<div className="image-container">
       { images && images.map(img => (
-			  <Image key={img._id} src={img.src} />
+			  <Image key={img._id} src={img.src} openModal={openModal} />
       ))}
 		</div>
 	)

@@ -86,8 +86,46 @@
   }
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  &__inner {
+    position: fixed;
+    max-width: 400px;
+    margin-top: 150px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+    padding: 20px 10px;
+    border-radius: 10px;
+    cursor: default;
+    img {
+      margin: 0px auto;
+      object-fit: contain;
+    }
+  }
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
 .pulse {
   animation: pulse 1s ease-in-out infinite;
+}
+
+.hover-scale {
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.01)
+  }
 }
 
 @keyframes pulse {
