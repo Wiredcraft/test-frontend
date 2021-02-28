@@ -4,7 +4,7 @@ import { useGlobalContext } from '../../store/global'
 
 export default function Login() {
 
-  const { updateUser, openModal, login } = useGlobalContext()
+  const { login } = useGlobalContext()
 
   const [pageData, setPageData] = useState({ 
     emailErr: false,
@@ -15,6 +15,9 @@ export default function Login() {
 
   const { emailErr, pwErr } = pageData
 
+  // validate the form, make sure both fields
+  // are filled, and the email is a valid email
+  // otherwise we show errors
   const validateForm = (e) => {
     e.preventDefault()
     const email = document.getElementById('email')
@@ -40,6 +43,8 @@ export default function Login() {
     }
   }
 
+  // when user starts typing we remove errors
+  // from the form
   const removeErrors = (e) => {
     if (emailErr || pwErr) {
       setPageData(prevState => ({

@@ -15,6 +15,10 @@ export default function Register() {
   
   const { emailErr, pwErr } = pageData
   
+  // validate the form, make sure both fields
+  // are filled, and the email is a valid email
+  // also we check that the passwords match
+  // otherwise we show errors
   const validateForm = (e) => {
     e.preventDefault()
     const email = document.getElementById('email')
@@ -42,6 +46,8 @@ export default function Register() {
     }
   }
   
+  // when user starts typing we remove errors
+  // from the form
   const removeErrors = () => {
     if (emailErr || pwErr) {
       setPageData(prevState => ({

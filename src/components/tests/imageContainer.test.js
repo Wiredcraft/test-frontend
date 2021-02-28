@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, shallow } from '../enzyme'
 // Intersection observer not available in test environment so we mock it
-import '../../__mocks__/intersectionObserver'
+import './__mocks__/intersectionObserver'
 import ImageContainer from '../ImageContainer'
 import json from '../../utils/images.json'
 

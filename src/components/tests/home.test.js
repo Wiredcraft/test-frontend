@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '../enzyme'
-import '../../__mocks__/intersectionObserver'
+import './__mocks__/intersectionObserver'
 import Home from '../../Home'
 import { MemoryRouter } from 'react-router-dom'
 import { GlobalProvider } from '../../store/global'

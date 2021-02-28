@@ -3,8 +3,11 @@ import React, { useState } from 'react'
 export default function Image(props) {
 
   const { src, openModal } = props
+  // we animate the placeholder until the image loads
   const [pulse, setPulse] = useState(true)
 
+  // use the path of the image to determing it's height
+  // this allows us to update the masonry layout
   const getHeight = (e) => {
     const path = src.split('?')[0]
     return path.slice(path.length - 3, path.length)

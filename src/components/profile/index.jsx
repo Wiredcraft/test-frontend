@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router'
 import Edit from './Edit'
 import Login from './Login'
@@ -7,14 +7,16 @@ import { useGlobalContext } from '../../store/global'
 
 const Profile = () => {
 
-  const { user } = useGlobalContext()
+  const { user, getUser } = useGlobalContext()
 
+  // for login/registration form switching
   const [pageData, setPageData] = useState({
     mode: 'login'
   })
 
   const { mode } = pageData
 
+  // switch between reg and login form
   const changeMode = (mode) => {
     setPageData(prevState => ({
       ...prevState,
@@ -24,6 +26,7 @@ const Profile = () => {
 
   return (
     <div className="profile">
+      {/* If there is no user we will show the registration and login forms */}
       {!user &&
         <div className="profile-switcher">
           <div 
@@ -38,14 +41,7 @@ const Profile = () => {
           >
             Register
           </div>
-          {/* <div
-            className={`profile-switcher__item ${mode === 'profile' ? 'profile-switcher__item--selected' : ''}`}
-            onClick={() => changeMode('profile')}
-          >
-            Profile
-          </div> */}
         </div>
-        
       }
       {!user && mode === 'login' &&
         <Login />
@@ -53,6 +49,7 @@ const Profile = () => {
       {!user && mode === 'register' &&
         <Register />
       }
+      {/* If we have user data we show the profile page */}
       {user &&
         <Edit />
       }

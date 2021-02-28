@@ -7,9 +7,11 @@ export default function ImageContainer(props) {
 
   useEffect(() => {
     const imageTags = Array.from(document.getElementsByClassName('image'))
+    // io is an intersection observer. it loads the images when they enter the viewport 
     imageTags.forEach(i => {
       io.observe(i)
     })
+    // unobserve the images when the component unmounts
     return () => {
       imageTags.forEach(i => {
         io.unobserve(i)

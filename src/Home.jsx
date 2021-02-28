@@ -9,6 +9,7 @@ const Home = (props) => {
 
   const { updateImages, searchResults, openModal } = useGlobalContext()
 
+  // when location changes check for query param and execute the search
   useEffect(() => {
     const { search } = props.location
     const { q } = queryString.parse(search)
@@ -20,6 +21,7 @@ const Home = (props) => {
     }
   }, [props.location])
 
+  // on page load if there is a query param, do the search, otherwise return all photos
   useEffect(() => {
     const { search } = props.location
     const { q } = queryString.parse(search)
@@ -35,8 +37,6 @@ const Home = (props) => {
     }
 
   }, [])
-
-
 
   return (
     <ImageContainer images={searchResults} openModal={openModal} />

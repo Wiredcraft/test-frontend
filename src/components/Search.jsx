@@ -8,7 +8,6 @@ import { searchPhotos } from '../utils/data'
 const Search = (props) => {
 
   const { updateImages } = useGlobalContext()
-  
 
   useEffect(() => {
     // handle search on enter
@@ -25,17 +24,22 @@ const Search = (props) => {
         }
 			}
 		}
-    // add handlet
+    // add handler
     document.getElementById('searchbar').addEventListener('keypress', submitOnEnter)
     return (() => {
+      // remove handler when component will unmount
       document.getElementById('searchbar').removeEventListener('keypress', submitOnEnter)
     })
   }, [])
 
+  // perform image search, and update global state with the results
   const handleSearch = () => {
     const s = document.getElementById('searchbar')
     if (s.value) {
-      props.history.replace('/')
+      // remove query param when user modifies search
+      if (props.history.location.search) {
+        props.history.replace('/')
+      }
       searchPhotos(s.value).then(res => {
         updateImages(res.data)
       })

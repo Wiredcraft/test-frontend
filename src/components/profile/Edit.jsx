@@ -1,23 +1,21 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { withRouter } from 'react-router'
 import { useDropzone } from 'react-dropzone'
-// import { uploadPhoto } from '../../../utils/data'
+import { useGlobalContext } from '../../store/global'
 
-const Edit = (props) => {
+const Edit = () => {
+
+  const { user, logout, updateProfile } = useGlobalContext()
 
 	const [pageData, setPageData] = useState({
 		fileSrc: null
 	})
 
-	useEffect(() => {
-	
-	}, [])
-
+  // react-dropzone receives uploaded images files here
+  // and updates pageData.fileSrc with the blobbed data
 	const onDrop = useCallback(acceptedFiles => {
 		const reader = new FileReader()
 		reader.onload = () => {
 			const res = reader.result
-      console.log('RESULT', res)
 			setPageData(prevState => ({
 				...prevState,
 				fileSrc: res
@@ -28,55 +26,53 @@ const Edit = (props) => {
 		}
 	}, [])
 
-	const handleFileUpload = () => {
-
-	}
-
+  // react-dropzone helpers
 	const {getRootProps, getInputProps } = useDropzone({onDrop})
 
-	const handleRegister = (e) => {
+  // update users profile data in the DB
+	const handleUpdate = (e) => {
 		e.preventDefault()
 		const name = document.getElementById('name')
-		const surname = document.getElementById('surname')
-		const country = document.getElementById('country')
-		const city = document.getElementById('city')
-		const brand = document.getElementById('brand')
-		const hotel = document.getElementById('hotel')
-	  if (name.value, surname.value, country.value, city.value, brand.value) {
-			const data = {
-				name: name.value,
-				surname: surname.value,
-				country: country.value,
-				city: city.value,
-				brand: brand.value,
-				hotel: hotel.value
-			}
-		}
-		if (pageData.uploadedFile) {
-			// handleFileUpload()
-		}
-		props.history.push('/profile')
-	}
-
-	const validateForm = () => {
-    
+    const data = {
+      id: user.id,
+      name: name.value || user,
+      avatar: pageData.fileSrc || null,
+      prevAvatar: user.avatar
+    }
+    updateProfile(data)
 	}
 
 	return (
 		<div className="form">  
       <div className="form-field">
-        <img src={pageData.fileSrc || '/avatar.png'} className="form-field__uploader" {...getRootProps()}/>
+        {/* If there's user data, we show their avatar, unless theyve uploaded a new one */}
+        {user && user.avatar &&
+          <img src={pageData.fileSrc || `https://d24tnhvewxeba9.cloudfront.net/${user.avatar}`} className="form-field__uploader" {...getRootProps()}/>
+        }
+        {/* Otherwise, we show the placeholder, until they upload something */}
+        {(!user || !user.avatar) &&
+          <img src={pageData.fileSrc || '/avatar.png'} className="form-field__uploader" {...getRootProps()}/>
+        }
         <input type="file"  accept="image/*" name="image" id="file" style={{ display: 'none' }} {...getInputProps()} />
       </div>
       <div className="form-field">
         <label htmlFor="password">
           Name
         </label>
-        <input id="name" name="name" className={`form-field__input`} type="text"></input>
+        <input
+          id="name"
+          name="name"
+          className={`form-field__input`}
+          type="text"
+          defaultValue={user && user.name ? user.name : '' }
+        ></input>
       </div>
-      <button type="button" onClick={validateForm}>Update</button>
+      <button type="button" onClick={handleUpdate}>Update</button>
+      <div>
+        <button type="button" onClick={logout}>Logout</button>
+      </div>
     </div>
 	);
 }
 
-export default withRouter(Edit)
+export default Edit

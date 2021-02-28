@@ -27,12 +27,25 @@ $blue: #2C52A8;
       opacity: .7;
     }
   }
+  &__user-img {
+    height: 25px;
+    width: 25px;
+    margin: 0 !important;
+    img {
+      border-radius: 50%;
+    }
+  }
   @media screen and (min-width: 640px) {
     justify-content: flex-end;
     padding: 0px 60px;
     &__icon {
       margin: 0px 5px;
       font-size: 20px;
+    }
+    &__user-img {
+      height: 22px;
+      width: 22px;
+      margin: 0 !important;
     }
   }
 }
