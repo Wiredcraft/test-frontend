@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { isEmail } from '../../utils'
+import { useGlobalContext } from '../../store/global'
 
 export default function Login() {
+
+  const { updateUser, openModal, login } = useGlobalContext()
 
   const [pageData, setPageData] = useState({ 
     emailErr: false,
@@ -25,7 +28,9 @@ export default function Login() {
       validPassword = false
     }
     if (validEmail && validPassword) {
-      console.log('VALID!')
+      login(email.value, password.value)
+      email.value = ''
+      password.value = ''
     } else {
       setPageData(prevState => ({
         ...prevState,

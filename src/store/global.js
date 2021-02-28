@@ -1,12 +1,13 @@
 import createContextStore from './hooks/createContextStore'
-import json from '../utils/images.json'
+import http from '../utils/axios'
 
 // intialApplication state values
 const initialState = {
-  searchResults: json,
+  searchResults: [],
   modalType: '',
   modalOpen: false,
-  zoomedImage: null
+  zoomedImage: null,
+  user: null
 }
 
 // We pass the name of our provider, and the subscriber function
@@ -14,8 +15,7 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
   ({ state, setState }) => {
     // we add any methods here to update state
 
-    const fetchImages = (query) => {
-      const searchResults = json.filter(item => item.name.indexOf(query) > -1)
+    const updateImages = (searchResults) => {
       setState({
         searchResults
       })
@@ -27,8 +27,6 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
         modalType,
         zoomedImage
       })
-      // document.getElementById('html').classList.add('noscroll')
-      // document.getElementById('body').classList.add('noscroll')
     }
 
     const closeModal = () => {
@@ -37,19 +35,55 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
         modalType: '',
         zoomedImage: null
       })
-      // document.getElementById('html').classList.remove('noscroll')
-      // document.getElementById('body').classList.remove('noscroll')
     } 
 
+    const updateUser = (user) => {
+      setState({
+        user
+      })
+    }
+
+    const register = (email, password, confirmPassword) => {
+      try {
+        http.post('/signup', {
+          email, password, confirmPassword
+        }).then(res => {
+          localStorage.setItem('token', res.data.token)
+          setState({
+            user: res.data.user
+          })
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    
+    const login = (email, password) => {
+      try {
+        return http.post('/signin', { email, password }).then(res => {
+          localStorage.setItem('token', res.data.token)
+          setState({
+            user: res.data.user
+          })
+        })
+      } catch (err) {
+        console.log(err)
+        openModal('auth-fail')
+      }
+    }
     // return methods and values components can use
     return {
-      fetchImages,
+      updateImages,
       searchResults: state.searchResults,
       modalType: state.modalType,
       modalOpen: state.modalOpen,
       zoomedImage: state.zoomedImage,
       openModal,
-      closeModal
+      closeModal,
+      user: state.user,
+      updateUser,
+      login,
+      register
     }
   },
   initialState

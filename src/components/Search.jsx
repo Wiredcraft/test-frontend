@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { withRouter } from 'react-router'
 import { useGlobalContext } from '../store/global'
+import { searchPhotos } from '../utils/data'
 
 const Search = (props) => {
 
-  const { fetchImages } = useGlobalContext()
+  const { updateImages } = useGlobalContext()
+  
 
   useEffect(() => {
     // handle search on enter
@@ -17,7 +19,9 @@ const Search = (props) => {
         if (s.value) {
           // update location to user's search
           props.history.push(`/?q=${s.value}`)
-          // fetchImages(s.value)
+          searchPhotos(s.value).then(res => {
+            updateImages(res.data)
+          })
         }
 			}
 		}
@@ -32,7 +36,9 @@ const Search = (props) => {
     const s = document.getElementById('searchbar')
     if (s.value) {
       props.history.replace('/')
-      fetchImages(s.value)
+      searchPhotos(s.value).then(res => {
+        updateImages(res.data)
+      })
     }
   }
 

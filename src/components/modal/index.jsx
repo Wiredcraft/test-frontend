@@ -11,6 +11,9 @@ const Modal = () => {
 			{ modalType === 'image-zoom' && 
 				<ImageZoom src={zoomedImage} closeModal={closeModal} />
 			}
+      { modalType === 'auth-fail' && 
+				<ImageZoom src={zoomedImage} closeModal={closeModal} />
+			}
 		</div>
 	) : null
 }

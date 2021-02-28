@@ -49,7 +49,10 @@ module.exports = () => {
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.DefinePlugin(envKeys)
+      new webpack.DefinePlugin(envKeys),
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
     ]
   }
 }

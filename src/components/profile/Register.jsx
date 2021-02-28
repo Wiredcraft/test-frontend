@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { isEmail } from '../../utils'
+import { useGlobalContext } from '../../store/global'
 
 export default function Register() {
+
+  const { register } = useGlobalContext()
 
   const [pageData, setPageData] = useState({ 
     emailErr: false,
@@ -26,7 +29,10 @@ export default function Register() {
       validPassword = false
     }
     if (validEmail && validPassword) {
-      console.log('VALID!')
+      register(email.value, password.value, confirm.value)
+      password.value = ''
+      email.value = ''
+      confirm.value = ''
     } else {
       setPageData(prevState => ({
         ...prevState,
@@ -49,22 +55,22 @@ export default function Register() {
   return (
     <form className="form" onChange={removeErrors}>
       <div className="form-field">
-        <label htmlFor>
+        <label htmlFor="email">
           Email
         </label>
-        <input id="email" className={`form-field__input ${emailErr ? 'form-field__input--error' : ''}`} type="text"></input>
+        <input id="email" name="email" className={`form-field__input ${emailErr ? 'form-field__input--error' : ''}`} type="text"></input>
       </div>
       <div className="form-field">
-        <label htmlFor>
+        <label htmlFor="password">
           Password
         </label>
-        <input id="password" className={`form-field__input ${pwErr ? 'form-field__input--error' : ''}`} type="text"></input>
+        <input id="password" name="password" className={`form-field__input ${pwErr ? 'form-field__input--error' : ''}`} type="text"></input>
       </div>
       <div className="form-field">
-        <label htmlFor>
+        <label htmlFor="confirm">
           Confirm password
         </label>
-        <input id="confirm" className={`form-field__input ${pwErr ? 'form-field__input--error' : ''}`} type="text"></input>
+        <input id="confirm" name="confirm" className={`form-field__input ${pwErr ? 'form-field__input--error' : ''}`} type="text"></input>
       </div>
       <button type="button" onClick={validateForm}>Register</button>
     </form>

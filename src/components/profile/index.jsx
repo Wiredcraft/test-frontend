@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router'
+import Edit from './Edit'
 import Login from './Login'
 import Register from './register'
+import { useGlobalContext } from '../../store/global'
 
 const Profile = () => {
+
+  const { user } = useGlobalContext()
 
   const [pageData, setPageData] = useState({
     mode: 'login'
@@ -20,37 +24,37 @@ const Profile = () => {
 
   return (
     <div className="profile">
-      <div className="profile-switcher">
-        <div 
-          className={`profile-switcher__item ${mode === 'login' ? 'profile-switcher__item--selected' : ''}`}
-          onClick={() => changeMode('login')}
-        >
-          Login
+      {!user &&
+        <div className="profile-switcher">
+          <div 
+            className={`profile-switcher__item ${mode === 'login' ? 'profile-switcher__item--selected' : ''}`}
+            onClick={() => changeMode('login')}
+          >
+            Login
+          </div>
+          <div 
+            className={`profile-switcher__item ${mode === 'register' ? 'profile-switcher__item--selected' : ''}`}
+            onClick={() => changeMode('register')}
+          >
+            Register
+          </div>
+          {/* <div
+            className={`profile-switcher__item ${mode === 'profile' ? 'profile-switcher__item--selected' : ''}`}
+            onClick={() => changeMode('profile')}
+          >
+            Profile
+          </div> */}
         </div>
-        <div 
-          className={`profile-switcher__item ${mode === 'register' ? 'profile-switcher__item--selected' : ''}`}
-          onClick={() => changeMode('register')}
-        >
-          Register
-        </div>
-        <div
-          className={`profile-switcher__item ${mode === 'profile' ? 'profile-switcher__item--selected' : ''}`}
-          onClick={() => changeMode('profile')}
-        >
-          Profile
-        </div>
-        <div
-          className={`profile-switcher__item ${mode === 'edit' ? 'profile-switcher__item--selected' : ''}`}
-          onClick={() => changeMode('edit')}
-        >
-          Edit
-        </div>
-      </div>
-      {mode === 'login' &&
+        
+      }
+      {!user && mode === 'login' &&
         <Login />
       }
-      {mode === 'register' &&
+      {!user && mode === 'register' &&
         <Register />
+      }
+      {user &&
+        <Edit />
       }
     </div>
   )
