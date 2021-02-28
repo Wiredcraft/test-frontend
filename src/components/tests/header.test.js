@@ -1,11 +1,19 @@
 import React from 'react'
-import { shallow } from '../enzyme'
+import { render } from '../enzyme'
 import Header from '../Header'
+import { MemoryRouter } from 'react-router-dom'
+import { GlobalProvider } from '../../store/global'
 
 describe('Header test', () => {
   
   it('header renders', () => {
-    shallow(<Header />)
+    render(
+      <GlobalProvider>
+        <MemoryRouter>
+          <Header />
+        </MemoryRouter>
+      </GlobalProvider>
+    )
   })
 
 })
