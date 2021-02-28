@@ -1,10 +1,18 @@
 import Home from '../Home'
-// import NotFound from '../components/pages/404'
+import Profile from '../components/profile'
+import NotFound from '../components/NotFound'
 
 export default [
 	{
 		path: '/',
 		exact: true,
 		component: Home
+	},
+  {
+		path: '/profile',
+		component: Profile
+	},
+  {
+		component: NotFound
 	}
 ]

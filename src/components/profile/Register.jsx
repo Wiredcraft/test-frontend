@@ -1,0 +1,72 @@
+import React, { useState } from 'react'
+import { isEmail } from '../../utils'
+
+export default function Register() {
+
+  const [pageData, setPageData] = useState({ 
+    emailErr: false,
+    pwErr: false,
+    validEmail: false,
+    validPw: false
+  })
+  
+  const { emailErr, pwErr } = pageData
+  
+  const validateForm = (e) => {
+    e.preventDefault()
+    const email = document.getElementById('email')
+    const password = document.getElementById('password')
+    const confirm = document.getElementById('confirm')
+    let validEmail = true
+    let validPassword = true
+    if (!email.value || !isEmail(email.value)) {
+      validEmail = false
+    }
+    if (!password.value || (password.value !== confirm.value)) {
+      validPassword = false
+    }
+    if (validEmail && validPassword) {
+      console.log('VALID!')
+    } else {
+      setPageData(prevState => ({
+        ...prevState,
+        emailErr: !validEmail,
+        pwErr: !validPassword
+      }))
+    }
+  }
+  
+  const removeErrors = () => {
+    if (emailErr || pwErr) {
+      setPageData(prevState => ({
+        ...prevState,
+        emailErr: false,
+        pwErr: false
+      }))
+    }
+  }
+
+  return (
+    <form className="form" onChange={removeErrors}>
+      <div className="form-field">
+        <label htmlFor>
+          Email
+        </label>
+        <input id="email" className={`form-field__input ${emailErr ? 'form-field__input--error' : ''}`} type="text"></input>
+      </div>
+      <div className="form-field">
+        <label htmlFor>
+          Password
+        </label>
+        <input id="password" className={`form-field__input ${pwErr ? 'form-field__input--error' : ''}`} type="text"></input>
+      </div>
+      <div className="form-field">
+        <label htmlFor>
+          Confirm password
+        </label>
+        <input id="confirm" className={`form-field__input ${pwErr ? 'form-field__input--error' : ''}`} type="text"></input>
+      </div>
+      <button type="button" onClick={validateForm}>Register</button>
+    </form>
+  )
+}

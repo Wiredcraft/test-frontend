@@ -12,7 +12,9 @@ export default function Header() {
         <FontAwesomeIcon icon={faHome} />
       </Link>
       <FontAwesomeIcon className="header__icon" icon={faBell} />
-      <FontAwesomeIcon className="header__icon" icon={faUserCircle} />
+      <Link to="/profile" className="header__icon">
+        <FontAwesomeIcon icon={faUserCircle} />
+      </Link>
 		</div>
 	)
 }
