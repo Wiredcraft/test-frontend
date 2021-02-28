@@ -2,7 +2,7 @@ const http = (function () {
 
 	const axios = require('axios')
 	const instance = axios.create({
-		baseURL: process.env.API_URL || 'http://localhost',
+		baseURL: 'https://ross-wiredcraft.herokuapp.com/',
 	})
   
   return {
