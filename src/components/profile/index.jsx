@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter } from 'react-router'
 import Edit from './Edit'
 import Login from './Login'
 import Register from './register'
@@ -57,4 +56,4 @@ const Profile = () => {
   )
 }
 
-export default withRouter(Profile)
+export default Profile

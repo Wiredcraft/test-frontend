@@ -6,6 +6,7 @@ import Login from '../profile/login'
 import Register from '../profile/Register'
 import { MemoryRouter } from 'react-router-dom'
 import { GlobalProvider } from '../../store/global'
+import 'babel-polyfill'
 
 describe('Profile test', () => {
 

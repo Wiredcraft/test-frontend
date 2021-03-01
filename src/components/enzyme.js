@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import Enzyme, { configure, shallow, mount, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
