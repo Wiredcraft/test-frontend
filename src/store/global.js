@@ -7,7 +7,9 @@ const initialState = {
   modalType: '',
   modalOpen: false,
   zoomedImage: null,
-  user: null
+  user: null,
+  showLoader: false,
+  loaderMessage: null
 }
 
 // We pass the name of our provider, and the subscriber function
@@ -48,6 +50,7 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
     // attempt to register a new user in the DB and then update
     // state with returned user info
     const register = (email, password, confirmPassword) => {
+      setShowLoader(true, 'Registering')
       try {
         http.post('/signup', {
           email, password, confirmPassword
@@ -57,6 +60,7 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
           setState({
             user: res.data.user
           })
+          setShowLoader(false)
         })
       } catch (err) {
         console.log(err)
@@ -64,18 +68,21 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
     }
     
     // log user in and return their profile data
-    const login = (email, password) => {
+    const login = async (email, password) => {
       try {
-        return http.post('/signin', { email, password }).then(res => {
+        setShowLoader(true, 'Authenticating')
+        const res = await http.post('/signin', { email, password })
+        if (res.data) {
           localStorage.setItem('token', res.data.token)
           localStorage.setItem('user', res.data.user.id)
           setState({
             user: res.data.user
           })
-        })
+        }
+        setShowLoader(false)
       } catch (err) {
         openModal('auth-fail')
-        console.log(err)
+        ('ERERERERE', err)
       }
     }
 
@@ -103,6 +110,7 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
     const updateProfile = (data, token) => {
       if (!token) token = localStorage.getItem('token')
       try {
+        setShowLoader(true, 'Updating Profile')
         http.put('/person', data, {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -111,6 +119,7 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
           setState({
             user: res.data
           })
+          setShowLoader(false)
         })
       } catch (err) {
         console.error(err)
@@ -121,6 +130,13 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
       localStorage.clear()
       setState({
         user: null
+      })
+    }
+
+    const setShowLoader = (bool, message = null) => {
+      setState({
+        showLoader: bool,
+        loaderMessage: message
       })
     }
   
@@ -139,7 +155,10 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
       register,
       logout,
       getUser,
-      updateProfile
+      updateProfile,
+      showLoader: state.showLoader,
+      loaderMessage: state.loaderMessage,
+      setShowLoader
     }
   },
   initialState

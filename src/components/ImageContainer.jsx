@@ -21,8 +21,8 @@ export default function ImageContainer(props) {
 
 	return (
 		<div className="image-container">
-      { images && images.map(img => (
-			  <Image key={img._id} src={img.src} openModal={openModal} />
+      { images && images.map((img, i) => (
+			  <Image key={`${img._id}${i}`} src={img.src} openModal={openModal} />
       ))}
 		</div>
 	)

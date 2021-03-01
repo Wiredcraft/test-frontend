@@ -18,7 +18,7 @@ export default function Image(props) {
   }
 
 	return (
-		<div className={`image-wrapper ${pulse ? 'pulse' : 'hover-scale'}`} onClick={zoomImage}>
+		<div className={`image-wrapper ${pulse ? 'pulse' : 'hover-scale'}`} onClick={pulse ? null : zoomImage}>
 			<img
         className="image"
         datasrc={src}
