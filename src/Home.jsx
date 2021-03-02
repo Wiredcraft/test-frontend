@@ -11,14 +11,16 @@ const Home = (props) => {
 
   // when location changes check for query param and execute the search
   useEffect(() => {
-    const { search } = props.location
-    const { q } = queryString.parse(search)
-
-    if (q) {
-      searchPhotos(q).then(res => {
-        updateImages(res.data)
-      })
+    console.log('I refreshed too many times')
+    const photoSearch = async () => {
+      const { search } = props.location
+      const { q } = queryString.parse(search)
+      if (q) {
+        const search =  await searchPhotos(q)
+        updateImages(search.data)
+      }
     }
+    photoSearch()
   }, [props.location])
 
   // on page load if there is a query param, do the search, otherwise return all photos
@@ -35,7 +37,6 @@ const Home = (props) => {
         updateImages(res.data)
       })
     }
-
   }, [])
 
   return (
