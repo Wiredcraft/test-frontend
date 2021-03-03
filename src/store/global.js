@@ -1,7 +1,8 @@
 import createContextStore from './hooks/createContextStore'
 import http from '../utils/axios'
+import { getUserLikes } from '../utils/data'
 
-// intialApplication state values
+// intial Application state values
 const initialState = {
   searchResults: [],
   modalType: '',
@@ -9,7 +10,8 @@ const initialState = {
   zoomedImage: null,
   user: null,
   showLoader: false,
-  loaderMessage: null
+  loaderMessage: null,
+  likes: []
 }
 
 // We pass the name of our provider, and the subscriber function
@@ -63,7 +65,7 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
           setShowLoader(false)
         })
       } catch (err) {
-        console.log(err)
+        console.error(err)
       }
     }
     
@@ -72,34 +74,38 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
       try {
         setShowLoader(true, 'Authenticating')
         const res = await http.post('/signin', { email, password })
+        const { id } = res.data.user
+        const likes = await getUserLikes(id, res.data.token)
         if (res.data) {
           localStorage.setItem('token', res.data.token)
           localStorage.setItem('user', res.data.user.id)
           setState({
-            user: res.data.user
+            user: res.data.user,
+            likes: likes.data
           })
         }
         setShowLoader(false)
       } catch (err) {
         openModal('auth-fail')
-        ('ERERERERE', err)
       }
     }
 
     // get a user by their user ID
-    const getUser = (id, token) => {
+    const getUser = async (id, token) => {
+      if (!token) token = localStorage.getItem('token')
       try {
-        http.get('/person', {
+        const user = await http.get('/person', {
           headers: {
             'Authorization': `Bearer ${token}`
           },
           params: {
             id
           }
-        }).then(res => {
-          setState({
-            user: res.data
-          })
+        })
+        const likes = await getUserLikes(user.data.id, token)
+        setState({
+          user: user.data,
+          likes: likes.data
         })
       } catch (err) {
         console.error(err)
@@ -139,6 +145,15 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
         loaderMessage: message
       })
     }
+
+    const refreshLikes = (id) => {
+      const token = localStorage.getItem('token')
+      getUserLikes(id, token).then(likes => {
+        setState({
+          likes: likes.data
+        })
+      })
+    }
   
     // return methods and values components can use
     return {
@@ -158,7 +173,8 @@ const [GlobalProvider, useGlobalContext] = createContextStore(
       updateProfile,
       showLoader: state.showLoader,
       loaderMessage: state.loaderMessage,
-      setShowLoader
+      setShowLoader,
+      likes: state.likes
     }
   },
   initialState

@@ -1,19 +1,18 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import routes from './routes'
-import '../reset.scss'
-import '../style.scss'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import routes from './routes';
+import '../reset.scss';
+import '../style.scss';
 
+import Wrapper from '../components/Wrapper';
 
-import Wrapper from '../components/Wrapper'
-
-const AppRouter = (props) => {
-	return (
-		<Router>
+const AppRouter = () => {
+  return (
+    <Router>
       <Wrapper>
         <Switch>
           {routes.map((r, i) => (
-            <Route 
+            <Route
               path={r.path}
               component={r.component}
               exact={r.exact}
@@ -23,8 +22,8 @@ const AppRouter = (props) => {
           ))}
         </Switch>
       </Wrapper>
-		</Router>
-	)
-}
+    </Router>
+  );
+};
 
-export default AppRouter
+export default AppRouter;

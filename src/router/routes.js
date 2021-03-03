@@ -1,18 +1,23 @@
-import Home from '../Home'
-import Profile from '../components/profile'
-import NotFound from '../components/NotFound'
+import Home from '../Home';
+import Profile from '../components/profile';
+import Likes from '../components/Likes'
+import NotFound from '../components/NotFound';
 
 export default [
-	{
-		path: '/',
-		exact: true,
-		component: Home
-	},
   {
-		path: '/profile',
-		component: Profile
-	},
+    path: '/',
+    exact: true,
+    component: Home,
+  },
   {
-		component: NotFound
-	}
-]
+    path: '/likes',
+    component: Likes,
+  },
+  {
+    path: '/profile',
+    component: Profile,
+  },
+  {
+    component: NotFound,
+  },
+];

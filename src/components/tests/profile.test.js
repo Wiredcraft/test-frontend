@@ -1,15 +1,14 @@
-import React from 'react'
-import { render } from '../enzyme'
-import Profile from '../profile'
-import Edit from '../profile/Edit'
-import Login from '../profile/login'
-import Register from '../profile/Register'
-import { MemoryRouter } from 'react-router-dom'
-import { GlobalProvider } from '../../store/global'
-import 'babel-polyfill'
+import React from 'react';
+import { render } from '../enzyme';
+import Profile from '../profile';
+import Edit from '../profile/Edit';
+import Login from '../profile/login';
+import Register from '../profile/Register';
+import { MemoryRouter } from 'react-router-dom';
+import { GlobalProvider } from '../../store/global';
+import 'babel-polyfill';
 
 describe('Profile test', () => {
-
   it('profile renders', () => {
     render(
       <GlobalProvider>
@@ -17,43 +16,42 @@ describe('Profile test', () => {
           <Profile />
         </MemoryRouter>
       </GlobalProvider>
-    )
-  })
+    );
+  });
 
   it('profile renders with edit page', () => {
     render(
       <GlobalProvider>
         <MemoryRouter>
           <Profile>
-            <Edit /> 
+            <Edit />
           </Profile>
         </MemoryRouter>
       </GlobalProvider>
-    )
-  })
+    );
+  });
 
   it('profile renders with edit page', () => {
     render(
       <GlobalProvider>
         <MemoryRouter>
           <Profile>
-            <Login /> 
+            <Login />
           </Profile>
         </MemoryRouter>
       </GlobalProvider>
-    )
-  })
+    );
+  });
 
   it('profile renders with edit page', () => {
     render(
       <GlobalProvider>
         <MemoryRouter>
           <Profile>
-            <Register /> 
+            <Register />
           </Profile>
         </MemoryRouter>
       </GlobalProvider>
-    )
-  })
-
-})
+    );
+  });
+});

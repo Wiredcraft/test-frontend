@@ -208,12 +208,29 @@ button {
   max-height: 550px;
   width: 300px;
   top: -50px;
+  padding-bottom: 35px;
   &__image {
     margin: 0px auto;
     object-fit: contain;
     cursor: default;
-    max-height: 500px;
+    max-height: 480px;
     width: 100%;
+  }
+  &__icon {
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    left: 10px;
+    color: rgba(0, 0, 0, 0.3);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      color: rgb(223, 6, 6);
+      opacity: .6
+    }
+  }
+  &__icon--selected {
+    color: rgb(223, 6, 6)
   }
   @media screen and (min-width: 640px) {
     width: 600px;
@@ -222,6 +239,13 @@ button {
 
 .notification {
   text-align: center;
+}
+
+.no-login {
+  padding: 40px 0px;
+  h2 {
+    text-align: center;
+  }
 }
 
 // LOADER

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { useGlobalContext } from '../../store/global'
 
@@ -9,6 +9,8 @@ const Edit = () => {
 	const [pageData, setPageData] = useState({
 		fileSrc: null
 	})
+
+  const nameRef = useRef(null)
 
   // react-dropzone receives uploaded images files here
   // and updates pageData.fileSrc with the blobbed data
@@ -24,7 +26,7 @@ const Edit = () => {
 		if (acceptedFiles[0]) {
 			reader.readAsDataURL(acceptedFiles[0])	
 		}
-	}, [])
+	}, [getRootProps, getInputProps])
 
   // react-dropzone helpers
 	const {getRootProps, getInputProps } = useDropzone({onDrop})
@@ -32,7 +34,7 @@ const Edit = () => {
   // update users profile data in the DB
 	const handleUpdate = (e) => {
 		e.preventDefault()
-		const name = document.getElementById('name')
+    const name = nameRef.current
     const data = {
       id: user.id,
       name: name.value || user,
@@ -65,6 +67,7 @@ const Edit = () => {
           className={`form-field__input`}
           type="text"
           defaultValue={user && user.name ? user.name : '' }
+          ref={nameRef}
         ></input>
       </div>
       <button type="button" onClick={handleUpdate}>Update</button>
