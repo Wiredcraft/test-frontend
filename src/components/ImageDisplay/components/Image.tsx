@@ -1,11 +1,8 @@
 import React from 'react'
+import { ImageProps } from './interfaces'
 
-const Image = () => {
-  return (
-    <div>
-
-    </div>
-  )
+const Image: React.FC<ImageProps> = (props) => {
+  return <img {...props} />
 }
 
 export default Image
