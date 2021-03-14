@@ -1,0 +1,79 @@
+$primary-color:#8a8a8a;
+%flex-layout{
+  display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+#root {
+	width: 80%;
+	margin: 10px auto;
+}
+.App {
+	font-family: sans-serif;
+	text-align: center;
+}
+header{
+  margin-top:50px;
+  height:45px;
+  line-height:45px;
+  @extend %flex-layout;
+}
+.filter-input{
+  background-image: url("./images/searchicon.svg");
+  background-position:6px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 6px 20px 6px 40px;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 12px; 
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  &:hover {
+    border: 1px solid $primary-color;
+  }
+  &:focus{
+    outline: 0 !important;
+  }
+}
+nav{
+  ul{
+    margin: 0px;
+    padding:0px;
+   @extend %flex-layout;
+  }
+    li{
+      list-style: none;
+      margin:0px 10px;
+    }  
+}
+hr{
+  color:$primary-color;
+}
+
+svg {
+	fill: $primary-color;
+	&:hover {
+		fill: #707070;
+	}
+}
+.selectedLink {
+	svg {
+		fill: #515151 !important;
+	}
+}
+.grid-container {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-auto-rows: 0;
+}
+.grid-item {
+	border-radius: 10px;
+  overflow: hidden;
+	position: relative;
+	img {
+		position: relative;
+	}
+}
