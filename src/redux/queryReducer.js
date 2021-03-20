@@ -1,6 +1,6 @@
-export default function reducer(state = "", action) {
+export default function queryReducer(state = "", action) {
   switch (action.type) {
-    case "SET_FILTER":
+    case "SEARCH":
       return action.payload;
     default:
       return state;

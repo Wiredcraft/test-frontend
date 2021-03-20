@@ -2,10 +2,29 @@
 @import "config";
 
 .App {
-  padding: 70px 10px 10px;
+  padding: $top-bar-height + $gap $top-bar-height;
   position: relative;
 }
 
+.gallery {
+  column-gap: $gap;
+
+  .card-container {
+    width: 100%;
+    margin-bottom: $gap;
+    border-radius: $gap;
+    background-color: $color-primary-light;
+    break-inside: avoid;
+  }
+}
+
+// card component
+.card {
+  width: 100%;
+  display: block;
+  border-radius: $gap;
+  position: relative;
+}
 .icon {
   height: $size-icon;
   width: auto;
@@ -18,7 +37,7 @@
   left: 0;
   z-index: 99;
   width: 100%;
-  height: 60px;
+  height: $top-bar-height;
   box-shadow: 0px 4px 8px rgba(103, 102, 102, 0.25);
   display: flex;
   align-items: center;
@@ -66,13 +85,26 @@
   }
 }
 
-// card component
-.card {
-  width: 100%;
-  display: block;
-  border-radius: 5px;
-  .image {
-    width: 100%;
-    border-radius: 5px;
+@media (max-width: $sm) {
+  .gallery {
+    column-count: 1;
+  }
+  .top-bar {
+    justify-content: space-between;
+  }
+}
+@media (min-width: $sm) and(max-width:$md) {
+  .gallery {
+    column-count: 2;
+  }
+}
+@media (min-width: $md) and(max-width:$lg) {
+  .gallery {
+    column-count: 4;
+  }
+}
+@media (min-width: $lg) {
+  .gallery {
+    column-count: 6;
   }
 }

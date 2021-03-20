@@ -2,6 +2,7 @@ import React from "react";
 import homeSvg from "assests/icons/home.svg";
 import notificationSvg from "assests/icons/notification.svg";
 import userSvg from "assests/icons/user.svg";
+import { NavLink } from "react-router-dom";
 
 const links = [
   {
@@ -25,9 +26,9 @@ export default function Nav() {
   return (
     <div className="nav">
       {links.map((link) => (
-        <div key={link.alt} className="nav-link">
+        <NavLink key={link.alt} className="nav-link" to={link.path}>
           <img src={link.svg} alt={link.alt} className="icon"></img>
-        </div>
+        </NavLink>
       ))}
     </div>
   );
