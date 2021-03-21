@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "assests/styles/index.scss";
+import "assets/styles/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";

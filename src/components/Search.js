@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import searchSvg from "assests/icons/search.svg";
+import searchSvg from "assets/icons/search.svg";
 
 // define action
-export const setFilter = (query) => ({
+export const setFilter = (filter) => ({
   type: "SEARCH",
-  payload: query,
+  payload: filter,
 });
 
 export default function Search() {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
   const handleValueChange = (e) => {
-    const query = e.target.value;
-    setValue(query);
-    dispatch(setFilter(query));
+    const { value } = e.target;
+    setValue(value);
+    dispatch(setFilter(value));
   };
   return (
     <div className="search-field">

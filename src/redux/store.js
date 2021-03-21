@@ -1,8 +1,8 @@
 import { createStore, combineReducers } from "redux";
-import queryReducer from "./queryReducer";
+import filterReducer from "./filterReducer";
 
 const reducers = combineReducers({
-  query: queryReducer,
+  filter: filterReducer,
 });
 
 export default createStore(

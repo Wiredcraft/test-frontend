@@ -1,7 +1,7 @@
 import React from "react";
-import homeSvg from "assests/icons/home.svg";
-import notificationSvg from "assests/icons/notification.svg";
-import userSvg from "assests/icons/user.svg";
+import homeSvg from "assets/icons/home.svg";
+import notificationSvg from "assets/icons/notification.svg";
+import userSvg from "assets/icons/user.svg";
 import { NavLink } from "react-router-dom";
 
 const links = [
