@@ -20,5 +20,4 @@ Db will run on port 4000
 ## Issues
 
 - Using CSS grid approach, result in wrong image index order
-- To cancel repeat axios requests
 - Lazyload
