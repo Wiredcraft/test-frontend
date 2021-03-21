@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Getting Started with Kiki's Masonry Layout App
 
 ## Available Scripts
@@ -23,6 +23,4 @@ Db will run on port 4000
 - Using CSS grid approach, result in wrong image index order
 - To cancel repeat axios requests
 - Lazyload
-=======
-*For the requirement description, refer to [test/coding/frontend](https://wiredcraft.gitbook.io/recruitment-test/coding/frontend).*
->>>>>>> efc0fe9e5c9f2a9957ee96819f2b8b772e7b4766
+
