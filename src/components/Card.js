@@ -1,12 +1,13 @@
 import React, { useRef, useEffect } from "react";
+import LazyImage from "components/LazyImage";
 import useCancalBg from "hooks/useCancelBg";
 
 function Card({ src, alt }) {
-  const ref = useRef();
+  const cardRef = useRef();
   useEffect(() => {
-    resetSize(ref, src);
+    resetSize(cardRef, src);
     return () => {};
-  }, [src]);
+  }, [cardRef, src]);
 
   // add grey backgroud to the images as placeholder
   const resetSize = (ref, url) => {
@@ -19,11 +20,11 @@ function Card({ src, alt }) {
   };
 
   // cancel the grey background when resizing the window
-  useCancalBg(ref);
+  useCancalBg(cardRef);
 
   return (
-    <div className="card-container" ref={ref}>
-      <img src={src} alt={alt} className="card" />
+    <div className="card" ref={cardRef}>
+      <LazyImage url={src} alt={alt} />
     </div>
   );
 }

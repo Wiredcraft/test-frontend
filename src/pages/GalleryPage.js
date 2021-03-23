@@ -6,7 +6,6 @@ import useGetImages from "hooks/useGetImages";
 export default function GalleryPage() {
   const { filter } = useSelector((state) => state);
   const { images } = useGetImages();
-
   return (
     <div className="gallery">
       {images.map(

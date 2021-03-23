@@ -9,7 +9,7 @@
 .gallery {
   column-gap: $gap;
 
-  .card-container {
+  .card {
     width: 100%;
     margin-bottom: $gap;
     border-radius: $gap;
@@ -19,7 +19,7 @@
 }
 
 // card component
-.card {
+.image {
   width: 100%;
   display: block;
   border-radius: $gap;

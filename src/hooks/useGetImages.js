@@ -6,7 +6,7 @@ export default function useGetImages() {
 
   useEffect(() => {
     // default api
-    let API = "http://localhost:4000/pics";
+    let API = "http://localhost:4000/pics?";
     axios
       .get(API)
       .then((res) => {
