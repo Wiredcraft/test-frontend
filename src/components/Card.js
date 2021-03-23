@@ -2,12 +2,23 @@ import React, { useRef, useEffect } from "react";
 import LazyImage from "components/LazyImage";
 import useCancalBg from "hooks/useCancelBg";
 
-function Card({ src, alt }) {
+function Card({ src, alt, index }) {
   const cardRef = useRef();
   useEffect(() => {
     resetSize(cardRef, src);
     return () => {};
   }, [cardRef, src]);
+  useEffect(() => {
+    if (index === 99) {
+      const observer = new IntersectionObserver((enteries, observer) => {
+        if (enteries[0].isIntersecting) {
+          console.log("bottom");
+          observer.disconnect();
+        }
+      });
+      observer.observe(cardRef.current);
+    }
+  }, [cardRef, index]);
 
   // add grey backgroud to the images as placeholder
   const resetSize = (ref, url) => {

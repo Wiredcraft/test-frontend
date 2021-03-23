@@ -6,17 +6,17 @@
   position: relative;
 }
 
-.gallery {
-  column-gap: $gap;
+// .gallery {
+//   column-gap: $gap;
 
-  .card {
-    width: 100%;
-    margin-bottom: $gap;
-    border-radius: $gap;
-    background-color: $color-primary-light;
-    break-inside: avoid;
-  }
+.card {
+  width: 100%;
+  // margin-bottom: $gap;
+  border-radius: $gap;
+  background-color: $color-primary-light;
+  // break-inside: avoid;
 }
+// }
 
 // card component
 .image {
