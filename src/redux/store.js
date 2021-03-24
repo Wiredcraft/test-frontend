@@ -1,8 +1,26 @@
 import { createStore, combineReducers } from "redux";
-import filterReducer from "./filterReducer";
+
+function filterReducer(state = "", action) {
+  switch (action.type) {
+    case "SEARCH":
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+function loadMoreReducers(state = false, action) {
+  switch (action.type) {
+    case "LOAD_MORE":
+      return action.payload;
+    default:
+      return state;
+  }
+}
 
 const reducers = combineReducers({
   filter: filterReducer,
+  loadMore: loadMoreReducers,
 });
 
 export default createStore(

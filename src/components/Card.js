@@ -1,24 +1,27 @@
 import React, { useRef, useEffect } from "react";
 import LazyImage from "components/LazyImage";
 import useCancalBg from "hooks/useCancelBg";
+import { useDispatch } from "react-redux";
+import { setLoadmore } from "redux/actions";
 
-function Card({ src, alt, index }) {
+function Card({ src, alt, isLast }) {
   const cardRef = useRef();
   useEffect(() => {
     resetSize(cardRef, src);
     return () => {};
   }, [cardRef, src]);
+  const dispatch = useDispatch();
   useEffect(() => {
-    if (index === 99) {
+    if (isLast) {
       const observer = new IntersectionObserver((enteries, observer) => {
         if (enteries[0].isIntersecting) {
-          console.log("bottom");
+          dispatch(setLoadmore(true));
           observer.disconnect();
         }
       });
       observer.observe(cardRef.current);
     }
-  }, [cardRef, index]);
+  }, [cardRef, dispatch, isLast]);
 
   // add grey backgroud to the images as placeholder
   const resetSize = (ref, url) => {
