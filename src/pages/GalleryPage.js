@@ -6,13 +6,17 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { setLoadmore } from "redux/actions";
 
 export default function GalleryPage() {
-  const { filter } = useSelector((state) => state);
+  const { filter, error } = useSelector((state) => state);
   const { images } = useGetImages();
   const dispatch = useDispatch();
+  // when component mount, load once
   useEffect(() => {
     dispatch(setLoadmore(true));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return (
+  return error ? (
+    <p>{error}</p>
+  ) : (
     <ResponsiveMasonry
       columnsCountBreakPoints={{ 350: 1, 500: 2, 750: 3, 900: 4, 1200: 6 }}
     >

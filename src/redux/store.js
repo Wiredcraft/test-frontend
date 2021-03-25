@@ -18,9 +18,19 @@ function loadMoreReducers(state = false, action) {
   }
 }
 
+function errorReducers(state = "", action) {
+  switch (action.type) {
+    case "SET_ERROR":
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
 const reducers = combineReducers({
   filter: filterReducer,
   loadMore: loadMoreReducers,
+  error: errorReducers,
 });
 
 export default createStore(

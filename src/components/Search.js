@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import searchSvg from "assets/icons/search.svg";
-
-// define action
-export const setFilter = (filter) => ({
-  type: "SEARCH",
-  payload: filter,
-});
+import { setFilter } from "redux/actions";
 
 export default function Search() {
   const [value, setValue] = useState("");
