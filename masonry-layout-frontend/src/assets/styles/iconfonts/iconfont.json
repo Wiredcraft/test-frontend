@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "840759",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "8299584",
+      "name": "alarm",
+      "font_class": "alarm",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "11982742",
+      "name": "Home, homepage, menu",
+      "font_class": "Homehomepagemenu",
+      "unicode": "e9db",
+      "unicode_decimal": 59867
+    },
+    {
+      "icon_id": "13126705",
+      "name": "search",
+      "font_class": "tubiaozhizuomoban-",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    }
+  ]
+}

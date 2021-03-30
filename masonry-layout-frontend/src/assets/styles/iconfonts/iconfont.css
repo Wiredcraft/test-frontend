@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1617113135212'); /* IE9 */
+  src: url('iconfont.eot?t=1617113135212#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAARkAAsAAAAACLwAAAQXAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqERIN/ATYCJAMUCwwABCAFhG0HXhuhB8gekiQlAQccAKhSJAqgCKj9+O3Jky8uTRTRjidNpJ/wxJDx0pkuWhpe8RD1p99WDzDY7rmqrQi8KGPQxkO8jv6qVryo/NtogACwuAfHTJfWYHk2m0tGYCXgaDgeUDfuE+Tt/Z9emH8Yu7zI+wQ0GtUXcaS0uhlomb4sIOzqtUqgEzq5ghzUyrJgb4bwCAp1nEPeAh56vx9+SYwGUZFAX3vsUokG8r96fv5ETe6Y7KyDAP5wFrBDJCwDmXC50LaLCmLLKI1yROIAUP5Wi+LX5g/tHwZ/ftrRARBtSNFo/MMjyoJEKEGXNSPsgXjmq6fFJPLVl1ckHwyZBH48lbtedLGnERUeA7/puGlvFUVBbEmXd44I9hzneNfsfN/i+qgQPzD6nSe7ixdj1u1SrFvnnL0zMGJdhEtkjl+bv9WyZkPwyuVhG9aEOXeAb3Tr1PbjXR+IjMulcDpbHA5us+PIFbHzsI0P7twbnhzkcDTDCsfq3N2T93Tz2bVvyl73k2IfIb5lVo1TrQwcvhzi7RUeHvNWEZRHkDFlHHPJNVXNackZrvSqK69lxbx9U/j+xzWLIgpQXJXQtMQmX6vl5CyXk65W9Nfo9Z8e2klD/9xx+95e2vLoCSeHIyvhdGkFqyYPL5i53qfGvDLf92Pd/9ZUr+IflePihtN+ZlqXvQROpoNffx2kDlFffgXvCKf2LIVb68F15fcu15cH//yd6xuGS+TBGM3aR44Y5e61IiJoV7dd8e35znlB4d4r3EcT/LS9eiSDjbcaOk49sTbPaBLrW/XXhnNu8Bbol25fE2eJTbA2Zvbs0K4aOTXj8OHp5AwScWzxdHjmDMqKu06ZNXt1mF/YpP6EYeECA6kngZYwRBK9y4aT4SbA/33JlRQe9UTaRE0WdzgLKAkgXSRf/Q6zfNnASYb5ZP+nPfKHfJ7TEIe9//dl6MZ7p3KN+S+f37AjK0JdX2Sp2uJJjsLRAWRRHmjEK3d1ejGMoqdxIUGtJ4KoMgJJbRqZsctQaLIKpdp+aLSk7HCTLjxKyG7AohkAgnaHIGr1BpJ2t5EZ+xwKvb5DqT0KGp0JAWc2mU3vXsRjpYA1SDUG6dWchTWNgrtf3Ii1dpOSjws9CoN5mz6IEmLj08kybMH8EBtsI7WJgsAilufMqBQ8hk0mDll5zoDVQqxOEKyZcXFs0SfFqjkzuDuMhykJMA1EZQxET41jwTr9Be6Zn2+EadmZKPEVNWVWBsaz0Y+OJIgV3wBZJrM0qrmUZ2xG0kokELAQFo9jhpQCC2YyYhzEWjzLAFMTxNJ1iFhlikO92Kay2OkV5hvIZQ3olxSBJChCQkgJGeRrNsxLlZeTafYt58xYZ7mtSi12rrXY/QW7Sq/kxur0Y+2cmVMpLf0AAAA=') format('woff2'),
+  url('iconfont.woff?t=1617113135212') format('woff'),
+  url('iconfont.ttf?t=1617113135212') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1617113135212#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e65c";
+}
+
+.icon-alarm:before {
+  content: "\e60c";
+}
+
+.icon-Homehomepagemenu:before {
+  content: "\e9db";
+}
+
+.icon-tubiaozhizuomoban-:before {
+  content: "\e610";
+}
+

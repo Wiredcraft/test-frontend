@@ -1,0 +1,28 @@
+{
+  "name": "masonry-layout-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env PORT=8000 ts-node-dev --respawn ./src/bin/www.ts",
+    "dev": "cross-env PORT=8000 nodemon --exec ts-node --files ./src/bin/www.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "http-status-codes": "^2.1.4",
+    "image-size": "^0.9.7"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/http-errors": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
+  }
+}

@@ -1,0 +1,10 @@
+.nav {
+    display: flex;
+    align-items: center;
+    .icons {
+        margin-left: 20px;
+        span {
+            margin: 0 10px;
+        }
+    }
+}

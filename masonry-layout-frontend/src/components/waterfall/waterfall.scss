@@ -1,0 +1,32 @@
+.container {
+	width:100%;
+	box-sizing: border-box;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .column {
+	box-sizing: border-box;
+}
+
+.card {
+	margin-bottom: 10px;
+	padding: 5px;
+	background: #FFF;
+	box-shadow: 3px 3px 10px 0 #222;
+	display: block;
+}
+
+.card  .lazyImageBox {
+	background: url("../../assets/images/default.gif") no-repeat center center #F4F4F4;
+	overflow: hidden;
+}
+
+.card  .lazyImageBox img {
+	width: 100%;
+  	height: 100%;
+	opacity: 0;
+	transition: opacity .3s ease;
+}
