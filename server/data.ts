@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     "_id": "5f115174961c75468fbe0f44",
     "index": 0,

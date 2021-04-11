@@ -1,8 +1,9 @@
-const express = require('express')
+import express from 'express'
+import pictures from './data'
+
 const app = express()
 const port = 3000
 
-const pictures = require('./data')
 const CHUNK_SIZE = 20
 
 app.get('/', (req, res) => {
@@ -10,7 +11,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/data', (req, res) => {
-  const chunkNum = req.query?.chunk || 0
+  const chunk = req.query.chunk as string
+  const chunkNum = parseInt(chunk) || 0
+
   const start = chunkNum * CHUNK_SIZE
   const end = chunkNum * CHUNK_SIZE + CHUNK_SIZE
   res.send(pictures.slice(start, end))
