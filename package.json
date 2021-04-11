@@ -1,0 +1,29 @@
+{
+  "name": "test-frontend",
+  "version": "1.0.0",
+  "description": "*For the requirement description, refer to [test/coding/frontend](https://wiredcraft.gitbook.io/recruitment-test/coding/frontend).*",
+  "scripts": {
+    "server": "tsc -p server/tsconfig.json -w & nodemon server/built/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumtsui/test-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumtsui/test-frontend/issues"
+  },
+  "homepage": "https://github.com/sumtsui/test-frontend#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.37",
+    "eslint": "^7.24.0",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
