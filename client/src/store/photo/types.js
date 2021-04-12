@@ -1,0 +1,9 @@
+const types = {
+
+  GET_PHOTOS_PENDING: 'GET_PHOTOS_PENDING',
+  GET_PHOTOS_SUCCESS: 'GET_PHOTOS_SUCCESS',
+  GET_PHOTOS_FAILURE: 'GET_PHOTOS_FAILURE',
+
+};
+
+export default types;
