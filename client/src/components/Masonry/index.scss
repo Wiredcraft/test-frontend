@@ -1,0 +1,51 @@
+
+
+.masonry {
+  margin: auto;
+  position: relative;
+
+  .item-container {
+    position: absolute;
+
+    .image-wrap {
+
+      .image-item {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+
+    .text-wrap {
+
+      .text-item {
+        word-break: break-all;
+      }
+    }
+  }
+
+  .loader {
+    position: absolute;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+  }
+
+  .clickable {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .item-container {
+    animation: fadeIn .5s ease-in;
+  }
+}

@@ -1,0 +1,127 @@
+@import "../../sass/_variables";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem .6rem;
+  box-shadow: 5px 5px 5px $color-background;
+  margin-bottom: 1rem;
+
+  ul {
+    display: flex;
+    list-style: none;
+
+    li {
+      margin-left: 2em;
+
+      a {
+        text-decoration: none;
+        color: $color-foreground;
+        font-size: 1.5rem;
+        line-height: $text-line-height;
+      }
+    }
+
+    .search-input {
+      background: $color-background;
+      padding: 0 .5rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      line-height: $text-line-height;
+      color: $color-foreground;
+
+      svg {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+        line-height: $text-line-height;
+        width: 7rem;
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+
+    div {
+      background: black;
+      height: 2px;
+      width: 20px;
+      margin-bottom: 3px;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  @media (max-width: $mobile-max-width-md) {
+    .burger {
+      display: block;
+    }
+
+    .items {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      background: white;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(100%);
+      transition: 0.3s ease-in-out;
+      z-index: 1;
+
+      li {
+        margin-left: 0;
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.show-items {
+  transform: translateX(0) !important;
+}
+
+.show-items:not(div) {
+  display: flex !important;
+}
+
+.show-items .line1 {
+  transform: rotate(-45deg) translate(-3px, 5px);
+}
+
+.show-items .line2 {
+  opacity: 0;
+}
+
+.show-items .line3 {
+  transform: rotate(45deg) translate(-3px, -5px);
+}
+
+@keyframes scaleFade {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-fade-animation {
+  animation: scaleFade 0.3s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
