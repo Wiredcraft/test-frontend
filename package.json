@@ -5,7 +5,8 @@
   "scripts": {
     "server": "tsc -p server/tsconfig.json -w & nodemon server/built/app.js",
     "build": "cross-env TS_NODE_PROJECT=\"client/build/tsconfig.json\" webpack --config client/build/webpack.config.ts --env prod",
-    "client": "cross-env TS_NODE_PROJECT=\"client/build/tsconfig.json\" webpack serve --config client/build/webpack.config.ts"
+    "client": "cross-env TS_NODE_PROJECT=\"client/build/tsconfig.json\" webpack serve --config client/build/webpack.config.ts",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
+    "concurrently": "^6.0.1",
     "cross-env": "^7.0.3",
     "eslint": "^7.24.0",
     "eslint-plugin-react": "^7.23.2",
