@@ -2,11 +2,20 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "react"
   ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
-  ]
+  ],
+  "rules": {
+    "semi": "warn",
+    "quotes": ["warn", "single", { "avoidEscape": true }]
+  }
 }

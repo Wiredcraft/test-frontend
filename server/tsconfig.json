@@ -3,7 +3,6 @@
     "outDir": "./built",
     "allowJs": false,
     "target": "es6",
-    "allowSyntheticDefaultImports": true,
     "module": "CommonJS",
     "esModuleInterop": true
   },
