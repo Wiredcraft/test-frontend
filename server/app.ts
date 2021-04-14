@@ -1,8 +1,12 @@
 import express from 'express';
 import pictures from './data';
+import cors from 'cors';
 
 const app = express();
 const port = 3000;
+const corsOptions = {
+  origin: 'http://localhost:9000',
+};
 
 const CHUNK_SIZE = 20;
 
@@ -10,7 +14,7 @@ app.get('/', (req, res) => {
   res.send('Hello');
 });
 
-app.get('/data', (req, res) => {
+app.get('/data', cors(corsOptions), (req, res) => {
   const chunk = req.query.chunk as string;
   const chunkNum = parseInt(chunk) || 0;
 
