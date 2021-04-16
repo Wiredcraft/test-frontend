@@ -1,7 +1,13 @@
 import React from 'react';
+import Masonry from './components/Masonry';
+import { PicturesProvider } from './contexts/PicturesContext';
 
 const App = () => (
-  <h1>My React and TypeScript App!</h1>
+  <div className="app-wrap">
+    <PicturesProvider>
+      <Masonry />
+    </PicturesProvider>
+  </div>
 );
 
 export default App;

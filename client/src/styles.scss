@@ -1,3 +1,26 @@
-h1 {
-  color: orange;
+$breakpoint-phone: 640px;
+$breakpoint-tablet: 768px;
+
+.app-wrap {
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-phone) {
+    width: 95%;
+  }
+
+  .masonry {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      img.picture {
+        border-radius: 5%;
+        margin-bottom: 1em;
+      }
+    }
+  }
 }
