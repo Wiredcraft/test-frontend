@@ -20,7 +20,7 @@ app.get('/data', cors(corsOptions), (req, res) => {
 
   const start = chunkNum * CHUNK_SIZE;
   const end = chunkNum * CHUNK_SIZE + CHUNK_SIZE;
-  res.send(pictures.slice(start, end));
+  setTimeout(() => res.send(pictures.slice(start, end)), 1000);
 });
 
 app.listen(port, () => {

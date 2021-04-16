@@ -1,18 +1,33 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   usePictures,
   useMorePictures,
   TPicture,
 } from '../contexts/PicturesContext';
 import useWindowSize from './useWindowSize';
+import { debounce } from 'lodash';
 
-let num = 2;
+let chunk = 1;
 
 const Masonry = () => {
   const { data, loading, error } = usePictures();
-  const { fetchMore, result } = useMorePictures();
+  const { fetchMore, result, called } = useMorePictures();
+  const [isNoMore, setIsNoMore] = useState(false);
   const [width] = useWindowSize();
   const { columnWidth, columnTotal } = getColumnWidthAndTotal(width);
+
+  useEffect(() => {
+    const fetchMoreDebounce = debounce(() => fetchMore(chunk++), 1000, {
+      leading: true,
+    });
+    scrollForMore(fetchMoreDebounce);
+  }, []);
+
+  console.log('called', called);
+
+  useEffect(() => {
+    if (result.data.length === 0 && called) setIsNoMore(true);
+  }, [result, called]);
 
   const columns = useMemo(() => {
     if (data.length === 0) return [];
@@ -28,9 +43,6 @@ const Masonry = () => {
 
   return (
     <div>
-      <button onClick={() => fetchMore(num++)}>
-        {result.loading ? 'loading' : 'more!'}
-      </button>
       <div className="masonry">
         {columns.map((col, idx) => (
           <div className="column" key={idx} style={{ width: columnWidth }}>
@@ -40,6 +52,12 @@ const Masonry = () => {
           </div>
         ))}
       </div>
+      {isNoMore && (
+        <div>
+          <hr />
+          {'that is all'}
+        </div>
+      )}
     </div>
   );
 };
@@ -84,6 +102,26 @@ function getColumnedPictures(columnTotal: number, data: TPicture[]) {
   }
 
   return cols;
+}
+
+function scrollForMore(getPic: () => void) {
+  window.addEventListener(
+    'scroll',
+    () => {
+      const {
+        scrollTop,
+        scrollHeight,
+        clientHeight,
+      } = document.documentElement;
+
+      if (scrollTop + clientHeight >= scrollHeight - 5) {
+        getPic();
+      }
+    },
+    {
+      passive: true,
+    }
+  );
 }
 
 export default Masonry;
