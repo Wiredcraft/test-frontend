@@ -30,11 +30,13 @@ module.exports = (env) => {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].bundle.js',
+      publicPath: '/',
     },
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       compress: true,
       port: 9000,
+      historyApiFallback: true,
     },
     plugins: [
       new html({
