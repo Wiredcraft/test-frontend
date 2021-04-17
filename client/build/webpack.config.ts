@@ -16,16 +16,16 @@ module.exports = (env) => {
         },
         {
           test: /\.s[ac]ss$/i,
-          use: [
-            'style-loader',
-            'css-loader',
-            'sass-loader',
-          ],
+          use: ['style-loader', 'css-loader', 'sass-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset',
         },
       ],
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js']
+      extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -38,7 +38,7 @@ module.exports = (env) => {
     },
     plugins: [
       new html({
-        template: path.resolve(__dirname, './index.html')
+        template: path.resolve(__dirname, './index.html'),
       }),
     ],
   };

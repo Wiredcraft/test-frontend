@@ -23,8 +23,6 @@ const Masonry = () => {
     scrollForMore(fetchMoreDebounce);
   }, []);
 
-  console.log('called', called);
-
   useEffect(() => {
     if (result.data.length === 0 && called) setIsNoMore(true);
   }, [result, called]);
@@ -81,6 +79,7 @@ function getColumnWidthAndTotal(windowWidth: number) {
   return { columnWidth, columnTotal };
 }
 
+// todo: use useRef to keep the last columnedPictures
 function getColumnedPictures(columnTotal: number, data: TPicture[]) {
   const cols = [] as TPicture[][];
 

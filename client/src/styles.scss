@@ -1,6 +1,14 @@
 $breakpoint-phone: 640px;
 $breakpoint-tablet: 768px;
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 .app-wrap {
   width: 80%;
   margin: 0 auto;
@@ -20,6 +28,38 @@ $breakpoint-tablet: 768px;
       img.picture {
         border-radius: 5%;
         margin-bottom: 1em;
+      }
+    }
+  }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 10px 10px;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    left: 0;
+    .search-input {
+      input {
+        background-color: #eaeaea;
+        background-image: url('./assets/images/search.png');
+        background-repeat: no-repeat;
+        padding: 8px;
+        padding-left: 30px;
+        border: none;
+        background-size: auto 50%;
+        background-position: 8px 8px;
+      }
+    }
+    button {
+      border: none;
+      background: white;
+      img {
+        height: 20px;
+        width: 20px;
       }
     }
   }

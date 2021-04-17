@@ -60,8 +60,9 @@ function useMorePictures() {
 }
 
 /**
- * this is a native approach, just trying things out.
- * adding switch to useReducer might be more interesting,
+ * this is a naive approach, just trying things out.
+ * switching to useReducer might be more interesting,
+ * since so many states in the provider, children might have some unnecessary rerenders..
  */
 function PicturesProvider(props: any) {
   const [pictures, setPictures] = useState<TPicture[]>([]);
