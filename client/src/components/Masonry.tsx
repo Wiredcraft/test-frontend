@@ -35,9 +35,9 @@ const Masonry = () => {
     return cols;
   }, [data, width]);
 
-  if (loading) return <p>loading</p>;
+  if (loading) return <p className="loader">fancy loader</p>;
 
-  if (error) return <p>error :/</p>;
+  if (error) return <p className="error-msg">fancy error message</p>;
 
   return (
     <div>
@@ -51,9 +51,9 @@ const Masonry = () => {
         ))}
       </div>
       {isNoMore && (
-        <div>
+        <div className="bottom">
           <hr />
-          {'that is all'}
+          {'fancy bottom'}
         </div>
       )}
     </div>

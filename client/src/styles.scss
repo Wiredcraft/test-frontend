@@ -21,6 +21,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-top: 80px;
 
     .column {
       display: flex;
@@ -62,5 +63,16 @@ body {
         width: 20px;
       }
     }
+  }
+
+  .bottom {
+    margin-bottom: 4em;
+  }
+
+  .loader,
+  .error-msg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
   }
 }
