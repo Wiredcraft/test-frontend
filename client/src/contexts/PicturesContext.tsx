@@ -59,6 +59,7 @@ function PicturesProvider(props: any) {
 
     // switched to a new route, reset data
     if (chunk === 0) {
+      isAll.current = false;
       setData([]);
       setCurrentData([]);
       setLoadingFirst(true);
