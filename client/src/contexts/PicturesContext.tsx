@@ -6,6 +6,7 @@ import {
   createContext,
   useCallback,
   useRef,
+  useEffect,
 } from 'react';
 
 export type TPicture = {
@@ -50,8 +51,12 @@ function PicturesProvider(props: any) {
   const [loadingFirst, setLoadingFirst] = useState<boolean>(false);
   const [loadingMore, setLoadingMore] = useState<boolean>(false);
   const [error, setError] = useState<undefined | Error>(undefined);
-  const [called, setCalled] = useState<boolean>(false);
+  const [isLoadedAll, setIsLoadedAll] = useState(false);
   const isAll = useRef(false);
+
+  useEffect(() => {
+    isAll.current = isLoadedAll;
+  }, [isLoadedAll]);
 
   const fetchData = useCallback((chunk: number, search: string) => {
     // still on current route, and loaded all pictures, no need to keep fetching
@@ -59,7 +64,7 @@ function PicturesProvider(props: any) {
 
     // switched to a new route, reset data
     if (chunk === 0) {
-      isAll.current = false;
+      setIsLoadedAll(false);
       setData([]);
       setCurrentData([]);
       setLoadingFirst(true);
@@ -72,8 +77,7 @@ function PicturesProvider(props: any) {
         res.json().then((res) => {
           setData((pics) => [...pics, ...res]);
           setCurrentData(res);
-          setCalled(true);
-          isAll.current = res.length === 0 ? true : false;
+          setIsLoadedAll(res.length === 0 ? true : false);
         })
       )
       .catch((err) => setError(err))
@@ -87,7 +91,7 @@ function PicturesProvider(props: any) {
     () => ({
       fetchData,
       result: {
-        isAll: isAll.current,
+        isAll: isLoadedAll,
         loadingFirst,
         loadingMore,
         error,
@@ -95,7 +99,7 @@ function PicturesProvider(props: any) {
         currentData,
       },
     }),
-    [allData, currentData, loadingFirst, loadingMore, error, called, isAll]
+    [allData, currentData, loadingFirst, loadingMore, error, isLoadedAll]
   );
   return <PicturesContext.Provider value={value} {...props} />;
 }
