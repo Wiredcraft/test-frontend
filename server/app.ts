@@ -8,7 +8,7 @@ const corsOptions = {
   origin: 'http://localhost:9000',
 };
 
-const CHUNK_SIZE = 20;
+const CHUNK_SIZE = 10;
 
 app.get('/', (req, res) => {
   res.send('Hello');
@@ -17,10 +17,15 @@ app.get('/', (req, res) => {
 app.get('/data', cors(corsOptions), (req, res) => {
   const chunk = req.query.chunk as string;
   const chunkNum = parseInt(chunk) || 0;
+  const search = req.query.search as string;
+
+  const result = search
+    ? pictures.filter((pic) => pic.name.includes(search))
+    : pictures;
 
   const start = chunkNum * CHUNK_SIZE;
   const end = chunkNum * CHUNK_SIZE + CHUNK_SIZE;
-  setTimeout(() => res.send(pictures.slice(start, end)), 1000);
+  setTimeout(() => res.send(result.slice(start, end)), 1000);
 });
 
 app.listen(port, () => {
