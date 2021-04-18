@@ -7,6 +7,7 @@ $breakpoint-tablet: 768px;
 
 body {
   margin: 0;
+  min-height: 100vh;
 }
 
 .app-wrap {
@@ -29,6 +30,8 @@ body {
       img.picture {
         border-radius: 5%;
         margin-bottom: 1em;
+        min-height: 6em;
+        background-color: lightgray;
       }
     }
   }
@@ -55,6 +58,9 @@ body {
         background-position: 8px 8px;
       }
     }
+    :nth-child(n) {
+      margin-right: 10px;
+    }
     button {
       border: none;
       background: white;
@@ -69,10 +75,16 @@ body {
     margin-bottom: 4em;
   }
 
-  .loader,
-  .error-msg {
+  .loader-more,
+  .no-more {
+    width: 100%;
+    text-align: center;
+  }
+
+  .error-msg,
+  .loader-first {
     position: absolute;
-    left: 50%;
+    left: 48%;
     top: 50%;
   }
 }

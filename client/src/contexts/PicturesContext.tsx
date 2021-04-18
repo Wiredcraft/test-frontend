@@ -2,10 +2,10 @@ import * as React from 'react';
 import {
   useMemo,
   useState,
-  useEffect,
   useContext,
   createContext,
   useCallback,
+  useRef,
 } from 'react';
 
 export type TPicture = {
@@ -16,115 +16,87 @@ export type TPicture = {
 };
 
 type TPictureQuery = {
-  data: TPicture[];
-  loading: boolean;
-  error: Error | undefined;
+  fetchData: (chunk: number, search?: string) => void;
+  result: {
+    isAll: boolean;
+    allData: TPicture[];
+    currentData: TPicture[];
+    loadingFirst: boolean;
+    loadingMore: boolean;
+    error: Error | undefined;
+  };
 };
 
-type TPictureQueryMore = {
-  fetchMore: (chunk: number) => void;
-  called: boolean;
-  result: TPictureQuery;
-};
+const PicturesContext = createContext<TPictureQuery | undefined>(undefined);
 
-type TPicturesContext = [TPictureQuery, TPictureQueryMore];
+function usePicturesLazy(): TPictureQuery {
+  const context = useContext(PicturesContext);
 
-const PicturesContext = createContext<TPicturesContext | undefined>(undefined);
+  if (!context)
+    throw new Error('usePicturesLazy must be used within a PicturesProvider');
+
+  return context;
+}
 
 /**
  * I use Apollo Client to manage state at work.
- * This is my experiment to minic Apollo with React's context api.
- * https://www.apollographql.com/docs/react/api/react/hooks/#usequery
+ * I took this project as a chance to experiment managing state with React's context api.
+ * Replacing useState with useReducer can have better scalability.
  */
-function usePictures() {
-  const context = useContext(PicturesContext);
 
-  if (!context)
-    throw new Error('usePictures must be used within a PicturesProvider');
-
-  const [pictures] = context;
-
-  return pictures;
-}
-
-// https://www.apollographql.com/docs/react/api/react/hooks/#uselazyquery
-function useMorePictures() {
-  const context = useContext(PicturesContext);
-
-  if (!context)
-    throw new Error('usePictures must be used within a PicturesProvider');
-
-  const [_, fetchMore] = context;
-
-  return fetchMore;
-}
-
-/**
- * this is a naive approach, just trying things out.
- * switching to useReducer might be more interesting,
- * since so many states in the provider, children might have some unnecessary rerenders..
- */
 function PicturesProvider(props: any) {
-  const [pictures, setPictures] = useState<TPicture[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [allData, setData] = useState<TPicture[]>([]);
+  const [currentData, setCurrentData] = useState<TPicture[]>([]);
+  const [loadingFirst, setLoadingFirst] = useState<boolean>(false);
+  const [loadingMore, setLoadingMore] = useState<boolean>(false);
   const [error, setError] = useState<undefined | Error>(undefined);
-
-  const [morePictures, setMorePictures] = useState<TPicture[]>([]);
-  const [moreLoading, setMoreLoading] = useState<boolean>(false);
-  const [moreError, setMoreError] = useState<undefined | Error>(undefined);
   const [called, setCalled] = useState<boolean>(false);
+  const isAll = useRef(false);
 
-  const fetchMore = useCallback(
-    (chunk: number) =>
-      getPics(
-        setPictures,
-        setMoreError,
-        setMoreLoading,
-        chunk,
-        setMorePictures,
-        setCalled
-      ),
-    []
-  );
+  const fetchData = useCallback((chunk: number, search: string) => {
+    // still on current route, and loaded all pictures, no need to keep fetching
+    if (isAll.current && chunk !== 0) return;
 
-  const value = useMemo(
-    () => [
-      { data: pictures, loading, error },
-      {
-        fetchMore,
-        result: { loading: moreLoading, error: moreError, data: morePictures },
-        called,
-      },
-    ],
-    [pictures, loading, error, morePictures, moreLoading, moreError]
-  );
+    // switched to a new route, reset data
+    if (chunk === 0) {
+      setData([]);
+      setCurrentData([]);
+      setLoadingFirst(true);
+    } else {
+      setLoadingMore(true);
+    }
 
-  useEffect(() => {
-    getPics(setPictures, setError, setLoading, 0);
+    fetch(`http://localhost:3000/data?chunk=${chunk}&search=${search || ''}`)
+      .then((res) =>
+        res.json().then((res) => {
+          setData((pics) => [...pics, ...res]);
+          setCurrentData(res);
+          setCalled(true);
+          isAll.current = res.length === 0 ? true : false;
+        })
+      )
+      .catch((err) => setError(err))
+      .finally(() => {
+        setLoadingFirst(false);
+        setLoadingMore(false);
+      });
   }, []);
 
+  const value = useMemo<TPictureQuery>(
+    () => ({
+      fetchData,
+      result: {
+        isAll: isAll.current,
+        loadingFirst,
+        loadingMore,
+        error,
+        allData,
+        currentData,
+      },
+    }),
+    [allData, currentData, loadingFirst, loadingMore, error, called, isAll]
+  );
   return <PicturesContext.Provider value={value} {...props} />;
 }
 
-function getPics(
-  setPictures: React.Dispatch<React.SetStateAction<TPicture[]>>,
-  setError: React.Dispatch<React.SetStateAction<Error>>,
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
-  chunk: number,
-  setMorePictures?: React.Dispatch<React.SetStateAction<TPicture[]>>,
-  setCalled?: React.Dispatch<React.SetStateAction<boolean>>
-) {
-  setLoading(true);
-  fetch(`http://localhost:3000/data?chunk=${chunk}`)
-    .then((res) =>
-      res.json().then((res) => {
-        setPictures((pics) => [...pics, ...res]);
-        if (setMorePictures) setMorePictures(res);
-        if (setCalled) setCalled(true);
-      })
-    )
-    .catch((err) => setError(err))
-    .finally(() => setLoading(false));
-}
-
-export { PicturesProvider, usePictures, useMorePictures };
+export { PicturesProvider, usePicturesLazy };
