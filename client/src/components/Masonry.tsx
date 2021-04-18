@@ -1,43 +1,53 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import {
-  usePictures,
-  useMorePictures,
-  TPicture,
-} from '../contexts/PicturesContext';
-import useWindowSize from './useWindowSize';
 import { debounce } from 'lodash';
+import React, { useEffect, useMemo } from 'react';
+import { TPicture } from '../contexts/PicturesContext';
+import { useWindowSize } from '../contexts/WindowSizeContext';
 
-let chunk = 1;
+type TProps = {
+  data: TPicture[];
+  loadingFirst: boolean;
+  loadingMore: boolean;
+  error: undefined | Error;
+  isAll: boolean;
+  fetchMore: () => void;
+};
 
-const Masonry = () => {
-  const { data, loading, error } = usePictures();
-  const { fetchMore, result, called } = useMorePictures();
-  const [isNoMore, setIsNoMore] = useState(false);
+const Masonry = ({
+  data = [],
+  loadingFirst,
+  loadingMore,
+  error,
+  isAll,
+  fetchMore,
+}: TProps) => {
   const [width] = useWindowSize();
   const { columnWidth, columnTotal } = getColumnWidthAndTotal(width);
 
   useEffect(() => {
-    const fetchMoreDebounce = debounce(() => fetchMore(chunk++), 1000, {
+    // debounce still looks buggy
+    const loadMore = debounce(fetchMore, 1000, {
       leading: true,
     });
-    scrollForMore(fetchMoreDebounce);
+    const cb = () => scrollForMore(loadMore);
+
+    window.addEventListener('scroll', cb, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener('scroll', cb);
+    };
   }, []);
 
-  useEffect(() => {
-    if (result.data.length === 0 && called) setIsNoMore(true);
-  }, [result, called]);
-
   const columns = useMemo(() => {
-    if (data.length === 0) return [];
-
     const cols = getColumnedPictures(columnTotal, data);
 
     return cols;
   }, [data, width]);
 
-  if (loading) return <p className="loader">fancy loader</p>;
-
-  if (error) return <p className="error-msg">fancy error message</p>;
+  if (loadingFirst) return <p className="loader-first">full screen loader</p>;
+  if (error) return <p className="error-msg">error message</p>;
+  if (data.length === 0) return <p className="error-msg">no result found</p>;
 
   return (
     <div>
@@ -50,10 +60,11 @@ const Masonry = () => {
           </div>
         ))}
       </div>
-      {isNoMore && (
+      {loadingMore && <p className="loader-more">small loader</p>}
+      {isAll && (
         <div className="bottom">
           <hr />
-          {'fancy bottom'}
+          <p className="no-more">{'fancy bottom. no more.'}</p>
         </div>
       )}
     </div>
@@ -79,16 +90,13 @@ function getColumnWidthAndTotal(windowWidth: number) {
   return { columnWidth, columnTotal };
 }
 
-// todo: use useRef to keep the last columnedPictures
+// can make it work with last returned value to do least work at each render
 function getColumnedPictures(columnTotal: number, data: TPicture[]) {
   const cols = [] as TPicture[][];
 
   for (let j = 0; j < columnTotal; j++) {
     cols.push([]);
   }
-  console.log('columnTotal', columnTotal);
-  console.log('cols', cols);
-
   for (let i = 1; i <= data.length; i++) {
     let colNum = null;
     if (i % columnTotal !== 0) {
@@ -104,23 +112,11 @@ function getColumnedPictures(columnTotal: number, data: TPicture[]) {
 }
 
 function scrollForMore(getPic: () => void) {
-  window.addEventListener(
-    'scroll',
-    () => {
-      const {
-        scrollTop,
-        scrollHeight,
-        clientHeight,
-      } = document.documentElement;
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-      if (scrollTop + clientHeight >= scrollHeight - 5) {
-        getPic();
-      }
-    },
-    {
-      passive: true,
-    }
-  );
+  if (scrollTop + clientHeight >= scrollHeight - 5) {
+    getPic();
+  }
 }
 
 export default Masonry;

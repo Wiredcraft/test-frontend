@@ -1,15 +1,31 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import bell from '../assets/images/bell.png';
 import home from '../assets/images/home.png';
 import profile from '../assets/images/profile.png';
 
 const TopBar = () => {
+  const history = useHistory();
   const [term, setTerm] = useState('');
+
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    if (!term) {
+      history.push('/');
+    } else {
+      history.push(`/search/${term}`);
+    }
+  }
+
   return (
     <div className="top-bar">
-      <div className="search-input">
-        <input type="text" />
-      </div>
+      <form className="search-input" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="search-term"
+          onChange={(ev) => setTerm(ev.target.value)}
+        />
+      </form>
       <button>
         <img src={home} alt="home button" />
       </button>
