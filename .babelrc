@@ -1,0 +1,23 @@
+{
+    "presets": [
+        "react",
+        ["env", {
+            "targets": {
+                "browsers": ["last 2 versions"],
+                "uglify":true
+            }
+        }]
+    ],
+    "plugins": [
+        "transform-object-rest-spread",
+        "transform-class-properties",
+        "transform-runtime",
+        "transform-object-assign",
+        "react-hot-loader/babel",
+        "transform-decorators-legacy",
+        ["import", {
+            "libraryName": "antd",
+            "style": false
+        }]
+    ]
+}
