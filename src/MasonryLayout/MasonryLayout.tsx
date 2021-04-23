@@ -22,11 +22,11 @@ export type MasonryLayoutConfig = {
  *
  * @param {Array} data - data to display
  * @param {Number} columns - default value is 6
- * @param {Number} cellMinHeight - default value is 200
- * @param {Number} cellMaxHeight - default value is 300
- * @param {Number} rowHeightBase - default value is 10
+ * @param {Number} cellMinHeight - px unit, default value is 200
+ * @param {Number} cellMaxHeight - px unit, default value is 300
+ * @param {Number} rowHeightBase - px unit, default value is 10
  * @param {Number} gap - space between cells,
- *                       default value is 16
+ *                       px unit, default value is 16
  */
 type MasonryLayoutProps = Partial<MasonryLayoutConfig> & {
   data: MasonryLayoutData[]
@@ -35,7 +35,7 @@ type MasonryLayoutProps = Partial<MasonryLayoutConfig> & {
 const ConfigDefaults: MasonryLayoutConfig = {
   columns: 6,
   cellMinHeight: 200,
-  cellMaxHeight: 300,
+  cellMaxHeight: 400,
   rowHeightBase: 10,
   gap: 16
 }
@@ -53,12 +53,7 @@ const MasonryLayout: FC<MasonryLayoutProps> = (props) => {
       rowHeightBase={layoutConfig.rowHeightBase}
     >
       {data.slice(0, 10).map((item) => (
-        <MasonryLayoutCell
-          key={item._id}
-          data={item}
-          rowHeightBase={layoutConfig.rowHeightBase}
-          rowGap={layoutConfig.gap}
-        />
+        <MasonryLayoutCell key={item._id} data={item} {...layoutConfig} />
       ))}
     </MasonryLayoutWrapper>
   )

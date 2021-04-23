@@ -13,7 +13,7 @@ const App: FC = () => {
         <PageHeaderSearch onChange={onSearch} />
       </PageHeader>
       <div>
-        <MasonryLayout data={require('./mock/data.json')} />
+        <MasonryLayout data={require('../mock/data.json')} />
       </div>
     </div>
   )
