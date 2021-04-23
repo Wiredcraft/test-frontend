@@ -1,1 +1,1 @@
-export * from './prop/prop';
+export * from './prop/prop'

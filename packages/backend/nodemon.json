@@ -1,0 +1,4 @@
+{
+  "exec": "ts-node ./index.ts",
+  "inspect": true
+}
