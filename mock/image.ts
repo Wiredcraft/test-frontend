@@ -37,6 +37,14 @@ class MockImage {
   get src() {
     return this.source
   }
+
+  get width() {
+    return 100
+  }
+
+  get height() {
+    return 50
+  }
 }
 
 export default MockImage
