@@ -3,6 +3,7 @@
     "target": "es6",
     "module": "commonjs",
     "jsx": "react-jsx",
+    "lib": ["es6", "dom"],
     "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
