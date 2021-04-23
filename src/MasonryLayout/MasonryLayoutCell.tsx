@@ -39,7 +39,7 @@ const MasonryLayoutCell: FC<MasonryLayoutCellProps> = memo((props) => {
 
   return (
     <MasonryLayoutCellWrapper span={span}>
-      <img src={data.src} alt={data.name} />
+      <Image data={data} />
     </MasonryLayoutCellWrapper>
   )
 })
@@ -62,6 +62,11 @@ const MasonryLayoutCellWrapper = styled.figure<{span: number}>`
     }
   }
 `
+
+// eslint-disable-next-line react/display-name
+const Image: FC<{data: MasonryLayoutData}> = memo(({data}) => (
+  <img src={data.src} alt={data.name} />
+))
 
 MasonryLayoutCell.displayName = 'MasonryLayoutCell'
 
