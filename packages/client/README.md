@@ -10,3 +10,5 @@
 - Styled Component@5
 - Webpack@5
 - Typescript@4
+- Lerna
+- Koa
