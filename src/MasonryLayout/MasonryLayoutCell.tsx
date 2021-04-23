@@ -49,6 +49,7 @@ const MasonryLayoutCellWrapper = styled.figure<{span: number}>`
   margin: 0;
   border-radius: 10px;
   overflow: hidden;
+  background-color: #f1f1f1;
   cursor: pointer;
   img {
     width: 100%;
