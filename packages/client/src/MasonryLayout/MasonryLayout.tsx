@@ -52,7 +52,7 @@ const MasonryLayout: FC<MasonryLayoutProps> = (props) => {
       gap={layoutConfig.gap}
       rowHeightBase={layoutConfig.rowHeightBase}
     >
-      {data.slice(0, 10).map((item) => (
+      {data.map((item) => (
         <MasonryLayoutCell key={item._id} data={item} {...layoutConfig} />
       ))}
     </MasonryLayoutWrapper>
