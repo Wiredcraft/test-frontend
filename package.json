@@ -2,10 +2,12 @@
   "name": "wiredcraft-masonry-layout",
   "private": true,
   "scripts": {
-    "dev": "npx lerna run dev",
+    "dev": "npx lerna run dev --stream",
+    "test": "lerna run test --stream",
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1"
   }
