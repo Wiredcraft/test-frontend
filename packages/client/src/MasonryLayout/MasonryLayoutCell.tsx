@@ -1,4 +1,4 @@
-import {size} from 'polished'
+import {rgba} from 'polished'
 import {FC, memo, useMemo} from 'react'
 import styled from 'styled-components'
 import {useImageLoader} from '../hooks/useImageLoader'
@@ -50,6 +50,7 @@ const MasonryLayoutCellWrapper = styled.figure<{span: number}>`
   border-radius: 10px;
   overflow: hidden;
   background-color: #f1f1f1;
+  box-shadow: 0 2px 4px ${rgba('#000', 0.1)};
   cursor: pointer;
   img {
     width: 100%;
@@ -57,7 +58,7 @@ const MasonryLayoutCellWrapper = styled.figure<{span: number}>`
     object-fit: cover;
     object-position: center;
     transition: transform 650ms ease;
-    transition-delay: 50ms;
+    transition-delay: 80ms;
     &:hover {
       transform: scale(1.2);
     }

@@ -1,5 +1,5 @@
 import {FC, useCallback, useState} from 'react'
-import {PageHeader, PageHeaderSearch} from './components'
+import {Loading, PageHeader, PageHeaderSearch} from './components'
 import {useRequest} from './hooks/useRequest'
 import MasonryLayout, {PhotoData} from './MasonryLayout/MasonryLayout'
 
@@ -18,7 +18,11 @@ const App: FC = () => {
         <PageHeaderSearch onChange={onSearch} />
       </PageHeader>
       <div>
-        {loading || !data ? 'loading...' : <MasonryLayout data={data.items} />}
+        {loading || !data ? (
+          <Loading>loading...</Loading>
+        ) : (
+          <MasonryLayout data={data.items} />
+        )}
       </div>
     </div>
   )
