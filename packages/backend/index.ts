@@ -1,6 +1,7 @@
 import Application = require('koa')
 import * as Koa from 'koa'
 import * as Router from 'koa-router'
+import * as cors from '@koa/cors'
 import {photosService} from './photos/photos'
 
 function registerApi(app: Application) {
@@ -19,6 +20,7 @@ function registerApi(app: Application) {
 }
 
 const app = new Koa()
+app.use(cors())
 registerApi(app)
 
 const port = process.env.BACKEND_SERVER_PORT || 8081
