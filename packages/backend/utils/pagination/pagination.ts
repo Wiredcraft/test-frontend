@@ -1,4 +1,4 @@
-type PaginationResult<T> = {
+export type PaginationResult<T> = {
   items: T[]
   page: number
   size: number
