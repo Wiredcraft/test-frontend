@@ -5,13 +5,13 @@ import {useImageLoader} from '../hooks/useImageLoader'
 import {pxToGridRowSpan} from '../utils/grid'
 import {clamp} from '../utils/math'
 import {prop} from '../utils/styled-helpers'
-import {MasonryLayoutConfig, MasonryLayoutData} from './MasonryLayout'
+import {MasonryLayoutConfig, PhotoData} from './MasonryLayout'
 
 type MasonryLayoutCellProps = Pick<
   MasonryLayoutConfig,
   'rowHeightBase' | 'gap' | 'cellMinHeight' | 'cellMaxHeight'
 > & {
-  data: MasonryLayoutData
+  data: PhotoData
 }
 
 const MasonryLayoutCell: FC<MasonryLayoutCellProps> = memo((props) => {
@@ -65,7 +65,7 @@ const MasonryLayoutCellWrapper = styled.figure<{span: number}>`
 `
 
 // eslint-disable-next-line react/display-name
-const Image: FC<{data: MasonryLayoutData}> = memo(({data}) => (
+const Image: FC<{data: PhotoData}> = memo(({data}) => (
   <img src={data.src} alt={data.name} />
 ))
 

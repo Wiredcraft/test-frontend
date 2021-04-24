@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {prop} from '../utils/styled-helpers'
 import MasonryLayoutCell from './MasonryLayoutCell'
 
-export type MasonryLayoutData = {
+export type PhotoData = {
   _id: string
   name: string
   src: string
@@ -29,7 +29,7 @@ export type MasonryLayoutConfig = {
  *                       px unit, default value is 16
  */
 type MasonryLayoutProps = Partial<MasonryLayoutConfig> & {
-  data: MasonryLayoutData[]
+  data: PhotoData[]
 }
 
 const ConfigDefaults: MasonryLayoutConfig = {
