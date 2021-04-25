@@ -1,10 +1,22 @@
-import {ChangeEvent, FC} from 'react'
+/* eslint-disable @typescript-eslint/no-var-requires */
+import {ChangeEvent, FC, useCallback, useMemo} from 'react'
 import styled from 'styled-components'
+import {debounce} from '../../utils/lang/debounce'
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = () => {}
 
 const PageHeaderSearch: FC<{onChange?: (value: string) => void}> = (props) => {
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    props.onChange && props.onChange(e.target.value.trim())
-  }
+  const debounced = useMemo(() => {
+    return debounce(props.onChange || noop, 1000)
+  }, [props.onChange])
+
+  const onChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      debounced(e.target.value.trim())
+    },
+    [debounced]
+  )
 
   return (
     <SearchWrapper as={'form'}>

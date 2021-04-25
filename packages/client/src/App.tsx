@@ -14,7 +14,7 @@ const App: FC = () => {
   }, [run])
 
   const onSearch = useCallback(
-    (search) => {
+    (search: string) => {
       setParams(search ? {keyword: search} : null)
       reset()
     },

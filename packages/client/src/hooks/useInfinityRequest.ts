@@ -59,15 +59,15 @@ export const useInfinityRequest = <T extends PhotoData>(
     }
   }, [status])
 
-  const setParams = (value: RequestParams | null) => {
+  const setParams = useCallback((value: RequestParams | null) => {
     params.current = value
-  }
+  }, [])
 
-  const reset = () => {
+  const reset = useCallback(() => {
     setData([])
     setStatus('ready')
     setPage({value: 1})
-  }
+  }, [])
 
   useEffect(() => {
     page.value > 0 && request()

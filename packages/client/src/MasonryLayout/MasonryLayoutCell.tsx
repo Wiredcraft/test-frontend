@@ -3,7 +3,7 @@ import {FC, memo, useMemo} from 'react'
 import styled from 'styled-components'
 import {useImageLoader} from '../hooks/useImageLoader'
 import {pxToGridRowSpan} from '../utils/grid'
-import {clamp} from '../utils/math'
+import {clamp} from '../utils/lang'
 import {prop} from '../utils/styled-helpers'
 import {MasonryLayoutConfig, PhotoData} from './MasonryLayout'
 
