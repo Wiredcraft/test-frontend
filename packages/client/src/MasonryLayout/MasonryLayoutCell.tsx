@@ -1,6 +1,14 @@
 import {rgba} from 'polished'
-import {FC, memo, useMemo} from 'react'
+import {
+  FC,
+  ImgHTMLAttributes,
+  memo,
+  useCallback,
+  useMemo,
+  useState
+} from 'react'
 import styled from 'styled-components'
+import InViewDetector from '../components/InViewDetector/InViewDetector'
 import {useImageLoader} from '../hooks/useImageLoader'
 import {pxToGridRowSpan} from '../utils/grid'
 import {clamp} from '../utils/lang'
@@ -37,9 +45,15 @@ const MasonryLayoutCell: FC<MasonryLayoutCellProps> = memo((props) => {
     props.rowHeightBase
   ])
 
+  const [inView, setInView] = useState(false)
+  const onEnter = useCallback(() => {
+    setInView(true)
+  }, [])
+
   return (
     <MasonryLayoutCellWrapper span={span}>
-      <Image data={data} />
+      <InViewDetector onEnter={onEnter} />
+      {inView && <Image src={data.src} alt={data.name} />}
     </MasonryLayoutCellWrapper>
   )
 })
@@ -66,8 +80,8 @@ const MasonryLayoutCellWrapper = styled.figure<{span: number}>`
 `
 
 // eslint-disable-next-line react/display-name
-const Image: FC<{data: PhotoData}> = memo(({data}) => (
-  <img src={data.src} alt={data.name} />
+const Image: FC<ImgHTMLAttributes<unknown>> = memo((props) => (
+  <img {...props} />
 ))
 
 MasonryLayoutCell.displayName = 'MasonryLayoutCell'
