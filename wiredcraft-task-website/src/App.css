@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.head {
+  height: 55px;
+  width: 100%;
+  box-shadow: 0 0 25px #eaeaea;
+  margin-bottom: 30px;;
+}
+
+.head input {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius:8px;
+  background-color: #eaeaea;
+  border: #eaeaea;
+  outline: none;
+  overflow:auto;
+  height: 25px;
+  background-image: url(./search.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 5px 4px;
+  padding: 2px 10px 2px 30px;
+  float: right;
+  margin-right: 60px;
+}
+
+.head img{
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  float: right;
+  margin-right: 60px;
+}
+
+
+.masonry {
+  width: 1440px;
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 30px;
+}
+
+.item {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 30px;
+}
+
+.item img {
+  width: 100%;
+  border-radius:25px;
+}
+
+
+
