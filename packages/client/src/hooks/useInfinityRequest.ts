@@ -1,7 +1,9 @@
-import {useCallback, useEffect, useState} from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
 import {PhotoData} from '../MasonryLayout'
 
-type Status = 'loading' | 'success' | 'failed' | 'finish'
+type RequestParams = Record<string, string | number>
+
+type Status = 'ready' | 'loading' | 'success' | 'failed' | 'finish'
 
 type Response<T> = {
   data: {
@@ -11,63 +13,71 @@ type Response<T> = {
 }
 
 export const useInfinityRequest = <T extends PhotoData>(
-  url: string,
-  getParams?: () => Record<string, string | number>
+  url: string
 ): {
   status: Status
   data: T[]
-  loadNext: () => void
+  run: (params?: RequestParams) => void
+  setParams: (value: RequestParams | null) => void
   reset: () => void
 } => {
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState<{value: number}>({value: 0})
   const [data, setData] = useState<T[]>([])
-  const [status, setStatus] = useState<Status>('loading')
+  const [status, setStatus] = useState<Status>('ready')
+
+  const params = useRef<RequestParams | null>()
 
   const request = useCallback(async () => {
     const query = new URLSearchParams()
-    query.append('page', String(page))
+    query.append('page', String(page.value))
     query.append('size', String(20))
 
-    if (getParams) {
-      const params = getParams()
-      Object.keys(params).forEach((key) => {
-        query.append(key, String(params[key]))
+    if (params.current) {
+      const paramData = params.current
+      Object.keys(paramData).forEach((key) => {
+        paramData[key] && query.append(key, String(paramData[key]))
       })
     }
 
     setStatus('loading')
 
-    fetch(`${url}?${query}`)
-      .then<Response<T>>((res) => res.json())
-      .then(({data}) => {
-        setStatus(data.hasNext ? 'success' : 'finish')
-        setData((prev) => [...prev, ...data.items])
-      })
-      .catch(() => {
-        setStatus('failed')
-      })
-  }, [page, getParams, url])
+    const {data} = await fetch(`${url}?${query}`).then<Response<T>>((res) =>
+      res.json()
+    )
 
-  const loadNext = useCallback(() => {
-    if (status === 'finish') {
+    if (!data) {
       return
     }
-    setPage((prev) => prev + 1)
+
+    setStatus(data.hasNext ? 'success' : 'finish')
+    setData((prev) => [...prev, ...data.items])
+  }, [page, url])
+
+  const run = useCallback(() => {
+    if (!['loading', 'finish'].includes(status)) {
+      setPage((prev) => ({value: prev.value + 1}))
+    }
   }, [status])
 
-  const reset = useCallback(() => {
+  const setParams = (value: RequestParams | null) => {
+    params.current = value
+  }
+
+  const reset = () => {
     setData([])
-    setStatus('loading')
-  }, [])
+    setStatus('ready')
+    setPage({value: 1})
+  }
 
   useEffect(() => {
-    request()
-  }, [request])
+    page.value > 0 && request()
+  }, [page, request])
 
   return {
     data,
     status,
-    loadNext,
+    run,
+    setParams,
     reset
   }
 }

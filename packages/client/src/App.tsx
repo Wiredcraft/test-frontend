@@ -1,16 +1,24 @@
-import {FC, useCallback, useState} from 'react'
+import {FC, useCallback} from 'react'
 import {Loading, PageHeader, PageHeaderSearch} from './components'
-import InViewDetector from './components/InviewDetector/InViewDetector'
+import InViewDetector from './components/InViewDetector/InViewDetector'
 import {useInfinityRequest} from './hooks/useInfinityRequest'
 import MasonryLayout, {PhotoData} from './MasonryLayout/MasonryLayout'
 
 const App: FC = () => {
-  const [search, setSearch] = useState('')
-  const onSearch = useCallback((value) => setSearch(value), [])
+  const {status, data, run, setParams, reset} = useInfinityRequest<PhotoData>(
+    'http://localhost:8081/api/photos'
+  )
 
-  const {status, data, loadNext} = useInfinityRequest<PhotoData>(
-    'http://localhost:8081/api/photos',
-    search
+  const onLoadMore = useCallback(() => {
+    run()
+  }, [run])
+
+  const onSearch = useCallback(
+    (search) => {
+      setParams(search ? {keyword: search} : null)
+      reset()
+    },
+    [reset, setParams]
   )
 
   return (
@@ -19,9 +27,14 @@ const App: FC = () => {
         <PageHeaderSearch onChange={onSearch} />
       </PageHeader>
       <div>
-        {<MasonryLayout data={data} />}
-        {status === 'loading' && <Loading>loading...</Loading>}
-        <InViewDetector onEnter={loadNext} />
+        <MasonryLayout data={data} />
+        {status === 'loading' ? (
+          <Loading>LOADING...</Loading>
+        ) : status === 'finish' ? (
+          <Loading>NO MORE</Loading>
+        ) : (
+          <InViewDetector distance={100} onEnter={onLoadMore} />
+        )}
       </div>
     </div>
   )
