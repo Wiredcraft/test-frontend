@@ -1,0 +1,38 @@
+.header {
+  padding: 24px 44px 11px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(103, 102, 102, 0.25);
+
+  .search-input {
+    position: relative;
+
+    input {
+      padding-left: 35px;
+      height: 36px;
+      width: 196px;
+      background-color: #eaeaea;
+      border-radius: 18px;
+      border: none;
+      outline: none;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    user-select: none;
+    margin-left: 33px;
+    cursor: pointer;
+  }
+}
