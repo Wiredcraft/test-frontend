@@ -1,0 +1,3 @@
+{
+  "presets": [["@bable/preset-env", { "targets": "es5" }]]
+}
