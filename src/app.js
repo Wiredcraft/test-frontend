@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { MasonryContext } from './';
 import Header from './components/Header';
 import ImgItem from './components/ImgItem';
@@ -21,8 +21,12 @@ const App = () => {
   useEffect(() => {
     columnNum = calcColumn();
     const getImgs = async () => {
-      await getImages();
-      updateRenderImgList(columnNum);
+      try {
+        await getImages();
+        updateRenderImgList(columnNum);
+      } catch (e) {
+        console.error(e.message);
+      }
     };
     getImgs();
   }, []);
@@ -41,6 +45,30 @@ const App = () => {
     columnNum = calcColumn();
     updateRenderImgList(columnNum);
   }, [windowWidth, keyword]);
+
+  // lazy load image callback
+  const imgObserver = useCallback((imgNode) => {
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const src = el.dataset.imgsrc;
+
+          if (src) {
+            el.src = src;
+          }
+          observer.unobserve(el);
+        }
+      });
+    });
+    observer.observe(imgNode);
+  }, []);
+
+  // image lazy load
+  useEffect(() => {
+    const imgs = document.querySelectorAll('.img-item__img');
+    imgs.forEach(imgObserver);
+  }, [renderImgList]);
 
   const calcColumn = () => {
     // content available width without padding

@@ -3,6 +3,8 @@ import request from '../request';
 
 class MasonryStore {
   originImgList = [];
+
+  // two dimessional array for render column images
   renderImgList = [];
   keyword = '';
 
