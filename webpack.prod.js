@@ -1,4 +1,6 @@
 const config = require('./webpack.config');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 module.exports = {
   ...config,
@@ -6,4 +8,5 @@ module.exports = {
   optimization: {
     minimize: true,
   },
+  plugins: [...config.plugins, new BundleAnalyzerPlugin()],
 };
