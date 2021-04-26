@@ -8,11 +8,11 @@ function registerApi(app: Application) {
   const api = new Router({prefix: '/api'})
 
   api.get('/photos', (ctx) => {
-    const {res, request} = ctx
+    const {request} = ctx
     const {page, keyword} = request.query
     ctx.body = {
       status: 'success',
-      data: photosService.find(parseInt(page as string))
+      data: photosService.find(parseInt(page as string), keyword as string)
     }
   })
 
