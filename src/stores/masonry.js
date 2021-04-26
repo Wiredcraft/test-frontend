@@ -27,7 +27,6 @@ class MasonryStore {
   };
 
   get filteredImgList() {
-    console.log('refilter');
     return this.originImgList.filter((img) =>
       this.keyword ? img.name.includes(this.keyword) : true
     );
@@ -62,10 +61,7 @@ class MasonryStore {
     this.renderImgList = arr;
   };
 
-  updateKeyword = (e) => {
-    console.log(e.target.value);
-    this.keyword = e.target.value;
-  };
+  updateKeyword = (e) => (this.keyword = e.target.value);
 }
 
 export default new MasonryStore();
