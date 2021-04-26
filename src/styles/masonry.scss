@@ -1,2 +1,14 @@
 .masonry {
+  position: relative;
+  padding: 80px 50px;
+
+  .masonry-body {
+    display: flex;
+    justify-content: center;
+
+    .column {
+      padding: 0 7px;
+      min-width: 200px;
+    }
+  }
 }
