@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
+import masonryStore from './stores/masonry';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export const MasonryContext = createContext();
+
+ReactDOM.render(
+  <MasonryContext.Provider value={masonryStore}>
+    <App />
+  </MasonryContext.Provider>,
+  document.getElementById('app')
+);
