@@ -7,6 +7,12 @@ import {photosService} from './photos/photos'
 function registerApi(app: Application) {
   const api = new Router({prefix: '/api'})
 
+  /**
+   * Get photo list in pagination
+   *
+   * @query page - page index, from 1
+   * @query keyword - search photos witch the name match to `keyword`
+   */
   api.get('/photos', (ctx) => {
     const {request} = ctx
     const {page, keyword} = request.query

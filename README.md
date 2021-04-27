@@ -10,21 +10,31 @@
 - Styled Component@5
 - Webpack@5
 - Typescript@4
-- Lerna
-- Koa
+- Jest
+- Koa backend
+- Monorepo with lerna
 
 ## Dev
 
 ```
 npm install
 lerna bootstrap
-lerna run dev
+npm run dev
 ```
 
-Client will run on port `8080`, and backend api run on `8081` default.
+Client will run on [localhost:8080](http://localhost:8080/), 
+and backend api run on `8081` default.
 
 ## Test
 
 ```
-lerna run test
+npm run test
 ```
+
+# Key Features
+
+- Implement masonry layout with `grid layout`.
+
+- Use `IntersectionObserver` in Image Lazy Loading and Infinity Scrolling.
+
+- Test for major functions and Components, it will be complete soon for the remains.
