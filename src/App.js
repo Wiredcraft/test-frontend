@@ -60,18 +60,17 @@ const store = createMasonryStore();
 
 const loadMoreRefs = [];
 
+const columnNumsBreakpoints = [
+  [1200, 6],
+  [900, 4],
+  [720, 3],
+  [0, 2]
+];
+
 const onScrollOrResize = () => {
   runInAction(() => {
     const wWidth = window.innerWidth;
-    if (wWidth > 1200) {
-      store.columnNums = 6;
-    } else if ( wWidth > 900 ) {
-      store.columnNums = 4;
-    } else if ( wWidth > 720 ) {
-      store.columnNums = 3;
-    } else {
-      store.columnNums = 2;
-    }
+    store.columnNums = columnNumsBreakpoints.find((p) => wWidth >= p[0])[1];
     ([...new Array(store.columnNums)]).forEach((_, i) => {
       if (loadMoreRefs[i] && (loadMoreRefs[i].current) && (loadMoreRefs[i].current.getBoundingClientRect().top <= window.innerHeight)) {
         store.loadMore(24);
