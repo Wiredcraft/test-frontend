@@ -1,12 +1,11 @@
 _For the requirement description, refer to [test/coding/frontend](https://wiredcraft.gitbook.io/recruitment-test/coding/frontend)._
 
-## json server
-
-Sample `data.json` is included at the root of project, use a simple server like `http-server` with `cors` enabled to serve the json file at the url ``http://127.0.0.1:8080/data.json`, then you can test the project in development or production environment
-
 ## development
 
 ```cmd
+npm run serve
+
+// Open another shell window
 npm start
 ```
 
@@ -17,6 +16,8 @@ npm run build
 ```
 
 Build files could be found in `./dist` folder
+
+> Not: You shuld run `npm run serve` from the project root to start a json server for the fetch request before you run the production project
 
 ## test
 
