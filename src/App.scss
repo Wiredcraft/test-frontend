@@ -1,0 +1,88 @@
+html, body {
+  background: #fff;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(103, 102, 102, 0.25);
+  height: 71px;
+  z-index: 10;
+
+  .nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 0 20px;
+    .pull-right {
+      margin-left: auto;
+    }
+    .nav-search {
+      padding: 24px 33px 0 0;
+    }
+    .search-box {
+      position: relative;
+      > img {
+        width: 19px;
+        height: 19px;
+        position: absolute;
+        top: 8px;
+        left: 11px;
+      }
+      > input {
+        border: 0;
+        height: 19px;
+        line-height: 19px;
+        background: #EAEAEA;
+        border-radius: 18px;
+        padding: 8px 11px 9px 36px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .nav-item {
+      padding: 30px 35px 0 0;
+      > img {
+        height: 24px;
+      }
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-top: 71px;
+}
+
+$masonry-gap: 14px;
+
+.masonry-container {
+  margin: $masonry-gap (-$masonry-gap / 2);
+  display: flex;
+  padding: 0 $masonry-gap;
+  .masonry-col {
+    padding: $masonry-gap / 2;
+    flex-grow: 1;
+  }
+  .masonry-item {
+    margin-bottom: $masonry-gap;
+    break-inside: avoid;
+    position: relative;
+    border-radius: 13px;
+    overflow: hidden;
+    > img {
+      width: 100%;
+    }
+  }
+}
+
+.load-more {
+  height: 10px;
+}
