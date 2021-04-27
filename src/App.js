@@ -9,9 +9,7 @@ import home from './images/home.png';
 import bell from './images/bell.png';
 import user from './images/user.png';
 
-import data from './data.json';
-
-const createMasonryStore = (rawItems) => {
+const createMasonryStore = () => {
   const store = observable({
     loading: false,
     items: [],
@@ -19,7 +17,7 @@ const createMasonryStore = (rawItems) => {
     searchWord: '',
     get columns() {
       const columns = [...new Array(this.columnNums)].map(() => []);
-      this.items.filter((i) => (this.searchWord.length == 0) || (i.name.indexOf(this.searchWord) != -1) ).forEach((item, i) => {
+      this.items.filter((i) => (this.searchWord.length === 0) || (i.name.indexOf(this.searchWord) !== -1) ).forEach((item, i) => {
         const col = i % this.columnNums;
         columns[col] = columns[col] || [];
         columns[col].push(item);
@@ -27,32 +25,38 @@ const createMasonryStore = (rawItems) => {
       return columns;
     },
     loadMore(num) {
-      if (!this.loading) {
-        const toLoads = rawItems.slice(this.items.length, this.items.length + num);
-        if (toLoads.length) {
-          let loadedCount = 0;
-          this.loading = true;
-          toLoads.forEach((item) => {
-            const img = new Image();
-            img.src = item.src;
-            const callback = () => {
-              loadedCount += 1;
-              if (loadedCount === toLoads.length) {
-                store.items = [...store.items, ...toLoads];
-                store.loading = false;
-              }
-            };
-            img.addEventListener('load', callback);
-            img.addEventListener('error', callback);
+      if (!this.loading && (this.items.length < 100)) {
+        this.loading = true;
+        const start = this.items.length
+        const end = start + num;
+        fetch(`/data.json?start=${start}&end=${end}`).then(resp => resp.json()).then(data => {
+          runInAction(() => {
+            const toLoads = data.slice(start, end);
+            if (toLoads.length) {
+              let loadedCount = 0;
+              toLoads.forEach((item) => {
+                const img = new Image();
+                img.src = item.src;
+                const callback = () => {
+                  loadedCount += 1;
+                  if (loadedCount === toLoads.length) {
+                    store.items = [...store.items, ...toLoads];
+                    store.loading = false;
+                  }
+                };
+                img.addEventListener('load', callback);
+                img.addEventListener('error', callback);
+              });
+            }
           });
-        }
+        });
       }
     }
   });
   return store;
 }
 
-const store = createMasonryStore(data);
+const store = createMasonryStore();
 
 const loadMoreRefs = [];
 
