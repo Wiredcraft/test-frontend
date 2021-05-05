@@ -5,7 +5,7 @@ export const BASE_CDN_URL = 'https://img.lastwhisper.cn'
 export const BASE_API_URL =
   process.env.NODE_ENV === 'development'
     ? `${config.dev.protocol}://${config.dev.host}:${config.dev.port}`
-    : `${config.prod.protocol}://${config.prod}`
+    : `${config.prod.protocol}://${config.prod.host}`
 
 export const COLUMN_GAP = 14
 export const SM = 'sm'
