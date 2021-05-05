@@ -1,0 +1,13 @@
+{
+  "dev": {
+    "protocol": "http",
+    "port": "8081",
+    "host": "127.0.0.1"
+  },
+
+  "prod": {
+    "protocol": "http",
+    "port": "8081",
+    "host": "api.lastwhisper.cn"
+  }
+}

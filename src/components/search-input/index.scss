@@ -1,0 +1,30 @@
+@import '../../styles/color.scss';
+
+.search-input {
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+  border-radius: 19.5px;
+  background: $input-bg-color;
+
+  &__focused {
+    border-color: $wiredcraft-primary-color;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgb(255 72 71 / 20%);
+  }
+
+  &__input {
+    background: $input-bg-color;
+    padding: 6px 0;
+    border: none;
+    outline: none;
+  }
+  
+  &__prefix {
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+  }
+}
