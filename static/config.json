@@ -6,8 +6,8 @@
   },
 
   "prod": {
-    "protocol": "http",
+    "protocol": "https",
     "port": "8081",
-    "host": "api.lastwhisper.cn"
+    "host": "befitting-daffodil-casquette.glitch.me"
   }
 }
