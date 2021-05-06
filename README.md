@@ -18,6 +18,10 @@ npm run dev
 
 Click [here](https://test-frontend-pi.vercel.app/) to preview online. Thanks to `vercel` and `glitch`, it will be depolyed after the master branch updated.
 
+![preview-1](https://img.lastwhisper.cn/masonry-layout-preview-1.png)
+
+![preview-2](https://img.lastwhisper.cn/masonry-layout-preview-2.png)
+
 ## Technology selection
 
 1. `react` is necessary.
