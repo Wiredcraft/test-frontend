@@ -1,7 +1,13 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, useRef } from 'react'
 import { createContainer } from 'unstated-next'
 
-import { BASE_API_URL } from '@/common/constants'
+import {
+  getColumnCountByDeviceSize,
+  calcAverageImgWidth,
+  getDeviceSizeByWidth,
+  concatImagesByColumn,
+} from '@/common/utils'
+import { COLUMN_GAP, BASE_API_URL } from '@/common/constants'
 
 function useApp() {
   const defaultPageInfo = { page: 1, pageSize: 20 }
@@ -10,6 +16,25 @@ function useApp() {
   const [keyword, setKeyword] = useState('')
   const [initialFetch, setInitialFetch] = useState(true)
   const [end, setEnd] = useState(false)
+  const containerRef = useRef()
+  const imgWidthRef = useRef()
+  const columnCountRef = useRef()
+
+  useEffect(() => {
+    if (!containerRef.current) return
+    const containerWidth = parseInt(
+      getComputedStyle(containerRef.current).width.slice(0, -2)
+    )
+    columnCountRef.current = getColumnCountByDeviceSize(
+      getDeviceSizeByWidth(containerWidth)
+    )
+    const imgWidth = calcAverageImgWidth(
+      containerWidth,
+      getColumnCountByDeviceSize(getDeviceSizeByWidth(containerWidth)),
+      COLUMN_GAP
+    )
+    imgWidthRef.current = imgWidth
+  }, [])
 
   const fetchImageList = useCallback(
     (params) => {
@@ -36,7 +61,11 @@ function useApp() {
             })
             return params.page === 1
               ? newImageList
-              : prevImageList.concat(newImageList)
+              : concatImagesByColumn(
+                  prevImageList,
+                  newImageList,
+                  columnCountRef.current
+                )
           })
           if (params.page === 1) setInitialFetch(false)
           if (json.length < params.pageSize) setEnd(true)
@@ -69,6 +98,9 @@ function useApp() {
     initialFetch,
     end,
     onKeywordChange,
+
+    imgWidthRef,
+    containerRef,
   }
 }
 

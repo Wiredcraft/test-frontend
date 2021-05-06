@@ -3,13 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import TopBar from './components/top-bar'
 import LazyloadImage from './components/lazyload-image'
 import Placeholder from './components/placeholder'
-import { COLUMN_GAP } from './common/constants'
-import {
-  getColumnCountByDeviceSize,
-  calcAverageImgWidth,
-  getDeviceSizeByWidth,
-  getHeightByRatio,
-} from './common/utils'
+import { getHeightByRatio } from './common/utils'
 import AppProvder from './providers/app'
 
 import './app.scss'
@@ -20,9 +14,9 @@ function App() {
     end,
     setPageInfo,
     initialFetch,
+    imgWidthRef,
+    containerRef,
   } = AppProvder.useContainer()
-  const containerRef = useRef()
-  const imgWidthRef = useRef()
   const loadmoreRef = useRef()
 
   useEffect(() => {
@@ -43,19 +37,6 @@ function App() {
       io.disconnect()
     }
   }, [initialFetch, setPageInfo, end])
-
-  useEffect(() => {
-    if (!containerRef.current) return
-    const containerWidth = parseInt(
-      getComputedStyle(containerRef.current).width.slice(0, -2)
-    )
-    const imgWidth = calcAverageImgWidth(
-      containerWidth,
-      getColumnCountByDeviceSize(getDeviceSizeByWidth(containerWidth)),
-      COLUMN_GAP
-    )
-    imgWidthRef.current = imgWidth
-  }, [])
 
   return (
     <div>

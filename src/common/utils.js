@@ -66,3 +66,23 @@ export function debounce(func, delay, { trailing = false } = {}) {
     }
   }
 }
+
+export function flatten(arr) {
+  return arr.reduce((sum, cur) => {
+    return Array.isArray(cur) ? [...sum, ...flatten(cur)] : [...sum, cur]
+  }, [])
+}
+
+export function concatImagesByColumn(prevImages, newImages, columnCount) {
+  const prevImagesByColumn = []
+  for (let i = 0; i < columnCount; i++) {
+    prevImagesByColumn.push([])
+  }
+  prevImages.forEach((i, index) =>
+    prevImagesByColumn[index % columnCount].push(i)
+  )
+  newImages.forEach((i, index) =>
+    prevImagesByColumn[index % columnCount].push(i)
+  )
+  return flatten(prevImagesByColumn)
+}

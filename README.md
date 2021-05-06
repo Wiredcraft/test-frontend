@@ -14,6 +14,10 @@ npm install
 npm run dev
 ```
 
+## Preview
+
+Click [here](https://test-frontend-pi.vercel.app/) to preview online. Thanks to `vercel` and `glitch`, it will be depolyed after the master branch updated.
+
 ## Technology selection
 
 1. `react` and `react-router` is necessary.
