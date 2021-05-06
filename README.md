@@ -20,11 +20,11 @@ Click [here](https://test-frontend-pi.vercel.app/) to preview online. Thanks to 
 
 ## Technology selection
 
-1. `react` and `react-router` is necessary.
+1. `react` is necessary.
 2. Use `fetch` to request the server, low version browsers(IE11, Chrome45) need to import polyfills, such as `isomorphic-fetch`.
-3. Instead of `redux`, `mobx` as mentioned in task, I prefer `unstated-next` use context-based state management.
+3. Instead of `redux`, `mobx` as mentioned in task, I prefer `unstated-next` use context-based state management. I think it will make me less boilerplate code
 4. Use `vite` as ESM based dev server, I choose to hug esmodule to get a better development experience.
-5. At the beginning I put the json of the images on the cdn, but later I found out that the back-end is needed for infinite scrolling, so I wrote a simple service based on `node.js`.
+5. At the beginning I put the json of the images on the cdn, but later I found out that the back-end is needed for infinite scrolling, so I wrote a simple service based on `node.js`([server.js](./server.js)).
 
 ## To be optimized
 
@@ -33,8 +33,9 @@ Click [here](https://test-frontend-pi.vercel.app/) to preview online. Thanks to 
 3. Need to enhance request failures, image load failures and server-side parameter check.
 4. In UX, it is necessary to add loading to prevent splash screen when search keywords in topbar and display tips when the image list is empty.
 5. More unit tests should be finished.
+6. In the case of using the css `column` layout, when scrolling down load more, even if the column index of the image is calculated correctly, it will be rearranged due to the inconsistent height of the picture. It should be fixed.
 
-Due to time constraints, I can only finish here for the time being. If you give me one more day of free time, I can do better.
+Due to time constraints, I can only finish here for the time being(in one night). If I have more time, I think I can do better. Anyway, thanks very much for this opportunity to practice.
 
 ## Author
 
