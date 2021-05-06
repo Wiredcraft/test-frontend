@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 import CustomIcon from '@/components/custom-icon'
 import { debounce } from '@/common/utils'
@@ -12,6 +12,17 @@ function SearchInput({ onChange }) {
 
   const onBlur = () => setFocused(false)
 
+  const debouncedOnChange = useCallback(
+    debounce(onChange, 200, {
+      trailing: true,
+    }),
+    []
+  )
+
+  const onInputChange = (value) => {
+    debouncedOnChange(value)
+  }
+
   return (
     <div className={`search-input ${focused ? 'search-input__focused' : ''}`}>
       <CustomIcon className="search-input__prefix" name="search" size={18} />
@@ -19,7 +30,7 @@ function SearchInput({ onChange }) {
         className="search-input__input"
         onFocus={onFocus}
         onBlur={onBlur}
-        onChange={debounce(onChange, 200, { trailing: true })}
+        onChange={(e) => onInputChange(e.target.value)}
       />
     </div>
   )

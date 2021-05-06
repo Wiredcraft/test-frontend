@@ -86,12 +86,12 @@ function useApp() {
     fetchImageList({ ...pageInfo, keyword })
   }, [pageInfo, keyword, fetchImageList])
 
-  const onKeywordChange = (e) => {
+  const onKeywordChange = (data) => {
     setImageList([])
     setInitialFetch(true)
     setPageInfo(defaultPageInfo)
     setEnd(false)
-    setKeyword(e.target.value)
+    setKeyword(data)
   }
 
   return {
