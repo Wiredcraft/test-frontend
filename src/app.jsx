@@ -24,7 +24,6 @@ function App() {
     const node = loadmoreRef.current
     const io = new IntersectionObserver(([entry]) => {
       if (entry.intersectionRatio <= 0 || initialFetch || end) return
-
       setPageInfo((prevPageInfo) => ({
         ...prevPageInfo,
         page: prevPageInfo.page + 1,

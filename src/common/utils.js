@@ -78,11 +78,8 @@ export function concatImagesByColumn(prevImages, newImages, columnCount) {
   for (let i = 0; i < columnCount; i++) {
     prevImagesByColumn.push([])
   }
-  prevImages.forEach((i, index) =>
-    prevImagesByColumn[index % columnCount].push(i)
-  )
-  newImages.forEach((i, index) =>
-    prevImagesByColumn[index % columnCount].push(i)
-  )
+  prevImages
+    .concat(newImages)
+    .forEach((i) => prevImagesByColumn[i.index % columnCount].push(i))
   return flatten(prevImagesByColumn)
 }

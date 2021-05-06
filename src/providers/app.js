@@ -22,18 +22,25 @@ function useApp() {
 
   useEffect(() => {
     if (!containerRef.current) return
-    const containerWidth = parseInt(
-      getComputedStyle(containerRef.current).width.slice(0, -2)
-    )
-    columnCountRef.current = getColumnCountByDeviceSize(
-      getDeviceSizeByWidth(containerWidth)
-    )
-    const imgWidth = calcAverageImgWidth(
-      containerWidth,
-      getColumnCountByDeviceSize(getDeviceSizeByWidth(containerWidth)),
-      COLUMN_GAP
-    )
-    imgWidthRef.current = imgWidth
+    function handler() {
+      const containerWidth = parseInt(
+        getComputedStyle(containerRef.current).width.slice(0, -2)
+      )
+      columnCountRef.current = getColumnCountByDeviceSize(
+        getDeviceSizeByWidth(containerWidth)
+      )
+      const imgWidth = calcAverageImgWidth(
+        containerWidth,
+        getColumnCountByDeviceSize(getDeviceSizeByWidth(containerWidth)),
+        COLUMN_GAP
+      )
+      imgWidthRef.current = imgWidth
+    }
+    handler()
+    window.addEventListener('resize', handler)
+    return () => {
+      window.removeEventListener('resize', handler)
+    }
   }, [])
 
   const fetchImageList = useCallback(
