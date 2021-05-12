@@ -44,7 +44,7 @@ export function Masonry() {
           (acc.find(col => (getColHeight(col) === minLength)) || acc[0]).push(val);
           return acc;
         }, Array.from({ length: colNum }, () => []) as ImgData[][])
-        .map((col, idx) => <div className="column" key={idx}>
+        .map((col, idx) => <div data-testid="column" className="column" key={idx}>
           {col.map(image => <ImgItem src={image.src} key={image._id} name={image.name}/>)}
         </div>)}
     </main>

@@ -13,13 +13,13 @@ export function Header() {
 
   return (
     <header>
-      <div className="search">
+      <div data-testid="search" className="search">
         <input type="text" value={keyword} onChange={e => dispatch(updateKeyword(e.target.value))} />
         <img src={IMG_SEARCH} alt="search"/>
       </div>
-      <img src={IMG_HOME} alt="home"/>
-      <img src={IMG_NOTIFICATION} alt="notification"/>
-      <img src={IMG_USER} alt="user"/>
+      <img data-testid="link" src={IMG_HOME} alt="home"/>
+      <img data-testid="link" src={IMG_NOTIFICATION} alt="notification"/>
+      <img data-testid="link" src={IMG_USER} alt="user"/>
     </header>
   );
 }

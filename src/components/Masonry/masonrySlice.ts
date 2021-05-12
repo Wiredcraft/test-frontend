@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { ImgData, getImages } from '../../app/api'
 
@@ -20,6 +20,9 @@ export const masonrySlice = createSlice({
   name: 'header',
   initialState,
   reducers: {
+    updateImages: (state, action: PayloadAction<ImgData[]>) => {
+      state.images = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -33,5 +36,7 @@ export const masonrySlice = createSlice({
   },
 });
 
+export const { updateImages } = masonrySlice.actions;
 export const selectImages = (state: RootState) => state.masonry.images;
+
 export default masonrySlice.reducer;
