@@ -1,10 +1,10 @@
 import request from '../utils/request'
 
 export interface ImgData {
-  _id: string
-  index: number
-  name: string
-  src: string
+  _id: string;
+  index: number;
+  name: string;
+  src: string;
 }
 
 export function getImages() {

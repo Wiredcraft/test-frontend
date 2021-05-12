@@ -5,11 +5,9 @@ const request = async (url: string, method = 'GET', headers: HeadersInit | undef
   });
 
   if (res.status < 300) {
-    return await res.json();
+    return res.json();
   } else {
-    throw new Error(
-      `Request failed with code ${res.status}, ${res.statusText}`
-    );
+    throw new Error(`Error ${res.status}: ${res.statusText}`);
   }
 };
 

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import { Header } from './components/Header/Header';
 import { Masonry } from './components/Masonry/Masonry';
-import './index.scss'
+import './index.scss';
 
 ReactDOM.render(
   <React.StrictMode>

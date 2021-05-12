@@ -8,8 +8,7 @@ export interface MasonryState {
 }
 
 export const fetchImages = createAsyncThunk('masonry/getImages', async () => {
-  console.log('get')
-  return getImages()
+  return getImages();
 });
 
 const initialState: MasonryState = {
@@ -25,11 +24,9 @@ export const masonrySlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchImages.pending, (state) => {
-        console.log('pending')
         state.status = 'loading';
       })
       .addCase(fetchImages.fulfilled, (state, action) => {
-        console.log('fulfilled')
         state.status = 'idle';
         state.images = action.payload;
       });
