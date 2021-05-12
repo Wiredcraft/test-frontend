@@ -32,17 +32,21 @@ export function Masonry() {
   }, []);
 
   return (
-    <div className="main">
+    <main>
       {images
         .filter(v => v.name.includes(keyword))
-        .reduce((acc, val, idx, arr) => { // simulates lodash.chunk
-          const targetColumn = Math.floor(idx / Math.ceil(arr.length / colNum))
-          acc[targetColumn].push(val)
-          return acc
+        // get height from url
+        .map(v => ({ ...v, height: Number(v.src.match(/picsum\.photos\/\d+\/(\d+)/)?.[1] || 0) }))
+        // find the shortest column and push
+        .reduce((acc, val) => {
+          const getColHeight = (col: ImgData[]): number => col.reduce((colAcc, colVal) => colAcc + (colVal.height || 0), 0);
+          const minLength = Math.min(...acc.map(getColHeight));
+          (acc.find(col => (getColHeight(col) === minLength)) || acc[0]).push(val);
+          return acc;
         }, Array.from({ length: colNum }, () => []) as ImgData[][])
         .map((col, idx) => <div className="column" key={idx}>
           {col.map(image => <ImgItem src={image.src} key={image._id} name={image.name}/>)}
         </div>)}
-    </div>
+    </main>
   );
 }
