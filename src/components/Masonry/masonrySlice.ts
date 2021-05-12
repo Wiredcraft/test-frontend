@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import { ImageData, getImages } from '../../app/api'
+import { ImgData, getImages } from '../../app/api'
 
 export interface MasonryState {
-  images: ImageData[];
+  images: ImgData[];
   status: 'idle' | 'loading' | 'failed';
 }
 
