@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import headerReducer from '../components/Header/headerSlice';
+import masonryReducer from '../components/Masonry/masonrySlice';
 
 export const store = configureStore({
   reducer: {
     header: headerReducer,
+    masonry: masonryReducer,
   },
 });
 
