@@ -5,6 +5,7 @@ export interface ImgData {
   index: number;
   name: string;
   src: string;
+  height?: number;
 }
 
 export function getImages() {
