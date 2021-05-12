@@ -1,12 +1,13 @@
 .img-item {
   margin-top: 15px;
   width: 100%;
-  min-height: 120px;
+  min-height: 40px;
   border-radius: 13px;
   background-color: #ccc;
   overflow: hidden;
 
   img {
+    display: block; // covers the div
     width: 100%;
   }
 }
