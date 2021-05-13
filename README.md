@@ -1,7 +1,7 @@
 *For the requirement description, refer to [test/coding/frontend](https://wiredcraft.gitbook.io/recruitment-test/coding/frontend).*
 
 ## Introduction
-This application is created by `create-react-app`, as recommended by [React Tutorial](). Codes are all written in TypeScript.
+This application is created by `create-react-app`, as recommended by [React Tutorial](https://reactjs.org/docs/create-a-new-react-app.html). Codes are all written in TypeScript.
 
 It uses `flex` layout to simulate Masonry layout. An `onresize` callback is set for re-calculating columns after window resizing. Lazy-loading feature is also presented.
 

@@ -48,7 +48,7 @@ export const mockImgs = [
   }
 ]
 
-describe('header reducer', () => {
+describe('masonry reducer', () => {
   const initialState: MasonryState = {
     images: [],
     status: 'idle'
