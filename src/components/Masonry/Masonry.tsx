@@ -15,9 +15,10 @@ export function Masonry() {
   const keyword = useAppSelector(selectKeyword);
   const images = useAppSelector(selectImages);
   const dispatch = useAppDispatch();
-  if (images && !images.length) {
+
+  useEffect(() => {
     dispatch(fetchImages());
-  }
+  }, [dispatch]);
 
   function calcCols (width: number) {
     return Math.floor((width - SIDE_PADDING * 2 + GAP_WIDTH) / (COL_WIDTH + GAP_WIDTH))
