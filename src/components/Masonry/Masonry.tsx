@@ -25,6 +25,7 @@ export function Masonry() {
 
   const [colNum, setColNum] = useState(calcCols(window.innerWidth))
 
+  // handle resize of window
   useEffect(() => {
     const handleResize = () => setColNum(calcCols(window.innerWidth));
     window.addEventListener('resize', throttle(handleResize, 200));
@@ -34,6 +35,7 @@ export function Masonry() {
   return (
     <main>
       {images
+        // filter by keyword
         .filter(v => v.name.includes(keyword))
         // get height from url
         .map(v => ({ ...v, height: Number(v.src.match(/picsum\.photos\/\d+\/(\d+)/)?.[1] || 0) }))
@@ -41,9 +43,11 @@ export function Masonry() {
         .reduce((acc, val) => {
           const getColHeight = (col: ImgData[]): number => col.reduce((colAcc, colVal) => colAcc + (colVal.height || 0), 0);
           const minLength = Math.min(...acc.map(getColHeight));
+          // push to shortest or first column
           (acc.find(col => (getColHeight(col) === minLength)) || acc[0]).push(val);
           return acc;
         }, Array.from({ length: colNum }, () => []) as ImgData[][])
+        // map from masonry columns
         .map((col, idx) => <div data-testid="column" className="column" key={idx}>
           {col.map(image => <ImgItem src={image.src} key={image._id} name={image.name}/>)}
         </div>)}
