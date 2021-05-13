@@ -3,7 +3,7 @@
 ## Introduction
 This application is created by `create-react-app`, as recommended by [React Tutorial](). Codes are all written in TypeScript.
 
-It uses `flex` layout to simulate Masonry layout. An `onresize` callback is set for re-calculating columns after window resizing.
+It uses `flex` layout to simulate Masonry layout. An `onresize` callback is set for re-calculating columns after window resizing. Lazy-loading feature is also presented.
 
 Unit tests are set for `Header` and `Masonry` with a coverage of 96.55%.
 
