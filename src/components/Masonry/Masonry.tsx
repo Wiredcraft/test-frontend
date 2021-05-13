@@ -20,7 +20,7 @@ export function Masonry() {
   }
 
   function calcCols (width: number) {
-    return Math.floor((width - SIDE_PADDING * 2) / (COL_WIDTH + GAP_WIDTH))
+    return Math.floor((width - SIDE_PADDING * 2 + GAP_WIDTH) / (COL_WIDTH + GAP_WIDTH))
   }
 
   const [colNum, setColNum] = useState(calcCols(window.innerWidth))
