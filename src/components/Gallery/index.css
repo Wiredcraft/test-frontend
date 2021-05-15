@@ -1,0 +1,17 @@
+.wc-columns {
+    column-count: 6;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+}
+
+.wc-columns .card {
+    margin-bottom: .75rem;
+    border-radius: 0.75rem;
+    border: none;
+}
+
+.wc-columns .card .wc-picture{
+    padding: 0;
+    border: none;
+}
