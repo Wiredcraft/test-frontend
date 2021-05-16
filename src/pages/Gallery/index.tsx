@@ -28,8 +28,8 @@ const Gallery = () => {
     setIsLoading(true);
     const fetchData = async () => {
       const pictures = await getPictures();
-      setPictureList(pictures.data);
-      setFilteredPictureList(pictures.data);
+      setPictureList(pictures.data.slice(0,10));
+      setFilteredPictureList(pictures.data.slice(0,10));
       setIsLoading(false);
     };
     fetchData();
@@ -57,7 +57,7 @@ const Gallery = () => {
         {isLoading ? 'loading' : ''}
         <div className="wc-columns">
           {filteredPictureList.map((item) => (
-            <Card src={item.src} id={item.id} />
+            <Card src={item.src} _id={item._id} name={item.name} key={item._id} />
           ))}
         </div>
       </div>

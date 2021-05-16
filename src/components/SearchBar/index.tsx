@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 import React, { useState } from 'react';
-import './index.css';
 // import { searchProps } from '../../data.d';
 
 const SearchBar = ({ searchQuery, setSearchQuery} :any) => {

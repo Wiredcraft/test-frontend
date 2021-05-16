@@ -6,12 +6,24 @@
 }
 
 .wc-columns .card {
-    margin-bottom: .75rem;
-    border-radius: 0.75rem;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    border-radius: 1rem;
     border: none;
+    -webkit-column-break-inside: avoid;
+    break-before: avoid;
 }
 
-.wc-columns .card .wc-picture{
+.wc-columns .card .wc-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
     padding: 0;
     border: none;
+    border-radius: 0.75rem;
+}
+
+.wc-image-placeholder {
+    width: 100%;
+    border-radius: 0.75rem;
 }

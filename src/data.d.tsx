@@ -1,8 +1,8 @@
 export type pictureCard = {
-  id: string;
+  _id: string;
   index?: number;
-  name?: string;
-  src?: string;
+  name: string;
+  src: string;
   isLoading?: boolean;
 };
 
