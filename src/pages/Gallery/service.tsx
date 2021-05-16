@@ -1,5 +1,6 @@
 // eslint-disable-next-line
 import axios from 'axios';
+import { searchParams } from '../../data.d';
 
 // Create instance called instance
 const instance = axios.create({
@@ -11,12 +12,7 @@ const instance = axios.create({
     }
 });
 
-export type pictureParams = {
-    search?: string;
-    page?: number;
-};
-
-export async function getPictures (params?: pictureParams) {
+export async function getPictures (params?: searchParams) {
     return instance.get('/pictures', {
         params
     });

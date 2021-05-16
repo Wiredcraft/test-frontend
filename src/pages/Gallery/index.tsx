@@ -4,48 +4,64 @@ import './index.css';
 import Card from '../../components/Card';
 import SearchBar from '../../components/SearchBar';
 import { getPictures } from './service';
-import { pictureCard } from '../../data.d';
-import useIntersectionObserver from '@react-hook/intersection-observer'
+import { pictureCard, searchParams } from '../../data.d';
+import Loading from '../../components/Loading';
 
 const Gallery = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [pictureList, setPictureList] = useState<pictureCard[]>([]);
-  const [filteredPictureList, setFilteredPictureList] = useState<pictureCard[]>([]);
+  const [cachedPictureList, setCachedPictureList] = useState<pictureCard[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showNoSearchTip, setShowNoSearchTip] = useState(false);
-
-  const ref = useRef<HTMLDivElement | null>(null)
-  const { isIntersecting } = useIntersectionObserver(ref);
-
-  console.log(`Render Section { isIntersecting }`);
+  const [searchParams, setSearchParams] = useState<searchParams>({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loadMore, setLoadMore] = useState(false);
 
   const updateSearch = async (searchQuery: string) => {
     setShowNoSearchTip(false);
-    setFilteredPictureList(pictureList);
     setSearchQuery(searchQuery);
+    setSearchParams({search: searchQuery});
+
+ // reset picture data
+    if(searchQuery.length === 0) {
+      setPictureList(cachedPictureList);
+    }
   }
 
-  const onSearchButtonClick = () => {
-    const filtered = pictureList.filter((item: pictureCard) => {
-      return item.name === searchQuery;
-    })
-    if(filtered.length == 0){
+  const onSearchButtonClick = async () => {
+    const pictures = await getPictures(searchParams);
+    setPictureList(pictures.data.result);
+    if(pictures.data.result.length === 0){
       setShowNoSearchTip(true);
-    }
-    setFilteredPictureList(filtered);
-  }
- 
-  useEffect(() => {
-    setIsLoading(true);
-    setShowNoSearchTip(false);
-    const fetchData = async () => {
-      const pictures = await getPictures(1);
-      setPictureList(pictures.data.result);
-      setFilteredPictureList(pictures.data.result);
       setIsLoading(false);
+    }
+  }
+
+  const onLoadMore = async (isLoading: boolean) => {
+    if(isLoading){
+      setIsLoading(false);
+      setLoadMore(true);
+      setCurrentPage(currentPage+1);
+      setSearchParams({page: currentPage+1});
+    }
+  }
+
+  useEffect(() => {
+    setShowNoSearchTip(false);
+    console.log('current page', currentPage, searchParams);
+    const fetchData = async () => {
+      const pictures = await getPictures(searchParams);
+      const results = pictures.data.result;
+      if(results.length == 0){
+        setIsLoading(false);
+        return;
+      }
+      setPictureList(prevArray => [...prevArray, ...results]);
+      setCachedPictureList(pictures.data.result);
+      setIsLoading(true);
     };
     fetchData();
-  }, []);
+  }, [searchParams]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
@@ -66,8 +82,8 @@ const Gallery = () => {
             >Search</button>
           </div>
         </div>
-        <div className="wc-columns mt-2" ref={ref}>
-          {filteredPictureList.map((item) => (
+        <div className="wc-columns mt-2">
+          {pictureList.map((item) => (
             <Card src={item.src} _id={item._id} name={item.name} key={item._id} />
           ))}
         </div>
@@ -78,13 +94,11 @@ const Gallery = () => {
         ) : '' }
       </div>
       {isLoading ? (
-          <div className="text-center m-5">
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )
-         : ''}
+         <Loading  
+         isLoading={isLoading}
+         setIsLoading={onLoadMore}>
+       </Loading>
+      ) : ''}
     </div>
   );
 };

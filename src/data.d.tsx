@@ -6,7 +6,7 @@ export type pictureCard = {
   isLoading?: boolean;
 };
 
-export type searchProps = {
-  onChange: (value?: string) => void;
-  input: string;
+export type searchParams = {
+  search?: string;
+  page?: number;
 };

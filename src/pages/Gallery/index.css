@@ -1,5 +1,5 @@
 .wc-columns {
-    column-count: 6;
+    column-count: 2;
     column-gap: 1.25rem;
     orphans: 1;
     widows: 1;
@@ -26,4 +26,28 @@
 .wc-image-placeholder {
     width: 100%;
     border-radius: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .wc-columns {
+        column-count: 3
+    }
+}
+
+@media (min-width: 768px) {
+    .wc-columns {
+        column-count: 4;
+    }
+}
+
+@media (min-width: 992px) {
+    .wc-columns {
+        column-count: 5;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .wc-columns {
+        column-count: 6;
+    }
 }

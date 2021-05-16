@@ -28,14 +28,16 @@ app.get("/api/pictures", (req, res) => {
   const resultCount = Object.keys(result).length;
   const pageCount = Math.ceil(resultCount / 10);
   let page = parseInt(req.query.page);
+  result = result.slice(page * 10 - 10, page * 10);
   if (!page) { page = 1;}
   if (page > pageCount) {
     page = pageCount
+    result = [];
   }
   res.header("Content-Type",'application/json');
   res.json({
     "page": page,
     "pageCount": pageCount,
-    "result": result.slice(page * 10 - 10, page * 10)
+    "result": result,
   });
 });

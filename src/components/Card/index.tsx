@@ -39,7 +39,7 @@ const Card: React.FC<pictureCard> = (props) => {
     setIsLoading(true);
     getPlaceholderSize();
     getPlaceholderBgColor();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div key={props._id} className="card wc-card">
@@ -48,6 +48,7 @@ const Card: React.FC<pictureCard> = (props) => {
           src={props.src}
           className="card-img-top img-thumbnail wc-picture"
           style={{ backgroundColor: bgColor }}
+          alt={props.name}
           onLoad={onLoadDone}
         />
       </div>
