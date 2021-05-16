@@ -11,6 +11,13 @@ const instance = axios.create({
     }
 });
 
-export async function getPictures () {
-    return instance.get('/pictures');
+export type pictureParams = {
+    search?: string;
+    page?: number;
+};
+
+export async function getPictures (params?: pictureParams) {
+    return instance.get('/pictures', {
+        params
+    });
 }

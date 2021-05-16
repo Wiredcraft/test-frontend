@@ -1,10 +1,11 @@
 // eslint-disable-next-line
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 import Card from '../../components/Card';
 import SearchBar from '../../components/SearchBar';
 import { getPictures } from './service';
 import { pictureCard } from '../../data.d';
+import useIntersectionObserver from '@react-hook/intersection-observer'
 
 const Gallery = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +13,11 @@ const Gallery = () => {
   const [filteredPictureList, setFilteredPictureList] = useState<pictureCard[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showNoSearchTip, setShowNoSearchTip] = useState(false);
+
+  const ref = useRef<HTMLDivElement | null>(null)
+  const { isIntersecting } = useIntersectionObserver(ref);
+
+  console.log(`Render Section { isIntersecting }`);
 
   const updateSearch = async (searchQuery: string) => {
     setShowNoSearchTip(false);
@@ -33,9 +39,9 @@ const Gallery = () => {
     setIsLoading(true);
     setShowNoSearchTip(false);
     const fetchData = async () => {
-      const pictures = await getPictures();
-      setPictureList(pictures.data.slice(0,10));
-      setFilteredPictureList(pictures.data.slice(0,10));
+      const pictures = await getPictures(1);
+      setPictureList(pictures.data.result);
+      setFilteredPictureList(pictures.data.result);
       setIsLoading(false);
     };
     fetchData();
@@ -60,7 +66,7 @@ const Gallery = () => {
             >Search</button>
           </div>
         </div>
-        <div className="wc-columns mt-2">
+        <div className="wc-columns mt-2" ref={ref}>
           {filteredPictureList.map((item) => (
             <Card src={item.src} _id={item._id} name={item.name} key={item._id} />
           ))}
