@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React from 'react';
 import './App.css';
-import Gallery from './components/Gallery';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
