@@ -10,39 +10,43 @@ import Loading from '../../components/Loading';
 const Gallery = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [pictureList, setPictureList] = useState<pictureCard[]>([]);
-  const [cachedPictureList, setCachedPictureList] = useState<pictureCard[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showNoSearchTip, setShowNoSearchTip] = useState(false);
   const [searchParams, setSearchParams] = useState<searchParams>({});
   const [currentPage, setCurrentPage] = useState(1);
-  const [loadMore, setLoadMore] = useState(false);
 
   const updateSearch = async (searchQuery: string) => {
     setShowNoSearchTip(false);
     setSearchQuery(searchQuery);
-    setSearchParams({search: searchQuery});
+    setCurrentPage(1);
 
- // reset picture data
+   // reset picture data
     if(searchQuery.length === 0) {
-      setPictureList(cachedPictureList);
+      const pictures = await getPictures({search: '', page: 1});
+      setPictureList(pictures.data.result);
+      setIsLoading(true);
     }
   }
 
   const onSearchButtonClick = async () => {
-    const pictures = await getPictures(searchParams);
-    setPictureList(pictures.data.result);
+    if(searchQuery.length === 0) {
+      return;
+    }
+    const pictures = await getPictures({search: searchQuery, page: 1});
     if(pictures.data.result.length === 0){
+      setPictureList([]);
       setShowNoSearchTip(true);
       setIsLoading(false);
+      return;
     }
+    setPictureList(pictures.data.result);
   }
 
   const onLoadMore = async (isLoading: boolean) => {
     if(isLoading){
       setIsLoading(false);
-      setLoadMore(true);
       setCurrentPage(currentPage+1);
-      setSearchParams({page: currentPage+1});
+      setSearchParams({search: searchQuery, page: currentPage+1});
     }
   }
 
@@ -52,12 +56,11 @@ const Gallery = () => {
     const fetchData = async () => {
       const pictures = await getPictures(searchParams);
       const results = pictures.data.result;
-      if(results.length == 0){
+      if(results.length === 0){
         setIsLoading(false);
         return;
       }
       setPictureList(prevArray => [...prevArray, ...results]);
-      setCachedPictureList(pictures.data.result);
       setIsLoading(true);
     };
     fetchData();
