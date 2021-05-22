@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  position: fixed;
+  height: 75px;
+  box-shadow: 0 5px 9px #cccccc;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 10;
+  background: #fff;
+  .input_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    margin-right: 15px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    padding: 0 15px;
+    overflow: hidden;
+    i {
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      vertical-align: middle;
+      color: #bbb;
+      font-size: 22px;
+      margin-top: 10px;
+    }
+    input {
+      border: 0;
+      background: transparent;
+      height: 100%;
+      color: #bbb;
+      outline: 0;
+    }
+  }
+  .icon-Homehomepagemenu {
+    color: #bbb;
+    font-size: 35px;
+    margin-right: 20px;
+  }
+  .icon-bell {
+    color: #bbb;
+    font-size: 28px;
+    margin-right: 20px;
+  }
+  .icon-xxhdpiShape {
+    color: #bbb;
+    font-size: 30px;
+    margin-right: 15px;
+  }
+}

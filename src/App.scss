@@ -1,0 +1,36 @@
+@import "./assets/font/iconfont.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  position: relative;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    columns: 6;
+    padding-top: 110px;
+    column-gap: 14px;
+
+    //Responsive code
+    @media screen and (min-width: 320px) {
+      columns: 1;
+    }
+    @media screen and (min-width: 375px) {
+      columns: 2;
+    }
+    @media screen and (min-width: 1024px) {
+      columns: 5;
+    }
+    @media screen and (min-width: 1200px) {
+      columns: 6;
+    }
+   
+  }
+
+
+}
+
