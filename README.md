@@ -1,6 +1,6 @@
 # Masonry Layout - Wiredcraft Frontend Task
 
-This project was bootstrapped with [Create React App]
+This project was bootstrapped with [Create React App].
 
 ## Development
 ### `npm install or yarn add` to download the node-modules files
