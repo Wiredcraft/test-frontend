@@ -52,7 +52,7 @@ const Fetch = (url: string, params = {}, method = "POST") => {
         }
       })
       .catch((error) => {
-        if (error.message == "Network request failed") {
+        if (error.message === "Network request failed") {
           error.message = "网络连接失败,请检查网络";
         } else {
           error.message = "服务器内部错误";

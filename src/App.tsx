@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useRef } from "react";
 import "App.scss";
 import { connect } from "dva";
@@ -8,24 +8,24 @@ const App = ({ dispatch, data, limit, pager, name }) => {
   const loadingRef = useRef<any>(null);
 
   useEffect(() => {
+    let current = loadingRef.current;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry && entry.isIntersecting) {
-        console.log("app called");
         dispatch({
           type: "model/getPage",
           payload: { _page: pager, _limit: limit },
-        }).then((res: any) => {});
+        }).then((res) => {});
       }
     });
-    observer.observe(loadingRef.current);
+    observer.observe(current);
 
     return () => {
-      if (loadingRef && loadingRef.current) {
-        observer.unobserve(loadingRef.current);
+      if (loadingRef && current) {
+        observer.unobserve(current);
         observer.disconnect();
       }
     };
-  }, [pager, data, name]);
+  }, [pager, data, name, dispatch, limit]);
 
   return (
     <div className="wrapper">

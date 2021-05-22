@@ -5,7 +5,7 @@ const Request = (url: string, params = {}, method = "POST", timeout = 8000) => {
   if (process.env.NODE_ENV === "development") {
     return fetch_promise;
   } else {
-    var abort_fn = null;
+    // var abort_fn = null;
     var abort_promise = new Promise(function (resolve, reject) {
       // abort_fn = function (abort) {
       //   reject(abort);

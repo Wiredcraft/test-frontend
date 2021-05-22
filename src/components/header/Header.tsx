@@ -12,7 +12,7 @@ const _Header: React.FC = ({ dispatch, limit, pager, txt }) => {
       type: "model/resetPage",
       payload: searchTxt,
     });
-  }, [debouncedTxt]);
+  }, [debouncedTxt, searchTxt, dispatch]);
 
   return (
     <div className="header">

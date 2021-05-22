@@ -1,5 +1,5 @@
 import Request from "./components/base/Request";
-export default {
+const model = {
   namespace: "model",
   state: {
     //originData
@@ -60,3 +60,4 @@ export default {
     setup({ dispatch }) {},
   },
 };
+export default model;
