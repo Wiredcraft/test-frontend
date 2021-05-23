@@ -12,7 +12,7 @@ const _Header: React.FC = ({ dispatch, limit, pager, txt }) => {
       type: "model/resetPage",
       payload: searchTxt,
     });
-  }, [debouncedTxt, searchTxt, dispatch]);
+  }, [debouncedTxt, dispatch]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="header">
