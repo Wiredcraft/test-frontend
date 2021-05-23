@@ -9,4 +9,7 @@ This project was bootstrapped with [Create React App].
 
 ## Thoughts
 I decided to spend the weekend to do this task from the scratch. To be frank, i have been quite
-shameful about the last version i commited and i know i have to make it correct. About this version, perhaps it's not so good either, but it's better. And I'll be very appreciated if you guys could check it.
+shameful about the last version i committed and i know i have to make it correct. About this version, perhaps it's not so good either, but it's better. And I'll be very appreciated if you guys could check it
+
+## Online address
+https://test-frontend-blond.vercel.app
