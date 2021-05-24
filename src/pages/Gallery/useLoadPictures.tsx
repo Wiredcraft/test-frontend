@@ -15,16 +15,14 @@ function useLoadPictures(loadingStatus: string) {
       try {
         const pictures = await getPictures({search: query, page: currentPage});
         if(currentPage > pictures.data.pageCount){
-          dispatch(loadPictureList(ACTIONS.LOAD_PICTURE_LIST, []));
           dispatch(loadMore(LOAD_MORE_STATUS.STOP));
-        } else {
-          const results  = pictures.data.result;
-          dispatch(loadPictureList(ACTIONS.LOAD_PICTURE_LIST, [...results]));
-          setCurrentPage(currentPage+1);
-          dispatch(loadMore(LOAD_MORE_STATUS.PAUSE));
+          return;
         }
+        const results  = pictures.data.result;
+        dispatch(loadPictureList(ACTIONS.LOAD_PICTURE_LIST, [...results]));
+        setCurrentPage(currentPage+1);
+        dispatch(loadMore(LOAD_MORE_STATUS.PAUSE));
       } catch (error) {
-        dispatch(loadPictureList(ACTIONS.LOAD_PICTURE_LIST, []));
         dispatch(loadMore(LOAD_MORE_STATUS.STOP));
       }
     };
