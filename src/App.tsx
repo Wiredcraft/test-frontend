@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 import React from 'react';
 import './App.css';
 import Gallery from './pages/Gallery';

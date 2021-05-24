@@ -1,9 +1,20 @@
-// eslint-disable-next-line
-import React, { useState } from 'react';
+import React,  { useState }from 'react';
+import { useDispatch } from "react-redux";
+import { onSearch } from "../../redux/actions";
 
-const SearchBar = ({ searchQuery, setSearchQuery} :any) => {
+const SearchBar = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const dispatch = useDispatch();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
+    const value = e.target.value;
+    setSearchQuery(value);
+    dispatch(onSearch({query: value, onEnterSearch: false}));
+  };
+
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      dispatch(onSearch({query: searchQuery, onEnterSearch: true}));
+    }
   };
   
   return (
@@ -11,8 +22,9 @@ const SearchBar = ({ searchQuery, setSearchQuery} :any) => {
       key="search-bar"
       value={searchQuery}
       className="input-group mb-3 form-control"
-      placeholder={"search name"}
+      placeholder={"press enter to search"}
       onChange={handleChange}
+      onKeyPress={handleEnter}
     />
   );
 };

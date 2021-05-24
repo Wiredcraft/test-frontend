@@ -1,11 +1,18 @@
-// eslint-disable-next-line
-import React, { useState, useRef, RefObject } from 'react';
+import React, { useRef, useEffect } from 'react';
 import useIntersectionObserver from '@react-hook/intersection-observer';
+import { useDispatch } from "react-redux";
+import { loadMore } from "../../redux/actions";
+import { LOAD_MORE_STATUS } from "../../redux/types";
 
-const Loading = ({isLoading, setIsLoading} : any) => {
+const Loading = () => {
   const ref = useRef<HTMLDivElement | null>(null)
   const {isIntersecting} = useIntersectionObserver(ref, {threshold: 1});
-  setIsLoading(isIntersecting);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if(isIntersecting) {
+      dispatch(loadMore(LOAD_MORE_STATUS.LOADING));
+    }
+  }, [isIntersecting]);
 
   return (
     <div>
