@@ -19,10 +19,10 @@ app.listen(PORT, () => {
 app.get("/api/pictures", (req, res) => {
   const json = fs.readFileSync(path.join(__dirname, 'data.json'));
   let result = JSON.parse(json);
-  let search = req.query.search;
+  let search = req.query.search.toString();
   if(search){
     result = result.filter(item => {
-      return item.name.toString() === search.toString()
+      return item.name.toString().includes(search);
     });
   }
   const resultCount = Object.keys(result).length;
