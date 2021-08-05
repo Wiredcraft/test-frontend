@@ -2,23 +2,30 @@ import { useEffect } from 'react';
 
 
 function useObserveNode ({
-  node = '',
+  nodeRef = '',
   onNodeDisplay
 }) {
 
   useEffect(() => {
-    const nodeElm = typeof node === 'string'
-      ? document.querySelector(node)
-      : node;
+    const nodeElm = typeof nodeRef === 'function'
+      ? nodeRef()
+      : nodeRef.current;
 
-    const io = new IntersectionObserver((entrys) => {
 
+    const io = new IntersectionObserver((entries) => {
+      if (entries[0].intersectionRatio <= 0) {
+        return;
+      }
+      onNodeDisplay && onNodeDisplay();
     });
 
-    return () => {
+    io.observe(nodeElm);
 
-    }
-  }, [node, onNodeDisplay]);
+    return () => {
+      io.unobserve(nodeElm)
+      io.disconnect()
+    };
+  }, [nodeRef]);
 }
 
 
