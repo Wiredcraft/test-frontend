@@ -27,16 +27,22 @@ function useImages(initialState = []) {
 
 
   const setPageNo = (pageNo) => {
-    currentPageNo.current = pageNo;
-    fetchImages().then(res => {
+    if (pageNo > currentPageNo.current && !hasMoreRef.current) {
+      return;
+    }
 
+    currentPageNo.current = pageNo;
+
+    fetchImages().then(({ list, hasMore }) => {
+      hasMoreRef.current = hasMore;
       setImages(prevImages =>  {
         const rawImgaes = pageNo === 0
-          ? res
-          : prevImages.concat(res);
+          ? list
+          : prevImages.concat(list);
 
         return rawImgaes.map(addSize);
       });
+
     });
   }
 
