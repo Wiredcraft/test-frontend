@@ -43,12 +43,11 @@ export const calcNodeStyle = ({
   nodeIndex,
   images,
   currentImage,
-  container
+  containerWidth
 }) => {
   const nodeGap = 14;
   const initTop = 20;
   const nodeWidthWithGap = nodeWidth + nodeGap;
-  const containerWidth = window.getComputedStyle(container).width.slice(0, -2);
   const colCount = Math.floor(containerWidth / nodeWidthWithGap);
 
 
@@ -83,9 +82,54 @@ export const debounce = (fn, wait, imme) => {
 
   return function(...rest) {
     if (imme && !timer) {
-      fn.apply(this, rest)
+      fn.apply(this, rest);
     }
-    timer && clearTimeout(timer)
-    timer = setTimeout(() => fn.apply(this, rest), wait)
+    timer && clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, rest), wait);
+  }
+}
+
+/**
+ *
+ *
+ * @param {*} fn
+ * @param {*} wait
+ * @returns
+ */
+export const throttle = (fn, wait) => {
+  let lastTime;
+
+  return function(...rest) {
+    if (!lastTime || Date.now() - lastTime > wait) {
+        lastTime = Date.now();
+        fn.apply(this, rest);
+    }
+  }
+}
+
+export const getContainerWidth = wrapperWidth => {
+  // column count 6
+  if (wrapperWidth >= 1440) {
+    return 1440;
+  }
+
+  // column count 5
+  if (wrapperWidth >= 1070 && wrapperWidth < 1440) {
+    return 1070
+  }
+
+  // column count 4
+  if (wrapperWidth >= 856 && wrapperWidth < 1070) {
+    return 856
+  }
+
+  // column count 3
+  if (wrapperWidth >= 642 && wrapperWidth < 856) {
+    return 642
+  }
+
+  // column count 2
+  if (wrapperWidth < 642) {
+    return 428
   }
 }
