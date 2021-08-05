@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "dev:serve": "node ./server/app.js",
+    "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
