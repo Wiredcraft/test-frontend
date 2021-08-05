@@ -1,6 +1,14 @@
 import mockData from '../mock.json';
 
-// TODO:
+/**
+ *
+ *
+ * @param {*} {
+ *   url,
+ *   data
+ * }
+ * @returns
+ */
 function request({
   url,
   data

@@ -1,51 +1,69 @@
 import { createContainer } from 'unstated-next';
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import * as service from '../service';
+import { addSize } from '../common/uitils';
 
-// TODO:
 const PAGE_SIZE = 20;
 
 function useImages(initialState = []) {
   const [images, setImages] = useState(initialState);
+  const [fetching, setFetching] = useState(false);
   const currentPageNo = useRef(0);
   const currentKeyword = useRef('');
+  const hasMoreRef = useRef(true);
 
 
-  const fetchImages = useCallback(params => {
+  const fetchImages = params => {
+    setFetching(true);
+
     return service
       .fetchImageList({
         pageSize: PAGE_SIZE,
         pageNo: currentPageNo.current,
         keyword: currentKeyword.current,
         ...params
-      })
-      .then(res => {
-        setImages(res);
       });
-  }, []);
-
-  useEffect(() => {
-    fetchImages();
-  }, [])
+  };
 
 
   const setPageNo = (pageNo) => {
     currentPageNo.current = pageNo;
-    fetchImages();
-  }
+    fetchImages().then(res => {
 
+      setImages(prevImages =>  {
+        const rawImgaes = pageNo === 0
+          ? res
+          : prevImages.concat(res);
+
+        return rawImgaes.map(addSize);
+      });
+    });
+  }
 
   const doSearch = (keyword) => {
     currentKeyword.current = keyword;
-    fetchImages();
+    setPageNo(0);
   };
+
+  const loadMore = () => hasMoreRef.current && setPageNo(++currentPageNo.current);
+
+
+  useEffect(() => {
+    setPageNo(0);
+  }, []);
+
+
+  useEffect(() => {
+    setFetching(false);
+  }, [images]);
 
 
   return {
     images, 
+    fetching,
     setImages,
     doSearch,
-    pageNo: currentPageNo.current,
+    loadMore,
     setPageNo
   };
 }
