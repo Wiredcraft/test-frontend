@@ -11,7 +11,7 @@ const NODE_WIDTH = 200;
 
 function ImageLayout () {
   const { images } = useContainer(ImageContainer);
-  const [containerWidth, setContainerWidth]= useState(1440);
+  const [containerWidth, setContainerWidth]= useState(1300);
   const containerRef = useRef(null);
 
   const reCalcContainerWidth = () => {

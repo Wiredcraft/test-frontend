@@ -1,5 +1,3 @@
-import mockData from '../mock.json';
-
 
 const BASE_URL = 'http://localhost:8080';
 
