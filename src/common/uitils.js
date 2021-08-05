@@ -109,12 +109,12 @@ export const throttle = (fn, wait) => {
 
 export const getContainerWidth = wrapperWidth => {
   // column count 6
-  if (wrapperWidth >= 1440) {
-    return 1440;
+  if (wrapperWidth >= 1300) {
+    return 1300;
   }
 
   // column count 5
-  if (wrapperWidth >= 1070 && wrapperWidth < 1440) {
+  if (wrapperWidth >= 1070 && wrapperWidth < 1300) {
     return 1070
   }
 
