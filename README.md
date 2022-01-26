@@ -4,7 +4,7 @@
 
 We need to build a simple webpage following a design like the following screenshot, which features the "[Masonry Layout](https://www.sitepoint.com/understanding-masonry-layout/)". See the [Figma link](https://www.figma.com/file/MGrnRE8jfCl9lU1UmqOQBg/Wiredcraft-Front-End-Test-Mockup) for the design.
 
-![](../.gitbook/assets/87638500-761e7f80-c776-11ea-8805-506856db7fdf.png)
+![](https://1099461659-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-LceGMK-Zxa6_-QeGdy1%2F-MCQbVn9o4bL1vBkWDNj%2F-MCQcRxHS2nkc2w0v2lB%2F87638500-761e7f80-c776-11ea-8805-506856db7fdf.png?alt=media&token=a2095548-d4fc-495d-b1c8-78137ee83586)
 
 ### Requirements
 
