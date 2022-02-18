@@ -11,7 +11,7 @@ interface ImageContainerProps {
 }
 
 const ImageContainer: React.FC<ImageContainerProps> = (props) => {
-    const { src, name } = props.data
+    const { src, name, _id } = props.data
     const [loaded, setLoaded] = useState(false)
     const containerStyle: React.CSSProperties = {
         display: 'flex',
@@ -23,15 +23,17 @@ const ImageContainer: React.FC<ImageContainerProps> = (props) => {
         height: 'auto'
     }
     return (
-        <div style={containerStyle}>
+        <div key={`imageContainer${_id}`} style={containerStyle}>
             {loaded ? null : (
                 <img
+                    key={`imageLoading${_id}`}
                     style={imageStyle}
                     src="/images/loading.gif"
                     alt="loading"
                 />
             )}
             <img
+                key={`image${_id}`}
                 style={loaded ? imageStyle : { ...imageStyle, display: 'none' }}
                 src={src}
                 alt={name}

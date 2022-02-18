@@ -1,31 +1,22 @@
+import React, { Suspense } from 'react'
 import './App.css'
-import { MasonryLayout } from './components/masonryLayout'
 import { ImageContainer, ImageData } from './components/ImageContainer'
 import { TopNav } from './components/TopNav'
+
+const MasonryLayout = React.lazy(() => import('./components/MasonryLayout'))
 
 function App() {
     return (
         <div className="App">
             <TopNav />
-            <MasonryLayout columns={6} gap={14} padding={80}>
-                {generateImages(images)}
-            </MasonryLayout>
+            <Suspense fallback={<div>Loading...</div>}>
+                <MasonryLayout columns={6} gap={14} padding={80}>
+                    {generateImages(images)}
+                </MasonryLayout>
+            </Suspense>
         </div>
     )
 }
-
-// const generateDivs = () => {
-//     let result = []
-//     for (let i = 0; i < 12; i++) {
-//         const height = 200 + Math.ceil(Math.random() * 300)
-//         result.push(
-//             <div
-//                 style={{ height: `${height}px`, backgroundColor: `#CCC` }}
-//             ></div>
-//         )
-//     }
-//     return result
-// }
 
 const images = [
     {
@@ -177,7 +168,7 @@ const images = [
 const generateImages = (imageData: Array<ImageData>) => {
     let result: Array<JSX.Element> = []
     imageData.forEach((image) => {
-        result.push(<ImageContainer data={image} />)
+        result.push(<ImageContainer key={image._id} data={image} />)
     })
     return result
 }
