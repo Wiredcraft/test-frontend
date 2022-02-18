@@ -14,6 +14,8 @@ We need to build a simple webpage following a design like the following screensh
 
 {% file src="../.gitbook/assets/data.json.zip" caption="Data Source JSON file" %}
 
+or download the data.json directly from this repo.
+
 ### Tech stack
 
 * Use **React**, and optionally React-router.
