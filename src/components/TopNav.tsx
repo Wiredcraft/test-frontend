@@ -24,7 +24,6 @@ const TopNavSearch: React.FC = () => {
         const searchString = e.target.value
         dispatch(changeSearch(searchString))
         setSearchString(searchString)
-        console.log(searchData)
     }
     return (
         <div className="search">

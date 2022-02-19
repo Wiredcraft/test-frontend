@@ -46,8 +46,6 @@ const ImageList: React.FC<{}> = () => {
             Math.ceil(window.scrollY + window.innerHeight) >=
             document.body.offsetHeight
         if (bottom) {
-            console.log('at bottom', isBottom)
-            console.log('page', page)
             if (!isBottom) {
                 page += 1
                 dispatch(nextPage())
@@ -56,12 +54,10 @@ const ImageList: React.FC<{}> = () => {
         }
     }
     useEffect(() => {
-        console.log('effect search', search)
         getImage(search)
         if (prevSearch !== search) {
             setPrevSearch(search)
         }
-        console.log('previous search', prevSearch)
         window.addEventListener('scroll', handleScroll, {
             passive: true
         })
@@ -76,14 +72,6 @@ const ImageList: React.FC<{}> = () => {
     })
     return (
         <div>
-            <input
-                style={{ display: 'none' }}
-                id="search"
-                value={search}
-                onChange={(e) => {
-                    console.log(e.target.value)
-                }}
-            />
             <MasonryLayout columns={6} gap={14} padding={80}>
                 {resultList}
             </MasonryLayout>

@@ -20,15 +20,24 @@ interface ColumnContainer {
 const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
     const [width] = useWindowSize()
     const [columns, setColumns] = useState(props.columns)
+    const [padding, setPadding] = useState(props.padding)
     useLayoutEffect(() => {
         const updateColumn = () => {
             if (width > 900 && 6 >= columns) {
                 // only set 6 columns if less than 6 columns is set
                 setColumns(6)
             } else if (width > 750) {
+                // break point at 750px, set 4 columns and padding 40
                 setColumns(4)
-            } else if (width < 350) {
+                setPadding(40)
+            } else if (width >= 500) {
+                // break point at 500px
+                setColumns(3)
+                setPadding(16)
+            } else {
+                // layout for small screens
                 setColumns(2)
+                setPadding(16)
             }
         }
         window.addEventListener('resize', updateColumn)
@@ -49,7 +58,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
     }
     const baseContainerStyle: React.CSSProperties = {
         display: 'flex',
-        padding: `0 ${props.padding}px`
+        padding: `0 ${padding}px`
     }
     // init columns
     for (let i = 0; i < columns; i++) {
