@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './ImageContainer.less'
+import './ImageContainer.scss'
 interface ImageData {
     _id: string
     index: number
@@ -31,6 +31,7 @@ const ImageContainer: React.FC<ImageContainerProps> = (props) => {
                 onLoad={() => {
                     setLoaded(true)
                 }}
+                loading="lazy"
             />
         </div>
     )

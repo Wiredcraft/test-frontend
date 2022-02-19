@@ -1,31 +1,13 @@
 import React, { useState } from 'react'
 import { changeSearch } from '../features/imageListSlice'
 import { useAppDispatch, useAppSelector } from '../store/storeHooks'
-
-const fontColor = '#8A8A8A'
+import './TopNav.scss'
 
 const TopNav: React.FC = () => {
-    const navStyle: React.CSSProperties = {
-        width: '100%',
-        height: '70px',
-        boxShadow: '0px 4px 8px 0px #67666640',
-        marginBottom: '18px',
-        display: 'flex',
-        justifyContent: 'flex-end',
-        alignItems: 'center'
-    }
     return (
-        <nav style={navStyle}>
+        <nav>
             <TopNavSearch />
-            <div
-                style={{
-                    display: 'flex',
-                    width: '120px',
-                    justifyContent: 'space-between',
-                    marginLeft: '35px',
-                    marginRight: '35px'
-                }}
-            >
+            <div className="top-nav-actions">
                 <TopNavBtns key="home" icon="fa-house" />
                 <TopNavBtns key="notification" icon="fa-bell" />
                 <TopNavBtns key="user" icon="fa-circle-user" />
@@ -36,25 +18,6 @@ const TopNav: React.FC = () => {
 
 const TopNavSearch: React.FC = () => {
     const dispatch = useAppDispatch()
-
-    const searchStyle: React.CSSProperties = {
-        width: '200px',
-        height: '36px',
-        display: 'flex',
-        alignItems: 'center',
-        paddingLeft: '18px',
-        paddingRight: '18px',
-        borderRadius: '18px',
-        backgroundColor: '#EAEAEA'
-    }
-    const searchInputStyle: React.CSSProperties = {
-        lineHeight: '36px',
-        border: 'none',
-        width: '100%',
-        outline: 'none',
-        background: 'transparent',
-        color: fontColor
-    }
     const searchData = useAppSelector((state) => state.imageList.search)
     const [searchString, setSearchString] = useState(searchData)
     const search = (e: any) => {
@@ -64,17 +27,10 @@ const TopNavSearch: React.FC = () => {
         console.log(searchData)
     }
     return (
-        <div style={searchStyle}>
-            <i
-                className="fa-solid fa-magnifying-glass fa-lg"
-                style={{
-                    marginLeft: '-4px',
-                    marginRight: '4px',
-                    color: fontColor
-                }}
-            />
+        <div className="search">
+            <i className="fa-solid fa-magnifying-glass fa-lg search-icon" />
             <input
-                style={searchInputStyle}
+                className="search-input"
                 type="text"
                 placeholder="Search"
                 alt="Search"
@@ -86,11 +42,8 @@ const TopNavSearch: React.FC = () => {
 }
 
 const TopNavBtns: React.FC<{ icon: string }> = (props) => {
-    const btnStyle: React.CSSProperties = {
-        color: fontColor
-    }
     return (
-        <div style={btnStyle}>
+        <div className="nav-btns">
             <i className={`fa-solid ${props.icon} fa-xl`} />
         </div>
     )
