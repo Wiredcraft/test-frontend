@@ -26,9 +26,9 @@ const ImageList: React.FC<{}> = () => {
     let isBottom = false
     const getImage = async (searchString?: string) => {
         // get image from json-server
-        let url = `http://localhost:3001/images?_page=${page}&_limit=${limit}`
+        let url = `http://localhost:3002/images?_page=${page}&_limit=${limit}`
         if (searchString) {
-            url += `&name_like=${searchString}`
+            url += `&_search=${searchString}`
             if (prevSearch !== searchString) {
                 dispatch(clearImage())
             }

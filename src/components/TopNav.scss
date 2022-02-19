@@ -37,8 +37,10 @@ nav {
         justify-content: space-between;
         margin-left: 35px;
         margin-right: 35px;
+
         .nav-btns {
             color: $font-color;
+            cursor: pointer;
         }
     }
 }

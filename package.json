@@ -23,7 +23,8 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "api-server": "node ./src/mock/api.js"
     },
     "eslintConfig": {
         "extends": [
@@ -44,6 +45,8 @@
         ]
     },
     "devDependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.3",
         "sass": "^1.49.8"
     }
 }
