@@ -37,6 +37,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      '@': SRC_PATH,
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),

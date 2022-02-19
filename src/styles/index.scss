@@ -1,0 +1,7 @@
+@import './reset';
+@import './config';
+
+.app-container {
+  position: relative;
+  padding: $top-bar-height 0;
+}

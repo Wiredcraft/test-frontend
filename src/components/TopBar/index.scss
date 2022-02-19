@@ -1,0 +1,19 @@
+@import '../../styles/config';
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: $top-bar-height;
+  padding: 0 3.125vw;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: 0px 4px 8px rgba(103, 102, 102, 0.25);
+  .nav-link {
+    margin-left: 2.43vw;
+  }
+}

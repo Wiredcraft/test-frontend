@@ -1,0 +1,23 @@
+@import '../../styles/_config.scss';
+
+.search-field {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid #fff;
+  border-radius: 19.5px;
+  background: $primary-light;
+
+  &__input {
+    padding: 6px 0;
+    border: none;
+    outline: none;
+    background: $primary-light;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+  }
+}
