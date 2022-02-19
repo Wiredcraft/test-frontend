@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { MasonryLayoutProps } from '../types/masonryLayout'
 
 const useWindowSize = () => {
@@ -15,16 +15,6 @@ const useWindowSize = () => {
 }
 interface ColumnContainer {
     [key: string]: Array<JSX.Element>
-}
-
-const getImages = async (url: string) => {
-    const fetch = window.fetch
-    try {
-        const res = await fetch(url)
-        return res.json()
-    } catch (e) {
-        console.error('Request Failed', e)
-    }
 }
 
 const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
@@ -45,13 +35,6 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
         updateColumn()
         return () => window.removeEventListener('resize', updateColumn)
     }, [columns, width])
-    useEffect(() => {
-        const getImage = async () => {
-            const getImgRes = await getImages('http://localhost:3001/images')
-            console.log('IMG RES', getImgRes)
-        }
-        getImage()
-    }, [])
     let columnContainer: ColumnContainer = {}
     const result: Array<any> = []
     const elementGapStyle: React.CSSProperties = {

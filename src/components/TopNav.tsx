@@ -1,3 +1,7 @@
+import React, { useState } from 'react'
+import { changeSearch } from '../features/imageListSlice'
+import { useAppDispatch, useAppSelector } from '../store/storeHooks'
+
 const fontColor = '#8A8A8A'
 
 const TopNav: React.FC = () => {
@@ -31,6 +35,8 @@ const TopNav: React.FC = () => {
 }
 
 const TopNavSearch: React.FC = () => {
+    const dispatch = useAppDispatch()
+
     const searchStyle: React.CSSProperties = {
         width: '200px',
         height: '36px',
@@ -49,6 +55,14 @@ const TopNavSearch: React.FC = () => {
         background: 'transparent',
         color: fontColor
     }
+    const searchData = useAppSelector((state) => state.imageList.search)
+    const [searchString, setSearchString] = useState(searchData)
+    const search = (e: any) => {
+        const searchString = e.target.value
+        dispatch(changeSearch(searchString))
+        setSearchString(searchString)
+        console.log(searchData)
+    }
     return (
         <div style={searchStyle}>
             <i
@@ -64,6 +78,8 @@ const TopNavSearch: React.FC = () => {
                 type="text"
                 placeholder="Search"
                 alt="Search"
+                onChange={search}
+                value={searchString}
             />
         </div>
     )

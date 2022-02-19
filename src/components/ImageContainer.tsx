@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import './ImageContainer.less'
 interface ImageData {
     _id: string
     index: number
@@ -13,28 +13,19 @@ interface ImageContainerProps {
 const ImageContainer: React.FC<ImageContainerProps> = (props) => {
     const { src, name, _id } = props.data
     const [loaded, setLoaded] = useState(false)
-    const containerStyle: React.CSSProperties = {
-        display: 'flex',
-        borderRadius: '13px',
-        overflow: 'hidden'
-    }
-    const imageStyle: React.CSSProperties = {
-        width: '100%',
-        height: 'auto'
-    }
     return (
-        <div key={`imageContainer${_id}`} style={containerStyle}>
+        <div key={`imageContainer${_id}`} className="image-container">
             {loaded ? null : (
                 <img
                     key={`imageLoading${_id}`}
-                    style={imageStyle}
                     src="/images/loading.gif"
                     alt="loading"
+                    className="image"
                 />
             )}
             <img
                 key={`image${_id}`}
-                style={loaded ? imageStyle : { ...imageStyle, display: 'none' }}
+                className={loaded ? 'image' : 'image loading'}
                 src={src}
                 alt={name}
                 onLoad={() => {
