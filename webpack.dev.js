@@ -11,7 +11,7 @@ module.exports = {
     contentBase: ['./public'],
     compress: true,
     proxy: {
-      '/api': 'http://localhost:8008',
+      '/api': 'http://localhost:8009',
       pathRewrite: { '/api': '' },
     },
   },

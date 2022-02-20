@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest"
+    "test": "jest",
+    "server": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "css-minimizer-webpack-plugin": "^2.0.0",
@@ -51,6 +53,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "express": "^4.17.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1"
