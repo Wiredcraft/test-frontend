@@ -3,3 +3,13 @@
   display: block;
   border-radius: 14px;
 }
+
+.full {
+  transition: opacity 1000ms ease 0ms;
+}
+
+.thumb {
+  filter: blur(20px);
+  transform: scale(1);
+  transition: visibility 0ms ease 1000ms;
+}

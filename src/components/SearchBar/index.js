@@ -15,6 +15,7 @@ export default function SearchBar() {
       <img src={searchIcon} alt="search" className="search-field__icon" />
       <input
         value={value}
+        placeholder="Search"
         onChange={(e) => {
           setValue(e.target.value);
           handleValueChange();
