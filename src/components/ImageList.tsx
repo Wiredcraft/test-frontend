@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { ImageContainer } from './ImageContainer'
 import MasonryLayout from './MasonryLayout'
 import { api } from '../config/api'
+import './ImageList.scss'
 const getImages = async (url: string) => {
     const fetch = window.fetch
     try {
@@ -11,6 +12,8 @@ const getImages = async (url: string) => {
         return res.json()
     } catch (e) {
         console.error('Request Failed', e)
+        alert('Network Error!')
+        throw e
     }
 }
 
@@ -42,11 +45,16 @@ const ImageList: React.FC<{}> = () => {
     const getImage = async (searchString?: string) => {
         // get image from json-server
         setLoading(true)
+        setAtBottom(false)
         let url = `${api}images?_page=${page}&_limit=${limit}`
         if (searchString) {
             url += `&_search=${searchString}`
+            console.log('Search Params', prevSearch, searchString)
             if (prevSearch !== searchString) {
                 dispatch(clearImage())
+                // start from 1 if changed
+                page = 1
+                url = `${api}images?_page=${page}&_limit=${limit}&_search=${searchString}`
             }
         }
         const res = await getImages(url)
@@ -72,7 +80,9 @@ const ImageList: React.FC<{}> = () => {
     }
     useEffect(() => {
         const timer = setTimeout(() => {
-            getImage(search)
+            if (!prevSearch || prevSearch !== search) {
+                getImage(search)
+            }
             if (prevSearch !== search) {
                 setPrevSearch(search)
             }
@@ -98,16 +108,12 @@ const ImageList: React.FC<{}> = () => {
             </MasonryLayout>
             {loading ? (
                 <div>
-                    <span style={{ color: '#CCC' }}>
-                        Loading more images...
-                    </span>
+                    <span className="hint">Loading more images...</span>
                 </div>
             ) : null}
             {atBottom ? (
                 <div>
-                    <span style={{ color: '#CCC' }}>
-                        There's no more images...
-                    </span>
+                    <span className="hint">There's no more images...</span>
                 </div>
             ) : null}
         </div>

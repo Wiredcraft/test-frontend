@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import { TopNav } from './components/TopNav'
-import './App.css'
+import './App.scss'
 const ImageList = React.lazy(() => import('./components/ImageList'))
 
 function App() {

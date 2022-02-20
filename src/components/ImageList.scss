@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: dark) {
+    .hint {
+        color: #555555;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .hint {
+        color: #cccccc;
+    }
+}

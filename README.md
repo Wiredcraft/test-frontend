@@ -18,15 +18,33 @@ or download the data.json directly from this repo.
 
 ### Tech stack
 
-* Use **React**, and optionally React-router.
-* Use a state management tool. We often use Redux or MobX.
-* Use **SASS** or **Less** for CSS.
-* We are open to other 3rd-party tools but please limit the use - it's a test for you to demonstrate your skill after all.
+-   Use **React**, and optionally React-router.
+-   Use a state management tool. We often use Redux or MobX.
+-   Use **SASS** or **Less** for CSS.
+-   We are open to other 3rd-party tools but please limit the use - it's a test for you to demonstrate your skill after all.
 
 ### Advanced requirements
 
 _Here are some further challenges for you to demonstrate your skills. You can safely skip them if you are not applying as a senior._
 
-* Make it responsive.
-* Feature "Lazy-loading".
+-   Make it responsive.
+-   Feature "Lazy-loading".
 
+---
+
+## Completed Project
+
+### Features
+
+-   Responsive, breakpoints at 900/750/500
+-   Paginated API, auto load next page when scrolled to bottom
+-   Dark mode, auto detects color scheme
+-   Debounced input, trigger search 500 ms after input ends
+
+### Deploy
+
+-   Script:
+    -   start: Local dev server with hot-reload
+    -   api-server: Local API server
+-   Config:
+    -   src/config/api.js: stores API server address, edit accordingly

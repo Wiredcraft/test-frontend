@@ -13,12 +13,22 @@ interface ImageContainerProps {
 const ImageContainer: React.FC<ImageContainerProps> = (props) => {
     const { src, name, _id } = props.data
     const [loaded, setLoaded] = useState(false)
+    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const [darkMode, setDarkMode] = useState(darkModeQuery.matches)
+    darkModeQuery.addEventListener('change', (e) => {
+        setDarkMode(darkModeQuery.matches)
+    })
+
     return (
         <div key={`imageContainer${_id}`} className="image-container">
             {loaded ? null : (
                 <img
                     key={`imageLoading${_id}`}
-                    src="/images/loading.gif"
+                    src={
+                        darkMode
+                            ? '/images/loading-dark.gif'
+                            : '/images/loading.gif'
+                    }
                     alt="loading"
                     className="image"
                 />
