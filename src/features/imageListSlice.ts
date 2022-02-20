@@ -12,7 +12,7 @@ export const imageListSlice = createSlice({
     },
     reducers: {
         nextPage: (state) => {
-            if (state.page * state.limit < state.total) state.page += 1
+            state.page += 1
         },
         prevPage: (state) => {
             if (state.page > 1) {

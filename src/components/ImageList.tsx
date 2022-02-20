@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../store/storeHooks'
 import React, { useEffect, useState } from 'react'
 import { ImageContainer } from './ImageContainer'
 import MasonryLayout from './MasonryLayout'
-
+import { api } from '../config/api'
 const getImages = async (url: string) => {
     const fetch = window.fetch
     try {
@@ -11,6 +11,20 @@ const getImages = async (url: string) => {
         return res.json()
     } catch (e) {
         console.error('Request Failed', e)
+    }
+}
+
+const debounce = (fn: Function, delay: number, immediate = false) => {
+    let timer: number | NodeJS.Timeout | null | undefined = null
+    return (args: any) => {
+        if (typeof timer === 'number') {
+            clearTimeout(timer)
+        } else if (immediate) {
+            fn.apply(this, args)
+        }
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, delay)
     }
 }
 
@@ -23,10 +37,12 @@ const ImageList: React.FC<{}> = () => {
     const search = useAppSelector((state) => state.imageList.search)
     const [prevSearch, setPrevSearch] = useState('')
     const [atBottom, setAtBottom] = useState(false)
+    const [loading, setLoading] = useState(false)
     let isBottom = false
     const getImage = async (searchString?: string) => {
         // get image from json-server
-        let url = `http://localhost:3002/images?_page=${page}&_limit=${limit}`
+        setLoading(true)
+        let url = `${api}images?_page=${page}&_limit=${limit}`
         if (searchString) {
             url += `&_search=${searchString}`
             if (prevSearch !== searchString) {
@@ -38,13 +54,14 @@ const ImageList: React.FC<{}> = () => {
             setAtBottom(true)
             isBottom = true
         }
+        setLoading(false)
         dispatch(addImage(res))
     }
     const handleScroll = () => {
         // load at bottom
         const bottom =
             Math.ceil(window.scrollY + window.innerHeight) >=
-            document.body.offsetHeight
+            document.body.offsetHeight - 250
         if (bottom) {
             if (!isBottom) {
                 page += 1
@@ -54,15 +71,19 @@ const ImageList: React.FC<{}> = () => {
         }
     }
     useEffect(() => {
-        getImage(search)
-        if (prevSearch !== search) {
-            setPrevSearch(search)
-        }
-        window.addEventListener('scroll', handleScroll, {
+        const timer = setTimeout(() => {
+            getImage(search)
+            if (prevSearch !== search) {
+                setPrevSearch(search)
+            }
+        }, 500)
+        const debouncedScroll = debounce(handleScroll, 100)
+        window.addEventListener('scroll', debouncedScroll, {
             passive: true
         })
         return () => {
-            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('scroll', debouncedScroll)
+            clearTimeout(timer)
         }
         // only get image after search string update
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -75,6 +96,13 @@ const ImageList: React.FC<{}> = () => {
             <MasonryLayout columns={6} gap={14} padding={80}>
                 {resultList}
             </MasonryLayout>
+            {loading ? (
+                <div>
+                    <span style={{ color: '#CCC' }}>
+                        Loading more images...
+                    </span>
+                </div>
+            ) : null}
             {atBottom ? (
                 <div>
                     <span style={{ color: '#CCC' }}>
