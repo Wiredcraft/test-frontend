@@ -85,12 +85,13 @@ const ImageList: React.FC<{}> = () => {
     }
     useEffect(() => {
         getImage('')
-        // load image when loaded
-
+        // load image when page first loaded
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     useEffect(() => {
         const timer = setTimeout(() => {
+            // this won't fire when page first loaded so added empty dep useEffect above
+            // added search not empty condition to avoid firing twice when search change from someting to nothing
             if ((!prevSearch && search) || prevSearch !== search) {
                 getImage(search)
             }
