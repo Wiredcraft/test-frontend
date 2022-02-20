@@ -57,6 +57,11 @@ const ImageList: React.FC<{}> = () => {
                 url = `${api}images?_page=${page}&_limit=${limit}&_search=${searchString}`
             }
         }
+        if (!searchString && prevSearch) {
+            dispatch(clearImage())
+            page = 1
+            url = `${api}images?_page=${page}&_limit=${limit}`
+        }
         const res = await getImages(url)
         if (res.length < limit) {
             setAtBottom(true)
@@ -79,8 +84,14 @@ const ImageList: React.FC<{}> = () => {
         }
     }
     useEffect(() => {
+        getImage('')
+        // load image when loaded
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+    useEffect(() => {
         const timer = setTimeout(() => {
-            if (!prevSearch || prevSearch !== search) {
+            if ((!prevSearch && search) || prevSearch !== search) {
                 getImage(search)
             }
             if (prevSearch !== search) {
