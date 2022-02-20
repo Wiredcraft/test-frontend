@@ -1,5 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
+
+LazyImg.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
+};
 
 export default function LazyImg({ url, alt }) {
   const imgRef = useRef();

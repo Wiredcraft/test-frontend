@@ -1,7 +1,13 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import useRemoveBg from '@/hooks/useRemoveBg.js';
 import LazyImg from '../LazyImg';
 import './index.scss';
+
+Card.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
+};
 
 function Card({ src, alt }) {
   const cardRef = useRef();
