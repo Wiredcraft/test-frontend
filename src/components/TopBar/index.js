@@ -15,7 +15,7 @@ const links = [
   {
     svg: notificationIcon,
     alt: 'notification',
-    path: '/notication',
+    path: '/notification',
   },
   {
     svg: userIcon,

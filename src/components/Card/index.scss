@@ -1,0 +1,8 @@
+@import '../../styles/config';
+
+.card-container {
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background-color: $primary-light;
+  break-inside: avoid;
+}
