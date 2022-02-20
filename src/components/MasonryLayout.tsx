@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { MasonryLayoutProps } from '../types/masonryLayout'
-
+import './MasonryLayout.scss'
 const useWindowSize = () => {
     const [size, setSize] = useState([0, 0])
     useLayoutEffect(() => {
@@ -26,6 +26,10 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
             if (width > 900 && 6 >= columns) {
                 // only set 6 columns if less than 6 columns is set
                 setColumns(6)
+                setPadding(props.padding)
+            } else if (width > 820) {
+                setColumns(5)
+                setPadding(props.padding)
             } else if (width > 750) {
                 // break point at 750px, set 4 columns and padding 40
                 setColumns(4)
@@ -43,21 +47,16 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
         window.addEventListener('resize', updateColumn)
         updateColumn()
         return () => window.removeEventListener('resize', updateColumn)
-    }, [columns, width])
+    }, [columns, props.padding, width])
     let columnContainer: ColumnContainer = {}
     const result: Array<any> = []
     const elementGapStyle: React.CSSProperties = {
         marginBottom: `${props.gap}px`
     }
-    const columnBaseStyle: React.CSSProperties = {
-        flex: 1
-    }
     const columnGapStyle: React.CSSProperties = {
-        ...columnBaseStyle,
         marginLeft: `${props.gap}px`
     }
     const baseContainerStyle: React.CSSProperties = {
-        display: 'flex',
         padding: `0 ${padding}px`
     }
     // init columns
@@ -67,7 +66,11 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
     for (let i = 0; i < props.children.length; i++) {
         const colIndex = i % columns
         columnContainer[`column${colIndex}`].push(
-            <div key={`child${i}`} style={elementGapStyle}>
+            <div
+                key={`child${i}`}
+                className="masonry-element"
+                style={elementGapStyle}
+            >
                 {props.children[i]}
             </div>
         )
@@ -75,15 +78,20 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
     for (let i = 0; i < columns; i++) {
         result.push(
             <div
+                className="masonry-column"
                 key={`column${i}`}
-                style={i > 0 ? columnGapStyle : columnBaseStyle}
+                style={i > 0 ? columnGapStyle : {}}
             >
                 {columnContainer[`column${i}`]}
             </div>
         )
     }
     return (
-        <div key={'BaseLayout'} style={baseContainerStyle}>
+        <div
+            key={'BaseLayout'}
+            className="masonry-layout-container"
+            style={baseContainerStyle}
+        >
             {result}
         </div>
     )

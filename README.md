@@ -36,7 +36,7 @@ _Here are some further challenges for you to demonstrate your skills. You can sa
 
 ### Features
 
--   Responsive, breakpoints at 900/750/500
+-   Responsive, breakpoints at 900/820/750/500
 -   Paginated API, auto load next page when scrolled to bottom
 -   Dark mode, auto detects color scheme
 -   Debounced input, trigger search 500 ms after input ends
