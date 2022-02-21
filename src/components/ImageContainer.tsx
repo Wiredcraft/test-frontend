@@ -20,7 +20,11 @@ const ImageContainer: React.FC<ImageContainerProps> = (props) => {
     })
 
     return (
-        <div key={`imageContainer${_id}`} className="image-container">
+        <div
+            data-testid="image-container"
+            key={`imageContainer${_id}`}
+            className="image-container"
+        >
             {loaded ? null : (
                 <img
                     key={`imageLoading${_id}`}

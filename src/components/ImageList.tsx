@@ -5,17 +5,7 @@ import { ImageContainer } from './ImageContainer'
 import MasonryLayout from './MasonryLayout'
 import { api } from '../config/api'
 import './ImageList.scss'
-const getImages = async (url: string) => {
-    const fetch = window.fetch
-    try {
-        const res = await fetch(url)
-        return res.json()
-    } catch (e) {
-        console.error('Request Failed', e)
-        alert('Network Error!')
-        throw e
-    }
-}
+import { getImages } from '../utils/fetchData'
 
 const debounce = (fn: Function, delay: number, immediate = false) => {
     let timer: number | NodeJS.Timeout | null | undefined = null
@@ -63,6 +53,11 @@ const ImageList: React.FC<{}> = () => {
             url = `${api}images?_page=${page}&_limit=${limit}`
         }
         const res = await getImages(url)
+        if (!res) {
+            setAtBottom(true)
+            isBottom = true
+            return
+        }
         if (res.length < limit) {
             setAtBottom(true)
             isBottom = true
@@ -133,3 +128,4 @@ const ImageList: React.FC<{}> = () => {
 }
 
 export default ImageList
+export { getImages }

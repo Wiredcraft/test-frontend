@@ -70,6 +70,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
                 key={`child${i}`}
                 className="masonry-element"
                 style={elementGapStyle}
+                data-testid="masonry-element"
             >
                 {props.children[i]}
             </div>
@@ -81,6 +82,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
                 className="masonry-column"
                 key={`column${i}`}
                 style={i > 0 ? columnGapStyle : {}}
+                data-testid="masonry-column"
             >
                 {columnContainer[`column${i}`]}
             </div>
@@ -91,6 +93,7 @@ const MasonryLayout: React.FC<MasonryLayoutProps> = (props) => {
             key={'BaseLayout'}
             className="masonry-layout-container"
             style={baseContainerStyle}
+            data-testid="masonry-layout-container"
         >
             {result}
         </div>

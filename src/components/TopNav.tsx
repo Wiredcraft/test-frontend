@@ -8,9 +8,13 @@ const TopNav: React.FC = () => {
         <nav>
             <TopNavSearch />
             <div className="top-nav-actions">
-                <TopNavBtns key="home" icon="fa-house" />
-                <TopNavBtns key="notification" icon="fa-bell" />
-                <TopNavBtns key="user" icon="fa-circle-user" />
+                <TopNavBtns id="home" key="home" icon="fa-house" />
+                <TopNavBtns
+                    id="notification"
+                    key="notification"
+                    icon="fa-bell"
+                />
+                <TopNavBtns id="user" key="user" icon="fa-circle-user" />
             </div>
         </nav>
     )
@@ -40,9 +44,9 @@ const TopNavSearch: React.FC = () => {
     )
 }
 
-const TopNavBtns: React.FC<{ icon: string }> = (props) => {
+const TopNavBtns: React.FC<{ icon: string; id: string }> = (props) => {
     return (
-        <div className="nav-btns">
+        <div id={props.id} className="nav-btns" data-testid={props.id}>
             <i className={`fa-solid ${props.icon} fa-xl`} />
         </div>
     )
