@@ -1,3 +1,3 @@
-const api = 'http://localhost:3002/'
+const api = 'https://front-end-api-test.herokuapp.com/'
 
 export { api }
