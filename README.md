@@ -48,3 +48,7 @@ _Here are some further challenges for you to demonstrate your skills. You can sa
     -   api-server: Local API server
 -   Config:
     -   src/config/api.js: stores API server address, edit accordingly
+
+### Live Demo
+
+[Live Demo](https://artemissaber.github.io/)
