@@ -52,11 +52,9 @@ const ImageList: React.FC<{}> = () => {
             page = 1
             url = `${api}images?_page=${page}&_limit=${limit}`
         }
-        const res = await getImages(url)
+        let res = await getImages(url)
         if (!res) {
-            setAtBottom(true)
-            isBottom = true
-            return
+            res = []
         }
         if (res.length < limit) {
             setAtBottom(true)
