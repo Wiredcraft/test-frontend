@@ -53,6 +53,9 @@ const ImageContainer: React.FC<ImageContainerProps> = (props) => {
                 alt={name}
                 onLoad={() => {
                     setLoaded(true)
+                    if (containerRef.current) {
+                        containerRef.current.style.height = 'auto'
+                    }
                 }}
                 loading="lazy"
             />
