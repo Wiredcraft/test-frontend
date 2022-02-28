@@ -1,0 +1,43 @@
+.home-body {
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.grid {
+    margin: 89px 85px 0 79px;
+}
+.grid-item {
+    margin-bottom: 15px;
+}
+.grid-item img {
+    border-radius: 13px;
+    max-width: 201px;
+    cursor: pointer;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.grid-item img:hover {
+    opacity: 0.6;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}
