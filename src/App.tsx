@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.scss";
+import { Provider, PageStore } from "./store";
+import { PageHeader } from "./components/PageHeader";
+import { PageContent } from "./components/PageContent";
+import { observer } from "mobx-react";
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "./query-client";
+import { ReactQueryDevtools } from "react-query/devtools";
 
-function App() {
+export const App = observer(() => {
+  const [pageStore] = useState(() => new PageStore());
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider value={pageStore}>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools position="bottom-right" />
+        <div className="app-wrapper">
+          <PageHeader />
+          <PageContent />
+        </div>
+      </QueryClientProvider>
+    </Provider>
   );
-}
-
-export default App;
+});
