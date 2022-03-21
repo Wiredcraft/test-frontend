@@ -1,0 +1,64 @@
+.search {
+  position: "absolute";
+  width: 196px;
+  height: 36px;
+  margin-left: 1026px;
+  margin-top: 24px;
+  input {
+    width: 196px;
+    height: 36px;
+    background: #eaeaea;
+    border: 1px solid #eaeaea;
+    border-radius: 19.5px;
+    text-indent: 30px;
+  }
+  input[type="text"]:focus {
+    outline: none;
+  }
+
+  i.fa {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    color: "#8A8A8A";
+    top: 32px;
+    left: 1037px;
+    right: 26.67%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .search {
+    margin-left: 600px;
+    i.fa {
+      left: 610px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .search {
+    margin-left: 200px;
+    i.fa {
+      left: 210px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search {
+    margin-left: 50px;
+    width: 83px;
+    height: 18px;
+    input {
+      width: 160px;
+      height: 24px;
+      font-size: 12px;
+      text-indent: 24px;
+    }
+    i.fa {
+      left: 60px;
+      font-size: 12px;
+    }
+  }
+}
