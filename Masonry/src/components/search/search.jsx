@@ -1,13 +1,13 @@
 import React from 'react';
 import './search.scss'
 import { searchAction } from '../../Store/Action/action';
-import store from '../../Store';
+import { connect } from 'react-redux';
 
-const SearchInput = () => {
-
+const SearchInput = (props) => {
+  let that = props;
   const handleSearch = (e) => {
     const action = searchAction(e.target.value);
-    store.dispatch(action);
+    that.dispatch(action);
 }
 
   return (
@@ -20,5 +20,11 @@ const SearchInput = () => {
     </div>
   );
 }
- 
-export default SearchInput;
+
+const mapStateToProps = state => {
+  return {
+    list: state.list,
+    all: state.all
+  };
+};
+export default connect(mapStateToProps)(SearchInput);
