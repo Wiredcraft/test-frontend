@@ -12,14 +12,14 @@ class Masonry extends Component {
       <React.Fragment>
         <header>
           <SearchInput />
-          <div className='panel'>
-          <Home />
-          <Alert />
-          <User />
+          <div className="panel">
+            <Home />
+            <Alert />
+            <User />
           </div>
         </header>
-          <div style={{ height: '71px'}}></div>
-          <MasonryLayout />
+        <div style={{ height: '71px' }}></div>
+        <MasonryLayout />
       </React.Fragment>
     )
   }
