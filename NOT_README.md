@@ -17,4 +17,7 @@
 
 ## 技术栈选择
 
+## 参考资料
 
+- [Approaches for a CSS Masonry Layout](https://css-tricks.com/piecing-together-approaches-for-a-css-masonry-layout/)
+- [Masonry by ordering Flexbox items](https://codepen.io/didumos/pen/xNPKRJ)
