@@ -4,6 +4,7 @@ import * as service from '@/service';
 import InfiniteScroll from '@/components/InfiniteScroll';
 
 import styles from './index.less';
+import ImageCard from '@/components/ImageCard';
 
 interface State {
   list: ListItem[];
@@ -18,6 +19,8 @@ interface ListItem {
   id: string;
   name: string;
   src: string;
+  width: number;
+  height: number;
 }
 
 interface Props {
@@ -91,9 +94,24 @@ class Content extends React.PureComponent<Props, State> {
         return;
       }
       const { list, total } = res;
-      const realList = await this.getRealListFromList(list);
+
+      const realList = list.map((item: ListItem) => {
+        const { src, name, id } = item;
+        // the width and height are defined in the src
+        const urlWithoutQuery = src.split('?')[0];
+        const result = urlWithoutQuery.match(/\d+/g);
+        return {
+          src,
+          name,
+          id,
+          width: parseInt(result?.[0] || '0'),
+          height: parseInt(result?.[1] || '0'),
+        };
+      });
+
       const newOffset = offset + limit;
       const allLoaded = offset + limit >= total;
+
       this.setState({
         list: [...this.state.list, ...realList],
         offset: newOffset,
@@ -106,29 +124,15 @@ class Content extends React.PureComponent<Props, State> {
     }
   };
 
-  // the src in list will be redirected to get the real image src
-  // we need real image src to ensure lazy loading image
-  getRealListFromList: (list: any[]) => Promise<any[]> = (list) =>
-    Promise.all(
-      list.map((item) => {
-        const { src } = item;
-        return new Promise((resolve) => {
-          window.fetch(src).then((res) => {
-            resolve({
-              ...item,
-              src: res.url,
-            });
-          });
-        });
-      }),
-    );
-
   renderList = () => {
     const { list } = this.state;
     return list.map((item) => (
-      <div>
-        <img key={item.id} src={item.src} />
-      </div>
+      <ImageCard
+        key={item.id}
+        src={item.src}
+        width={200}
+        height={(item.height / item.width) * 200}
+      />
     ));
   };
 
