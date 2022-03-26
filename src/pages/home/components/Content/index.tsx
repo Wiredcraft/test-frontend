@@ -73,37 +73,55 @@ class Content extends React.PureComponent<Props, State> {
     this.searchTimer = setTimeout(this.triggerSearch, INPUT_GAP);
   };
 
-  triggerSearch = () => {
-    this.searchingName = this.props.name;
-    const { limit, offset } = this.state;
+  triggerSearch = async () => {
+    try {
+      this.searchingName = this.props.name;
+      const { limit, offset } = this.state;
 
-    this.setState({
-      requesting: true,
-    });
-    service
-      .getList({
+      this.setState({
+        requesting: true,
+      });
+      const res: any = await service.getList({
         limit,
         offset,
         name: this.searchingName,
-      })
-      .then((res: any) => {
-        if (this.searchingName !== this.props.name) {
-          // make sure the results match current name
-          return;
-        }
-        const { list, total } = res;
-        const newOffset = offset + limit;
-        const allLoaded = offset + limit >= total;
-        this.setState({
-          list: [...this.state.list, ...list],
-          offset: newOffset,
-          total,
-          requesting: false,
-          allLoaded,
-        });
-      })
-      .catch();
+      });
+      if (this.searchingName !== this.props.name) {
+        // make sure the results match current name
+        return;
+      }
+      const { list, total } = res;
+      const realList = await this.getRealListFromList(list);
+      const newOffset = offset + limit;
+      const allLoaded = offset + limit >= total;
+      this.setState({
+        list: [...this.state.list, ...realList],
+        offset: newOffset,
+        total,
+        requesting: false,
+        allLoaded,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  // the src in list will be redirected to get the real image src
+  // we need real image src to ensure lazy loading image
+  getRealListFromList: (list: any[]) => Promise<any[]> = (list) =>
+    Promise.all(
+      list.map((item) => {
+        const { src } = item;
+        return new Promise((resolve) => {
+          window.fetch(src).then((res) => {
+            resolve({
+              ...item,
+              src: res.url,
+            });
+          });
+        });
+      }),
+    );
 
   renderList = () => {
     const { list } = this.state;

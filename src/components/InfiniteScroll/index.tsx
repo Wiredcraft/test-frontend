@@ -15,7 +15,7 @@ interface Props {
 
 type FinalProps = Props & typeof defaultProps;
 
-const PScroll = class extends PureComponent<FinalProps> {
+class InfiniteScroll extends PureComponent<FinalProps> {
   computing: boolean;
   scrollTop: number;
   listenerRemoved: boolean;
@@ -88,6 +88,6 @@ const PScroll = class extends PureComponent<FinalProps> {
     const { children } = this.props;
     return children;
   }
-} as React.ComponentClass<Props>;
+}
 
-export default PScroll;
+export default InfiniteScroll;

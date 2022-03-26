@@ -7,7 +7,6 @@ export default {
 
   state: {
     name: '',
-    list: [],
   },
 
   reducers: {
