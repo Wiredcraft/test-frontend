@@ -12,17 +12,17 @@ export const getList = ({
 }) =>
   new Promise((resolve) => {
     setTimeout(() => {
-      let list = [];
+      let matchedList = [];
       if (!name.trim()) {
-        // if string is empty
-        list = allList.slice();
+        // if string is empty, match all
+        matchedList = allList.slice();
       } else {
-        list = allList.filter((item) => item.name.includes(name));
+        matchedList = allList.filter((item) => item.name.includes(name));
       }
-      list = list.slice(offset, offset + limit);
+      const list = matchedList.slice(offset, offset + limit);
 
       const result = {
-        total: allList.length,
+        total: matchedList.length,
         list,
       };
 

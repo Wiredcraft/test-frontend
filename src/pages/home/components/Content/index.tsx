@@ -62,6 +62,7 @@ class Content extends React.PureComponent<Props, State> {
     this.setState({
       list: [],
       total: 0,
+      offset: 0,
       allLoaded: false,
     });
 
