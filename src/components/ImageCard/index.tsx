@@ -5,6 +5,7 @@ interface Props {
   width: number;
   height: number;
   src: string;
+  innerGap: number;
 }
 
 interface State {
@@ -27,11 +28,17 @@ export default class ImageCard extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { src, width, height } = this.props;
+    const { src, width, height, innerGap } = this.props;
     const { loaded } = this.state;
     return (
-      <div className={styles.container} style={{ width, height }}>
-        {loaded ? <img className={styles.img} src={src} /> : null}
+      <div style={{ width: width, height: height }}>
+        {loaded ? (
+          <img
+            className={styles.img}
+            src={src}
+            style={{ padding: innerGap / 2 }}
+          />
+        ) : null}
       </div>
     );
   }

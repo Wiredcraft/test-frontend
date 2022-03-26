@@ -5,6 +5,10 @@ import InfiniteScroll from '@/components/InfiniteScroll';
 
 import styles from './index.less';
 import ImageCard from '@/components/ImageCard';
+import Masonry from '@/components/Masonry';
+
+const GAP = 14;
+const COLUMN_WIDTH = 200;
 
 interface State {
   list: ListItem[];
@@ -15,7 +19,7 @@ interface State {
   requesting: boolean;
 }
 
-interface ListItem {
+export interface ListItem {
   id: string;
   name: string;
   src: string;
@@ -95,17 +99,21 @@ class Content extends React.PureComponent<Props, State> {
       }
       const { list, total } = res;
 
-      const realList = list.map((item: ListItem) => {
-        const { src, name, id } = item;
+      const realList = list.map((item: any) => {
+        const { src, name, _id } = item;
         // the width and height are defined in the src
         const urlWithoutQuery = src.split('?')[0];
         const result = urlWithoutQuery.match(/\d+/g);
+        const imgWidth = parseInt(result?.[0] || '0');
+        const imgHeight = parseInt(result?.[1] || '0');
+        const cellWidth = COLUMN_WIDTH + GAP;
+        const cellHeight = (imgHeight / imgWidth) * COLUMN_WIDTH + GAP;
         return {
           src,
           name,
-          id,
-          width: parseInt(result?.[0] || '0'),
-          height: parseInt(result?.[1] || '0'),
+          id: _id,
+          width: cellWidth,
+          height: cellHeight,
         };
       });
 
@@ -126,14 +134,23 @@ class Content extends React.PureComponent<Props, State> {
 
   renderList = () => {
     const { list } = this.state;
-    return list.map((item) => (
-      <ImageCard
-        key={item.id}
-        src={item.src}
-        width={200}
-        height={(item.height / item.width) * 200}
+    const columnWidth = 214;
+    const dataSource = list.map((item) => {
+      const ratio = item.height / item.width;
+      const height = columnWidth * ratio;
+      return {
+        ...item,
+        width: columnWidth,
+        height,
+      };
+    });
+    return (
+      <Masonry
+        dataSource={dataSource}
+        innerGap={14}
+        columnWidth={columnWidth}
       />
-    ));
+    );
   };
 
   render() {
