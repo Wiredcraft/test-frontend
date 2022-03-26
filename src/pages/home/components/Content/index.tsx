@@ -71,6 +71,7 @@ class Content extends React.PureComponent<Props, State> {
       total: 0,
       offset: 0,
       allLoaded: false,
+      requesting: true,
     });
 
     // trigger search after input stopped
@@ -133,7 +134,7 @@ class Content extends React.PureComponent<Props, State> {
   };
 
   renderList = () => {
-    const { list } = this.state;
+    const { list, requesting } = this.state;
     const columnWidth = 214;
     const dataSource = list.map((item) => {
       const ratio = item.height / item.width;
@@ -144,13 +145,19 @@ class Content extends React.PureComponent<Props, State> {
         height,
       };
     });
-    return (
-      <Masonry
-        dataSource={dataSource}
-        innerGap={14}
-        columnWidth={columnWidth}
-      />
-    );
+    if (dataSource.length) {
+      return (
+        <Masonry
+          dataSource={dataSource}
+          innerGap={14}
+          columnWidth={columnWidth}
+        />
+      );
+    }
+    if (requesting) {
+      return <p className={styles.tips}>Looking for results...</p>;
+    }
+    return <p className={styles.tips}>Nothing found here.</p>;
   };
 
   render() {

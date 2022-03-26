@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect, CommonState, Dispatch } from 'umi';
-
+import { ReactComponent as SearchIcon } from '@/assets/search.svg';
+import { ReactComponent as HomeIcon } from '@/assets/home.svg';
+import { ReactComponent as MessageIcon } from '@/assets/message.svg';
+import { ReactComponent as PersonalIcon } from '@/assets/personal.svg';
 import styles from './index.less';
 
 interface Props {
@@ -21,7 +24,17 @@ class Header extends React.PureComponent<Props> {
     const { name } = this.props;
     return (
       <div className={styles.container}>
-        <input value={name} onChange={this.handleInputChange} />
+        <div className={styles.searchInputContainer}>
+          <SearchIcon className={styles.searchIcon} />
+          <input
+            className={styles.input}
+            value={name}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <HomeIcon className={styles.icon} />
+        <MessageIcon className={styles.icon} />
+        <PersonalIcon className={styles.icon} />
       </div>
     );
   }

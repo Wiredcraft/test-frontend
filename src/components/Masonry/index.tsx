@@ -67,7 +67,7 @@ export default class Masonry extends React.PureComponent<Props, State> {
     const numOfColumns = Math.floor(
       (this.container.current?.offsetWidth || 0) / columnWidth,
     );
-    if (enforce || (numOfColumns !== columnNumber && dataSource.length)) {
+    if (enforce || numOfColumns !== columnNumber) {
       const newColumns = new Array(numOfColumns).fill(0).map(() => ({
         cellList: [] as Cell[],
         outerHeight: 0,

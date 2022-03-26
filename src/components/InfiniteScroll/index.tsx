@@ -37,13 +37,6 @@ class InfiniteScroll extends PureComponent<FinalProps> {
     }
   }
 
-  componentDidUpdate() {
-    const { allLoaded } = this.props;
-    if (allLoaded) {
-      this.removeScroll();
-    }
-  }
-
   componentWillUnmount() {
     this.removeScroll();
   }
