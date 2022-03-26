@@ -1,9 +1,5 @@
 # umi project
 
-## Live Demo
-
-
-
 ## Getting Started
 
 Install dependencies,
