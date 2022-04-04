@@ -1,0 +1,56 @@
+.navigation {
+  position: fixed;
+  width: 100%;
+  height: 71px;
+  left: 0px;
+  top: 0px;
+  background: #fff;
+  box-shadow: 0px 4px 8px rgba(103, 102, 102, 0.25);
+  padding: 13px 45px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search {
+  max-width: 196px;
+  height: 36px;
+  background: #eaeaea url("./search.svg") 11px center/19px 19px no-repeat;
+  border-radius: 19.5px;
+  display: flex;
+  input {
+    box-sizing: border-box;
+    flex: 1;
+    max-width: 100%;
+    padding-left: 41px;
+    padding-right: 11px;
+    background: transparent;
+    border: none;
+    outline: none;
+    line-height: 36px;
+  }
+  + .icon-button {
+    margin-left: 33px;
+  }
+}
+
+.icon-button {
+  width: 24px;
+  height: 24px;
+  background: transparent center/contain no-repeat;
+  border: none;
+  cursor: pointer;
+  + .icon-button {
+    margin-left: 35px;
+  }
+  &.icon-home {
+    background-image: url("./home.svg");
+  }
+  &.icon-alert {
+    background-image: url("./alert.svg");
+  }
+  &.icon-user {
+    background-image: url("./user.svg");
+  }
+}
