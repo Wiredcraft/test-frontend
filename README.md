@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [x] Bootstrap with CRA
 - [x] Setup JSON server for serving API
-- [ ] Creating Github Action config for CI/CD
+- [x] Creating Github Action config for CI/CD
 - [ ] Component - Navigation bar
 - [ ] Component - Image
 - [ ] Component - Masonry
