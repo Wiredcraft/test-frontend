@@ -1,10 +1,10 @@
 import { memo } from "react";
 import "./masonry.scss";
-import { Picture } from "../../utils/api";
 import Image from "../Image/Image";
+import { PictureWithMeta } from "../../redux/matrix/matrix";
 
 interface Props {
-  picMatrix: Picture[][];
+  picMatrix: PictureWithMeta[][];
 }
 
 function Masonry({ picMatrix }: Props) {
@@ -14,7 +14,12 @@ function Masonry({ picMatrix }: Props) {
         <div key={colIdx} data-testid="col" className="col">
           {col.map((cell) => (
             <div className="cell" key={cell._id}>
-              <Image src={cell.src} alt={cell.name} />
+              <Image
+                src={cell.src}
+                alt={cell.name}
+                width={cell.width}
+                height={cell.height}
+              />
             </div>
           ))}
         </div>

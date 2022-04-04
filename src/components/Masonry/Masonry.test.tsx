@@ -7,6 +7,8 @@ test("Should render correct number of colume of picutures", async () => {
     index: 0,
     name: "purple",
     src: "https://picsum.photos/240/379?random=371",
+    width: 240,
+    height: 379,
   };
   let picMatrix = [[mockPicture]];
   const { rerender } = render(<Masonry picMatrix={picMatrix} />);

@@ -2,10 +2,18 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Picture } from "../../utils/api";
 import { RootState } from "../store";
 
-export function pictureToMatrix(pictures: Picture[], col = 6): Picture[][] {
-  const result: Picture[][] = Array.from({ length: col }, () => []);
+export interface PictureWithMeta extends Picture {
+  width: number;
+  height: number;
+}
+
+export function pictureToMatrix(pictures: Picture[], col = 6) {
+  const result: PictureWithMeta[][] = Array.from({ length: col }, () => []);
   pictures.forEach((pic, picIdx) => {
-    result[picIdx % col].push(pic);
+    const split = pic.src.replace(/\?.*/, "").split("/");
+    const width = parseInt(split[3], 10);
+    const height = parseInt(split[4], 10);
+    result[picIdx % col].push({ ...pic, width, height });
   });
   return result;
 }
@@ -27,7 +35,7 @@ function getColNum(windowWidth: number) {
   return col;
 }
 
-const initialState: Picture[][] = [[]];
+const initialState: PictureWithMeta[][] = [[]];
 
 type MatrixAction = PayloadAction<{ pictures: Picture[]; windowWidth: number }>;
 
