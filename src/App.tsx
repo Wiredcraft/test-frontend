@@ -41,7 +41,7 @@ function App() {
     <div className="app">
       <Navigation />
       <div className="masonry-container">
-        <Masonry picMatrix={matrix} />
+        <Masonry picMatrix={matrix} windowWidth={windowWidth} />
       </div>
     </div>
   );

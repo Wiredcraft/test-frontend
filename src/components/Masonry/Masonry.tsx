@@ -5,9 +5,10 @@ import { PictureWithMeta } from "../../redux/matrix/matrix";
 
 interface Props {
   picMatrix: PictureWithMeta[][];
+  windowWidth?: number;
 }
 
-function Masonry({ picMatrix }: Props) {
+function Masonry({ picMatrix, windowWidth }: Props) {
   return (
     <div className="masonry">
       {picMatrix.map((col, colIdx) => (
@@ -19,6 +20,8 @@ function Masonry({ picMatrix }: Props) {
                 alt={cell.name}
                 width={cell.width}
                 height={cell.height}
+                windowWidth={windowWidth!}
+                col={picMatrix.length}
               />
             </div>
           ))}

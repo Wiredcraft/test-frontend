@@ -15,6 +15,7 @@
     "normalize.css": "^8.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-lazy-load-image-component": "^1.5.3",
     "react-redux": "^7.2.8",
     "react-scripts": "5.0.0",
     "sass": "^1.49.11",
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-lazy-load-image-component": "^1.5.2",
     "@types/react-redux": "^7.1.23",
     "concurrently": "^7.1.0",
     "json-server": "^0.17.0"

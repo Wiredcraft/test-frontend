@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Integration with API
 - [x] Redux for managing status (Images data for rendering)
 - [x] Make it responsive
-- [ ] Make it lazy-load
+- [x] Make it lazy-load
 
 ---
 
