@@ -1,18 +1,21 @@
 import Masonry from "./components/Masonry/Masonry";
 import Navigation from "./components/Navigation/Navigation";
 import "./app.scss";
-import getPictures, { Picture } from "./utils/api";
-import { useEffect, useState } from "react";
+import getPictures from "./utils/api";
+import { useEffect } from "react";
+import { refresh } from "./redux/matrix/matrix";
+import { useAppDispatch, useAppSelector } from "./redux/hooks";
 
 function App() {
-  const [matrix, setMatrix] = useState<Picture[][]>([[]]);
+  const matrix = useAppSelector((state) => state.matrix);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     (async () => {
-      const matrix = await getPictures();
-      setMatrix(matrix);
+      const pictures = (await getPictures()).data;
+      dispatch(refresh({ pictures }));
     })();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="app">
