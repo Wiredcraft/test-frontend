@@ -1,4 +1,4 @@
-name: MP CI FOR MASTER
+name: CI FOR MASTER
 
 on:
   workflow_dispatch:
