@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Todo Tasks:
 
 - [x] Bootstrap with CRA
-- [ ] Setup JSON server for serving API
+- [x] Setup JSON server for serving API
 - [ ] Creating Github Action config for CI/CD
 - [ ] Component - Navigation bar
 - [ ] Component - Image

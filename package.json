@@ -19,7 +19,9 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "server": "json-server --watch server/data.json --routes server/routes.json --port 3004",
+    "dev": "react-scripts start",
+    "start": "concurrently \"yarn server\" \"yarn dev\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "json-server": "^0.17.0"
   }
 }
