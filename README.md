@@ -13,8 +13,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Setup JSON server for serving API
 - [x] Creating Github Action config for CI/CD
 - [x] Component - Navigation bar
-- [ ] Component - Image
-- [ ] Component - Masonry
+- [x] Component - Image
+- [x] Component - Masonry
 - [ ] Integration with API
 - [ ] Redux for managing status (Images data for rendering)
 - [ ] Make it responsive

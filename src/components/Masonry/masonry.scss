@@ -1,0 +1,24 @@
+.masonry {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  flex: 1;
+}
+
+.col + .col {
+  margin-left: 14px;
+}
+
+.cell {
+  border-radius: 13px;
+  overflow: hidden;
+  + .cell {
+    margin-top: 15px;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
