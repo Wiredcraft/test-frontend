@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Masonry from "./components/Masonry/Masonry";
 import Navigation from "./components/Navigation/Navigation";
 import "./app.scss";
