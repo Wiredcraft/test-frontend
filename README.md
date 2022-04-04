@@ -19,3 +19,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Redux for managing status (Images data for rendering)
 - [ ] Make it responsive
 - [ ] Make it lazy-load
+
+---
+
+- [ ] Image skeleton by using its width/height in src
+- [ ] Algorism for average column height
+- [ ] Virtual scroll for optimize performance
