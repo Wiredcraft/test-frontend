@@ -22,7 +22,7 @@ function App() {
       <IconRing />
       <IconUser />
     </div>
-      <Masonry imgs={data} />
+      <Masonry imgs={data?.data} />
     </>
   )
 }

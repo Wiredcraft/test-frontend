@@ -1,7 +1,5 @@
 import { useQuery } from "react-query";
 
-import images from '../../data.json';
-
 export type MasonryItem = {
     src: string,
     name: string,
@@ -9,15 +7,17 @@ export type MasonryItem = {
 }
 
 const Query_Key = 'masonry'
+const API = 'api/data'
 
 export function useMasonry(filter?: string) {
-    return useQuery<MasonryItem[]>([Query_Key, filter],
-        () => Promise.resolve(images),
+    return useQuery<{ data: MasonryItem[] }>([Query_Key, filter],
+        () => fetch(API).then(res => res.json()),
         {
-            select: (res) => (
-                filter
-                    ? res.filter(item => item.name.includes(filter))
-                    : res
-            )
+            select: (res) => ({
+                data:
+                    filter
+                        ? res.data.filter(item => item.name.includes(filter))
+                        : res.data
+            })
         })
 }
