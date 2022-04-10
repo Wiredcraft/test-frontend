@@ -3,6 +3,7 @@ import { placeholder } from '../icons'
 import './index.css'
 
 export const LazyLoadImg = memo(({ src }: { src: string, className?: string }) => {
+    // match size from image info
     const [, h] = useMemo(() => {
         const [width, height] = src.match(new RegExp('/\\d+', 'g')) || []
         const h = Number(height.slice(1))

@@ -1,5 +1,10 @@
 import { RefObject, useLayoutEffect } from "react";
 
+/**
+ * Load real image while the element nearing visual portal
+ * @param containerRef 
+ * @param deps 
+ */
 export function useLazyLoad(containerRef: RefObject<HTMLElement>, deps?: any[]) {
     useLayoutEffect(() => {
         const lazyImgs = containerRef.current?.querySelectorAll<HTMLImageElement>('.lazy')
