@@ -16,6 +16,7 @@ export function useLazyLoad(containerRef: RefObject<HTMLElement>, deps?: any[]) 
                     if (entry.isIntersecting) {
                         const img = entry.target as HTMLImageElement
                         img.src = img.dataset.src!
+                        img.style.opacity = '0.5'
                         observer.unobserve(img)
                     }
                 })

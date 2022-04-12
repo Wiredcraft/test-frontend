@@ -1,4 +1,5 @@
 .lazy {
     background-color: #eee;
     object-fit: contain;
+    transition: opacity 0.5s;
 }

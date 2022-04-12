@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react'
+import { memo, useCallback, useMemo } from 'react'
 import { placeholder } from '../icons'
 import './index.css'
 
@@ -10,8 +10,14 @@ export const LazyLoadImg = memo(({ src }: { src: string, className?: string }) =
         const w = Number(width.slice(1))
         return [, h * 200 / w]
     }, [src])
+
+    const onLoad = useCallback((e) => {
+        if (!e.target.src.includes('placeholder')) {
+            e.target.style.opacity = '1'
+        }
+    }, [])
     
     return <>
-        <img className="lazy masonry-item" src={placeholder} data-src={src} height={h} />
+        <img onLoad={onLoad} className="lazy masonry-item" src={placeholder} data-src={src} height={h} />
     </>
 })
