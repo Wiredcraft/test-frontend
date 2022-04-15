@@ -1,0 +1,26 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext",
+    "allowJs": true,
+    "jsx": "react",
+    "outDir": "./app/dist",
+    "rootDir": ".",
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    // "typeRoots": [
+    //   "node_modules/@types",
+    // ],
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "app",
+    "typings",
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

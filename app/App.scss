@@ -1,0 +1,16 @@
+@import "./styles/var.scss";
+
+.App {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.container {
+  box-sizing: border-box;
+  padding-top: $header-height + 18px;
+  height: 100%;
+  padding-left: 18px;
+  padding-right: 18px;
+}
