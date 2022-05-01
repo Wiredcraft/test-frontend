@@ -1,30 +1,27 @@
 import fetch from 'cross-fetch'
 
 export const REQUEST_POSTS = 'REQUEST_POSTS'
-function requestPosts(subreddit) {
+function requestPosts() {
   return {
-    type: REQUEST_POSTS,
-    subreddit
+    type: REQUEST_POSTS
   }
 }
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-function receivePosts(subreddit, json) {
+function receivePosts(json) {
   return {
     type: RECEIVE_POSTS,
-    subreddit,
-    // posts: json.data.children.map(child => child.data),
     posts: json.all,
     visiblePosts: json.visible,
     receivedAt: Date.now()
   }
 }
 
-// 来看一下我们写的第一个 thunk action 创建函数！
-// 虽然内部操作不同，你可以像其它 action 创建函数 一样使用它：
-// store.dispatch(fetchPosts('reactjs'))
-
-export function fetchPosts(subreddit) {
+/**
+ * 
+ * @returns 异步请求数据
+ */
+export function fetchPosts() {
 
   // Thunk middleware 知道如何处理函数。
   // 这里把 dispatch 方法通过参数的形式传给函数，
@@ -32,31 +29,21 @@ export function fetchPosts(subreddit) {
 
   return function (dispatch) {
 
-    // 首次 dispatch：更新应用的 state 来通知
-    // API 请求发起了。
+    // 首次 dispatch：更新应用的 state 来通知 API 请求发起了。
 
-    dispatch(requestPosts(subreddit))
+    dispatch(requestPosts())
 
     // thunk middleware 调用的函数可以有返回值，
     // 它会被当作 dispatch 方法的返回值传递。
-
-    // 这个案例中，我们返回一个等待处理的 promise。
-    // 这并不是 redux middleware 所必须的，但这对于我们而言很方便。
-
-    return fetch(`http://localhost:3001/data`)
+    return fetch(`http://localhost:3004/data`)
       .then(
         response => response.json(),
-        // 不要使用 catch，因为会捕获
-        // 在 dispatch 和渲染中出现的任何错误，
-        // 导致 'Unexpected batch number' 错误。
-        // https://github.com/facebook/react/issues/6895
         error => console.log('An error occurred.', error)
       )
       .then(json =>
-        // 可以多次 dispatch！
-        // 这里，使用 API 请求结果来更新应用的 state。
+        // 使用 API 请求结果来更新应用的 state。
 
-        dispatch(receivePosts(subreddit, {
+        dispatch(receivePosts({
           all: json,
           visible: json
         }))
@@ -64,7 +51,13 @@ export function fetchPosts(subreddit) {
   }
 }
 
-export function filterPosts(subreddit, json, keyword) {
+/**
+ * 
+ * @param {array} json 用于过滤查找的数据源，是数组类型
+ * @param {*} keyword 用于过滤查找的关键字，是字符串类型
+ * @returns 
+ */
+export function filterPosts(json, keyword) {
   return function (dispatch) {
     let visible = []
     if (keyword?.length) {
@@ -75,7 +68,7 @@ export function filterPosts(subreddit, json, keyword) {
       visible = json
     }
 
-    dispatch(receivePosts(subreddit, {
+    dispatch(receivePosts({
       all: json,
       visible: visible
     }))

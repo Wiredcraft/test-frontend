@@ -1,25 +1,34 @@
-import { memo, useState, useContext, useRef } from "react"
-import Glass from '../Icons/glass'
-import './res/search.less'
-import { filterPosts } from '../../actions'
+import { memo, useState, useContext, useRef } from "react";
 import { StoreContext } from "redux-react-hook";
+
+import { filterPosts } from '../../actions';
+import Glass from '../Icons/glass';
+import './res/search.less';
 
 const Search = () => {
     const inputEle = useRef(null);
     const store = useContext(StoreContext);
 
-    const [keyword, setKeyword] = useState("")
+    const [keyword, setKeyword] = useState("");
 
+    /**
+     * 输入框内容发生改变的回调函数
+     * @param {SyntheticEvent} event 
+     */
     const onInputChanged = (event) => {
-        const keyword = event.target.value
-        setKeyword(keyword)
+        const keyword = event.target.value;
+        setKeyword(keyword);
     }
 
+    /**
+     * 点击搜索按钮的回调函数
+     */
     const onSearch = () => {
-        const keyword = inputEle.current?.value
-        const items = store.getState().postsBySubreddit.reactjs.items
+        const keyword = inputEle.current?.value;
+        const { getState } = store;
+        const { items } = getState();
         store
-        .dispatch(filterPosts('reactjs', items, keyword))
+        .dispatch(filterPosts(items, keyword));
     }
 
     return (
@@ -31,7 +40,7 @@ const Search = () => {
                 <input type="text" value={keyword} onChange={onInputChanged} ref={inputEle}></input>
             </div>
         </div>   
-    )
+    );
 }
 
 export default memo(Search)

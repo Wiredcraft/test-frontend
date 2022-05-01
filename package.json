@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "mock": "json-server db.json --port 3004",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -12,7 +13,6 @@
     "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-lazyload": "^3.2.0",
     "react-thunk": "^1.0.0",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
