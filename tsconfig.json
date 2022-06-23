@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": "client",
+    "paths": {
+      "store": ["store"],
+      "utils": ["utils"],
+    },
+    "types": ["react/next", "react-dom/next"]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+}
+  
